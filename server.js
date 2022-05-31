@@ -14,10 +14,6 @@ let dbconnection = require('./auth')
 
 
 
-app.get("/" , (req,res)=>{
-    res.send("Welcome to Doctrap")
-} )
-
 
 
 
@@ -29,8 +25,20 @@ app.use('/api/admin' , adminroute )
 app.use('/api/compounder/' , compounderroute )
 
 
-const port =  7000 ;
+if(process.env.NODE_ENV==='production')
 
- app.listen( port , ()=>{
-    console.log('Server started of Doctrap')
+{
+    app.use('/' , express.static('client/build') )
+    app.get('*' , (req,res)=>{
+        res.sendFile(path.resolve(__dirname , 'client/build/index.html'))
+    } )
+}
+
+
+
+
+const port = process.env.PORT ||  7000 ;
+
+var server = app.listen( port , ()=>{
+    console.log('Server started at Docapp')
 } )
