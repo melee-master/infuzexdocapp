@@ -1,0 +1,16 @@
+.consult-now
+{
+    color: rgb(20,186,241);
+    font-weight: 900;
+  
+
+}
+
+.consult-now:hover
+{
+    color: rgb(20,186,241,0.7);
+    font-weight: 900;
+    cursor: pointer;
+  
+
+}

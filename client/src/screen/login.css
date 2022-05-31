@@ -1,0 +1,349 @@
+.boxgrid
+{
+    display: grid;
+    grid-template-columns: auto auto;
+
+
+}
+
+#signupbtn
+{
+    cursor: pointer;
+}
+#message
+{
+    color: #00688B;
+}
+
+.title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 20px;
+  }
+  .checked-item,
+  .not-checked-item {
+    margin-left: 10px;
+  }
+  .checked-item {
+    text-decoration: line-through;
+  }
+
+#sideimg
+{
+    width: 80%;
+}
+
+#loginbox
+{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border : 0.5px solid black;
+    border-radius: 12px;
+    padding:  20px 10px 20px 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+button{
+    border: none;
+}
+
+.formtext
+{
+    
+    text-align: left;
+    float: left;
+    padding: 10px;
+    font-size: 18px;
+    
+}
+
+
+input{
+    font-size: 15px;
+    float: left;
+    
+}
+
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+    
+    
+  }
+  
+  input[type=Number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  
+
+.doc-descroption-input
+{
+    width: 99%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}  
+  
+
+
+#checkboxgrid
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+
+
+@media screen and (max-width:900px) {
+
+
+    
+}
+
+
+
+
+@media screen and (max-width:750px) {
+
+
+    .boxgrid
+{
+    display: block;
+    
+}
+
+#sideimg
+{
+    width: 0%;
+}
+
+#loginbox
+{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border : 0.5px solid black;
+    padding:  20px 10px 20px 10px;
+ margin-left: auto;
+ margin-right: auto;
+ width: 88%;
+    overflow: auto;
+}
+
+
+#message
+{
+    color: #00688B;
+    margin-top: 520px;
+}
+
+
+
+#timingbox
+{
+    margin-top: 800px;
+}
+
+#timingboxnew
+{
+    margin-top: 800px
+}
+
+#checkboxgrid
+{
+    
+    display: grid;
+    grid-template-columns: auto auto auto ;
+}
+    
+}
+
+
+
+
+@media screen and (max-width:600px) {
+
+    .boxgrid
+    {
+        display: block;
+        
+    }
+    #sideimg
+{
+    width: 0%;
+}
+
+
+
+#loginbox
+{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border : 0.5px solid black;
+    padding:  20px 10px 20px 10px;
+ margin-left: auto;
+ margin-right: auto;
+ width: 88%;
+    overflow: auto;
+}
+
+.formtext
+{
+    
+    text-align: left;
+    float: left;
+    padding: 10px;
+    font-size: 15px;
+    
+}
+
+
+input{
+    font-size: 12px;
+    float: left;
+    
+}
+
+#signupbtn
+{
+    font-size: 20px;
+  margin-right: 200px;
+}
+
+
+#message
+{
+    color: #00688B;
+    margin-top: 570px;
+}
+
+#Message
+{
+    margin-top: 250px;
+}
+
+
+
+
+#checkboxgrid
+{
+    
+    display: grid;
+    grid-template-columns: auto auto ;
+}
+
+
+#timingboxnew
+{
+    margin-top: 1100px
+}
+
+
+
+    
+}
+
+
+
+
+
+
+
+@media screen and (max-width:450px) {
+    .boxgrid
+    {
+        display: block;
+        
+    }
+    #sideimg
+{
+    width: 0%;
+}
+
+
+#loginbox
+{
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    border : 0.5px solid black;
+    padding:  20px 10px 20px 10px;
+ margin-left: auto;
+ margin-right: auto;
+ width: 80%;
+    overflow: auto;
+}
+
+#signupbtn
+{
+    font-size: 20px;
+  margin-right: 120px;
+}
+
+#timingboxnew
+{
+    margin-top: 1200px
+}
+
+
+    
+}
+
+
+
+@media screen and (max-width:375px) {
+    .boxgrid
+    {
+        display: block;
+        
+    }
+
+    #sideimg
+    {
+        width: 0%;
+    }
+
+    #signupbtn
+{
+    font-size: 20px;
+  margin-right: 100px;
+}
+
+
+    
+    
+}

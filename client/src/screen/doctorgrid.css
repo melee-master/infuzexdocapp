@@ -1,0 +1,294 @@
+.gridcontain1 {
+    display: grid ;
+    grid-gap: 20px 10px;
+    grid-template-columns: auto auto  auto ;
+
+
+    padding: 10px;
+  }
+
+  .doc-grid
+  {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    
+    
+    
+
+  }
+  
+  .card {
+  
+    
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    /* border: 0.1px solid  black; */
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+    border-radius: 20px;
+
+    transition: 0.3s;
+    padding: 2px 16px;
+  }
+
+  .griditemm
+  {
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    border: 0.1px   black;
+  }
+
+  #img-docgrid{
+      width: 100%;
+height: 200px;
+border-radius: 50%;
+
+  }
+
+  h3{
+      font-size: 20px;
+  }
+
+
+  
+  
+  .card:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  
+
+  .doc-name
+  {
+   
+    font-size: 30px;
+   
+  }
+
+  .doc-field
+  {
+    color: rgb(71, 70, 70);
+    margin-top: -20px;
+    font-size: 25px;
+
+  }
+
+  .doc-exp
+  {
+    color: grey;
+    font-size: 20px;
+    margin-top: -20px;
+  }
+  .doc-fees
+  {
+    margin-top: -35px;
+    font-size: 20px;
+   
+  }
+
+  .container {
+    padding: 2px 16px;
+  }
+
+
+
+  /* @media screen and (max-width:800px) {
+
+    .gridcontain1 {
+      display: grid;
+      grid-gap: 50px 100px;
+      grid-template-columns: auto auto;
+   
+      padding: 10px;
+    }
+
+    #img{
+      width: 100%;
+height: 250px;
+
+  }
+    
+    
+  }
+
+
+
+  @media screen and (max-width:600px) {
+
+    .gridcontain1 {
+      display: grid;
+      grid-gap: 20px 60px;
+      grid-template-columns: auto ;
+   
+      padding: 10px;
+    }
+
+
+    #img{
+      width: 100%;
+height: 200px;
+
+  }
+    
+    
+  } */
+
+
+
+
+  @media screen and (max-width:900px) {
+
+    .gridcontain1 {
+      display: grid ;
+      grid-gap: 50px 100px;
+      grid-template-columns: auto auto  ;
+    
+  
+      padding: 10px;
+    }
+  
+    .card {
+  
+    
+      padding: 10px;
+      font-size: 25px;
+      text-align: center;
+      /* border: 0.1px   black; */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      padding: 2px 16px;
+    }
+  
+    .griditemm
+    {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      border: 0.1px   black;
+    }
+
+    .doc-name
+    {
+      font-family: Comfortaa    ;
+      font-size: 18px;
+     
+    }
+  
+    .doc-field
+    {
+      color: rgb(71, 70, 70);
+      margin-top: -20px;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+  
+    .doc-exp
+    {
+      color: grey;
+      font-size: 20px;
+    }
+
+  
+    
+
+
+    
+  }
+  
+  
+  
+  
+  @media screen and (max-width:750px) {
+  
+  
+      
+  }
+  
+  
+  
+  
+  @media screen and (max-width:600px) {
+
+    .gridcontain1 {
+      display: grid ;
+      grid-gap: 50px 50px;
+      grid-template-columns: auto   ;
+    
+  
+      padding: 10px;
+    }
+  
+    .card {
+  
+    
+      padding: 10px;
+      font-size: 25px;
+      text-align: center;
+      /* border: 0.1px   black; */
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      padding: 2px 16px;
+    }
+  
+    .griditemm
+    {
+      padding: 10px;
+      font-size: 20px;
+      text-align: center;
+      border: 0.1px   black;
+    }
+
+    .doc-name
+    {
+      font-family: Comfortaa    ;
+      font-size: 18px;
+     
+    }
+  
+    .doc-field
+    {
+      color: rgb(71, 70, 70);
+      margin-top: -20px;
+      font-size: 22px;
+    }
+  
+    .doc-exp
+    {
+      color: grey;
+      font-size: 20px;
+    }
+
+    #smallh2
+    {
+      font-size: 15px;
+    }
+
+    #smallh6
+    {
+      font-size: 12px;
+    }
+
+  
+  
+  
+      
+  }
+  
+  
+  
+  
+  @media screen and (max-width:450px) {
+  
+  
+      
+  }
+  
+  
+  
+  @media screen and (max-width:375px) {
+  
+      
+  }
+  
+
