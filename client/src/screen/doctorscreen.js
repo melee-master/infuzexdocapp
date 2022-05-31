@@ -33,7 +33,7 @@ const DoctorWelcomeScreen=()=>{
                     
                     
                     >
-                        Register
+                        Register &nbsp;
                     </div>
                     </a>
                         </div>
