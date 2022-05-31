@@ -1,0 +1,42 @@
+.forminput
+{
+    font-size: 30px;
+    width:'80%' ;
+     margin-left:'auto' ;
+      margin-right:'auto';
+}
+
+
+#formtext
+{
+font-size: 22px;
+}
+
+#formbutton
+{
+    width: 20%;    
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 4%;
+    padding-left: 4%;
+    border-radius: 10px;
+}
+
+
+
+
+@media screen and (max-width:450px) {
+
+    #formbutton
+    {
+        width: 90%;    
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-right: 4%;
+        padding-left: 4%;
+        border-radius: 10px;
+    }
+    
+
+    
+}

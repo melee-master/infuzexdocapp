@@ -1,0 +1,22 @@
+[
+    { "name":"Mahesh" ,
+    "lname":"Suresh" ,
+    "email":"mahesh@gmail.com" ,
+    "contactnumber":2114 ,
+    "age":23  , 
+    "userid":"6257275e1ff5d4a144f9ac39", 
+    "doctorid" :"6245ea11b1923b7840ef1fcb" ,
+    "createdAt":"2022-04-08T20:13:46.637+00:00"
+  } ,
+
+  { "name":"Kanchan" ,
+    "lname":"Janga" ,
+    "email":"KJ@gmail.com" ,
+    "contactnumber":324 ,
+    "age":23  , 
+    "userid":"625726e0a4d0de909d2499a8", 
+    "doctorid" :"6249b57205cb5829c9aec34c" ,
+    "createdAt":"2022-04-08T20:13:46.637+00:00"
+  }
+
+]
