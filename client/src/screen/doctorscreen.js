@@ -28,12 +28,12 @@ const DoctorWelcomeScreen=()=>{
 
                    
                     <a href="/drsignup">
-                    <div className="box1" id="bxx"
+                    <div className="box1" id="bxx2"
                     
                     
                     
                     >
-                        Register &nbsp;
+                        Register 
                     </div>
                     </a>
                         </div>

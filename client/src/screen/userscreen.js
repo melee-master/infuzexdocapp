@@ -26,7 +26,7 @@ const UserWelcomeScreen=()=>{
 
                    
                     <a href="/signup"  >
-                    <div className="box1" id="bxx"  >
+                    <div className="box1" id="bxx2"  >
                         Register
                     </div>
                     </a>
