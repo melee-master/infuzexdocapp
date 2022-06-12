@@ -13,7 +13,23 @@ import { Carousel } from 'react-responsive-carousel';
 const DoctorBySpecialization=()=>{
 
    
+var sizecheck = false 
 
+const [isMobile, setIsMobile] = useState(false)
+ 
+//choose the screen size 
+const handleResize = () => {
+  if (window.innerWidth < 430) {
+      setIsMobile(true)
+  } else {
+      setIsMobile(false)
+  }
+}
+
+// create an event listener
+useEffect(() => {
+  window.addEventListener("resize", handleResize)
+})
 
 
     
@@ -40,43 +56,163 @@ const DoctorBySpecialization=()=>{
 
            </select>
            <button  onClick={searchas} >Submit</button> */}
- 
-<a href="/dr-by-specialization" style={{textDecoration:'none' , color:'black' }} >
-
-            <div className='Doc-by-Spec'  >
-          
-
-                <p>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3467/3467794.png'  id="img-docgrid1" />
-                    <br/>
-                    <h2 className='doc-name' >Cardiologist </h2>
-                </p>
-           
-
-                <p>
-                <img src='https://www.nicepng.com/png/detail/867-8678512_doctor-icon-physician.png'  id="img-docgrid1" />
-                    <br/>
-                    <h2 className='doc-name' >General Physician </h2>
-                </p>
-
-                <p>
-                <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGOQipLO9pNuSYGYsbjY5maxyohlj4WClMTaz2SI_5LTzJ82YJUhoH9rE2Yc1TVIpNQ-c&usqp=CAU'  id="img-docgrid1" />
-                    <br/>
-                    <h2 className='doc-name' >Orthopaedic</h2>
-                </p>
-                <p>
-                <img src='https://cdn2.iconfinder.com/data/icons/medical-professions-innovicons-color/128/Neurologist-brain-doctor-consultation-512.png'  id="img-docgrid1" />
-                    <br/>
-                    <h2 className='doc-name' >Neurologist</h2>
-                </p>
-               
-
-               
-               
-
-            </div>
 
 
+
+{isMobile? (<p>
+
+<Carousel
+
+infiniteLoop={true}
+
+autoPlay={true}
+
+interval={5000}
+
+>
+
+<p>
+<a href='/physician' style={{ textDecoration: 'none' }} >
+                    <p>
+                        <img src='https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg' id="img-docgrid1" />
+                        <br />
+                        <h4 style={{ color: 'black' }} >Physician</h4>
+
+                        <h5 className='consult-now' >Consult Now</h5>
+                    </p>
+                </a>
+</p>
+
+<p>
+<a href='/dermatologist' style={{ textDecoration: 'none' }} >
+                    <p>
+                        <img src='https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=' id="img-docgrid1" />
+                        <br />
+                        <h4 style={{ color: 'black' }} >Dermatologist </h4>
+                        <h5 className='consult-now' >Consult Now</h5>
+                    </p>
+                </a>
+
+</p>
+
+<p>
+<a href='/paediatrician' style={{ textDecoration: 'none' }} >
+                    <p>
+                        <img src='https://img.freepik.com/free-vector/visiting-pediatrician-semi-flat-rgb-color-vector-illustration-mother-with-toddler-female-doctor-isolated-cartoon-characters-white-background_106317-17504.jpg?w=2000' id="img-docgrid1" />
+                        <br />
+                        <h4 style={{ color: 'black' }} >Paediatrician</h4>
+                        <h5 className='consult-now' >Consult Now</h5>
+                    </p>
+                </a>
+
+</p>
+
+
+<p>
+<a href='/psychiatrist' style={{ textDecoration: 'none' }} >
+                    <p>
+                        <img src='https://us.123rf.com/450wm/happyvector071/happyvector0711601/happyvector071160100426/51469380-abstract-creative-concept-vector-silhouette-head-for-web-and-mobile-applications-isolated-on-white-b.jpg?ver=6' id="img-docgrid1" />
+                        <br />
+                        <h4 style={{ color: 'black' }} >Psychiatrist</h4>
+                        <h5 className='consult-now' >Consult Now</h5>
+                    </p>
+                </a>
+
+    </p>
+
+
+
+
+    <p>
+<a href='/dentist' style={{ textDecoration: 'none' }} >
+                    <p>
+                        <img src='https://img.freepik.com/free-vector/dental-care-concept-illustration_52683-65383.jpg?w=2000' id="img-docgrid1" />
+                        <br />
+                        <h4 style={{ color: 'black' }} >Dentist</h4>
+                        <h5 className='consult-now' >Consult Now</h5>
+                    </p>
+                </a>
+
+    </p>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+</Carousel>
+
+
+</p>):(
+   <div className='Doc-by-Spec' 
+   
+   
+   
+   >
+
+   <a href='/physician' style={{ textDecoration: 'none' }} >
+                       <p>
+                           <img src='https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg' id="img-docgrid1" />
+                           <br />
+                           <h4 style={{ color: 'black' }} >Physician</h4>
+   
+                           <h5 className='consult-now' >Consult Now</h5>
+                       </p>
+                   </a>
+              
+   
+                  
+                   <a href='/dermatologist' style={{ textDecoration: 'none' }} >
+                       <p>
+                           <img src='https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=' id="img-docgrid1" />
+                           <br />
+                           <h4 style={{ color: 'black' }} >Dermatologist </h4>
+                           <h5 className='consult-now' >Consult Now</h5>
+                       </p>
+                   </a>
+   
+   
+                   <a href='/paediatrician' style={{ textDecoration: 'none' }} >
+                       <p>
+                           <img src='https://img.freepik.com/free-vector/visiting-pediatrician-semi-flat-rgb-color-vector-illustration-mother-with-toddler-female-doctor-isolated-cartoon-characters-white-background_106317-17504.jpg?w=2000' id="img-docgrid1" />
+                           <br />
+                           <h4 style={{ color: 'black' }} >Paediatrician</h4>
+                           <h5 className='consult-now' >Consult Now</h5>
+                       </p>
+                   </a>
+   
+   
+   
+                   <a href='/psychiatrist' style={{ textDecoration: 'none' }} >
+                       <p>
+                           <img src="https://us.123rf.com/450wm/happyvector071/happyvector0711601/happyvector071160100426/51469380-abstract-creative-concept-vector-silhouette-head-for-web-and-mobile-applications-isolated-on-white-b.jpg?ver=6" id="img-docgrid1" />
+                           <br />
+                           <h4 style={{ color: 'black' }} >Psychiatrist</h4>
+                           <h5 className='consult-now' >Consult Now</h5>
+                       </p>
+                   </a>
+   
+                   
+                  
+   
+               </div>
+   
+   
+      
+) }
+
+
+
+
+
+    
            
 
             <div className="gridcontain1"  >
@@ -96,11 +232,11 @@ const DoctorBySpecialization=()=>{
 //id="navigationbutton"
 style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' }} 
 
-> View All Specialization </p>
+>View All Specialization </p>
 </a>
 
 </div>
-</a>
+
 
 
 {/* <a href="/dr-by-specialization" style={{textDecoration:'none' , color:'black' }} >

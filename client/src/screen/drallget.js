@@ -17,6 +17,7 @@ const alldoctos = useSelector(state=>state.GetAllDoctorReducer)
 const {loading , doctors , error} = alldoctos
 
 
+
 const dispatch = useDispatch()
 
 useEffect( ()=>{

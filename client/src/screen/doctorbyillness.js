@@ -34,7 +34,7 @@ const DoctorByIllness=()=>{
                
                 <a href='/cold-cough' style={{ textDecoration: 'none' }} >
                     <p>
-                        <img src='https://previews.123rf.com/images/jemastock/jemastock1706/jemastock170607306/80044898-tosiendo-hombre-enfermo-con-fr%C3%ADo-gripe-y-virus-ilustraci%C3%B3n-vectorial.jpg' id="img-docgrid1" />
+                        <img src='https://img.freepik.com/free-vector/illustration-person-with-cold_23-2148405063.jpg?w=2000' id="img-docgrid1" />
                         <br />
                         <h4 style={{ color: 'black' }} >Cold , Cough or Fever </h4>
                         <h5 className='consult-now' >Consult Now</h5>
