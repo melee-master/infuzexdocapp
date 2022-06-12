@@ -45,7 +45,7 @@ useEffect( ()=>{
 const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
 const { loading, doctors ,error} = dridstate
 
-
+var day2=bookingdate.toString().substr(0,3)
 
 const bookappointment=()=>{
 
@@ -120,29 +120,18 @@ minDetail = 'month'
 
 
 
+{
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br/>
-<select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+day2==='Mon'?(
+    <p>
+        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
 
 {
  
-doctors.checked && doctors.checked.map(rev => {
+doctors.mon && doctors.mon.map(rev => {
+
+   
+
     return <option value={rev} >
 
  
@@ -157,6 +146,147 @@ doctors.checked && doctors.checked.map(rev => {
 
 }
 </select>
+        </p>
+
+):(
+   day2==='Tue' ? (
+    <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+    {
+     
+    doctors.tue && doctors.tue.map(rev => {
+        return <option value={rev} >
+    
+     
+            {rev} 
+    
+    
+    
+    
+            </option>
+    
+    })
+    
+    }
+    </select>
+   ) : (
+       day2==='Wed' ? (
+        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.wed && doctors.wed.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+    ) : (
+        day2==='Thu' ? (
+            <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+            {
+             
+            doctors.thu && doctors.thu.map(rev => {
+                return <option value={rev} >
+            
+             
+                    {rev} 
+            
+            
+            
+            
+                    </option>
+            
+            })
+            
+            }
+            </select>
+        )  : (
+            day2==='Fri' ? (
+                <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.fri && doctors.fri.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+            )  : (
+                day2==='Sat'?(
+                    <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.sat && doctors.sat.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+                ) : (
+                    day2==='Sun' ? (
+                        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.sun && doctors.sun.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+                    ) : (
+                        <p> </p>
+                    )
+                )
+            )
+        )
+    )
+   )
+)
+
+}
+
+
 
 
 
@@ -172,6 +302,15 @@ doctors.checked && doctors.checked.map(rev => {
 
 
 
+
+<br/>
+
+
+
+
+
+
+<br/>
 
 
 </div>

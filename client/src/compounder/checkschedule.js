@@ -15,7 +15,9 @@ const CheckSchedule=({doctorid})=>{
 
     const dispatch = useDispatch()
 
+    const today = new Date()
 
+    var checkdate = today.toString().substring(0, 15)
 
 
 const patientstate = useSelector(state=>state.GetPatientsByUserIdReducer)
@@ -56,14 +58,14 @@ const doc = localStorage.getItem('compounder')
                                   
                                        <tr  > 
                 
-                                          <th> Booking Id </th>
-                                           <th> Patient's Name </th>
+                                          <th scope="col" >Booking Id</th>
+                                           <th scope="col" >Patient's Name</th>
                                           
                 
-                                           <th> Contact Details  </th>
-                                           <th> Appointment Booked For  </th>
-                                           <th>Slot</th>
-                                           <th>Booked By</th>
+                                           <th scope="col" >Contact Details</th>
+                                           <th scope="col" >Appointment Booked For</th>
+                                           <th scope="col" >Slot</th>
+                                           <th scope="col" >Booked By</th>
                                          
                                            {/* <th> Status </th>
                                            <th> Appointment Booked On </th> */}
@@ -75,29 +77,35 @@ const doc = localStorage.getItem('compounder')
                                           {/* {loading && ( <Loading/> ) }   */}
                                            {orders && (
                                               orders.map( ord =>{
-                                                  return <tr >
+
+                                                if (ord.date === checkdate)
+                                                {
+                                                    return <tr >
                 
-                                                     <td>{ord._id}</td>
-                                                      <td> {ord.name} {ord.lname} </td>
-                                                   
+                                                    <td data-label="Booking Id" >{ord._id}</td>
+                                                     <td data-label="Patient's Name" > {ord.name} {ord.lname} </td>
+                                                  
+                                                    
+                                                  
+                                                     <td data-label="Contact Details" >{ord.contactnumber}
+                                                     <br/> {ord.email}
+                                                     </td>
+                                                     {/* <td>{ord.createdAt.substr(0,10)}</td> */}
+                                                     <td data-label="Appointment Booked For" > {ord.date} </td>
+                                                     <td data-label="Slot">{ord.slot}</td>
+                                                     <td data-label="Booked By" >{ord.status}</td>
                                                      
-                                                   
-                                                      <td>{ord.contactnumber}
-                                                      <br/> {ord.email}
-                                                      </td>
-                                                      {/* <td>{ord.createdAt.substr(0,10)}</td> */}
-                                                      <td> {ord.date} </td>
-                                                      <td>{ord.slot}</td>
-                                                      <td>{ord.status}</td>
-                                                      
-                                                      {/* <td>Dr. {doc.name}</td> */}
-                                                 
-                
-                
-                                                     
+                                                     {/* <td>Dr. {doc.name}</td> */}
                                                 
-                
-                                                  </tr>
+               
+               
+                                                    
+                                               
+               
+                                                 </tr>
+                                                }
+
+                                               
                                               } )
                                           )  } 
                                           
