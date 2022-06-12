@@ -1,143 +1,256 @@
 [
 
     { "symptom":"Cough,Cold,Fever" , 
-      "search_tags":"cough cold fever sardi zukaam কাশিসর্দিবর" , 
+      "search_tags":"cough cold fever sardi zukaam কাশিসর্দিবর Physician চিকিত্সক Cikitsaka" , 
       "link":"/cold-cough" , 
-      "img":"https://previews.123rf.com/images/jemastock/jemastock1706/jemastock170607306/80044898-tosiendo-hombre-enfermo-con-fr%C3%ADo-gripe-y-virus-ilustraci%C3%B3n-vectorial.jpg"   
+      "field":"Physician",
+       "link2":"/physician" ,
+       "search_tags2":"Physician চিকিত্সক Cikitsaka" , 
+       "img2":"https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg",
+      "img":"https://img.freepik.com/free-vector/illustration-person-with-cold_23-2148405063.jpg?w=2000"
     }  ,
     { "symptom":"Skin or Hair Issues" , 
-        "search_tags":"acnepimplehairskinzitshairfallscalphairlossব্রণব্রণচুলচামড়াzitsচুলপড়ামাথারত্বকচুলপরা" , 
+        "search_tags":"acnepimplehairskinzitshairfallscalphairlossব্রণব্রণচুলচামড়াzitsচুলপড়ামাথারত্বকচুলপরা Carmarōga biśēṣajña dermatologist " , 
         "link":"/acne-issues" , 
+        "field":"Dermatologist",
+       "link2":"/dermatologist" ,
+       "search_tags2":"Physician চিকিত্সক Cikitsaka" , 
+       "img2":"https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=",
+      
         "img":"https://thumbs.dreamstime.com/b/unhappy-teen-girl-struggling-acne-unhappy-teen-girl-struggling-acne-pimples-skin-face-problem-concept-vector-modern-flat-99784709.jpg"   
     } 
     ,
     { "symptom":"Child not feeling well" , 
-        "search_tags":"children paediatrics শিশুরোগ" , 
+        "search_tags":"children paediatrics শিশুরোগ paediatrician শিশুরোগ বিশেষজ্ঞ" , 
         "link":"/child-not-feelingwell" , 
+
+        "field":"Paediatrician",
+        "link2":"/paediatrician" ,
+        
+        "img2":"https://img.freepik.com/free-vector/visiting-pediatrician-semi-flat-rgb-color-vector-illustration-mother-with-toddler-female-doctor-isolated-cartoon-characters-white-background_106317-17504.jpg?w=2000",
+       
+
+
         "img":"https://media.istockphoto.com/vectors/sick-child-in-bed-vector-id1169998028?k=20&m=1169998028&s=170667a&w=0&h=lFvWE98tTOKDlJpgiOlFuz3SFe55fenQSGgiV5rnRBk="   
     }  
 
     ,
     { "symptom":"Depression or Anxiety" , 
-        "search_tags":"depression anxiety counselling mood বিষণ্নতা উদ্বেগ কাউন্সেলিং মেজাজ বিষণ্ণতা" , 
+        "search_tags":"depression anxiety counselling mood psychiatrist মনোরোগ বিশেষজ্ঞ বিষণ্নতা উদ্বেগ কাউন্সেলিং মেজাজ বিষণ্ণতা" , 
         "link":"/depression" , 
-        "img":"https://img.freepik.com/free-vector/woman-depression-with-bewildered-thoughts-her-mind_102172-221.jpg?w=2000"   
+        "img":"https://img.freepik.com/free-vector/woman-depression-with-bewildered-thoughts-her-mind_102172-221.jpg?w=2000"    ,
+    
+        "field":"Psychiatrist",
+        "link2":"/psychiatrist" ,
+        
+        "img2":"https://us.123rf.com/450wm/happyvector071/happyvector0711601/happyvector071160100426/51469380-abstract-creative-concept-vector-silhouette-head-for-web-and-mobile-applications-isolated-on-white-b.jpg?ver=6"
+    
+    
     }  
 
     ,
     { "symptom":"Dental Care" , 
-        "search_tags":"Dental Teeth tooth cavity ডেন্টাল দাঁত দাঁতের গহ্বর" , 
+        "search_tags":"Dental Dentist Teeth tooth cavity ডেন্টাল দাঁত দাঁতের গহ্বর দাঁতের ডাক্তার " , 
         "link":"/dental-issues" , 
+
+        "field":"Dentist",
+        "link2":"/dentist" ,
+        
+        "img2":"https://img.freepik.com/free-vector/dental-care-concept-illustration_52683-65383.jpg?w=2000",
+
         "img":"https://media.gettyimages.com/vectors/dental-care-vector-id1185554271"   
     }  
 
     ,
     { "symptom":"Period doubts or pregnancy" , 
-        "search_tags":"periods cramps pregnancy vagina পিরিয়ড ক্র্যাম্পস গর্ভাবস্থার যোনি" , 
+        "search_tags":"periods cramps pregnancy vagina Obstetric পিরিয়ড ক্র্যাম্পস গর্ভাবস্থার যোনি প্রসূতি" , 
         "link":"/periods-issues" , 
+        "field":"Obstetric",
+        "link2":"/obstetric" ,
+        
+        "img2":"https://images.all-free-download.com/images/graphiclarge/creative_maternity_vector_design_graphics_546434.jpg",
+
         "img":"https://media.istockphoto.com/vectors/to-be-a-woman-menstruation-period-cartoon-female-sitting-with-flowers-vector-id1337820462?b=1&k=20&m=1337820462&s=612x612&w=0&h=QSMsI3MCFgbeU38g5NlVyoMcNunLM9hihWga88GjHPs="   
     }  
     
     ,
     { "symptom":"Performance issues in bed" , 
-        "search_tags":"performance sex intercourse stamina বিছানা কর্মক্ষমতা যৌন মিলন সহন ক্ষমতা" , 
+        "search_tags":"performance sex intercourse Sexologist stamina বিছানা কর্মক্ষমতা যৌন মিলন সহন ক্ষমতা সেক্সোলজিস্ট" , 
         "link":"/performance-issues" , 
-        "img":"https://c8.alamy.com/comp/2HNA517/improving-system-performance-semi-flat-rgb-color-vector-illustration-2HNA517.jpg"   
+
+        "field":"Sexologist",
+        "link2":"/sexologist" ,
+        
+        "img2":"https://img.freepik.com/free-vector/sexologist-consultation-icon-psychological-sexual-problems-health-vector-illustration_106788-3043.jpg?w=2000",
+
+        "img":"https://img.freepik.com/free-vector/sexologist-consultation-icon-psychological-sexual-problems-health-vector-illustration_106788-3043.jpg?w=2000"   
     }  
 
     ,
     { "symptom":"Heart Related Issues" , 
-        "search_tags":"heartattack panicattack cardiologist হার্ট অ্যাটাক প্যানিক্যাটাক কার্ডিওলজিস্ট" , 
+        "search_tags":"heartattack panicattack cardiologist কার্ডিওলজিস্ট হার্ট অ্যাটাক প্যানিক্যাটাক কার্ডিওলজিস্ট" , 
         "link":"/heart-issues" , 
+        "field":"Cardiologist",
+        "link2":"/cardiologist" ,
+        
+        "img2":"https://static.vecteezy.com/system/resources/previews/005/370/190/original/cardiology-medical-logo-vector.jpg",
         "img":"https://media.istockphoto.com/vectors/cardiology-icon-vector-id1061340964?k=20&m=1061340964&s=612x612&w=0&h=YbXByT1hCiMZkFatTHvYz4CcOrscu8wnwb20g_59orQ="   
     }  
 
 
     ,
     { "symptom":"Lungs and Breathing Problems" , 
-        "search_tags":"lungs asthama breathing ফুসফুসের হাঁপানি শ্বাস" , 
+        "search_tags":"lungs asthama breathing Pummonologist ফুসফুসের হাঁপানি শ্বাস পালমোনোলজিস্ট" , 
         "link":"/lungs-breathing" , 
+        "field":"Pummonologist",
+        "link2":"/pummonologist" ,
+        
+        "img2":"https://img.freepik.com/free-vector/pulmonology-concept-physical-respiratory-system-examination-treatment-vector-illustration_199064-57.jpg?w=2000",
         "img":"https://img.freepik.com/free-vector/human-lung-anatomy-diagram-illness-respiratory-cancer-graphics_124894-214.jpg?w=2000"   
     }  
 
 
     ,
     { "symptom":"Diet and Nutrition" , 
-        "search_tags":"diet nutrition food খাদ্য পুষ্টি খাদ্য" , 
+        "search_tags":"diet nutrition food Nutritionist খাদ্য পুষ্টি খাদ্য পুষ্টিবিদ" , 
         "link":"/diet-nutrition" , 
+        "field":"Nutritionist",
+        "link2":"/nutritionist" ,
+        
+        "img2":"https://media.istockphoto.com/vectors/illustration-that-a-female-nutritionist-has-vegetables-upper-body-vector-id860052304?b=1&k=20&m=860052304&s=612x612&w=0&h=MJyxWAr1qQBZxfzXVQlN9cA9cqdDbuncxDd1LAX4QEE=",
         "img":"https://img.freepik.com/free-vector/ketogenic-diet-woman-composition_1284-64950.jpg?w=2000"   
     }  
 
 
     ,
     { "symptom":"Brain and Nerves" , 
-        "search_tags":"braintumor tumour nerves head মস্তিষ্কের টিউমার স্নায়ু মাথা" , 
+        "search_tags":"braintumor tumour nerves head  neurologist নিউরোলজিস্ট মস্তিষ্কের টিউমার স্নায়ু মাথা" , 
         "link":"/brain-issues" , 
+        "field":"Neurologist",
+        "link2":"/neurologist" ,
+        
+        "img2":"https://media.istockphoto.com/vectors/cute-funny-smiling-doctor-and-healthy-happy-brain-vector-id1170936049?k=20&m=1170936049&s=612x612&w=0&h=VEyyaq45nrn1ZZRpDnB8oEonCJD8ej39fznG3CJ7TPU=",
         "img":"https://thumbs.dreamstime.com/b/neurology-vector-concept-made-flat-icons-illustration-129219951.jpg"   
     }  
 
 
     ,
     { "symptom":"Joint/Bones Pain" , 
-        "search_tags":"bones joints bonefracture plaster হাড় জয়েন্টগুলোতে ফ্র্যাকচার প্লাস্টার" , 
-        "link":"/bones-issues" , 
-        "img":"https://www.venkateshwarhospitals.com/blog/wp-content/uploads/2019/05/orthopedics-sport-injury.jpg"   
+        "search_tags":"bones joints bonefracture plaster orthopedic অর্থোপেডিক হাড় জয়েন্টগুলোতে ফ্র্যাকচার প্লাস্টার" , 
+        "link":"/bones-issues" ,
+        "field":"Orthopedic",
+        "link2":"/orthopedic" ,
+        
+        "img2":"https://us.123rf.com/450wm/studiostoks/studiostoks1503/studiostoks150300057/37742751-the-orthopedic-doctor-examines-an-x-ray-of-a-fracture-of-the-skull-medicine-health.jpg?ver=6", 
+        "img":"https://us.123rf.com/450wm/studiostoks/studiostoks1503/studiostoks150300057/37742751-the-orthopedic-doctor-examines-an-x-ray-of-a-fracture-of-the-skull-medicine-health.jpg?ver=6"   
     }  
 
 
     ,
     { "symptom":"Diabetes" , 
-        "search_tags":"diabetes sugar insulin ডায়াবেটিস চিনির ইনসুলিন" , 
+        "search_tags":"diabetes sugar insulin endocrinologist এন্ডোক্রিনোলজিস্ট ডায়াবেটিস চিনির ইনসুলিন" , 
         "link":"/diabetes" , 
+        "field":"Endocrinologist",
+        "link2":"/endocrinologist" ,
+        
+        "img2":"https://img.freepik.com/free-vector/person-glucose-test-measuring-sugar-blood-concept_91248-899.jpg?w=2000",
         "img":"https://media.istockphoto.com/vectors/blood-test-with-finger-vector-id1073230446?k=20&m=1073230446&s=612x612&w=0&h=xfMJJU5_9cVVWapT9T3LOsnkKGraCLBwsSFyqW-TpMg="   
     }  
 
     ,
     { "symptom":"Gynecological Issues" , 
-        "search_tags":"pcos cysts vagina সিস্ট" , 
+        "search_tags":"pcos cysts vagina Gynecologist স্ত্রীরোগ বিশেষজ্ঞ সিস্ট" , 
         "link":"/gynecological-issues" , 
+        "field":"Gynecologist",
+        "link2":"/gynecologist" ,
+        
+        "img2":"https://media.istockphoto.com/vectors/woman-having-period-pain-concept-vector-illustration-on-white-vector-id1294748793?b=1&k=20&m=1294748793&s=612x612&w=0&h=Ch34l6vwEfWziIPUGUr6NM9htGmLfdeRO07bBB-GmrY=",
         "img":"https://media.istockphoto.com/vectors/doctor-gynecologist-character-vector-id1312626629?k=20&m=1312626629&s=612x612&w=0&h=adxjutDHOSGOGLSIvK_6AqiLOkC-l0KcqK260ponK8A="   
     }  
 
     ,
     { "symptom":"Stomach Issues" , 
-        "search_tags":"stomachache stomachpain loose motion constipation acidity পেটব্যথা পেটব্যথা আলগা গতি কোষ্ঠকাঠিন্য অ্যাসিডিটি" , 
+        "search_tags":"stomachache gastrologist stomachpain loose motion constipation acidity পেটব্যথা পেটব্যথা আলগা গতি কোষ্ঠকাঠিন্য অ্যাসিডিটি গ্যাস্ট্রোলজিস্ট" , 
         "link":"/stomach-pain" , 
+        "field":"Gastrologist",
+        "link2":"/gastrologist" ,
+        
+        "img2":"https://cdn-icons-png.flaticon.com/512/4006/4006236.png",
         "img":"https://img.freepik.com/free-vector/man-suffering-from-abdominal-pain-male-young-character-bending-holding-his-belly-painkillers-advertisement-stomach-disease-ulcers-gastritis-concept-vector-isolated-illustration_176411-2610.jpg?w=2000"   
     }  
 
     ,
     { "symptom":"Eye Related Issues" , 
-        "search_tags":"eyes specs cataract Glaucoma Amblyopia Strabismus চোখের চশমা ছানি গ্লুকোমা অ্যাম্বলিওপিয়া স্ট্র্যাবিসমাস" , 
+        "search_tags":"eyes specs cataract Glaucoma Amblyopia Strabismus Opthamologist চোখের চশমা ছানি গ্লুকোমা অ্যাম্বলিওপিয়া স্ট্র্যাবিসমাস চক্ষু বিশেষজ্ঞ" , 
         "link":"/eye-related-issues" , 
+
+        "field":"Ophthalmologist",
+        "link2":"/opthamologist" ,
+        
+        "img2":"https://media.istockphoto.com/vectors/the-concept-of-a-young-ophthalmologist-a-practicing-optometrist-sits-vector-id1303645143?b=1&k=20&m=1303645143&s=612x612&w=0&h=5n4jFFN-LQeV8CvsgupshZbVPSvOD-oOCkJXhquttE0=",
+
+
         "img":"https://media.istockphoto.com/vectors/ophthalmology-diagnostics-vector-concept-for-web-banner-website-page-vector-id1169361938?b=1&k=20&m=1169361938&s=612x612&w=0&h=rX8380vVQ0B-1boVLU6bt4hpCWoiS92YTblN7XhA_zU="   
     }  
 
     ,
     { "symptom":"Urinary Issues" , 
-        "search_tags":"urine frequent urination pee circumcision প্রস্রাব ঘন ঘন প্রস্রাব করা সুন্নত" , 
+        "search_tags":"urine frequent urination pee Urologist circumcision প্রস্রাব ঘন ঘন প্রস্রাব করা সুন্নত ইউরোলজিস্ট" , 
         "link":"/urinary-issues" , 
+
+        "field":"Urologist",
+        "link2":"/urologist" ,
+        
+        "img2":"https://thumbs.dreamstime.com/b/urinary-tract-vector-illustration-urinary-tract-vector-illustration-isolated-white-background-158784975.jpg",
+
+
         "img":"https://thumbs.dreamstime.com/b/urinary-tract-vector-illustration-urinary-tract-vector-illustration-isolated-white-background-158784975.jpg"   
     }  
 
     ,
     { "symptom":"Cancer" , 
-        "search_tags":"cancer ক্যান্সার" , 
+        "search_tags":"cancer Oncologist ক্যান্সার ক্যান্সার বিশেষজ্ঞ" , 
         "link":"/cancer" , 
+
+        "field":"Oncologist",
+        "link2":"/oncologist" ,
+        
+        "img2":"https://img.freepik.com/free-vector/bound_53876-25486.jpg?w=2000",
+
+
+
         "img":"https://img.freepik.com/free-vector/bound_53876-25486.jpg?w=2000"   
     }  
 
     ,
     { "symptom":"Ear , Nose , Throat Issues" , 
-        "search_tags":"ear nose throat ent কান নাক গলা" , 
+        "search_tags":"ear nose throat ent otolaryngologist কান নাক গলা অটোল্যারিঙ্গোলজিস্ট" , 
         "link":"/ENT-specialist" , 
+
+
+        "field":"Otolaryngologist",
+        "link2":"/otolaryngologist" ,
+        
+        "img2":"https://static.vecteezy.com/system/resources/previews/005/893/677/non_2x/ear-nose-throat-doctor-silhouette-icon-otolaryngology-medic-staff-with-stethoscope-mirror-black-icon-otolaryngologist-doctor-pictogram-isolated-illustration-vector.jpg",
+
+
+
         "img":"https://st2.depositphotos.com/4520249/7633/v/380/depositphotos_76335671-stock-illustration-ent-ear-nose-medicine-icon.jpg?forcejpeg=true"   
     }  
 
     ,
     { "symptom":"Kidney Issues" , 
-        "search_tags":"kidney stones polycystic urinarytract কিডনিতে পাথর পলিসিস্টিক ইউরিনারিট্র্যাক্ট" , 
+        "search_tags":"kidney stones polycystic urinarytract Nephrologist নেফ্রোলজিস্ট কিডনিতে পাথর পলিসিস্টিক ইউরিনারিট্র্যাক্ট" , 
         "link":"/kidney-issues" , 
+
+
+        "field":"Nephrologist",
+        "link2":"/nephrologist" ,
+        
+        "img2":"https://media.istockphoto.com/vectors/kidney-vector-illustration-isolated-on-white-background-vector-id1127168444?k=20&m=1127168444&s=612x612&w=0&h=cGnKRRaNJrXzvtVELZisd4E-qp30KdEbaJxGAaKnH6c=",
+
+
+
         "img":"https://static.vecteezy.com/system/resources/thumbnails/002/292/587/small/kidney-human-internal-organ-urinary-endocrine-system-front-view-anatomy-illustration-vector.jpg"   
     }  
 

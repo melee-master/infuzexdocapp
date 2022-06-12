@@ -346,25 +346,7 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 <br/>
-{/* <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
 
-{
- 
-doctors.checked && doctors.checked.map(rev => {
-    return <option value={rev} >
-
- 
-        {rev} 
-
-
-
-
-        </option>
-
-})
-
-}
-</select> */}
 
 
 
