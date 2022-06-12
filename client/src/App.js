@@ -131,6 +131,45 @@ function App() {
    <Route path='/cold-cough' component={Physician} ></Route>
    
 
+
+
+
+
+
+
+
+  {/*part2*/}
+
+
+
+  <Route path='/dermatologist' component={Dermatologist} ></Route>
+   <Route path='/nephrologist' component={Nephrologist} ></Route>
+   <Route path='/otolaryngologist' component={ENTSpeacialist} ></Route>
+   <Route path='/oncologist' component={Oncologist} ></Route>
+   <Route path='/urologist' component={Urologist} ></Route>
+   <Route path='/opthamologist' component={Opthamologist} ></Route>
+   <Route path='/gastrologist' component={Gastro} ></Route>
+   <Route path='/gynecologist' component={Gynecologist} ></Route>
+   <Route path='/endocrinologist' component={Diabetes} ></Route>
+   <Route path='/orthopedic' component={OrthopaedicDr} ></Route>
+   <Route path='/neurologist' component={Neurologist} ></Route>
+   <Route path='/nutritionist' component={Nutrition} ></Route>
+   <Route path='/pummonologist' component={Pummonologist} ></Route>
+   <Route path='/cardiologist' component={Cardiologist} ></Route>
+   <Route path='/sexologist' component={Sexologist} ></Route>
+   <Route path='/obstetric' component={Obstetric} ></Route>
+   <Route path='/dentist' component={Dentist} ></Route>
+   <Route path='/psychiatrist' component={Psychiatrist} ></Route>
+   <Route path='/paediatrician' component={Paediatrician} ></Route>
+   <Route path='/physician' component={Physician} ></Route>
+
+
+
+
+
+
+
+
    </BrowserRouter>
 
 
@@ -143,6 +182,10 @@ function App() {
    <BrowserRouter>
   <Route path='/admin' component={AdminScreen} ></Route> 
    </BrowserRouter>
+
+
+
+
 
 
 
