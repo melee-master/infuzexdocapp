@@ -200,7 +200,7 @@ export const FilterProducts=(searchkey)=>dispatch=>{
         if(searchkey)
         {
             filterproduct = res.data.filter(product=> {
-                return product.name.toLowerCase().includes(searchkey)
+                return product.name.toLowerCase().includes(searchkey.toLowerCase())
             } )
         }
 
@@ -273,7 +273,7 @@ export const FilterProducts2=(searchkey)=>dispatch=>{
         if(searchkey!=='all')
         {
             filterproduct = res.data.filter( product=> {
-                return product.field.toLowerCase().includes(searchkey)
+                return product.field.toLowerCase().includes(searchkey.toLowerCase())
             } )
         }
 
