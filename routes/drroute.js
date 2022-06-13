@@ -133,6 +133,7 @@ router.post('/register', upload.fields('image'), (req,res)=>{
                     fri:req.body.fri ,
                     sat:req.body.sat ,
                     sun:req.body.sun ,
+                    
                      
                 }
             )

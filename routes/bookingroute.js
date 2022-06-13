@@ -25,13 +25,28 @@ router.post('/booking' , (req,res)=>{
 
        } ) 
 
+  
+    //    const localsave = {
+    //        name : docs[0].name ,
+    //        _id: docs[0]._id ,
+               
+    //             contactnumber:docs[0].contactnumber ,
+    //             lname:docs[0].lname ,
+    //             slot:docs[0].slot ,
+    //             status : docs[0].status ,
+    //             date:docs[0].date ,
+    //             doctorname : docs[0].doctorname ,
+    //             speciality:docs[0].speciality
+    //    }
+
       
 
        book.save(err=>{
         
         if(!err)
         {
-           return  res.send({message :'Booking Successful' }  )
+            
+           return  res.send(book  )
         }
         else{
            return  res.send({message :'Something went wrong' } )
