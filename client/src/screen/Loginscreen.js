@@ -66,6 +66,7 @@ const LoginScreen = () => {
                     <div id="loginbox" >
                     <form onSubmit={login}   >
                         <h1> Login </h1>
+                        <h5> New Here ? <a href="/signup"> Registere Here </a>  </h5>
                         <hr/>
 
                     <label className="formtext" >Enter Email</label>
@@ -93,12 +94,16 @@ value={password}
 
                    
 
-<button  type='submit' className='box1' id="signupbtn"
+<button  type='submit' 
+className='box1' 
 
-style={{marginTop:'10px'}}
+
+id="signupbtn"
+
+style={{marginTop:'10px'   }}
 
 
->LOGIN</button>
+>Login</button>
 
 {loading && <Loader/>}
 <p id='Message'   ></p>

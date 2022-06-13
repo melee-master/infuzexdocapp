@@ -15,26 +15,41 @@ const UserWelcomeScreen=()=>{
 
 
                 </p>
-                <p>
 
-                    <div id="boxcontain" >
+
+
+                <p  >
+
+
+                <div 
+                id="boxcontain2"
+                 >
+                   
                         <a href="/login" style={{color:'black'}}>
-                    <div className="box2" id="bxx" >
-                        Login
-                    </div>
+                        <p className='docdes-box1' 
+
+//id="navigationbutton"
+
+style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' }} 
+>
+    Login </p>
                     </a>
 
                    
                     <a href="/signup"  >
-                    <div className="box1" id="bxx2"  >
-                        Register
-                    </div>
+                    <p className='docdes-box1' 
+
+//id="navigationbutton"
+
+style={{backgroundColor:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'black' }} 
+>
+    Signup  </p>
                     </a>
-                        </div>
+                       
                     
                     
                     
-                    
+                    </div>
                     </p>
 
 

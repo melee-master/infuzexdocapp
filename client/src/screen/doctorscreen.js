@@ -17,31 +17,44 @@ const DoctorWelcomeScreen=()=>{
                 </p>
 
                 
-                <p>
+            
 
-                    <div id="boxcontain" >
-                        <a href="/drlogin" style={{color:'black'}}>
-                    <div className="box2" id="bxx" >
-                        Login
-                    </div>
-                    </a>
 
-                   
-                    <a href="/drsignup">
-                    <div className="box1" id="bxx2"
-                    
-                    
-                    
-                    >
-                        Register 
-                    </div>
-                    </a>
-                        </div>
-                    
-                    
-                    
-                    
-                    </p>
+
+
+                <p  >
+
+
+<div 
+id="boxcontain2"
+ >
+   
+        <a href="/drlogin" style={{color:'black'}}>
+        <p className='docdes-box1' 
+
+//id="navigationbutton"
+
+style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' }} 
+>
+Login </p>
+    </a>
+
+   
+    <a href="/drsignup"  >
+    <p className='docdes-box1' 
+
+//id="navigationbutton"
+
+style={{backgroundColor:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'black' }} 
+>
+Signup  </p>
+    </a>
+       
+    
+    
+    
+    </div>
+    </p>
 
 
             </div>

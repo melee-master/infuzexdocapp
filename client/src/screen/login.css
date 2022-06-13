@@ -9,6 +9,8 @@
 #signupbtn
 {
     cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
 }
 #message
 {

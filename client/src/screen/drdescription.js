@@ -25,7 +25,7 @@ const date = new Date()
     var call
     var today = new Date();
   
-    console.log('Hello World' , today )
+   
     const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
     const { loading, doctors ,error} = dridstate
 
@@ -45,14 +45,7 @@ const date = new Date()
     const admin=JSON.parse(localStorage.getItem('admin'))
     const doctor = JSON.parse(localStorage.getItem('doctor'))
 
-    const bookappointment=()=>{
-
-
-     
-
-        
-    }
-
+  
 
     const shownumber=()=>{
 
