@@ -1,7 +1,7 @@
 import React , {useState, useEffect} from 'react'
 import {Link , useParams } from 'react-router-dom'
 import Rating from 'react-rating'
-
+import { createBrowserHistory } from 'history'
 import { useDispatch, useSelector } from 'react-redux'
 import DocumentMeta from 'react-document-meta';
 import axios from 'axios';
@@ -13,6 +13,7 @@ import './drbooking.css';
 import Loader from './loader';
 import Calendar from 'react-calendar';
 import { BookPatientsAction } from '../actions/bookingaction';
+import { wind } from 'fontawesome';
 
 
 
@@ -22,6 +23,10 @@ const DoctorBookingWithoutLogin=({doctorid})=>{
     const [time , settime ] = useState('')
     const [bookingdate, onChange] = useState(new Date());
 const [field , setfield] = useState('')
+
+var [callfun,setcallfun] = useState('false')
+
+
 
 var unavailableday 
 
@@ -48,7 +53,9 @@ const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
 const { loading, doctors ,error} = dridstate
 
 var day2=bookingdate.toString().substr(0,3)
-console.log( 'Doc Name' ,  doctors.name)
+
+
+
 
 
 
@@ -82,6 +89,8 @@ else
       }
   
       dispatch(BookPatientsAction(details))
+      
+      window.location.href=`/bookingconfirmation`
     }
     else
     {
@@ -99,20 +108,26 @@ else
       }
   
       dispatch(BookPatientsAction(details))
+   
+      
+      window.location.href=`/bookingconfirmation`
     }
+   setcallfun('true')
+
+
   
-  
-  
-  // alert(bookingdate ,'timing is' , field)
-  
-       document.getElementById('show-date').innerHTML= 'Booked For'+ bookingdate 
 
 }
 
 
     
 
-  
+//window.location.href=`/booking/name=${name}+${lname}/date=${date}/slot=${field}/dr=${doctors.name}`
+
+
+
+alert('Please take a screenshot of this page')
+
 
  }
 
@@ -522,9 +537,9 @@ onChange={ (e)=>{ setcontactnumber(e.target.value) } }  />
 value='submit' 
 //onClick={bookappointment}
 
-className='docdes-box1' style={{backgroundColor:'#0EB9B8' , color:'white'}}  > Book Appointment</button>
+className='docdes-box1' style={{backgroundColor:'#0EB9B8' , color:'white'  }}  > Book Appointment</button>
 <h4>OR</h4>
-<span  className='docdes-box1' style={{backgroundColor:'white' , border:'1px solid black' }} 
+<span  className='docdes-box1' style={{backgroundColor:'white' , border:'1px solid black'  }} 
 
 onClick={ showcontact }
 
@@ -555,7 +570,8 @@ onClick={ showcontact }
          </div>
  )
 }       
-                          
+
+                 
 
 
         </div>

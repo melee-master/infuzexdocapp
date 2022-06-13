@@ -121,7 +121,7 @@ const dispatch = useDispatch()
    // alert(bookingdate ,'timing is' , field)
 
         document.getElementById('show-date').innerHTML=bookingdate + field
-        alert('Booked Successfully')
+       
     }
 
 
@@ -379,9 +379,11 @@ doctors.sun && doctors.sun.map(rev => {
 value='submit' 
 //onClick={bookappointment}
 
-className='docdes-box1' style={{backgroundColor:'#0EB9B8' , color:'white'}}  > Book Appointment</button>
+className='docdes-box1' style={{backgroundColor:'#0EB9B8' , color:'white' }}  > Book Appointment</button>
+
+
 <h4>OR</h4>
-<span  className='docdes-box1' style={{backgroundColor:'white' , border:'1px solid black' }} 
+<span  className='docdes-box1' style={{backgroundColor:'white' , border:'1px solid black'  }} 
 
 onClick={ showcontact }
 

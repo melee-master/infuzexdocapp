@@ -18,7 +18,7 @@ const FilterDoctorIllness=()=>{
 
 style={{width:'90%' , marginLeft:'5%' , marginRight:'auto' }}
 
-placeholder='Search Doctors....'  
+placeholder='Search Illness....'  
         id="search-style-filter"
 
 ></input>
