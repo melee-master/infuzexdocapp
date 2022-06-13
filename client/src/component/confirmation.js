@@ -33,7 +33,7 @@ console.log(booking)
               
 
                <div id='containerbox' style={{ textAlign:'justify'  }} >
-               <h6 id='heading2'  > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Patient's Name :  {booking.name} {booking.lname}  </h6>
+               <h6 id='heading2' style={{ textAlign:'center'  }}  >  Patient's Name :  {booking.name} {booking.lname}  </h6>
                <h6 id='heading2' style={{textAlign:'center' , color:'#dcdcdc'}}  >  {booking.status} &nbsp;&nbsp;&nbsp; </h6>
         
 
