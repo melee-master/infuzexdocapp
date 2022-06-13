@@ -35,15 +35,15 @@ This is Request Screen
 <table className='table' id="customers"  >
                <thead>
                    <tr>
-                   <th>User Id</th>
-                   <th>Name</th>
-                   <th>Email</th>
-                   <th>Contact Number</th>
-                   <th>Fees</th>
-                   <th>Specilization</th>
-                   <th>Address</th>
-                   <th>Approved Status</th>
-                   <th>Show More</th>
+                   <th scope="col" >User Id</th>
+                   <th scope="col">Name</th>
+                   <th scope="col">Email</th>
+                   <th scope="col">Contact Number</th>
+                   <th scope="col">Fees</th>
+                   <th scope="col">Specilization</th>
+                   <th scope="col">Address</th>
+                   <th scope="col">Approved Status</th>
+                   <th scope="col">Show More</th>
                    
                   
                    
@@ -57,16 +57,16 @@ This is Request Screen
                    {doctors && ( doctors.map(use=>{
                        return <tr>
                            
-                           <td> {use._id} </td>
-                           <td> {use.name} </td>
-                           <td> {use.email} </td>
-                           <td> { use.contactnumber } </td>
-                           <td> { use.fees } </td>
-                           <td> { use.field } </td>
-                           <td> { use.address } </td>
-                           <td> {use.status ? <p>Not Approved</p> : <p> Approved</p> } </td>
+                           <td data-label="User Id" > {use._id} </td>
+                           <td data-label="Name"> {use.name} </td>
+                           <td data-label="Email"> {use.email} </td>
+                           <td data-label="Contact Number"> { use.contactnumber } </td>
+                           <td data-label="Fees"> { use.fees } </td>
+                           <td data-label="Specilization"> { use.field } </td>
+                           <td data-label="Address"> { use.address } </td>
+                           <td data-label="Approved Status"> {use.status ? <p>Not Approved</p> : <p> Approved</p> } </td>
                            <Link to={`/admin/doctorapprove/${use._id}`} >
-                           <td  > <i class="fa fa-list" aria-hidden="true"></i> </td>
+                           <td data-label="Show More" > <i class="fa fa-list" aria-hidden="true"></i> </td>
                            </Link>
                           
 

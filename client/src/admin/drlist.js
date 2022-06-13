@@ -27,16 +27,16 @@ const AllDrList=()=>{
 <table className='table' id="customers"  >
                <thead>
                    <tr>
-                   <th>User Id</th>
-                   <th>Name</th>
-                   <th>Email</th>
-                   <th>Contact Number</th>
-                   <th>Fees</th>
-                   <th>Specilization</th>
-                   <th>Address</th>
-                   <th>Approved Status</th>
-                   <th>Created At</th>
-                   <th>Edit</th>
+                   <th scope="col" >User Id</th>
+                   <th scope="col">Name</th>
+                   <th scope="col">Email</th>
+                   <th scope="col">Contact Number</th>
+                   <th scope="col">Fees</th>
+                   <th scope="col">Specilization</th>
+                   <th scope="col">Address</th>
+                   <th scope="col">Approved Status</th>
+                   <th scope="col">Created At</th>
+                   <th scope="col">Edit</th>
                    
                   
                    
@@ -50,16 +50,16 @@ const AllDrList=()=>{
                    {doctors && ( doctors.map(use=>{
                        return <tr>
 
-                           <td> {use._id} </td>
-                           <td> {use.name} </td>
-                           <td> {use.email} </td>
-                           <td> { use.contactnumber } </td>
-                           <td> { use.fees } </td>
-                           <td> { use.field } </td>
-                           <td> { use.address } </td>
-                           <td> { use.status?(<p>Approved</p>): <p>Not Approved</p> } </td>
-                           <td>{use.createdAt.substr(0,10)}</td>
-                           <td> <Link to={`/admin/dredit/${use._id}`} >
+<td data-label="User Id" > {use._id} </td>
+                           <td data-label="Name"> {use.name} </td>
+                           <td data-label="Email"> {use.email} </td>
+                           <td data-label="Contact Number"> { use.contactnumber } </td>
+                           <td data-label="Fees"> { use.fees } </td>
+                           <td data-label="Specilization"> { use.field } </td>
+                           <td data-label="Address"> { use.address } </td>
+                           <td data-label="Approved Status"> {use.status ? <p>Not Approved</p> : <p> Approved</p> } </td>
+                           <td data-label="Created At" >{use.createdAt.substr(0,10)}</td>
+                           <td data-label="Edit" > <Link to={`/admin/dredit/${use._id}`} >
                            <td  > <i class="fas fa-edit"></i> </td>
                            </Link></td>
                           
