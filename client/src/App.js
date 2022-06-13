@@ -53,6 +53,7 @@ import Obstetric from './doctors/drobstetric';
 //For Users
 import UpdateUser from './screen/updateuser';
 import AddTiming from './component/addtiming';
+import ConfirmationPage from './component/confirmation';
 
 
 
@@ -98,6 +99,9 @@ function App() {
 {/* <Route path='/admin/registration' component={AdminRegistration} ></Route> */}
 
  <Route path='/updateuser' component={UpdateUser} ></Route>
+ <Route path='/bookingconfirmation' component={ConfirmationPage}  ></Route>
+
+ 
    </BrowserRouter>
 
 

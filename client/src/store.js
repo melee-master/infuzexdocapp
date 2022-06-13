@@ -58,6 +58,7 @@ const currentuser = localStorage.getItem('currentuser') ? JSON.parse(localStorag
 const admin=localStorage.getItem('admin') ? JSON.parse(localStorage.getItem('admin')) : null
 const doctor = localStorage.getItem('doctor') ? JSON.parse(localStorage.getItem('doctor')) : null
 const compounder  = localStorage.getItem('compounder') ? JSON.parse(localStorage.getItem('compounder')) : null
+const book = sessionStorage.getItem('bookingdetails') ? JSON.parse(sessionStorage.getItem('bookingdetails')) : null
 
 const InitialState = {
   LoginUserReducer: { currentuser: currentuser } ,
