@@ -9,7 +9,7 @@ export const BookPatientsAction=(details)=>dispatch=>{
 
     axios.post('/api/booking/booking' , details ).then(res=>{
         dispatch({type:'Book_Patients_Success'})
-        alert('Booking Successfull')
+        sessionStorage.setItem('bookingdetails' ,  JSON.stringify(res.data) );
     }).catch(err=>{
         dispatch({type:'Book_Patients_Failed'})
         console.log(err)
