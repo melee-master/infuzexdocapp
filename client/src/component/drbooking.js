@@ -72,6 +72,7 @@ const dispatch = useDispatch()
            }
 
            dispatch(BookPatientsAction(details))
+           window.location.href=`/bookingconfirmation`
 
        }
 
@@ -92,6 +93,7 @@ const dispatch = useDispatch()
            }
 
            dispatch(BookPatientsAction(details))
+           window.location.href=`/bookingconfirmation`
 
        }
 
@@ -112,6 +114,7 @@ const dispatch = useDispatch()
         }
 
         dispatch(BookPatientsAction(details))
+        window.location.href=`/bookingconfirmation`
 
        }
       
@@ -119,7 +122,7 @@ const dispatch = useDispatch()
 
 
    // alert(bookingdate ,'timing is' , field)
-
+   alert('Please take a screenshot of this page')
         document.getElementById('show-date').innerHTML=bookingdate + field
        
     }
