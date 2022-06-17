@@ -69,10 +69,12 @@ const bookappointment=()=>{
     }
 
     dispatch(BookPatientsAction(details))
+    window.location.href=`/bookingconfirmation`
   }
  
 
 
+  alert('Please take a screenshot of this page')
 
 // alert(bookingdate ,'timing is' , field)
 

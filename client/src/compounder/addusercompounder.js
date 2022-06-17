@@ -100,7 +100,7 @@ const AddUserCompounder=()=>{
                         <div id="loginbox" >
 
 
-                        <h2>COMPOUNDER USER REGISTRATION</h2>
+                        <h2>COMPOUNDER PATIENT REGISTRATION</h2>
 
                           
 
@@ -206,7 +206,7 @@ const AddUserCompounder=()=>{
                             <button type='submit' className='box1' id="signupbtn" style={{
 
 
-                            }}  >Register this user</button>
+                            }}  >Register this Patient</button>
 
                         
 

@@ -41,7 +41,7 @@ const Compounder=()=>{
 <ul className='makebig'  >
                     <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li>
                     <li ><Link to='/compounder/checkschedule'   className='stylebar' >Check Schedule </Link>   </li>
-                    <li ><Link to='/compounder/adduser'  className='stylebar'>Add New User</Link>   </li>
+                    <li ><Link to='/compounder/adduser'  className='stylebar'>Add New Patient</Link>   </li>
                    
 
 
