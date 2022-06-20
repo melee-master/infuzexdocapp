@@ -77,14 +77,14 @@ const CompounderLogin=()=>{
   
     <hr/>
 
-<label className="formtext" >Enter Email</label>
+<label className="formtext" >Enter User Id</label>
                 <input type="text"
 
 value={email} 
                     required
                   
                     onChange={ (e)=>{ setemail(e.target.value) } }   
-                    placeholder='Enter Email' />
+                    placeholder='Enter User Id' />
 
 
 
