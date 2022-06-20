@@ -23,6 +23,7 @@ import { route } from 'fontawesome';
 import Compounder from './compounder/compounder';
 import AllDoctorIllness from './screen/alldrillness';
 import FilterDoctorIllness from './component/drfiltersearch';
+import ForgotPassword from './users/forgotpass';
 
 // For Doctors
 import Dermatologist from './doctors/acnedr';
@@ -54,6 +55,9 @@ import Obstetric from './doctors/drobstetric';
 import UpdateUser from './screen/updateuser';
 import AddTiming from './component/addtiming';
 import ConfirmationPage from './component/confirmation';
+import ResetPassword from './users/resetpassword';
+import DoctorForgotPassword from './doctors/drforgetpass';
+import DoctorResetPassword from './doctors/drresetpass';
 
 
 
@@ -100,7 +104,10 @@ function App() {
 
  <Route path='/updateuser' component={UpdateUser} ></Route>
  <Route path='/bookingconfirmation' component={ConfirmationPage}  ></Route>
-
+ <Route path='/forgotpass' component={ForgotPassword} ></Route>
+<Route path='/resetpassword' component={ResetPassword} ></Route>
+<Route path='/drforgetpassword' component={DoctorForgotPassword} />
+    <Route path='/drresetpassword' component={DoctorResetPassword} />
  
    </BrowserRouter>
 
@@ -134,7 +141,6 @@ function App() {
    <Route path='/child-not-feelingwell' component={Paediatrician} ></Route>
    <Route path='/cold-cough' component={Physician} ></Route>
    
-
 
 
 
