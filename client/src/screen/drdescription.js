@@ -68,17 +68,21 @@ const date = new Date()
                    <img src={doctors.image} id="img-docdes"/>
 
                   <h3 className='docdes-name' > Dr. {doctors.name}  {doctors.lname}  </h3>
-                   <p className='docdes-sub' > {doctors.field} </p>
-                   <br/>
+                   <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' }} > {doctors.field} </p>
+                  
                    <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} Years Exp </p>
-                   <br/>
-                  <h4 className='docdes-sub'> {doctors.address} </h4>
+                  
+                  <h4 className='docdes-sub' style={{fontWeight:'normal'}} > {doctors.address} </h4>
                   <p className='docdes-sub' > Fees : ₹{doctors.fees} </p>
 
-                  <hr/>
+                  {/* <hr/> */}
 
                  
+<div id='book-app' >
+    BOOK APPOINTMENT
+    </div>
 
+    {/* <hr/> */}
 
                 { currentuser ? <DrBooking doctorid={doctorid} /> : 
                 (

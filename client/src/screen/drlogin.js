@@ -124,7 +124,7 @@ style={{marginTop:'10px'}}
 
 {loading && <Loader/>}
 <p id='Message'   ></p>
-
+<h5>Forgot Password? <a href='/drforgetpassword'>Click Here</a> </h5>
 <p>Are you compounder ? <a href='/compounderlogin'>Login Here</a> </p>
 
 </form>

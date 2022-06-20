@@ -5,6 +5,8 @@ import pic1 from '../Images/userpic.png'
 import Loader from "../component/loader";
 import { RegisterNewUser } from "../actions/useraction";
 import { RegisterUserReducer } from "../reducers/userreducer";
+import firebase from "../firebase";
+
 
 
 const SignUpScreen = () => {
@@ -24,28 +26,102 @@ const SignUpScreen = () => {
     const [contactnumber, setcontactnumber] = useState();
     const [password, setpassword] = useState('')
     const [cpassword, setcpassword] = useState('')
+    const [verify,setverify] = useState()
 
+
+
+    const [otp,setotp]=useState()
+
+
+
+    const configureCaptcha = () =>{
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+          'size': 'invisible',
+          'callback': (response) => {
+            // reCAPTCHA solved, allow signInWithPhoneNumber.
+            onSignInSubmit();
+            console.log("Recaptca varified")
+          },
+          defaultCountry: "IN"
+        });
+      }
+   
+  const onSignInSubmit=(e)=>{
+    e.preventDefault()
+    configureCaptcha()
+  
+   const  phoneNumber = "+91" + contactnumber
+  
+   console.log(phoneNumber)
+      const appVerifier = window.recaptchaVerifier;
+      firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+          .then((confirmationResult) => {
+          
+            window.confirmationResult = confirmationResult;
+            console.log("OTP has been sent")
+            
+          }).catch((error) => {
+           
+            console.log("SMS not sent",error)
+          });
+  
+  
+  }
+  
+  
+  const onSubmitOTP = (e) =>{
+    e.preventDefault()
+    const code = otp
+    console.log(code)
+    window.confirmationResult.confirm(code).then((result) => {
+      
+      const user = result.user;
+      console.log(JSON.stringify(user))
+      setverify(1)
+      alert("OTP verified")
+      setverify(1)
+      
+    }).catch((error) => {
+      alert('Invalid OTP')
+      setverify(0)
+      window.location.reload()
+      setverify(0)
+    });
+  }
+  
+  
+  
+
+  
 
     const register = (e) => {
 
         e.preventDefault()
 
-        const user = {
-            name: name,
-            lname: lname,
-            contactnumber: contactnumber,
-            email: email,
-            password: password
+        if(verify==1)
+        {
+            const user = {
+                name: name,
+                lname: lname,
+                contactnumber: contactnumber,
+                email: email,
+                password: password
+            }
+    
+    
+            if (password === cpassword) {
+                dispatch(RegisterNewUser(user))
+            }
+            else {
+                document.getElementById('Message').innerHTML = 'Passwords Not Matched'
+                //alert('Passwords Not Matched')
+            }
+        }
+        else{
+            alert('Error')
         }
 
-
-        if (password === cpassword) {
-            dispatch(RegisterNewUser(user))
-        }
-        else {
-            document.getElementById('Message').innerHTML = 'Passwords Not Matched'
-            //alert('Passwords Not Matched')
-        }
+        
 
 
 
@@ -144,7 +220,9 @@ const SignUpScreen = () => {
 
                                 </p>
 
+                                </div>
 
+                                
 
                                 <p>
                                     <label className="formtext"
@@ -164,23 +242,79 @@ const SignUpScreen = () => {
                                 </p>
 
 
+<div id='otp-screen' >
                                 <p style={{ marginLeft: '5px' }} >
 
-                                    <label className="formtext">Contact Number</label>
-                                    <input type="Number"
+                               
 
-                                        value={contactnumber}
-                                        required
-                                        onChange={(e) => { setcontactnumber(e.target.value) }}
+<label className="formtext">Contact Number</label>
+<input type="number"
 
-
-                                        placeholder='Contact Number' />
-
-
-                                </p>
+    value={contactnumber}
+    required
+    onChange={(e) => { setcontactnumber(e.target.value) }}
 
 
+    placeholder='Contact Number' />
 
+
+</p>
+
+<div>
+<button  
+
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'  ,marginTop:'22%'  }} 
+
+
+//style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
+
+onClick={onSignInSubmit}
+
+>
+Generate OTP
+</button>
+</div>
+
+<p  >
+
+<label className="formtext">Enter OTP</label>
+<input type="number"
+
+value={otp}
+required
+onChange={(e) => { setotp(e.target.value) }}
+name='otp'
+
+placeholder='Enter OTP' />
+
+
+</p>
+
+<div>
+<button 
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' ,marginTop:'22%' }} 
+
+onClick={onSubmitOTP}
+
+>
+Verify OTP
+</button>
+
+</div>
+
+
+
+
+<div id="sign-in-button"></div>
+
+
+</div>
+
+<div>
 
                                 <p>
                                     <label className="formtext">Password</label>

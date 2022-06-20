@@ -36,10 +36,10 @@ useEffect( ()=>{
         <div>
 <br/><br/><br/><br/>
             <h2 id='smallh2' >Book an appointment for an in-clinic consultation</h2>
-            <h4 style={{color:'grey'}} id='smallh6'  >Find experienced doctors across all specialties</h4>
+             {/*<h4 style={{color:'grey'}} id='smallh6'  >Find experienced doctors across all specialties</h4>
 
 
-            
+             */}
               
            
 

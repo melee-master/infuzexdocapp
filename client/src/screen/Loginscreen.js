@@ -111,11 +111,14 @@ style={{marginTop:'10px'   }}
 
 </form>
 
+
+<h5>Forgot Password? <a href='/forgotpass'>Click Here</a> </h5>
+
                     </div>
 
 
                 
-                 
+            
 
 
 
