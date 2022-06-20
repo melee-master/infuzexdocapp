@@ -231,3 +231,46 @@ export const DeleteUserAction = (userid) => dispatch => {
     })
 
 }
+
+
+
+export const UserForgotPasswordAction=(email)=>dispatch=>{
+    dispatch({ type: 'USER_ForgotPassword_REQUEST' })
+
+    axios.post('/api/users/forgetpassword' , {email} ).then(res=>{
+        dispatch({ type: 'USER_ForgotPassword_SUCESS' })
+        alert(`Email rec is ${email} `)
+
+    }).catch(err=>{
+        dispatch({ type: 'USER_ForgotPassword_Failed' , payload:err })
+        console.log(err)
+    })
+
+}
+
+
+export const UserResetPasswordAction=(userid,password)=>dispatch=>{
+
+    dispatch({ type: 'User_ResetPass_Request' })
+
+
+
+    axios.post('/api/users/resetpassword', { password, userid }).then((res) => {
+        dispatch({ type: 'User_ResetPass_Success' })
+
+
+
+
+
+    }).catch(err => {
+        dispatch({ type: 'User_ResetPass_Failed', payload: err })
+        console.log(err)
+    })
+
+
+
+}
+
+
+
+

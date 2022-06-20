@@ -436,3 +436,44 @@ export const UpdateDoctorAction= (doctorid , updatedproduct )=> dispatch=>{
     })
 
 }
+
+
+
+
+
+export const DoctorForgotPasswordAction=(email)=>dispatch=>{
+    dispatch({ type: 'DR_ForgotPassword_REQUEST' })
+
+    axios.post('/api/doctor/forgetpassword' , {email} ).then(res=>{
+        dispatch({ type: 'DR_ForgotPassword_SUCESS' })
+        alert(`Email rec is ${email} `)
+
+    }).catch(err=>{
+        dispatch({ type: 'DR_ForgotPassword_Failed' , payload:err })
+        console.log(err)
+    })
+
+}
+
+
+export const DoctorResetPasswordAction=(userid,password)=>dispatch=>{
+
+    dispatch({ type: 'DR_ResetPass_Request' })
+
+
+
+    axios.post('/api/doctor/resetpassword', { password, userid }).then((res) => {
+        dispatch({ type: 'DR_ResetPass_Success' })
+
+
+
+
+
+    }).catch(err => {
+        dispatch({ type: 'DR_ResetPass_Failed', payload: err })
+        console.log(err)
+    })
+
+
+
+}
