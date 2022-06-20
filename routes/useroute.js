@@ -136,4 +136,100 @@ router.post('/deleteuser' , (req,res)=>{
 
 
 
+
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: 'awanishsampleprojects@gmail.com',
+    pass: 'grjmaxulvkdyfdvr'
+  }
+});
+
+
+
+
+router.post('/forgetpassword' , (req,res)=>{
+
+    const {email} = req.body
+
+    // getidbymail(req.body.email)
+
+    var idvariable 
+    var strires
+
+    User.find({email:req.body.email} , (err,res)=>{
+        if(err)
+        {
+            console.log('Email Not Registered')
+            console.log(`Something Went Wrong with the email id : ${err} `)
+            return  res.status(400).json({message:`Something Went Wrong  `})
+
+        }
+        else
+        {
+            strires = JSON.stringify(res)
+            
+           
+
+
+            var mailOptions = {
+                            from: 'awanishsampleprojects@gmail.com',
+                            to: `${req.body.email}`,
+                            subject: 'Password Reset',
+                            text: `These are your details ${res} .
+                           
+                            Please note your User ID . i.e the ObjectID , as it is required. 
+
+                            `
+                          };
+                          
+                          transporter.sendMail(mailOptions, function(error, info){
+                            if (error) {
+                              console.log(error);
+                            } else {
+                              console.log('Email sent: ' + info.response);
+                            }
+                          });
+            
+           
+            
+        }
+    } )
+
+ 
+
+
+
+} )
+
+
+
+router.post('/resetpassword' , (req,res)=>{
+    const {userid , password} = req.body
+    User.findByIdAndUpdate({_id : userid} , {
+   
+        password :req.body.password
+    } , (err)=>{
+
+        if(err)
+        {
+            return  res.status(400).json({message:`Couldn't update user  `})
+
+        }
+        else{
+            res.send({message :'Updated Successfully' } )
+        }
+
+    }  )
+} )
+
+
+
+
+
 module.exports = router
