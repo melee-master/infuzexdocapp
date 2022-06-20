@@ -13,5 +13,10 @@ const firebaseConfig = {
     appId: "1:568680660818:web:285f8ca0d51a3197a6848b"
   };
 
+  // export const auth = () => initializeAuth(app(), {
+  //   persistence: browserSessionPersistence,
+  //   popupRedirectResolver: browserPopupRedirectResolver,
+  // });
+
   firebase.initializeApp(firebaseConfig)
   export default firebase
