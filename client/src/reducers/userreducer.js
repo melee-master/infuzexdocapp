@@ -1,3 +1,5 @@
+
+
 export const RegisterUserReducer = (state = {}, action) => {
     switch (action.type) {
         case 'User_Register_Request': return {
@@ -165,3 +167,38 @@ export const DeleteUserReducer = ( state={} , action )=>{
 
 
 }
+
+
+
+
+export const UserResetPasswordReducer=(state = {  }, action) => {
+
+    switch (action.type) {
+        case 'User_ResetPass_Request': return {
+            ...state,
+            loading: true
+        }
+
+        case 'User_ResetPass_Success': return {
+            ...state,
+            loading: false,
+            success: true
+        }
+
+        case 'User_ResetPass_Failed': return {
+            ...state,
+            loading: true,
+            error: true
+        }
+
+
+        default: return state
+
+
+
+    }
+
+
+
+}
+

@@ -267,3 +267,42 @@ export const UpdateDoctorReducer=( state={} , action )=>{
         default : return  state
     }
 }
+
+
+
+
+
+
+
+
+
+export const DoctorResetPasswordReducer=(state = { }, action) => {
+
+    switch (action.type) {
+        case 'DR_ResetPass_Request': return {
+            ...state,
+            loading: true
+        }
+
+        case 'DR_ResetPass_Success': return {
+            ...state,
+            loading: false,
+            success: true
+        }
+
+        case 'UDR_ResetPass_Failed': return {
+            ...state,
+            loading: true,
+            error: true
+        }
+
+
+        default: return state
+
+
+
+    }
+
+
+
+}
