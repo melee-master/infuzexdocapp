@@ -1,3 +1,4 @@
+
 import React , {useState}  from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { UpdateUserAction } from "../actions/useraction";
@@ -75,7 +76,7 @@ const UpdateUserProfile=()=>{
 
                             id='formtext'
                             
-                            />
+                            ></input>
 
                             <input type="text" value={name} placeholder='Enter New Name'
 

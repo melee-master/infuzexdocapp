@@ -26,7 +26,7 @@ const UserProfile=()=>{
 <Link to='/updateuser/update' style={{textDecoration:'none' , color:'black' }} > 
 <div className='boxb' style={{width:'80%' , color:'white' , backgroundColor:'black' }}  >
 
-    My Account
+    Update My Account
     
 </div>
 </Link>
