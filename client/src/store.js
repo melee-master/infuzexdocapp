@@ -3,8 +3,8 @@ import { combineReducers } from 'redux';
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { RegisterDoctorReducer , LoginDocUserReducer , DoctorTimingReducer } from './reducers/doctorreducer';
-import { LoginUserReducer , UpdateUserReducer , DeleteUserReducer , GetAllUserReducer , RegisterUserReducer  } from '../src/reducers/userreducer'
-import { GetAllDoctorReducer , GetDoctorByIdReducer , ReviewReducer , GetAllReqDoctorReducer , ApproveDrReducer } from './reducers/doctorreducer';
+import { LoginUserReducer , UpdateUserReducer , DeleteUserReducer , GetAllUserReducer , RegisterUserReducer , UserResetPasswordReducer  } from '../src/reducers/userreducer'
+import { GetAllDoctorReducer , GetDoctorByIdReducer , ReviewReducer , GetAllReqDoctorReducer , ApproveDrReducer , DoctorResetPasswordReducer } from './reducers/doctorreducer';
 import {LoginAdminReducer ,RegisterAdminReducer} from './reducers/adminred'
 import { UpdateDoctorReducer } from './reducers/doctorreducer';
 import {RegisterCompounderReducer , LoginCompounderReducer  , GetCompounderByIdReducer , CompounderDeleteReducer
@@ -44,7 +44,9 @@ const FinalReducer = combineReducers(
     GetPatientsByOnlyIdReducer:GetPatientsByOnlyIdReducer ,
     GetAllPatientsReducer:GetAllPatientsReducer ,
     DoctorTimingReducer:DoctorTimingReducer , 
-    GetBookingsByUserIdReducer:GetBookingsByUserIdReducer
+    GetBookingsByUserIdReducer:GetBookingsByUserIdReducer ,
+    DoctorResetPasswordReducer:DoctorResetPasswordReducer ,
+    UserResetPasswordReducer:UserResetPasswordReducer
 
    
 
