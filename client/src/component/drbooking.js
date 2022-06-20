@@ -168,7 +168,10 @@ minDetail = 'month'
 
 
 
-
+<span style={{ 
+    fontSize:'large' ,
+    fontWeight:'bolder'
+ }} > Available Slots :  </span>
 
 
 
@@ -364,7 +367,7 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 
-<br/>
+
 
 
 
@@ -385,7 +388,9 @@ value='submit'
 className='docdes-box1' style={{backgroundColor:'#0EB9B8' , color:'white' }}  > Book Appointment</button>
 
 
-<h4>OR</h4>
+<h4  >OR</h4>
+<br/>
+
 <span  className='docdes-box1' style={{backgroundColor:'white' , border:'1px solid black'  }} 
 
 onClick={ showcontact }

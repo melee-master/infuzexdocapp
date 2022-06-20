@@ -174,7 +174,10 @@ minDetail = 'month'
 
 
 
-
+<span style={{ 
+    fontSize:'large' ,
+    fontWeight:'bolder'
+ }} > Available Slots :  </span>
 
 
 

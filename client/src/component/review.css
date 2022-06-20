@@ -42,5 +42,27 @@
 
 #user-icon
 {
-    font-size: 120px;
+    font-size: 100px;
+}
+
+
+
+@media screen and (max-width:600px) {
+    #user-icon
+{
+    font-size: 50px;
+}
+
+#review-name
+{
+    font-size: 20px;
+}
+
+#review-comment
+{
+    font-size: 18px;
+    margin-top: -15%;
+
+}
+
 }

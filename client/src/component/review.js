@@ -124,10 +124,10 @@ const ReviewComponent = ({ doctors }) => {
                             </p>
 
                             <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
-                                <h2 className='doc-name' >{rev.name} </h2>
+                                <h2 className='doc-name' id='review-name' >{rev.name} </h2>
                                 <br />
 
-                                <p className='doc-field' > {rev.comment} </p>
+                                <p className='doc-field' id='review-comment' > {rev.comment} </p>
 
 
                                 <p className='doc-exp' > On : {rev.updatedAt.substring(0, 10)} </p>
