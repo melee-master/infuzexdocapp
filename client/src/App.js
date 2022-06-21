@@ -58,6 +58,7 @@ import ConfirmationPage from './component/confirmation';
 import ResetPassword from './users/resetpassword';
 import DoctorForgotPassword from './doctors/drforgetpass';
 import DoctorResetPassword from './doctors/drresetpass';
+import IndividualBooking from './doctors/individualpatient';
 
 
 
@@ -108,7 +109,20 @@ function App() {
 <Route path='/resetpassword' component={ResetPassword} ></Route>
 <Route path='/drforgetpassword' component={DoctorForgotPassword} />
     <Route path='/drresetpassword' component={DoctorResetPassword} />
- 
+    {
+      doctor?(
+        <Route path='/bookings/:id' component={IndividualBooking} ></Route>
+      ):(
+        <p>
+          {
+            compounder ? (
+              <Route path='/bookings/:id' component={IndividualBooking} ></Route>
+            ) : null
+          }
+          </p>
+      )
+    }
+
    </BrowserRouter>
 
 

@@ -11,7 +11,7 @@ import {RegisterCompounderReducer , LoginCompounderReducer  , GetCompounderByIdR
 
 } from './reducers/compounderreducer'
 
-import {GetPatientsByUserIdReducer , GetPatientsByOnlyIdReducer ,GetAllPatientsReducer , GetBookingsByUserIdReducer } from './reducers/bookingreducer'
+import {GetPatientsByUserIdReducer , GetPatientsByOnlyIdReducer ,GetAllPatientsReducer , GetBookingsByUserIdReducer , GetBookingsByBookingIdReducer , UpdateBookingReducer} from './reducers/bookingreducer'
 
 import thunk from 'redux-thunk'
 
@@ -46,7 +46,9 @@ const FinalReducer = combineReducers(
     DoctorTimingReducer:DoctorTimingReducer , 
     GetBookingsByUserIdReducer:GetBookingsByUserIdReducer ,
     DoctorResetPasswordReducer:DoctorResetPasswordReducer ,
-    UserResetPasswordReducer:UserResetPasswordReducer
+    UserResetPasswordReducer:UserResetPasswordReducer ,
+    GetBookingsByBookingIdReducer:GetBookingsByBookingIdReducer ,
+    UpdateBookingReducer:UpdateBookingReducer
 
    
 
