@@ -96,6 +96,70 @@ export const GetBookingsByUserIdReducer = ( state={} , action )=>{
 
 
 
+
+export const GetBookingsByBookingIdReducer = ( state={} , action )=>{
+
+
+    switch(action.type)
+    {
+        case 'GET_BookingsBYBookingID_REQUEST' : return {
+            ...state ,
+            loading : true 
+        }
+
+        case 'GET_BookingsBYBookingID_SUCCESS' : return{
+            ...state ,
+            loading:false  ,
+            bookings : action.payload 
+        }
+
+        case 'GET_BookingsBYBookingID_FAILED' : return{
+            ...state ,
+            loading:false  ,
+            error : true 
+        }
+
+        default : return state
+    }
+
+
+
+}
+
+
+
+
+
+export const UpdateBookingReducer=( state={} , action )=>{
+    switch(action.type)
+    {
+        case 'Update_Booking_REQUEST' : return {
+            ...state ,
+            uploading : true 
+        }
+
+        case 'Update_Booking_SUCCESS' : return {
+            ...state ,
+            uploading : false ,
+            success : true 
+        }
+
+        case 'Update_Booking_FAILED' : return {
+            ...state ,
+            uploading : false ,
+            update_error : action.payload
+        }
+
+        default : return  state
+    }
+}
+
+
+
+
+
+
+
 export const GetPatientsByOnlyIdReducer = ( state={} , action )=>{
 
 
