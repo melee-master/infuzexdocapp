@@ -62,6 +62,52 @@ export const GetBookingsByUserIdAction=()=>(dispatch , getState )=>{
 
 
 
+export const GetBookingsByBookingIdAction=({bookid})=>(dispatch , getState )=>{
+
+  
+
+
+    dispatch({type:'GET_BookingsBYBookingID_REQUEST'})
+
+    axios.post('/api/booking/getbookingssbyBookingid' , {bookid} ).then( res=>{
+
+        dispatch({type:'GET_BookingsBYBookingID_SUCCESS' , payload:res.data })
+       
+
+    } ).catch(err=>{
+        dispatch({type:'GET_BookingsBYBookingID_FAILED' , payload:err })
+       
+    })
+
+
+}
+
+
+
+
+export const GetPatientsByDoctorIdAction=({doctorid})=>(dispatch , getState )=>{
+
+    
+
+
+    dispatch({type:'GET_PatientsBYDoctorID_REQUEST'})
+
+    axios.post('/api/booking/getpatientsbydocid' , {doctorid} ).then( res=>{
+
+        dispatch({type:'GET_PatientsBYDoctorID_SUCCESS' , payload:res.data })
+        
+
+    } ).catch(err=>{
+        dispatch({type:'GET_PatientsBYDoctorID_FAILED' , payload:err })
+        console.log(err)
+    })
+
+
+}
+
+
+
+
 
 
 export const GetPatientsByOnlyIdAction=(orderid)=>(dispatch , getState )=>{
@@ -83,6 +129,31 @@ export const GetPatientsByOnlyIdAction=(orderid)=>(dispatch , getState )=>{
 
 
 }
+
+
+
+export const UpdateBookingsAction=(bookid , updatedproduct)=>(dispatch , getState )=>{
+
+    
+
+
+    dispatch({type:'Update_Booking_REQUEST'})
+
+    axios.post('/api/booking/updatebooking' , {bookid,updatedproduct} ).then( res=>{
+
+        dispatch({type:'Update_Booking_SUCCESS' , payload:res.data })
+        alert('Updated Successfully')
+     
+        window.location.reload()
+
+    } ).catch(err=>{
+        dispatch({type:'Update_Booking_FAILED' , payload:err })
+        console.log(err)
+    })
+
+
+}
+
 
 
 
