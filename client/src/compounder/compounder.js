@@ -10,6 +10,7 @@ import './comp.css'
 import CompounderBooking from "./makebooking";
 import CheckSchedule from "./checkschedule";
 import AddUserCompounder from "./addusercompounder";
+import FutureScheduleCompounder from "./futureschedule";
 
 const Compounder=()=>{
 
@@ -40,8 +41,9 @@ const Compounder=()=>{
 
 <ul className='makebig'  >
                     <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li>
-                    <li ><Link to='/compounder/checkschedule'   className='stylebar' >Check Schedule </Link>   </li>
-                    <li ><Link to='/compounder/adduser'  className='stylebar'>Add New Patient</Link>   </li>
+                    <li ><Link to='/compounder/checkschedule'   className='stylebar' >Today's Schedule </Link>   </li>
+                    {/* <li ><Link to='/compounder/adduser'  className='stylebar'>Add New Patient</Link>   </li> */}
+                    <li> <Link to='/compounder/futureschedule'   className='stylebar' >Check Schedule </Link> </li>
                    
 
 
@@ -52,7 +54,9 @@ const Compounder=()=>{
                     <Route exact path='/compounder' ><CompounderBooking doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/makebooking"   ><CompounderBooking doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/checkschedule"   ><CheckSchedule doctorid={compounder.docid} /></Route>
-                <Route path='/compounder/adduser' ><AddUserCompounder/></Route>
+                <Route path="/compounder/futureschedule"   ><FutureScheduleCompounder doctorid={compounder.docid}  /></Route>
+                {/* <Route path='/compounder/adduser' ><AddUserCompounder/></Route> */}
+
                 </Switch>
 
 

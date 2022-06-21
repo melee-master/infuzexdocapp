@@ -18,12 +18,17 @@ const GetCompounder=({docid})=>{
     const { loading, compounders ,error} = dridstate
 
     
-
+const [ans,setans]=useState()
     useEffect(() => {
         dispatch(GetCompounderById( {docid} ))
 
     }, [])
 
+
+    // const deletingcompounder=()=>{
+    //     alert('Deleting this compounder..')
+    //     dispatch(DeleteCompounderAction(use._id))
+    // }
   
 
 
@@ -37,7 +42,10 @@ const GetCompounder=({docid})=>{
                    <th scope="col" >Name</th>
                    <th scope="col" >Email</th>
                    <th scope="col" >Contact Number</th>
+                   <th scope="col" >Password</th>
                    <th scope="col" >Delete</th>
+                  
+
                    
                    
                   
@@ -56,8 +64,24 @@ const GetCompounder=({docid})=>{
                            <td data-label="Name" > {use.name} </td>
                            <td data-label="Email" > {use.email} </td>
                            <td data-label="Contact Number" > { use.contactnumber } </td>
-                             <td data-label="Delete" > <i id="del" className="far fa-trash-alt" onClick={ ()=>{ dispatch(DeleteCompounderAction(use._id)) } }  ></i> 
+                           <td data-label="Password" >{use.password}</td>
+                             <td data-label="Delete" > <i id="del" className="far fa-trash-alt" onClick={ 
+                                
+                                 ()=>{ 
+                                    alert('Do You want to Delete this Compounder?') 
+                                    setans(1)
+                                    if(ans==1)
+                                    {
+                                        dispatch(DeleteCompounderAction(use._id))
+                                    }
+                                     }
+
+                              // deletingcompounder
+                                 
+                                  }  ></i> 
                           </td>
+
+                        
                           
                           
 
