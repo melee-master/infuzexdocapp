@@ -4,6 +4,7 @@ import EditDoctor from "../admin/editdoc";
 import GetCompounder from "../compounder/allcompounder";
 import CompounderRegister from "./compunderreg";
 import DailySchedule from "./dailyschedule";
+import CheckSchedule from "./drcheckschedule";
 import PatientsList from "./patientslist";
 import UpdateProfile from "./updateprofile";
 
@@ -26,7 +27,7 @@ const DoctorPage=()=>{
                      <li ><Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>Update My  Profile</Link>   </li> 
                     <li ><Link to='/drpage/compounderinfo'  className='stylebar'>See Compounder</Link>   </li>
                     <li ><Link to='/drpage/allpatients'   className='stylebar'   > All Patients</Link>  </li>
-                  
+                    <li ><Link to='/drpage/checkpatientslist'   className='stylebar'   >Check Schedule</Link>  </li>
                 </ul>
 
 
@@ -37,7 +38,7 @@ const DoctorPage=()=>{
 <Route path="/drpage/addcompounder"  ><CompounderRegister docid={doctor._id} /></Route>
  <Route path="/drpage/update/:doctor" component={UpdateProfile}  ><UpdateProfile/></Route>
  <Route path='/drpage/compounderinfo' >< GetCompounder docid={doctor._id} /></Route> 
-
+ <Route path='/drpage/checkpatientslist' component={CheckSchedule} ></Route> 
 
 
 </Switch>

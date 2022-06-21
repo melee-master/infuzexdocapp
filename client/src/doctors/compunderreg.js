@@ -110,14 +110,14 @@ const CompounderRegister=({docid})=>{
 
 
 
-            >Email Id</label>
+            >User Id</label>
             <input type="text"
 
                 value={email}
                 required
                 onChange={(e) => { setemail(e.target.value) }}
 
-                placeholder='Enter Email Id' />
+                placeholder='Enter User Id' />
 
         </p>
 

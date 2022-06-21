@@ -64,6 +64,7 @@ const DailySchedule = () => {
                             <th scope="col"  > Appointment Booked For  </th>
                             <th scope="col" >Slot</th>
                             <th scope="col" >Booked By</th>
+                            <th scope="col" >Status</th>
                         </tr>
                   
 
@@ -86,6 +87,17 @@ const DailySchedule = () => {
                                     <td data-label="Appointment Booked For" > {ord.date} </td>
                                     <td data-label="Slot" >{ord.slot}</td>
                                     <td data-label="Booked By" >{ord.status}</td>
+                                    <Link to={`/bookings/${ord._id}`} >
+                                                                                <td data-label="Status" >
+                                                                                <i class="fa fa-pencil-square-o" aria-hidden="true"  ></i>
+
+                 
+
+                                                                                </td>
+                                                                                </Link>
+
+
+                                                                                
     </tr>
 
 

@@ -7,45 +7,68 @@ import DocumentMeta from 'react-document-meta';
 import axios from 'axios';
 import { GetPatientsByUserIdAction } from "../actions/bookingaction";
 import { GetPatientsByUserIdReducer } from "../reducers/bookingreducer";
+import Loader from '../component/loader';
 
-const PatientsList=()=>{
+const CheckSchedule=()=>{
 
     const dispatch = useDispatch()
 
-    const [stat,setstat]=useState('')
+     const [day,setday]=useState('Mon')
 
-const patientstate = useSelector(state=>state.GetPatientsByUserIdReducer)
+    const patientstate = useSelector(state=>state.GetPatientsByUserIdReducer)
+    
+    const {orders , error , loading } = patientstate
+    
+    
+    const doc = localStorage.getItem('doctor')
+        useEffect( ()=>{
+    
+            if(localStorage.getItem('doctor'))
+            {
+                dispatch(GetPatientsByUserIdAction())
+            }
+            else{
+                window.location.href='/drlogin'
+            }
+    
+    
+    
+        } ,[dispatch]  )
+    
+       
 
-const {orders , error , loading } = patientstate
-
-
-const doc = localStorage.getItem('doctor')
-    useEffect( ()=>{
-
-        if(localStorage.getItem('doctor'))
-        {
-            dispatch(GetPatientsByUserIdAction())
-        }
-        else{
-            window.location.href='/drlogin'
-        }
-
-
-
-    } ,[dispatch]  )
-
-
-
+        
 
     return(
         <div>
-          
-        <div className="error"  >
+            <div className="error"  >
             
 
             <br></br>
             
-                           <h1 style={{textAlign:'center'  }} >All Patient's List</h1>
+                           <h1 style={{textAlign:'center'  }} >Patients List As Per Day</h1>
+
+                           <h5>Select Day :</h5>
+
+                           <select onChange={ (e)=>{ setday(e.target.value) } }  
+                           
+                          
+
+                           style={{
+                               marginLeft: 'auto',
+                               marginRight: 'auto' ,
+                               fontSize:'20px'
+                           }} 
+                            
+                           >
+                               <option value='Mon' >Monday</option>
+                               <option value='Tue' >Tuesday</option>
+                               <option value='Wed' >Wednesday</option>
+                               <option value='Thu' >Thursday</option>
+                               <option value='Fri' >Friday</option>
+                               <option value='Sat' >Saturday</option>
+                               <option value='Sun' >Sunday</option>
+                               </select>
             
                            <table   className='table' id="customers"  >
                               
@@ -64,10 +87,22 @@ const doc = localStorage.getItem('doctor')
                         </tr>
                                   
                                 
-                                      {/* {loading && ( <Loading/> ) }   */}
+                                      {loading && ( <Loader/> ) }  
                                        {orders && (
                                           orders.map( ord =>{
-                                            return  <tr>
+                                             
+                                            console.log( 'The Day is' , ord.date.substr(0,3))
+                                            var daynow = ord.date.substr(0,3) 
+
+                                                
+
+
+                                            if( (ord.date.substr(0,3)===day) && (ord.checkif==='false') )
+                                                
+                                              
+                                            {
+                                                return  <tr>
+                                              
                                             <td data-label="Booking Id" >{ord._id}</td>
                                                                                 <td data-label="Patient's Name" > {ord.name} {ord.lname} </td>
                                             
@@ -85,6 +120,8 @@ const doc = localStorage.getItem('doctor')
                                                                                 <i class="fa fa-pencil-square-o" aria-hidden="true"  ></i></td>
                                                                                 </Link>
                                                 </tr>
+                                            }
+                                            
                                             
                                           } )
                                       )  } 
@@ -97,9 +134,9 @@ const doc = localStorage.getItem('doctor')
                            </table>
 
 </div>                
-
-    </div>
+        </div>
     )
+
 }
 
-export default PatientsList
+export default CheckSchedule;
