@@ -14,7 +14,7 @@ const ConfirmationPage=()=>{
 
 const booking = JSON.parse(sessionStorage.getItem('bookingdetails'))
 
-console.log(booking)
+//console.log(booking)
 
     return(
         <div>

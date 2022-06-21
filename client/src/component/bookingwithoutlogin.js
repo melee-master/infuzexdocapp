@@ -89,8 +89,8 @@ else
       }
   
       dispatch(BookPatientsAction(details))
-      
-      window.location.href=`/bookingconfirmation`
+    //   alert('Please take a screenshot of this page')
+    //   window.location.href=`/bookingconfirmation`
     }
     else
     {
@@ -108,9 +108,10 @@ else
       }
   
       dispatch(BookPatientsAction(details))
-   
-      
-      window.location.href=`/bookingconfirmation`
+    //   alert('God plz')
+     
+    //   window.location.href='/bookingconfirmation';
+    // alert('Please take a screenshot of this page')
     }
    setcallfun('true')
 
@@ -125,8 +126,9 @@ else
 //window.location.href=`/booking/name=${name}+${lname}/date=${date}/slot=${field}/dr=${doctors.name}`
 
 
-
+window.location.href='/bookingconfirmation';
 alert('Please take a screenshot of this page')
+
 
 
  }
