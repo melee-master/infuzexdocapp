@@ -20,7 +20,8 @@ router.post('/booking' , (req,res)=>{
             status : req.body.status ,
             userid:req.body.userid ,
             doctorid:req.body.doctorid ,
-            speciality : req.body.speciality
+            speciality : req.body.speciality ,
+            checkif:"false"
            
 
        } ) 
@@ -87,10 +88,34 @@ router.post('/getpatientsbyuserid', (req, res) => {
 })
 
 
+
+
+
+router.post('/getpatientsbydocid', (req, res) => {
+
+    const doctorid = req.body.doctorid
+console.log('docid is' , doctorid )
+    Booking.find({ doctorid: doctorid }, (err, docs) => {
+        if (err) {
+            return res.status(400).json({ message: 'Something Went Wrong' })
+        }
+        else {
+            console.log('Data is' , docs )
+            res.send(docs)
+        }
+    })
+
+})
+
+
+
+
+
+
 router.post('/getbookingssbyuserid', (req, res) => {
 
     const userid = req.body.userid
-console.log('user id is' , userid )
+
     Booking.find({ userid: userid }, (err, docs) => {
         if (err) {
             return res.status(400).json({ message: 'Something Went Wrong' })
@@ -101,6 +126,28 @@ console.log('user id is' , userid )
     })
 
 })
+
+
+
+router.post('/getbookingssbyBookingid', (req, res) => {
+
+    
+    Booking.findById({ _id: req.body.bookid }, (err, docs) => {
+       // console.log('booking id in req is' , req.body.bookingid  )
+        if (err) {
+            //console.log(res)
+            return res.status(400).json({ message: `Something Went Wrong ${err} ` })
+        }
+        else {
+            
+            res.send(docs)
+        }
+    })
+
+})
+
+
+
 
 
 
@@ -131,6 +178,31 @@ router.get('/getallpatients' , (req,res)=>{
         else{
             res.send(docs)
         }
+    } )
+} )
+
+
+
+
+
+router.post('/updatebooking' , (req,res)=>{
+
+    // console.log('Body is' , req )
+    console.log('Value of Checkif' ,req.body.updatedproduct.checkif  )
+    Booking.findByIdAndUpdate( req.body.bookid , 
+        { checkif : req.body.updatedproduct.checkif ,
+            
+        
+        }  ,   (err,docs)=>{
+        if(err)
+        return res.status(400).json({message:`Something Went Wrong while updating doc ${err} `})
+
+        else{
+            
+            //alert(docs)
+            res.send({message:`Doctor Approved Successfully  `})
+        }
+
     } )
 } )
 
