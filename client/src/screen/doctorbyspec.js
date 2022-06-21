@@ -138,6 +138,19 @@ interval={5000}
 
 
 
+    <p>
+<a href='/dr-by-specialization' style={{ textDecoration: 'none' }} >
+                    <p>
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/768px-Search_Icon.svg.png' id="img-docgrid1" />
+                        <br />
+                        <h4 style={{ color: 'black' }} >See All</h4>
+                        <h5 className='consult-now' >All Doctors</h5>
+                    </p>
+                </a>
+
+    </p>
+
+
 
 
 
