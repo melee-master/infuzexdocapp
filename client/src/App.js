@@ -59,6 +59,7 @@ import ResetPassword from './users/resetpassword';
 import DoctorForgotPassword from './doctors/drforgetpass';
 import DoctorResetPassword from './doctors/drresetpass';
 import IndividualBooking from './doctors/individualpatient';
+import LanguageSelector from './language';
 
 
 
@@ -80,8 +81,8 @@ function App() {
 
    <BrowserRouter>
    
-   
-   <Route path="/" exact component={HomeScreen} ><HomeScreen/></Route>
+   <Route exact path='/' component={LanguageSelector} />
+   <Route path="/homescreen" exact component={HomeScreen} ><HomeScreen/></Route>
 <Route path="/login" component={LoginScreen} ><LoginScreen/></Route>
 
 <Route path="/signup" component={SignUpScreen} ><SignUpScreen/></Route>

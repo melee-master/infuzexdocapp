@@ -63,6 +63,7 @@ const admin=localStorage.getItem('admin') ? JSON.parse(localStorage.getItem('adm
 const doctor = localStorage.getItem('doctor') ? JSON.parse(localStorage.getItem('doctor')) : null
 const compounder  = localStorage.getItem('compounder') ? JSON.parse(localStorage.getItem('compounder')) : null
 const book = sessionStorage.getItem('bookingdetails') ? JSON.parse(sessionStorage.getItem('bookingdetails')) : null
+//const bengali = localStorage.getItem('bengali')? JSON.parse(localStorage.getItem('bengali') ) : null 
 
 const InitialState = {
   LoginUserReducer: { currentuser: currentuser } ,
