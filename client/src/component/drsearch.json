@@ -4,6 +4,8 @@
       "search_tags":"cough cold fever sardi zukaam কাশিসর্দিবর Physician চিকিত্সক Cikitsaka" , 
       "link":"/cold-cough" , 
       "field":"Physician",
+      "namebangla":"সর্দি, কাশি, জ্বর",
+      "fieldbangla":"চিকিত্সক",
        "link2":"/physician" ,
        "search_tags2":"Physician চিকিত্সক Cikitsaka" , 
        "img2":"https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg",
@@ -17,12 +19,22 @@
        "search_tags2":"Physician চিকিত্সক Cikitsaka" , 
        "img2":"https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=",
       
-        "img":"https://thumbs.dreamstime.com/b/unhappy-teen-girl-struggling-acne-unhappy-teen-girl-struggling-acne-pimples-skin-face-problem-concept-vector-modern-flat-99784709.jpg"   
+        "img":"https://thumbs.dreamstime.com/b/unhappy-teen-girl-struggling-acne-unhappy-teen-girl-struggling-acne-pimples-skin-face-problem-concept-vector-modern-flat-99784709.jpg"  , 
+    
+        "fieldbangla":"চিকিত্চর্মরোগ বিশেষজ্ঞসক", 
+      "namebangla":"ত্বক বা চুলের সমস্যা"
+    
     } 
     ,
     { "symptom":"Child not feeling well" , 
         "search_tags":"children paediatrics শিশুরোগ paediatrician শিশুরোগ বিশেষজ্ঞ" , 
         "link":"/child-not-feelingwell" , 
+
+
+        "namebangla":"বাচ্চা ভালো লাগছে না",
+        "fieldbangla":"শিশু বিশেষজ্ঞ",
+
+
 
         "field":"Paediatrician",
         "link2":"/paediatrician" ,
@@ -42,6 +54,14 @@
     
         "field":"Psychiatrist",
         "link2":"/psychiatrist" ,
+
+
+
+        "namebangla":"বিষণ্নতা বা উদ্বেগ",
+        "fieldbangla":"মনোরোগ বিশেষজ্ঞ",
+
+
+
         
         "img2":"https://us.123rf.com/450wm/happyvector071/happyvector0711601/happyvector071160100426/51469380-abstract-creative-concept-vector-silhouette-head-for-web-and-mobile-applications-isolated-on-white-b.jpg?ver=6"
     
@@ -55,6 +75,14 @@
 
         "field":"Dentist",
         "link2":"/dentist" ,
+
+
+        "namebangla":"দাঁতের যত্ন",
+        "fieldbangla":"ডেন্টিস্ট",
+
+
+
+
         
         "img2":"https://img.freepik.com/free-vector/dental-care-concept-illustration_52683-65383.jpg?w=2000",
 
@@ -68,6 +96,14 @@
         "field":"Obstetric",
         "link2":"/obstetric" ,
         
+
+
+        "namebangla":"পিরিয়ড সন্দেহ বা গর্ভাবস্থা",
+        "fieldbangla":"প্রসূতি",
+
+
+
+
         "img2":"https://images.all-free-download.com/images/graphiclarge/creative_maternity_vector_design_graphics_546434.jpg",
 
         "img":"https://media.istockphoto.com/vectors/to-be-a-woman-menstruation-period-cartoon-female-sitting-with-flowers-vector-id1337820462?b=1&k=20&m=1337820462&s=612x612&w=0&h=QSMsI3MCFgbeU38g5NlVyoMcNunLM9hihWga88GjHPs="   
@@ -80,6 +116,13 @@
 
         "field":"Sexologist",
         "link2":"/sexologist" ,
+
+
+        "namebangla":"বিছানায় কর্মক্ষমতা সমস্যা",
+        "fieldbangla":"সেক্সোলজিস্ট",
+
+
+
         
         "img2":"https://img.freepik.com/free-vector/sexologist-consultation-icon-psychological-sexual-problems-health-vector-illustration_106788-3043.jpg?w=2000",
 
@@ -92,6 +135,14 @@
         "link":"/heart-issues" , 
         "field":"Cardiologist",
         "link2":"/cardiologist" ,
+
+
+
+        "namebangla":"হার্ট সম্পর্কিত সমস্যা",
+        "fieldbangla":"কার্ডিওলজিস্ট",
+
+
+
         
         "img2":"https://static.vecteezy.com/system/resources/previews/005/370/190/original/cardiology-medical-logo-vector.jpg",
         "img":"https://media.istockphoto.com/vectors/cardiology-icon-vector-id1061340964?k=20&m=1061340964&s=612x612&w=0&h=YbXByT1hCiMZkFatTHvYz4CcOrscu8wnwb20g_59orQ="   
@@ -104,6 +155,12 @@
         "link":"/lungs-breathing" , 
         "field":"Pummonologist",
         "link2":"/pummonologist" ,
+
+
+
+        "namebangla":"ফুসফুস ও শ্বাসকষ্ট",
+        "fieldbangla":"পালমোনোলজিস্ট",
+
         
         "img2":"https://img.freepik.com/free-vector/pulmonology-concept-physical-respiratory-system-examination-treatment-vector-illustration_199064-57.jpg?w=2000",
         "img":"https://img.freepik.com/free-vector/human-lung-anatomy-diagram-illness-respiratory-cancer-graphics_124894-214.jpg?w=2000"   
@@ -116,6 +173,14 @@
         "link":"/diet-nutrition" , 
         "field":"Nutritionist",
         "link2":"/nutritionist" ,
+
+
+
+        "namebangla":"খাদ্য এবং পুষ্টি",
+        "fieldbangla":"পুষ্টিবিদ",
+
+
+
         
         "img2":"https://media.istockphoto.com/vectors/illustration-that-a-female-nutritionist-has-vegetables-upper-body-vector-id860052304?b=1&k=20&m=860052304&s=612x612&w=0&h=MJyxWAr1qQBZxfzXVQlN9cA9cqdDbuncxDd1LAX4QEE=",
         "img":"https://img.freepik.com/free-vector/ketogenic-diet-woman-composition_1284-64950.jpg?w=2000"   
@@ -128,6 +193,14 @@
         "link":"/brain-issues" , 
         "field":"Neurologist",
         "link2":"/neurologist" ,
+
+
+
+        "namebangla":"মস্তিষ্ক এবং স্নায়ু",
+        "fieldbangla":"নিউরোলজিস্ট",
+
+
+
         
         "img2":"https://media.istockphoto.com/vectors/cute-funny-smiling-doctor-and-healthy-happy-brain-vector-id1170936049?k=20&m=1170936049&s=612x612&w=0&h=VEyyaq45nrn1ZZRpDnB8oEonCJD8ej39fznG3CJ7TPU=",
         "img":"https://thumbs.dreamstime.com/b/neurology-vector-concept-made-flat-icons-illustration-129219951.jpg"   
@@ -140,6 +213,14 @@
         "link":"/bones-issues" ,
         "field":"Orthopedic",
         "link2":"/orthopedic" ,
+
+
+
+        "namebangla":"জয়েন্ট/হাড়ের ব্যথা",
+        "fieldbangla":"অর্থোপেডিক",
+
+
+
         
         "img2":"https://us.123rf.com/450wm/studiostoks/studiostoks1503/studiostoks150300057/37742751-the-orthopedic-doctor-examines-an-x-ray-of-a-fracture-of-the-skull-medicine-health.jpg?ver=6", 
         "img":"https://us.123rf.com/450wm/studiostoks/studiostoks1503/studiostoks150300057/37742751-the-orthopedic-doctor-examines-an-x-ray-of-a-fracture-of-the-skull-medicine-health.jpg?ver=6"   
@@ -152,6 +233,14 @@
         "link":"/diabetes" , 
         "field":"Endocrinologist",
         "link2":"/endocrinologist" ,
+
+
+
+        "namebangla":"ডায়াবেটিস",
+        "fieldbangla":"এন্ডোক্রিনোলজিস্ট",
+
+
+
         
         "img2":"https://img.freepik.com/free-vector/person-glucose-test-measuring-sugar-blood-concept_91248-899.jpg?w=2000",
         "img":"https://media.istockphoto.com/vectors/blood-test-with-finger-vector-id1073230446?k=20&m=1073230446&s=612x612&w=0&h=xfMJJU5_9cVVWapT9T3LOsnkKGraCLBwsSFyqW-TpMg="   
@@ -164,6 +253,14 @@
         "field":"Gynecologist",
         "link2":"/gynecologist" ,
         
+
+
+        "namebangla":"স্ত্রীরোগ সংক্রান্ত সমস্যা",
+        "fieldbangla":"স্ত্রীরোগ বিশেষজ্ঞ",
+
+
+
+
         "img2":"https://media.istockphoto.com/vectors/woman-having-period-pain-concept-vector-illustration-on-white-vector-id1294748793?b=1&k=20&m=1294748793&s=612x612&w=0&h=Ch34l6vwEfWziIPUGUr6NM9htGmLfdeRO07bBB-GmrY=",
         "img":"https://media.istockphoto.com/vectors/doctor-gynecologist-character-vector-id1312626629?k=20&m=1312626629&s=612x612&w=0&h=adxjutDHOSGOGLSIvK_6AqiLOkC-l0KcqK260ponK8A="   
     }  
@@ -174,6 +271,15 @@
         "link":"/stomach-pain" , 
         "field":"Gastrologist",
         "link2":"/gastrologist" ,
+
+
+
+        "namebangla":"পেটের সমস্যা",
+        "fieldbangla":"গ্যাস্ট্রোলজিস্",
+
+
+
+
         
         "img2":"https://cdn-icons-png.flaticon.com/512/4006/4006236.png",
         "img":"https://img.freepik.com/free-vector/man-suffering-from-abdominal-pain-male-young-character-bending-holding-his-belly-painkillers-advertisement-stomach-disease-ulcers-gastritis-concept-vector-isolated-illustration_176411-2610.jpg?w=2000"   
@@ -186,6 +292,14 @@
 
         "field":"Ophthalmologist",
         "link2":"/opthamologist" ,
+
+
+
+        "namebangla":"চক্ষু সংক্রান্ত সমস্যা",
+        "fieldbangla":"চক্ষু বিশেষজ্ঞ",
+
+
+
         
         "img2":"https://media.istockphoto.com/vectors/the-concept-of-a-young-ophthalmologist-a-practicing-optometrist-sits-vector-id1303645143?b=1&k=20&m=1303645143&s=612x612&w=0&h=5n4jFFN-LQeV8CvsgupshZbVPSvOD-oOCkJXhquttE0=",
 
@@ -200,6 +314,15 @@
 
         "field":"Urologist",
         "link2":"/urologist" ,
+
+
+
+        "namebangla":"প্রস্রাবের সমস্যা",
+        "fieldbangla":"ইউরোলজিস্ট",
+
+
+
+
         
         "img2":"https://thumbs.dreamstime.com/b/urinary-tract-vector-illustration-urinary-tract-vector-illustration-isolated-white-background-158784975.jpg",
 
@@ -214,6 +337,16 @@
 
         "field":"Oncologist",
         "link2":"/oncologist" ,
+
+
+
+
+        "namebangla":"ক্যান্সার",
+        "fieldbangla":"ক্যান্সার বিশেষজ্ঞ",
+
+
+
+
         
         "img2":"https://img.freepik.com/free-vector/bound_53876-25486.jpg?w=2000",
 
@@ -230,6 +363,14 @@
 
         "field":"Otolaryngologist",
         "link2":"/otolaryngologist" ,
+
+
+
+        "namebangla":"কান, নাক, গলার সমস্যা",
+        "fieldbangla":"অটোল্যারিঙ্গোলজিস্ট",
+
+
+
         
         "img2":"https://static.vecteezy.com/system/resources/previews/005/893/677/non_2x/ear-nose-throat-doctor-silhouette-icon-otolaryngology-medic-staff-with-stethoscope-mirror-black-icon-otolaryngologist-doctor-pictogram-isolated-illustration-vector.jpg",
 
@@ -246,6 +387,14 @@
 
         "field":"Nephrologist",
         "link2":"/nephrologist" ,
+
+
+
+        "namebangla":"কিডনির সমস্যা",
+        "fieldbangla":"নেফ্রোলজিস্ট",
+
+
+        
         
         "img2":"https://media.istockphoto.com/vectors/kidney-vector-illustration-isolated-on-white-background-vector-id1127168444?k=20&m=1127168444&s=612x612&w=0&h=cGnKRRaNJrXzvtVELZisd4E-qp30KdEbaJxGAaKnH6c=",
 

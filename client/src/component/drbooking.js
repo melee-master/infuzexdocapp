@@ -16,6 +16,13 @@ import { BookPatientsAction } from '../actions/bookingaction';
 
 const DrBooking=({doctorid})=>{
 
+
+    const bengali = localStorage.getItem('bengali')
+    const english = localStorage.getItem('english')
+
+
+
+
     const [docid , setdocid] = useState(doctorid)
     const [time , settime ] = useState('')
     const [bookingdate, onChange] = useState(new Date());
@@ -140,6 +147,293 @@ timevar =  doctors.checked
 
     return(
         <div>
+
+{
+        bengali ? ( <p>
+
+
+ {loading ? (<Loader/>) : error ? ( <p> There's an error </p> ) :
+ (
+     <div>
+
+<form onSubmit={bookappointment} >
+
+<div id='calendar-position' >
+<Calendar onChange={onChange} value={bookingdate}
+
+dateFormat = 'dd/MM/yyyy'
+
+minDate =  { new Date()  }
+
+maxDate = { new Date( yyyy , mm-1 , dd2 ) }
+maxDetail = 'month'
+minDetail = 'month'
+
+
+/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+
+day2==='Mon'?(
+    <p>
+        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.mon && doctors.mon.map(rev => {
+
+   
+
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+        </p>
+
+):(
+   day2==='Tue' ? (
+    <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+    {
+     
+    doctors.tue && doctors.tue.map(rev => {
+        return <option value={rev} >
+    
+     
+            {rev} 
+    
+    
+    
+    
+            </option>
+    
+    })
+    
+    }
+    </select>
+   ) : (
+       day2==='Wed' ? (
+        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.wed && doctors.wed.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+    ) : (
+        day2==='Thu' ? (
+            <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+            {
+             
+            doctors.thu && doctors.thu.map(rev => {
+                return <option value={rev} >
+            
+             
+                    {rev} 
+            
+            
+            
+            
+                    </option>
+            
+            })
+            
+            }
+            </select>
+        )  : (
+            day2==='Fri' ? (
+                <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.fri && doctors.fri.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+            )  : (
+                day2==='Sat'?(
+                    <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.sat && doctors.sat.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+                ) : (
+                    day2==='Sun' ? (
+                        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.sun && doctors.sun.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+                    ) : (
+                        <p> </p>
+                    )
+                )
+            )
+        )
+    )
+   )
+)
+
+}
+
+
+
+
+
+
+
+
+
+<br/>
+
+
+
+
+
+
+
+
+<br/>
+
+
+
+
+
+
+<br/>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<button 
+value='submit' 
+//onClick={bookappointment}
+
+className='docdes-box1' style={{backgroundColor:'#0EB9B8' , color:'white'  }}  > &nbsp; &nbsp;   বুক অ্যাপয়েন্টমেন্ট</button>
+<h4>বা
+</h4>
+<span  className='docdes-box1' style={{backgroundColor:'white' , border:'1px solid black'  }} 
+
+onClick={ showcontact }
+
+
+>
+
+<i class="fa fa-phone" aria-hidden="true"></i>  
+ ক্লিনিকে কল করুন</span>
+
+
+
+
+</form>
+
+
+<br/>
+
+
+
+
+<p id="show-number" ></p>
+<p id="show-date" ></p>
+
+
+
+         </div>
+ )
+}       
+                          
+
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
+
+
 
  {loading ? (<Loader/>) : error ? ( <p> There's an error </p> ) :
  (
@@ -421,6 +715,306 @@ onClick={ showcontact }
          </div>
  )
 }       
+
+
+              </p>
+            ) : (
+              <p>
+
+
+
+ {loading ? (<Loader/>) : error ? ( <p> There's an error </p> ) :
+ (
+     <div>
+
+<form onSubmit={bookappointment} >
+
+<div id='calendar-position' >
+<Calendar onChange={onChange} value={bookingdate}
+
+dateFormat = 'dd/MM/yyyy'
+
+minDate =  { new Date()  }
+
+maxDate = { new Date( yyyy , mm-1 , dd2 ) }
+maxDetail = 'month'
+minDetail = 'month'
+
+
+/>
+
+
+
+
+
+
+
+
+<span style={{ 
+    fontSize:'large' ,
+    fontWeight:'bolder'
+ }} > Available Slots :  </span>
+
+
+
+
+
+{
+
+day2==='Mon'?(
+    <p>
+        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.mon && doctors.mon.map(rev => {
+
+   
+
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+        </p>
+
+):(
+   day2==='Tue' ? (
+    <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+    {
+     
+    doctors.tue && doctors.tue.map(rev => {
+        return <option value={rev} >
+    
+     
+            {rev} 
+    
+    
+    
+    
+            </option>
+    
+    })
+    
+    }
+    </select>
+   ) : (
+       day2==='Wed' ? (
+        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.wed && doctors.wed.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+    ) : (
+        day2==='Thu' ? (
+            <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+            {
+             
+            doctors.thu && doctors.thu.map(rev => {
+                return <option value={rev} >
+            
+             
+                    {rev} 
+            
+            
+            
+            
+                    </option>
+            
+            })
+            
+            }
+            </select>
+        )  : (
+            day2==='Fri' ? (
+                <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.fri && doctors.fri.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+            )  : (
+                day2==='Sat'?(
+                    <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.sat && doctors.sat.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+                ) : (
+                    day2==='Sun' ? (
+                        <select value={field} onChange={ (e)=>{ setfield(e.target.value) } } id='select-doc' style={{marginTop:'30px' , marginBottom:'30px' }}  >
+
+{
+ 
+doctors.sun && doctors.sun.map(rev => {
+    return <option value={rev} >
+
+ 
+        {rev} 
+
+
+
+
+        </option>
+
+})
+
+}
+</select>
+                    ) : (
+                        <p> </p>
+                    )
+                )
+            )
+        )
+    )
+   )
+)
+
+}
+
+
+
+
+
+
+
+
+
+<br/>
+
+
+
+
+
+
+
+
+<br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<button 
+value='submit' 
+//onClick={bookappointment}
+
+className='docdes-box1' style={{backgroundColor:'#0EB9B8' , color:'white' }}  > Book Appointment</button>
+
+
+<h4  >OR</h4>
+<br/>
+
+<span  className='docdes-box1' style={{backgroundColor:'white' , border:'1px solid black'  }} 
+
+onClick={ showcontact }
+
+
+>
+
+<i class="fa fa-phone" aria-hidden="true"></i>  
+&nbsp;  Contact Clinic   </span>
+
+
+
+
+
+</form>
+
+
+<br/>
+
+
+
+
+<p id="show-number" ></p>
+<p id="show-date" ></p>
+
+
+
+         </div>
+ )
+}       
+
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
+
+
+
                           
 
 
