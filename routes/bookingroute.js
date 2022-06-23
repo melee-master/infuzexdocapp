@@ -3,8 +3,8 @@ const router = express.Router();
 const mongoose = require('mongoose')
 
 const Booking = require('../models/Booking')
-const accountSid = 'AC25e57c35ff0fa2cffd8b8dc7668fb3a0'; 
-const authToken = '4146ab88c2e9fdbd2d64441b3721807b'; 
+const accountSid =process.env.accountSid; 
+const authToken = process.env.authToken; 
 const client = require('twilio')(accountSid, authToken); 
 
 
