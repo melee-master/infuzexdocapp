@@ -10,14 +10,10 @@ export default function DoctorGrid({prod})
 
    
 
-    // window.onload = function() {
-    //     if(!window.location.hash) {
-    //         window.location = window.location + '#loaded';
-    //         window.location.reload();
-    //     }
-    // }
 
-
+    const bengali = localStorage.getItem('bengali')
+    const english = localStorage.getItem('english')
+    
    
 
 
@@ -26,71 +22,15 @@ export default function DoctorGrid({prod})
         <div   >
 
 
-
-{/* 
-
-<div  className="iii" style={{border:'none'}} >
-
-<Link to={`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}
-
-
-
->
-             <div className="griditemm"   >
-
-
-
-<div className='doc-grid' >
-    <p  >
-        <img  src={prod.image} id="img-docgrid" 
-       
-
-       
-       />
-
-
-        </p>
-
-    <p style={{marginLeft:'15px'}} >  
-    <h2 className='doc-name' >Dr. {prod.name} </h2>
-
-<p className='doc-field' >{prod.field}   </p>
-
-
-<p className='doc-exp' > {prod.experience} Years Exp</p>
-<br/>
-<p className='doc-field' > Fees : ₹{prod.fees} </p>
-
-
-    </p>
-
-
-
-
-
-</div>
-
-
-
-</div>
-
-</Link>
-
-
-</div> */}
-
-
-
-
-
-<div id='test-item' >
-{/* <Link to={`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}
-
-
-
-> */}
+{
+        bengali ? ( <p>
 
 < a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
+<div id='test-item' >
+{/* <Link to={`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}
+> */}
+
+
 
     
 
@@ -101,21 +41,115 @@ export default function DoctorGrid({prod})
 id="testing-image"
 
 />
-<h2 className='doc-name' >Dr. {prod.name} </h2>
+<h2 className='doc-name' >
+ডাঃ {prod.name} </h2>
+
+<p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' ,  marginTop:'-5%'}} >{prod.field}   </p>
+
+
+<p className='docdes-sub' style={{fontWeight:'bold' ,  marginTop:'-3%'}} > {prod.experience} বছর মেয়াদ</p>
+<br/>
+<p className='docdes-sub' style={{   marginTop:'-2%' }} > ফি: ₹{prod.fees} </p>
+
+{/* </Link> */}
+
+
+
+
+</div>
+</a>
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
+                < a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
+                  <div id='test-item' >
+
+
+
+
+    
+
+<img  src={prod.image} 
+
+
+
+id="testing-image"
+
+/>
+
+<h3 className='docdes-name'  > Dr. {prod.name}    </h3>
+        <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' ,  marginTop:'-5%'}} > {prod.field} </p>
+       
+        <p className='docdes-sub' style={{fontWeight:'bold' ,  marginTop:'-3%'}}  > {prod.experience} Years Exp </p>
+       
+  
+       <p className='docdes-sub' style={{   marginTop:'-2%' }} > Fees : ₹{prod.fees} </p>
+
+
+
+
+
+<br/>
+<p className='consult-now' >Consult Now</p>
+</div>
+
+</a>
+
+              </p>
+            ) : (
+              <p>
+                < a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
+                  <div id='test-item' >
+
+
+
+
+    
+
+<img  src={prod.image} 
+
+
+
+id="testing-image"
+
+/>
+{/* <h2 className='doc-name' >Dr. {prod.name} </h2>
 
 <p className='doc-field' >{prod.field}   </p>
 
 
 <p className='doc-exp' > {prod.experience} Years Exp</p>
 <br/>
-<p className='doc-fees' > Fees : ₹{prod.fees} </p>
+<p className='doc-fees' > Fees : ₹{prod.fees} </p> */}
 
-{/* </Link> */}
 
-</a>
+<h3 className='docdes-name'  > Dr. {prod.name}    </h3>
+        <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' ,  marginTop:'-5%'}} > {prod.field} </p>
+       
+        <p className='docdes-sub' style={{fontWeight:'bold' ,  marginTop:'-3%'}}  > {prod.experience} Years Exp </p>
+       
+  
+       <p className='docdes-sub' style={{   marginTop:'-2%' }} > Fees : ₹{prod.fees} </p>
+
+
+
 <br/>
 
 </div>
+</a>
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
+
+
+
  
 
 

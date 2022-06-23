@@ -17,6 +17,8 @@ const Navbar = () => {
   const admin = JSON.parse(localStorage.getItem('admin'))
   const doctor = JSON.parse(localStorage.getItem('doctor'))
   const compounder = JSON.parse(localStorage.getItem('compounder'))
+  const bengali = localStorage.getItem('bengali')
+  const english = localStorage.getItem('english')
   const dispatch = useDispatch()
 
 
@@ -24,6 +26,188 @@ const Navbar = () => {
   return (
     <div>
 
+{
+        bengali ? ( <p>
+{ 
+
+currentuser ? ( <div>
+
+  <ul  >
+
+    <a href="/homescreen">
+      <li> <img src={img1} id="topimg" />  </li>
+    </a>
+
+
+
+
+
+    <li className="box1" style={{ float: 'right' }}
+
+      onClick={() => { dispatch(LogOutUser()) }}
+
+    >
+
+প্রস্থান
+    </li>
+
+
+<a href='/updateuser'>
+
+    <li className="box2" style={{ float: 'right', color: 'black' }}  >
+
+    হ্যালো  {currentuser.name}
+    </li>
+ 
+</a>
+
+
+
+
+
+
+
+
+  </ul>
+
+
+
+</div> ) : (
+
+  doctor ? ( <div>
+
+    <ul  >
+
+      <a href="/homescreen">
+        <li> <img src={img1} id="topimg" />  </li>
+      </a>
+
+
+
+
+
+      <li className="box1" style={{ float: 'right' }}
+
+        onClick={() => { dispatch(LogOutUserDoc()) }}
+
+      >
+
+প্রস্থান
+      </li>
+
+
+
+      <a href='/drpage'>
+        <li className="box2" style={{ float: 'right', color: 'black' }}  >
+
+        হ্যালো  {doctor.name}
+        </li>
+      </a>
+
+
+
+
+
+
+
+
+
+    </ul>
+
+
+
+  </div> ) : (
+    compounder ? (
+
+
+      <div>
+
+
+              <ul  >
+
+                <a href="/homescreen">
+                  <li> <img src={img1} id="topimg" />  </li>
+                </a>
+
+         
+
+
+                <li className="box1" style={{ float: 'right' }}
+
+onClick={() => { dispatch(LogOutUserCompounder()) }}
+
+>
+প্রস্থান
+</li>
+
+
+       <a href='/compounder'>
+        <li className="box2" style={{ float: 'right', color: 'black' }}  >
+        <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+           &nbsp; {compounder.name}
+        </li>
+      </a>
+
+
+              </ul>
+
+            </div>
+
+
+
+
+    ) : (
+     admin ? ( <p><AdminNavBar /></p> ) : (
+      <div>
+
+
+      <ul  >
+
+        <a href="/homescreen">
+          <li> <img src={img1} id="topimg" />  </li>
+        </a>
+
+
+
+        <a href="/user" style={{ color: 'black' }}  >
+          <li className="box2" style={{ float: 'right', color: 'black' }} >
+
+            <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+            ব্যবহারকারীদের
+
+          </li>
+        </a>
+
+
+
+
+        <a href="/doctor">
+          <li className="box1" style={{ float: 'right' }}  >
+            <i class="fa fa-stethoscope" id="steth"   ></i>
+            ডাক্তাররা
+          </li>
+        </a>
+
+
+
+
+
+      </ul>
+
+    </div>
+     )
+    )
+  )
+
+
+)
+
+} 
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
 
 
 
@@ -34,7 +218,7 @@ currentuser ? ( <div>
 
   <ul  >
 
-    <a href="/">
+    <a href="/homescreen">
       <li> <img src={img1} id="topimg" />  </li>
     </a>
 
@@ -78,7 +262,7 @@ currentuser ? ( <div>
 
     <ul  >
 
-      <a href="/">
+      <a href="/homescreen">
         <li> <img src={img1} id="topimg" />  </li>
       </a>
 
@@ -125,7 +309,7 @@ currentuser ? ( <div>
 
               <ul  >
 
-                <a href="/">
+                <a href="/homescreen">
                   <li> <img src={img1} id="topimg" />  </li>
                 </a>
 
@@ -163,7 +347,7 @@ Logout
 
       <ul  >
 
-        <a href="/">
+        <a href="/homescreen">
           <li> <img src={img1} id="topimg" />  </li>
         </a>
 
@@ -203,6 +387,205 @@ Logout
 )
 
 } 
+
+
+
+              </p>
+            ) : (
+              <p>
+
+
+
+
+{ 
+
+currentuser ? ( <div>
+
+  <ul  >
+
+    <a href="/homescreen">
+      <li> <img src={img1} id="topimg" />  </li>
+    </a>
+
+
+
+
+
+    <li className="box1" style={{ float: 'right' }}
+
+      onClick={() => { dispatch(LogOutUser()) }}
+
+    >
+
+      Logout
+    </li>
+
+
+<a href='/updateuser'>
+
+    <li className="box2" style={{ float: 'right', color: 'black' }}  >
+
+      Hello  {currentuser.name}
+    </li>
+ 
+</a>
+
+
+
+
+
+
+
+
+  </ul>
+
+
+
+</div> ) : (
+
+  doctor ? ( <div>
+
+    <ul  >
+
+      <a href="/homescreen">
+        <li> <img src={img1} id="topimg" />  </li>
+      </a>
+
+
+
+
+
+      <li className="box1" style={{ float: 'right' }}
+
+        onClick={() => { dispatch(LogOutUserDoc()) }}
+
+      >
+
+        Logout
+      </li>
+
+
+
+      <a href='/drpage'>
+        <li className="box2" style={{ float: 'right', color: 'black' }}  >
+
+          Hello  {doctor.name}
+        </li>
+      </a>
+
+
+
+
+
+
+
+
+
+    </ul>
+
+
+
+  </div> ) : (
+    compounder ? (
+
+
+      <div>
+
+
+              <ul  >
+
+                <a href="/homescreen">
+                  <li> <img src={img1} id="topimg" />  </li>
+                </a>
+
+         
+
+
+                <li className="box1" style={{ float: 'right' }}
+
+onClick={() => { dispatch(LogOutUserCompounder()) }}
+
+>
+Logout
+</li>
+
+
+       <a href='/compounder'>
+        <li className="box2" style={{ float: 'right', color: 'black' }}  >
+        <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+           &nbsp; {compounder.name}
+        </li>
+      </a>
+
+
+              </ul>
+
+            </div>
+
+
+
+
+    ) : (
+     admin ? ( <p><AdminNavBar /></p> ) : (
+      <div>
+
+
+      <ul  >
+
+        <a href="/homescreen">
+          <li> <img src={img1} id="topimg" />  </li>
+        </a>
+
+
+
+        <a href="/user" style={{ color: 'black' }}  >
+          <li className="box2" style={{ float: 'right', color: 'black' }} >
+
+            <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+            Users
+
+          </li>
+        </a>
+
+
+
+
+        <a href="/doctor">
+          <li className="box1" style={{ float: 'right' }}  >
+            <i class="fa fa-stethoscope" id="steth"   ></i>
+             Doctors
+          </li>
+        </a>
+
+
+
+
+
+      </ul>
+
+    </div>
+     )
+    )
+  )
+
+
+)
+
+} 
+
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
+
+
+
+
+
 
 
 
