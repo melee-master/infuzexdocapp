@@ -3,9 +3,29 @@ const router = express.Router();
 const mongoose = require('mongoose')
 
 const Booking = require('../models/Booking')
+const accountSid = 'AC25e57c35ff0fa2cffd8b8dc7668fb3a0'; 
+const authToken = '4146ab88c2e9fdbd2d64441b3721807b'; 
+const client = require('twilio')(accountSid, authToken); 
+
 
 
 router.post('/booking' , (req,res)=>{
+
+
+    client.messages 
+      .create({ 
+         body: `This is to inform ${req.body.name} ${req.body.lname} that your appointment has been booked 
+         for Dr.${req.body.doctorname} on ${req.body.date} at time ${req.body.slot} . 
+
+         `,  
+         messagingServiceSid: 'MGb4b7ae325252ab96d0ff4429f17046b0',      
+         to: `+91${req.body.contactnumber}` 
+       }) 
+      .then(message => console.log('Message has been sent to',req.body.contactnumber , message.sid)) 
+      .done();
+
+
+
 
     Booking.find({} , (err,docs)=>{
 
