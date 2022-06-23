@@ -12,7 +12,8 @@ const DoctorLogin = () => {
 
 
   
-
+    const bengali = localStorage.getItem('bengali')
+    const english = localStorage.getItem('english')
 
 
     const loginreducer = useSelector(state=>state.LoginDocUserReducer)
@@ -78,39 +79,121 @@ const DoctorLogin = () => {
       
 
             <DocumentMeta {...meta}>
-                  <div>
 
 
-                  <br/> <br/> <br/>
+{
+        bengali ? ( <p>
 
-             
+<div>
+
+
+<br/> <br/> <br/>
+
+
 <div id="loginbox" >
 <form onSubmit={login}   >
-    <h1> Doctor Login </h1>
-    <h5> New Here ? <a href="/drsignup"> Registere Here </a>  </h5>
-    <hr/>
+<h1> ডাক্তার লগইন</h1>
+<h5> এখানে নতুন ? <a href="/drsignup"> 
+এখানে নিবন্ধন করুন </a>  </h5>
+<hr/>
 
-<label className="formtext" >Enter Email</label>
-                <input type="text"
+<label className="formtext" >ইমেইল প্রদান করুন</label>
+<input type="text"
 
 value={email} 
-                    required
-                  
-                    onChange={ (e)=>{ setemail(e.target.value) } }   
-                    placeholder='Enter Email' />
+  required
+
+  onChange={ (e)=>{ setemail(e.target.value) } }   
+  placeholder='ইমেইল প্রদান করুন' />
+
+
+
+<label className="formtext" >
+পাসওয়ার্ড লিখুন</label>
+<input type="password"
+value={password}
+ 
+  required
+
+  onChange={ (e)=>{ setpassword(e.target.value) } } 
+
+
+  placeholder='পাসওয়ার্ড লিখুন' />   
+
+
+
+
+<button  type='submit' className='box1' id="signupbtn"
+
+style={{marginTop:'10px'}}
+
+
+>প্রবেশ করুন
+</button>
+
+{loading && <Loader/>}
+<p id='Message'   ></p>
+
+
+<br/>
+<p>
+আপনি কি কম্পাউন্ডার? <a href='/compounderlogin'>এখানে লগইন করুন</a> </p>
+
+</form>
+
+<h6>পাসওয়ার্ড ভুলে গেছেন
+
+ <a href='/drforgetpassword'>এখানে ক্লিক করুন
+</a> </h6>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
+   <div>
+
+
+<br/> <br/> <br/>
+
+
+<div id="loginbox" >
+<form onSubmit={login}   >
+<h1> Doctor Login </h1>
+<h5> New Here ? <a href="/drsignup"> Registere Here </a>  </h5>
+<hr/>
+
+<label className="formtext" >Enter Email</label>
+<input type="text"
+
+value={email} 
+  required
+
+  onChange={ (e)=>{ setemail(e.target.value) } }   
+  placeholder='Enter Email' />
 
 
 
 <label className="formtext" >Enter Password</label>
-                <input type="password"
+<input type="password"
 value={password}
-                   
-                    required
+ 
+  required
 
-                    onChange={ (e)=>{ setpassword(e.target.value) } } 
-                  
+  onChange={ (e)=>{ setpassword(e.target.value) } } 
 
-                    placeholder='Enter Password' />   
+
+  placeholder='Enter Password' />   
 
 
 
@@ -138,7 +221,83 @@ style={{marginTop:'10px'}}
 
 
 
-                  </div>
+</div>
+
+              </p>
+            ) : (
+              <p>
+   <div>
+
+
+<br/> <br/> <br/>
+
+
+<div id="loginbox" >
+<form onSubmit={login}   >
+<h1> Doctor Login </h1>
+<h5> New Here ? <a href="/drsignup"> Registere Here </a>  </h5>
+<hr/>
+
+<label className="formtext" >Enter Email</label>
+<input type="text"
+
+value={email} 
+  required
+
+  onChange={ (e)=>{ setemail(e.target.value) } }   
+  placeholder='Enter Email' />
+
+
+
+<label className="formtext" >Enter Password</label>
+<input type="password"
+value={password}
+ 
+  required
+
+  onChange={ (e)=>{ setpassword(e.target.value) } } 
+
+
+  placeholder='Enter Password' />   
+
+
+
+
+<button  type='submit' className='box1' id="signupbtn"
+
+style={{marginTop:'10px'}}
+
+
+>LOGIN</button>
+
+{loading && <Loader/>}
+<p id='Message'   ></p>
+<h5>Forgot Password? <a href='/drforgetpassword'>Click Here</a> </h5>
+<p>Are you compounder ? <a href='/compounderlogin'>Login Here</a> </p>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
+
+
+               
              </DocumentMeta>
 
 

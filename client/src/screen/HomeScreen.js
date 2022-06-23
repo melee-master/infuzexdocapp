@@ -19,12 +19,38 @@ const HomeScreen=()=>{
         }
       };
 
-
+      const bengali = localStorage.getItem('bengali')
+      const english = localStorage.getItem('english')
 
 
     return(
 
         <DocumentMeta {...meta}>
+
+      {
+        bengali ? ( <p>
+
+<div>
+
+<img src="https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg" id="homescreen-image" />
+ <h1> আপনি নিরাপদ হাতে আছেন
+ </h1>
+
+
+
+</div>
+
+
+<AllDoctors/>
+
+<DoctorBySpecialization/>
+
+<DoctorByIllness/>
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
 
 <div>
 
@@ -41,6 +67,35 @@ const HomeScreen=()=>{
 <DoctorBySpecialization/>
 
 <DoctorByIllness/>
+
+
+              </p>
+            ) : (
+              <p>
+                <div>
+
+<img src="https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg" id="homescreen-image" />
+ <h1> You are in Safe Hands </h1>
+
+
+
+</div>
+
+
+<AllDoctors/>
+
+<DoctorBySpecialization/>
+
+<DoctorByIllness/>
+
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
 
 
 

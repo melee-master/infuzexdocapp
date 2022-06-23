@@ -13,6 +13,11 @@ const SignUpScreen = () => {
 
    
 
+    const bengali = localStorage.getItem('bengali')
+    const english = localStorage.getItem('english')
+
+    
+
 
 
     const registreducer = useSelector(state => state.RegisterUserReducer)
@@ -162,100 +167,333 @@ const SignUpScreen = () => {
     return (
 
         <DocumentMeta {...meta}>
-        <div>
+
+{
+        bengali ? ( <p>
+
+
+<div className="boxgrid" >
+
+<p>
+
+    <img src='https://i.pinimg.com/736x/8b/76/eb/8b76ebf906d93b0fee4f554c5431c5c7--clip-art-free-fair-use.jpg'
+        id="sideimg" />
+
+
+</p>
 
 
 
-            <div className="boxgrid" >
 
-                <p>
+<p>
 
-                    <img src='https://i.pinimg.com/736x/8b/76/eb/8b76ebf906d93b0fee4f554c5431c5c7--clip-art-free-fair-use.jpg'
-                        id="sideimg" />
+    <form onSubmit={register} >
 
-
-                </p>
+        <div id="loginbox" >
 
 
+        <h1> এখানে নিবন্ধন করুন </h1>
 
+<p> ইতিমধ্যে একটি সদস্যপদ আছে ?  <a href="/login"> এখানে লগইন করুন </a>  </p>
 
-                <p>
+<hr />
 
-                    <form onSubmit={register} >
+            <div className="boxgrid">
 
-                        <div id="loginbox" >
-
-
-                            <h1> Register Here </h1>
-
-                            <p> Already have an account ?  <a href="/login"> Login Here </a>  </p>
-
-                            <hr />
-
-
-                            <div className="boxgrid">
-
-                                <p  >
-                                    <label className="formtext" >First Name</label>
+                <p  >
+                <label className="formtext" >নামের প্রথম অংশ</label>
                                     <input type="text"
 
                                         value={name}
                                         required
                                         onChange={(e) => { setname(e.target.value) }}
 
-                                        placeholder='Enter Name' />
-                                </p>
+                                        placeholder='রত' />
+                </p>
 
-                                <p style={{ marginLeft: '5px' }}>
-                                    <label className="formtext">Last Name</label>
-
-
-                                    <input type="text" placeholder='Enter Last Name'
-
-                                        value={lname}
-                                        required
-                                        onChange={(e) => { setlname(e.target.value) }}
-
-                                    />
-
-                                </p>
-
-                                </div>
-
-                                
-
-                                <p>
-                                    <label className="formtext"
+                <p style={{ marginLeft: '5px' }}>
+                <label className="formtext">নামের শেষাংশ</label>
 
 
+<input type="text" placeholder='শেষ নাম লিখুন'
+
+    value={lname}
+    required
+    onChange={(e) => { setlname(e.target.value) }}
+
+/>
 
 
-                                    >Email Id</label>
-                                    <input type="text"
+                </p>
 
-                                        value={email}
-                                        required
-                                        onChange={(e) => { setemail(e.target.value) }}
+                </div>
 
-                                        placeholder='Enter Email Id' />
+                
 
-                                </p>
+                <p>
+                <label className="formtext">ইমেইল আইডি</label>
+<input type="text"
+
+    value={email}
+    required
+    onChange={(e) => { setemail(e.target.value) }}
+
+    placeholder='ইমেইল আইডি দিন' />
+
+                </p>
 
 
 <div id='otp-screen' >
-                                <p style={{ marginLeft: '5px' }} >
+                <p style={{ marginLeft: '5px' }} >
 
-                               
+               
+
+                <label className="formtext">যোগাযোগের নম্বর</label>
+                                    <input type="Number"
+
+                                        value={contactnumber}
+                                        required
+                                        onChange={(e) => { setcontactnumber(e.target.value) }}
+
+
+                                        placeholder='যোগাযোগের নম্বর' />
+
+
+</p>
+
+<div>
+<button  
+
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'  ,marginTop:'22%'  }} 
+
+
+//style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
+
+onClick={onSignInSubmit}
+
+>
+OTP জেনারেট করুন
+</button>
+</div>
+
+<p  >
+
+<label className="formtext">OTP লিখুন
+</label>
+<input type="number"
+
+value={otp}
+required
+onChange={(e) => { setotp(e.target.value) }}
+name='otp'
+
+placeholder='OTP লিখুন
+' />
+
+
+</p>
+
+<div>
+<button 
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' ,marginTop:'22%' }} 
+
+onClick={onSubmitOTP}
+
+>
+OTP যাচাই করুন
+</button>
+
+</div>
+
+
+
+
+<div id="sign-in-button"></div>
+
+
+</div>
+
+<div>
+
+                <p>
+                <label className="formtext">পাসওয়ার্ড</label>
+                                    <input type="password"
+
+                                        value={password}
+                                        required
+                                        onChange={(e) => { setpassword(e.target.value) }}
+
+
+                                        placeholder='পাসওয়ার্ড লিখুন' />
+
+                </p>
+
+                <p style={{ marginLeft: '5px' }} >
+                <label className="formtext">পাসওয়ার্ড নিশ্চিত করুন</label>
+                                    <input type="password" placeholder='কনফার্ম পাসওয়ার্ড দিন'
+
+                                        value={cpassword}
+                                        required
+                                        onChange={(e) => { setcpassword(e.target.value) }}
+
+
+
+                                    />
+
+                </p>
+
+
+
+
+            </div>
+            <button type='submit' className='box1' id="signupbtn" style={{
+
+
+            }}  >নিবন্ধন করুন</button>
+
+        
+
+            {loading && ( <Loader/> ) }
+
+            <br/><br/>
+
+
+            {error && ( <p  id="message" >ইমেলটি ইতিমধ্যেই নিবন্ধন</p> )  }
+
+{success && ( <p  id="message" >সাফল্যের সাথে নিবন্ধিত</p> ) }
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+    </form>
+
+
+
+
+</p>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
+ <div>
+
+
+
+<div className="boxgrid" >
+
+    <p>
+
+        <img src='https://i.pinimg.com/736x/8b/76/eb/8b76ebf906d93b0fee4f554c5431c5c7--clip-art-free-fair-use.jpg'
+            id="sideimg" />
+
+
+    </p>
+
+
+
+
+    <p>
+
+        <form onSubmit={register} >
+
+            <div id="loginbox" >
+
+
+                <h1> Register Here </h1>
+
+                <p> Already have an account ?  <a href="/login"> Login Here </a>  </p>
+
+                <hr />
+
+
+                <div className="boxgrid">
+
+                    <p  >
+                        <label className="formtext" >First Name</label>
+                        <input type="text"
+
+                            value={name}
+                            required
+                            onChange={(e) => { setname(e.target.value) }}
+
+                            placeholder='Enter Name' />
+                    </p>
+
+                    <p style={{ marginLeft: '5px' }}>
+                        <label className="formtext">Last Name</label>
+
+
+                        <input type="text" placeholder='Enter Last Name'
+
+                            value={lname}
+                            required
+                            onChange={(e) => { setlname(e.target.value) }}
+
+                        />
+
+                    </p>
+
+                    </div>
+
+                    
+
+                    <p>
+                        <label className="formtext"
+
+
+
+
+                        >Email Id</label>
+                        <input type="text"
+
+                            value={email}
+                            required
+                            onChange={(e) => { setemail(e.target.value) }}
+
+                            placeholder='Enter Email Id' />
+
+                    </p>
+
+
+<div id='otp-screen' >
+                    <p style={{ marginLeft: '5px' }} >
+
+                   
 
 <label className="formtext">Contact Number</label>
 <input type="number"
 
-    value={contactnumber}
-    required
-    onChange={(e) => { setcontactnumber(e.target.value) }}
+value={contactnumber}
+required
+onChange={(e) => { setcontactnumber(e.target.value) }}
 
 
-    placeholder='Contact Number' />
+placeholder='Contact Number' />
 
 
 </p>
@@ -316,50 +554,50 @@ Verify OTP
 
 <div>
 
-                                <p>
-                                    <label className="formtext">Password</label>
-                                    <input type="password"
+                    <p>
+                        <label className="formtext">Password</label>
+                        <input type="password"
 
-                                        value={password}
-                                        required
-                                        onChange={(e) => { setpassword(e.target.value) }}
-
-
-                                        placeholder='Enter Password' />
-
-                                </p>
-
-                                <p style={{ marginLeft: '5px' }} >
-                                    <label className="formtext">Confirm Password</label>
-                                    <input type="password" placeholder='Enter Confirm Password'
-
-                                        value={cpassword}
-                                        required
-                                        onChange={(e) => { setcpassword(e.target.value) }}
+                            value={password}
+                            required
+                            onChange={(e) => { setpassword(e.target.value) }}
 
 
+                            placeholder='Enter Password' />
 
-                                    />
+                    </p>
 
-                                </p>
+                    <p style={{ marginLeft: '5px' }} >
+                        <label className="formtext">Confirm Password</label>
+                        <input type="password" placeholder='Enter Confirm Password'
+
+                            value={cpassword}
+                            required
+                            onChange={(e) => { setcpassword(e.target.value) }}
 
 
 
+                        />
 
-                            </div>
-                            <button type='submit' className='box1' id="signupbtn" style={{
-
-
-                            }}  >SignUp</button>
-
-                        
-
-                            {loading && ( <Loader/> ) }
-
-                            <br/><br/>
+                    </p>
 
 
-                            {error && ( <p  id="message" >Email Already Registered</p> )  }
+
+
+                </div>
+                <button type='submit' className='box1' id="signupbtn" style={{
+
+
+                }}  >SignUp</button>
+
+            
+
+                {loading && ( <Loader/> ) }
+
+                <br/><br/>
+
+
+                {error && ( <p  id="message" >Email Already Registered</p> )  }
 
 {success && ( <p  id="message" > Registered Successfully</p> ) }
 
@@ -370,15 +608,235 @@ Verify OTP
 
 
 
-                        </div>
+            </div>
 
 
-                    </form>
+        </form>
 
 
 
 
-                </p>
+    </p>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+              </p>
+            ) : (
+              <p>
+
+
+
+
+
+<div className="boxgrid" >
+
+    <p>
+
+        <img src='https://i.pinimg.com/736x/8b/76/eb/8b76ebf906d93b0fee4f554c5431c5c7--clip-art-free-fair-use.jpg'
+            id="sideimg" />
+
+
+    </p>
+
+
+
+
+    <p>
+
+        <form onSubmit={register} >
+
+            <div id="loginbox" >
+
+
+                <h1> Register Here </h1>
+
+                <p> Already have an account ?  <a href="/login"> Login Here </a>  </p>
+
+                <hr />
+
+
+                <div className="boxgrid">
+
+                    <p  >
+                        <label className="formtext" >First Name</label>
+                        <input type="text"
+
+                            value={name}
+                            required
+                            onChange={(e) => { setname(e.target.value) }}
+
+                            placeholder='Enter Name' />
+                    </p>
+
+                    <p style={{ marginLeft: '5px' }}>
+                        <label className="formtext">Last Name</label>
+
+
+                        <input type="text" placeholder='Enter Last Name'
+
+                            value={lname}
+                            required
+                            onChange={(e) => { setlname(e.target.value) }}
+
+                        />
+
+                    </p>
+
+                    </div>
+
+                    
+
+                    <p>
+                        <label className="formtext"
+
+
+
+
+                        >Email Id</label>
+                        <input type="text"
+
+                            value={email}
+                            required
+                            onChange={(e) => { setemail(e.target.value) }}
+
+                            placeholder='Enter Email Id' />
+
+                    </p>
+
+
+<div id='otp-screen' >
+                    <p style={{ marginLeft: '5px' }} >
+
+                   
+
+<label className="formtext">Contact Number</label>
+<input type="number"
+
+value={contactnumber}
+required
+onChange={(e) => { setcontactnumber(e.target.value) }}
+
+
+placeholder='Contact Number' />
+
+
+</p>
+
+<div>
+<button  
+
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'  ,marginTop:'22%'  }} 
+
+
+//style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
+
+onClick={onSignInSubmit}
+
+>
+Generate OTP
+</button>
+</div>
+
+<p  >
+
+<label className="formtext">Enter OTP</label>
+<input type="number"
+
+value={otp}
+required
+onChange={(e) => { setotp(e.target.value) }}
+name='otp'
+
+placeholder='Enter OTP' />
+
+
+</p>
+
+<div>
+<button 
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' ,marginTop:'22%' }} 
+
+onClick={onSubmitOTP}
+
+>
+Verify OTP
+</button>
+
+</div>
+
+
+
+
+<div id="sign-in-button"></div>
+
+
+</div>
+
+<div>
+
+                    <p>
+                        <label className="formtext">Password</label>
+                        <input type="password"
+
+                            value={password}
+                            required
+                            onChange={(e) => { setpassword(e.target.value) }}
+
+
+                            placeholder='Enter Password' />
+
+                    </p>
+
+                    <p style={{ marginLeft: '5px' }} >
+                        <label className="formtext">Confirm Password</label>
+                        <input type="password" placeholder='Enter Confirm Password'
+
+                            value={cpassword}
+                            required
+                            onChange={(e) => { setcpassword(e.target.value) }}
+
+
+
+                        />
+
+                    </p>
+
+
+
+
+                </div>
+                <button type='submit' className='box1' id="signupbtn" style={{
+
+
+                }}  >SignUp</button>
+
+            
+
+                {loading && ( <Loader/> ) }
+
+                <br/><br/>
+
+
+                {error && ( <p  id="message" >Email Already Registered</p> )  }
+
+{success && ( <p  id="message" > Registered Successfully</p> ) }
+
 
 
 
@@ -389,10 +847,35 @@ Verify OTP
             </div>
 
 
+        </form>
 
 
 
-        </div>
+
+    </p>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
+
+       
         </DocumentMeta>
     )
 

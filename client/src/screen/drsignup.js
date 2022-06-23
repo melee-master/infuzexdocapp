@@ -538,10 +538,8 @@ const onSubmitOTP = (e) =>{
         
 <select value={field} onChange={ (e)=>{ setfield(e.target.value) } }  id='select-doc' style={{marginTop:'50px' , float:'left' }}  >
 
-
-<option value='Physician'  >
-
-Physician</option>
+<option value='Physician'  >Field</option>
+<option value='Physician'  >Physician</option>
 <option value='Cardiologist' >Cardiologist</option>
 <option value='Orthopaedic' >Orthopaedic</option>
 <option value='Gynecologist' >Gynecologist</option>

@@ -7,11 +7,24 @@
 
 .Doc-by-Spec
 {
-    margin-top: 120px;
+    margin-top: 8%;
     display: grid;
     grid-template-columns: auto auto auto auto;
     padding: 10px;
 }
+
+
+
+.Doc-by-Spec1
+{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+}
+
+
+
 
 #img-docgrid1
 {

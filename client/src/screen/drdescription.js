@@ -15,6 +15,12 @@ import DrBooking from '../component/drbooking';
 import DoctorBookingWithoutLogin from '../component/bookingwithoutlogin';
 
 const DoctorDescription=({match})=>{
+
+    
+    const bengali = localStorage.getItem('bengali')
+    const english = localStorage.getItem('english')
+    
+    
     
 const date = new Date()
     const params = useParams();
@@ -58,82 +64,257 @@ const date = new Date()
     return(
         <div  >
 
-            <div>
+{
+        bengali ? ( <p>
 
-           { loading ? (<Loader/>) : error ? ( <h1>There's an error</h1> ) :
-           
-           (
-               <div  >
+<div>
 
-                   <img src={doctors.image} id="img-docdes"/>
+{ loading ? (<Loader/>) : error ? ( <h1>There's an error</h1> ) :
 
-                  <h3 className='docdes-name' > Dr. {doctors.name}  {doctors.lname}  </h3>
-                   <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' }} > {doctors.field} </p>
-                  
-                   <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} Years Exp </p>
-                  
-                  <h4 className='docdes-sub' style={{fontWeight:'normal'}} > {doctors.address} </h4>
-                  <p className='docdes-sub' > Fees : ₹{doctors.fees} </p>
+(
+    <div  >
 
-                  {/* <hr/> */}
+        <img src={doctors.image} id="img-docdes"/>
 
-                 
-<div id='book-app' >
-    BOOK APPOINTMENT
-    </div>
+       <h3 className='docdes-name' > ডাঃ {doctors.name}  {doctors.lname}  </h3>
+        <p className='docdes-sub' > {doctors.field} </p>
+        <br/>
+        <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} Years Exp </p>
+        <br/>
+       <h4 className='docdes-sub'> {doctors.address} </h4>
+       <p className='docdes-sub' > 
+ফি: ₹{doctors.fees} </p>
 
-    {/* <hr/> */}
+       <hr/>
 
-                { currentuser ? <DrBooking doctorid={doctorid} /> : 
-                (
-                    doctor ?  <DrBooking doctorid={doctorid} /> : (
-                        admin ?  <DrBooking doctorid={doctorid} /> : (
-                            compounder ?  <DrBooking doctorid={doctorid} /> : (
-                                <p>
-                                    <DoctorBookingWithoutLogin doctorid={doctorid}  />
-                                </p>
-                            )
-                        )
-                    )
-                )  }
- 
+      
 
 
+     { currentuser ? <DrBooking doctorid={doctorid} /> : 
+     (
+         doctor ?  <DrBooking doctorid={doctorid} /> : (
+             admin ?  <DrBooking doctorid={doctorid} /> : (
+                 compounder ?  <DrBooking doctorid={doctorid} /> : (
+                     <p>
+                         <DoctorBookingWithoutLogin doctorid={doctorid}  />
+                     </p>
+                 )
+             )
+         )
+     )  }
 
-                  
-                  <div style={{textAlign:'left' , marginLeft:'15px' }} >
 
-                  <h2 >About the Doctor</h2>
+
+
+       
+       <div style={{textAlign:'left' , marginLeft:'15px' }} >
+
+       <h2 >ডাক্তার সম্পর্কে</h2>
 
 <p className='docdes-sub'> {doctors.description} </p>
 
-                   </div>  
+        </div>  
 
 
 
-                   <hr/>
+        <hr/>
 
-               { currentuser ?  <ReviewComponent  doctors = {doctors}  /> :
-               
-               ( doctor ? <ReviewComponent  doctors = {doctors}  /> : 
-                (
-                    admin ?  <ReviewComponent  doctors = {doctors}  /> : ( compounder ? <ReviewComponent  doctors = {doctors}  /> : 
-                        ( <h3>Please Login To Read Reviews</h3> )   )
-                )  ) 
-               
-               
-               
-               }
-                 
+    { currentuser ?  <ReviewComponent  doctors = {doctors}  /> :
+    
+    ( doctor ? <ReviewComponent  doctors = {doctors}  /> : 
+     (
+         admin ?  <ReviewComponent  doctors = {doctors}  /> : ( compounder ? <ReviewComponent  doctors = {doctors}  /> : 
+             ( <h3>রিভিউ <a href='/login'>পড়তে</a> লগইন করুন</h3> )   )
+     )  ) 
+    
+    
+    
+    }
+      
 
-                   </div>
-           )
-           
-           
-           }
-               
-               </div>
+        </div>
+)
 
+
+}
+    
+    </div>
+
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
+
+<div>
+
+{ loading ? (<Loader/>) : error ? ( <h1>There's an error</h1> ) :
+
+(
+    <div  >
+
+        <img src={doctors.image} id="img-docdes"/>
+
+       <h3 className='docdes-name'  > Dr. {doctors.name}  {doctors.lname}  </h3>
+        <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' , marginTop:'-1%'}} > {doctors.field} </p>
+       
+        <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} Years Exp </p>
+       
+       <h4 className='docdes-sub' style={{fontWeight:'normal'}} > {doctors.address} </h4>
+       <p className='docdes-sub' > Fees : ₹{doctors.fees} </p>
+
+       {/* <hr/> */}
+
+      
+<div id='book-app' >
+BOOK APPOINTMENT
+</div>
+
+{/* <hr/> */}
+
+     { currentuser ? <DrBooking doctorid={doctorid} /> : 
+     (
+         doctor ?  <DrBooking doctorid={doctorid} /> : (
+             admin ?  <DrBooking doctorid={doctorid} /> : (
+                 compounder ?  <DrBooking doctorid={doctorid} /> : (
+                     <p>
+                         <DoctorBookingWithoutLogin doctorid={doctorid}  />
+                     </p>
+                 )
+             )
+         )
+     )  }
+
+
+
+
+       
+       <div style={{textAlign:'left' , marginLeft:'15px' }} >
+
+       <h2 >About the Doctor</h2>
+
+<p className='docdes-sub'> {doctors.description} </p>
+
+        </div>  
+
+
+
+        <hr/>
+
+    { currentuser ?  <ReviewComponent  doctors = {doctors}  /> :
+    
+    ( doctor ? <ReviewComponent  doctors = {doctors}  /> : 
+     (
+         admin ?  <ReviewComponent  doctors = {doctors}  /> : ( compounder ? <ReviewComponent  doctors = {doctors}  /> : 
+             ( <h3>Please <a href='/login'> Login </a> To Read Reviews</h3> )   )
+     )  ) 
+    
+    
+    
+    }
+      
+
+        </div>
+)
+
+
+}
+    
+    </div>
+
+
+
+              </p>
+            ) : (
+              <p>
+
+<div>
+
+{ loading ? (<Loader/>) : error ? ( <h1>There's an error</h1> ) :
+
+(
+    <div  >
+
+        <img src={doctors.image} id="img-docdes"/>
+
+       <h3 className='docdes-name'  > Dr. {doctors.name}  {doctors.lname}  </h3>
+        <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' , marginTop:'-1%' }} > {doctors.field} </p>
+       
+        <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} Years Exp </p>
+       
+       <h4 className='docdes-sub' style={{fontWeight:'normal'}} > {doctors.address} </h4>
+       <p className='docdes-sub' > Fees : ₹{doctors.fees} </p>
+
+       {/* <hr/> */}
+
+      
+<div id='book-app' >
+BOOK APPOINTMENT
+</div>
+
+{/* <hr/> */}
+
+     { currentuser ? <DrBooking doctorid={doctorid} /> : 
+     (
+         doctor ?  <DrBooking doctorid={doctorid} /> : (
+             admin ?  <DrBooking doctorid={doctorid} /> : (
+                 compounder ?  <DrBooking doctorid={doctorid} /> : (
+                     <p>
+                         <DoctorBookingWithoutLogin doctorid={doctorid}  />
+                     </p>
+                 )
+             )
+         )
+     )  }
+
+
+
+
+       
+       <div style={{textAlign:'left' , marginLeft:'15px' }} >
+
+       <h2 >About the Doctor</h2>
+
+<p className='docdes-sub'> {doctors.description} </p>
+
+        </div>  
+
+
+
+        <hr/>
+
+    { currentuser ?  <ReviewComponent  doctors = {doctors}  /> :
+    
+    ( doctor ? <ReviewComponent  doctors = {doctors}  /> : 
+     (
+         admin ?  <ReviewComponent  doctors = {doctors}  /> : ( compounder ? <ReviewComponent  doctors = {doctors}  /> : 
+             ( <h3>Please <a href='/login'> Login </a> To Read Reviews</h3> )   )
+     )  ) 
+    
+    
+    
+    }
+      
+
+        </div>
+)
+
+
+}
+    
+    </div>
+
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
+
+
+        
               
 
         </div>
