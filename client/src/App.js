@@ -60,6 +60,7 @@ import DoctorForgotPassword from './doctors/drforgetpass';
 import DoctorResetPassword from './doctors/drresetpass';
 import IndividualBooking from './doctors/individualpatient';
 import LanguageSelector from './language';
+import Invoice from './users/invoice';
 
 
 
@@ -118,7 +119,21 @@ function App() {
           {
             compounder ? (
               <Route path='/bookings/:id' component={IndividualBooking} ></Route>
-            ) : null
+            ) : (
+              <p>
+                {
+                  admin?(
+                    <Route path='/bookings/:id' component={IndividualBooking} ></Route>
+                  ) : (<div>
+                    {
+                      user ? (
+                        <Route path='/bookings/:id' component={Invoice} ></Route>
+                      ):null
+                    } </div>
+                  )
+                }
+                </p>
+            )
           }
           </p>
       )
