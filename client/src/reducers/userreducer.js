@@ -67,20 +67,20 @@ export const UpdateUserReducer = (state = {  }, action) => {
 
     switch (action.type) {
         case 'User_update_Request': return {
-            ...state,
-            loading: true
+            ...state ,
+            uploading : true 
         }
 
         case 'User_Update_Success': return {
-            ...state,
-            loading: false,
-            success: true
+            ...state ,
+            uploading : false ,
+            success : true 
         }
 
         case 'User_Update_Failed': return {
-            ...state,
-            loading: true,
-            error: true
+            ...state ,
+            uploading : false ,
+            update_error : action.payload
         }
 
 
@@ -171,6 +171,56 @@ export const DeleteUserReducer = ( state={} , action )=>{
 
 
 
+
+
+
+
+
+
+export const UserForgotPasswordReducer=(state = {  }, action) => {
+
+    switch (action.type) {
+        case 'USER_ForgotPassword_REQUEST': return {
+            ...state,
+            loading: true
+        }
+
+        case 'USER_ForgotPassword_SUCESS': return {
+            ...state,
+            loading: false,
+            success: true
+        }
+
+        case 'USER_ForgotPassword_Failed': return {
+            ...state,
+            loading: true,
+            error: true
+        }
+
+
+        default: return state
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const UserResetPasswordReducer=(state = {  }, action) => {
 
     switch (action.type) {
@@ -202,3 +252,31 @@ export const UserResetPasswordReducer=(state = {  }, action) => {
 
 }
 
+
+
+
+export  const GetUserByIdReducer = ( state ={users:[]} , action )=>{
+
+   
+    switch(action.type)
+    {
+        case 'GET_User_BY_ID_REQUEST' : return {
+            loading : true 
+        }
+
+        case 'GET_User_BY_ID_SUCCESS' : return {
+            users : action.payload ,
+            loading : false 
+
+        }
+
+        case 'GET_User_BY_ID_FAILED' : return {
+            users : action.payload ,
+            loading : false 
+           
+        }
+
+        default : return  state
+    }
+
+}
