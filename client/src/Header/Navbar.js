@@ -163,7 +163,7 @@ onClick={() => { dispatch(LogOutUserCompounder()) }}
 
       <ul  >
 
-        <a href="/homescreen">
+        <a href="/">
           <li> <img src={img1} id="topimg" />  </li>
         </a>
 
@@ -173,7 +173,7 @@ onClick={() => { dispatch(LogOutUserCompounder()) }}
           <li className="box2" style={{ float: 'right', color: 'black' }} >
 
             <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
-            ব্যবহারকারীদের
+            রোগী
 
           </li>
         </a>
@@ -184,7 +184,7 @@ onClick={() => { dispatch(LogOutUserCompounder()) }}
         <a href="/doctor">
           <li className="box1" style={{ float: 'right' }}  >
             <i class="fa fa-stethoscope" id="steth"   ></i>
-            ডাক্তাররা
+            ডাক্তার
           </li>
         </a>
 
@@ -347,7 +347,7 @@ Logout
 
       <ul  >
 
-        <a href="/homescreen">
+        <a href="/">
           <li> <img src={img1} id="topimg" />  </li>
         </a>
 
@@ -532,7 +532,7 @@ Logout
 
       <ul  >
 
-        <a href="/homescreen">
+        <a href="/">
           <li> <img src={img1} id="topimg" />  </li>
         </a>
 
