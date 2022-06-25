@@ -1,7 +1,7 @@
 import react from 'react';
 import App from './App';
 import HomeScreen from './screen/HomeScreen';
-
+import './lang.css'
 const LanguageSelector=()=>{
 
     const bengali = localStorage.getItem('bengali')
@@ -44,12 +44,38 @@ const english = localStorage.getItem('english')
                        }
                                     </div>
                             ) : (
+                                
                                 <p>
+                                    <br/>
+                                      <h1>Welcome to Docap!</h1>
+ <div className='grid-lang' >
 
-<br/><br/><br/><br/><br/>
-                     <div style={{  width:'80%' , marginLeft:'auto' , marginRight:'auto' , borderRadius:'12px' , boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} >
+<p id='set-bg-img' > 
+
+    {/* <img src='https://res.cloudinary.com/jerrick/image/upload/v1498775933/v9pscwg2c2luotyeuk7a.png' id="img-lang"  ></img> */}
+
+
+</p>
+
+
+
+<p  >
+
+
+<div 
+id="boxcontain21"
+ >
+
+
+<br/><br/><br/>
+                     <div 
+                     //style={{  width:'80%' , marginLeft:'auto' , marginRight:'auto' , borderRadius:'12px' , boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px' }}
+                     
+                     id='lang-box'
+                     
+                     >
                  <br/>
-                     <h1>Welcome to Docap!</h1>
+                   
                      <h4 style={{color:'gray'}} >Please Choose Your Language </h4>
          
                     
@@ -79,12 +105,32 @@ const english = localStorage.getItem('english')
          
          
          <div>
-    <p>You can change this in User's Settings</p>
+   
          </div>
                    
          
-         <br/><br/><br/><br/><br/>
+         <br/><br/><br/>
                          </div>
+       
+    
+    
+    
+    </div>
+    </p>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
                                 </p>
                             )

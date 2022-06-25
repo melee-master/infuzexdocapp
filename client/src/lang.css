@@ -1,0 +1,73 @@
+#img-lang
+{
+    width: 30%;
+    height: 500px;
+}
+
+.grid-lang
+{
+    display: grid;
+    grid-template-columns: auto auto;
+
+}
+
+
+#set-bg-img
+{
+    background-image: url('https://img.freepik.com/free-vector/flat-international-mother-language-day-illustration_23-2149219243.jpg?w=2000');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 120%;
+}
+
+
+#lang-box
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
+
+@media screen and (max-width:750px) {
+
+    #set-bg-img
+{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/004/745/526/original/modern-flat-design-isometric-concept-of-language-courses-banner-template-for-website-and-mobile-development-literal-translation-personal-assistant-e-learning-languages-online-illustration-free-vector.jpg');
+    background-position: center;
+    background-size: contain;
+    min-height: 350px;
+    max-height: 500px;
+    background-repeat: no-repeat;
+}
+
+
+    .grid-lang
+{
+    display: block;
+    grid-template-columns: auto;
+
+}
+
+
+#lang-box
+{
+    margin-top: -10%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: none;
+}
+
+
+
+
+
+    
+}
