@@ -22,12 +22,13 @@ const DoctorPage=()=>{
 
             <ul className='makebig'  >
             
-                    <li ><Link to='/drpage/dailyschedule'   className='stylebar'   > Daily Schedule</Link>  </li>
+                    <li ><Link to='/drpage/dailyschedule'   className='stylebar'   > Todays Schedule</Link>  </li>
+                    <li ><Link to='/drpage/checkpatientslist'   className='stylebar'   >Check Schedule</Link>  </li>
                     <li ><Link to='/drpage/addcompounder'   className='stylebar' >Add Compounder</Link>   </li>
                      <li ><Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>Update My  Profile</Link>   </li> 
                     <li ><Link to='/drpage/compounderinfo'  className='stylebar'>See Compounder</Link>   </li>
                     <li ><Link to='/drpage/allpatients'   className='stylebar'   > All Patients</Link>  </li>
-                    <li ><Link to='/drpage/checkpatientslist'   className='stylebar'   >Check Schedule</Link>  </li>
+                
                 </ul>
 
 
