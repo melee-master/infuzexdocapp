@@ -11,13 +11,13 @@ const english = localStorage.getItem('english')
     const langaugeenglish=()=>{
         var english
         localStorage.setItem('english',english)
-        window.location.href='/homescreen'
+        window.location.href='/makechoice'
     }
 
     const languageBengali=()=>{
         var bengali
         localStorage.setItem('bengali',bengali)
-        window.location.href='/homescreen'
+        window.location.href='/makechoice'
     }
 
 
@@ -28,7 +28,7 @@ const english = localStorage.getItem('english')
                 bengali ? (
                     <p>
                        {
-                           window.location.href='/homescreen'
+                           window.location.href='/makechoice'
                        }
 
                     </p>
@@ -40,7 +40,7 @@ const english = localStorage.getItem('english')
                             english ? (
                                 <div>
                      {
-                           window.location.href='/homescreen'
+                           window.location.href='/makechoice'
                        }
                                     </div>
                             ) : (

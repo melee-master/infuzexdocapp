@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { RegisterDoctorReducer , LoginDocUserReducer , DoctorTimingReducer } from './reducers/doctorreducer';
-import { LoginUserReducer , UpdateUserReducer , DeleteUserReducer , GetAllUserReducer , RegisterUserReducer , UserResetPasswordReducer  } from '../src/reducers/userreducer'
+import { LoginUserReducer , UpdateUserReducer , DeleteUserReducer , GetAllUserReducer , RegisterUserReducer , UserResetPasswordReducer , UserForgotPasswordReducer , GetUserByIdReducer } from '../src/reducers/userreducer'
 import { GetAllDoctorReducer , GetDoctorByIdReducer , ReviewReducer , GetAllReqDoctorReducer , ApproveDrReducer , DoctorResetPasswordReducer } from './reducers/doctorreducer';
 import {LoginAdminReducer ,RegisterAdminReducer} from './reducers/adminred'
 import { UpdateDoctorReducer } from './reducers/doctorreducer';
@@ -48,7 +48,9 @@ const FinalReducer = combineReducers(
     DoctorResetPasswordReducer:DoctorResetPasswordReducer ,
     UserResetPasswordReducer:UserResetPasswordReducer ,
     GetBookingsByBookingIdReducer:GetBookingsByBookingIdReducer ,
-    UpdateBookingReducer:UpdateBookingReducer
+    UpdateBookingReducer:UpdateBookingReducer , 
+    UserForgotPasswordReducer:UserForgotPasswordReducer ,
+    GetUserByIdReducer:GetUserByIdReducer
 
    
 
@@ -63,6 +65,7 @@ const admin=localStorage.getItem('admin') ? JSON.parse(localStorage.getItem('adm
 const doctor = localStorage.getItem('doctor') ? JSON.parse(localStorage.getItem('doctor')) : null
 const compounder  = localStorage.getItem('compounder') ? JSON.parse(localStorage.getItem('compounder')) : null
 const book = sessionStorage.getItem('bookingdetails') ? JSON.parse(sessionStorage.getItem('bookingdetails')) : null
+const resetpass = sessionStorage.getItem('passdetails')? JSON.parse(sessionStorage.getItem('passdetails')):null
 //const bengali = localStorage.getItem('bengali')? JSON.parse(localStorage.getItem('bengali') ) : null 
 
 const InitialState = {
