@@ -174,6 +174,14 @@ minDetail = 'month'
 
 
 
+<p>
+<span style={{ 
+    fontSize:'large' ,
+    fontWeight:'bolder'
+ }} > 
+ উপলব্ধ স্লট :  </span>
+
+</p>
 
 
 
@@ -461,13 +469,13 @@ minDetail = 'month'
 
 
 
-
+<p>
 <span style={{ 
     fontSize:'large' ,
     fontWeight:'bolder'
  }} > Available Slots :  </span>
 
-
+</p>
 
 
 
@@ -749,12 +757,13 @@ minDetail = 'month'
 
 
 
-
+<p>
 <span style={{ 
     fontSize:'large' ,
     fontWeight:'bolder'
  }} > Available Slots :  </span>
 
+</p>
 
 
 

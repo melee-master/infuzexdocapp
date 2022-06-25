@@ -15,7 +15,7 @@ const ReviewComponent = ({ doctors }) => {
 
     const senreview = () => {
 
-        if (localStorage.getItem('currentuser')) {
+        if ( localStorage.getItem('currentuser') ) {
             const currentuser = JSON.parse(localStorage.getItem('currentuser'))
 
             let alreadyreviewd
@@ -37,10 +37,48 @@ const ReviewComponent = ({ doctors }) => {
                 }
 
 
+                const userid=currentuser._id 
+                const curname = currentuser.name
+
+
+                dispach(AddProductReviewAction(review, doctors._id , userid , curname ))
+
+            }
+
+        }
+        
+
+
+      else  if ( localStorage.getItem('doctor') ) {
+            const doc = JSON.parse(localStorage.getItem('doctor'))
+
+            let alreadyreviewd
+
+            for (var i = 0; i < doctors.reviews.length; i++) {
+                if (doctors.reviews[i].userid == doc._id) {
+                    alreadyreviewd = true
+                }
+            }
+
+            if (alreadyreviewd) {
+                //alert(`You've already reviewed this product`)
+                document.getElementById('post-button').innerHTML = `You've Already Reviewed`
+            }
+            else {
+
+                const review = {
+                    comment: comment
+                }
 
 
 
-                dispach(AddProductReviewAction(review, doctors._id))
+
+
+                const userid=doc._id 
+                const curname = doc.name
+
+
+                dispach(AddProductReviewAction(review, doctors._id , userid , curname ))
 
             }
 
@@ -59,7 +97,15 @@ const ReviewComponent = ({ doctors }) => {
         <div>
 
 
-            <h2> Tell About Your experience  </h2>
+<p style={{textAlign:'left' , marginLeft:'0.5%' }} >
+<span style={{ 
+    fontSize:'large' ,
+    fontWeight:'bolder' 
+    
+ }} > 
+&nbsp; Tell About Your Experience  </span>
+
+</p>
 
             <div className='grid-box' >
 
@@ -102,18 +148,19 @@ const ReviewComponent = ({ doctors }) => {
 
 
             <h2> PATIENT REVIEWS </h2>
-
+<div className="grid-review">
             {
 
                 doctors.reviews && doctors.reviews.map(rev => {
-                    return <div>
+                    return <div className='review-grid' >
 
                         <div className='doc-grid' style={{
-                            border: '0.7px solid black', width: '90%',
-                            marginRight: 'auto', marginLeft: 'auto'
+                             width: '90%',
+                            marginRight: 'auto', marginLeft: 'auto' ,
+                            
 
 
-                        }} >
+                        }} id='style-review-box' >
                             <p  >
                                 <i class="fa fa-user"
 
@@ -124,13 +171,25 @@ const ReviewComponent = ({ doctors }) => {
                             </p>
 
                             <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
-                                <h2 className='doc-name' id='review-name' >{rev.name} </h2>
+                            <h3 >
+<span style={{ 
+    fontSize:'larger' ,
+    fontWeight:'bold' 
+    
+ }} > 
+&nbsp; {rev.name}  </span>
+
+</h3>
                                 <br />
 
-                                <p className='doc-field' id='review-comment' > {rev.comment} </p>
+                                <p className='doc-field' id='review-comment' style={{ 
+    fontSize:'large' ,
+    fontWeight:'bolder' 
+    
+ }} > {rev.comment} </p>
 
 
-                                <p className='doc-exp' > On : {rev.updatedAt.substring(0, 10)} </p>
+                                <p className='doc-exp' style={{fontSize:'small'}} > On : {rev.updatedAt.substring(0, 10)} </p>
 
 
 
@@ -150,6 +209,7 @@ const ReviewComponent = ({ doctors }) => {
                 })
 
             }
+            </div>
             <br />
 
 
