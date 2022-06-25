@@ -25,10 +25,9 @@ export default function DoctorGrid({prod})
 {
         bengali ? ( <p>
 
+
 < a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
 <div id='test-item' >
-{/* <Link to={`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}
-> */}
 
 
 
@@ -36,7 +35,7 @@ export default function DoctorGrid({prod})
 
 <img  src={prod.image} 
 
-//id="img-docgrid"
+
 
 id="testing-image"
 
@@ -44,14 +43,17 @@ id="testing-image"
 <h2 className='doc-name' >
 ডাঃ {prod.name} </h2>
 
-<p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' ,  marginTop:'-5%'}} >{prod.field}   </p>
+<p className='doc-field' >{prod.field}   </p>
 
 
-<p className='docdes-sub' style={{fontWeight:'bold' ,  marginTop:'-3%'}} > {prod.experience} বছর মেয়াদ</p>
+<p className='doc-exp' > {prod.experience} বছর মেয়াদ</p>
+
+<p className='doc-fees' >  ফি: ₹{prod.fees} </p>
 <br/>
-<p className='docdes-sub' style={{   marginTop:'-2%' }} > ফি: ₹{prod.fees} </p>
+<p className='consult-now-1'  >দেখা হবে
+</p>
 
-{/* </Link> */}
+
 
 
 
@@ -63,46 +65,9 @@ id="testing-image"
           {
             english ? (
               <p>
-                < a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
-                  <div id='test-item' >
-
-
-
-
-    
-
-<img  src={prod.image} 
-
-
-
-id="testing-image"
-
-/>
-
-<h3 className='docdes-name'  > Dr. {prod.name}    </h3>
-        <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' ,  marginTop:'-5%'}} > {prod.field} </p>
-       
-        <p className='docdes-sub' style={{fontWeight:'bold' ,  marginTop:'-3%'}}  > {prod.experience} Years Exp </p>
-       
-  
-       <p className='docdes-sub' style={{   marginTop:'-2%' }} > Fees : ₹{prod.fees} </p>
-
-
-
-
-
-<br/>
-<p className='consult-now' >Consult Now</p>
-</div>
-
-</a>
-
-              </p>
-            ) : (
-              <p>
-                < a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
-                  <div id='test-item' >
-
+ 
+< a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
+<div id='test-item' >
 
 
 
@@ -115,27 +80,60 @@ id="testing-image"
 id="testing-image"
 
 />
-{/* <h2 className='doc-name' >Dr. {prod.name} </h2>
+<h2 className='doc-name' >
+Dr. {prod.name} </h2>
 
 <p className='doc-field' >{prod.field}   </p>
 
 
 <p className='doc-exp' > {prod.experience} Years Exp</p>
+
+<p className='doc-fees' > Fees: ₹{prod.fees} </p>
 <br/>
-<p className='doc-fees' > Fees : ₹{prod.fees} </p> */}
-
-
-<h3 className='docdes-name'  > Dr. {prod.name}    </h3>
-        <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' ,  marginTop:'-5%'}} > {prod.field} </p>
-       
-        <p className='docdes-sub' style={{fontWeight:'bold' ,  marginTop:'-3%'}}  > {prod.experience} Years Exp </p>
-       
-  
-       <p className='docdes-sub' style={{   marginTop:'-2%' }} > Fees : ₹{prod.fees} </p>
+<p className='consult-now-1'  >Consult Now</p>
 
 
 
+
+
+
+</div>
+</a>
+
+              </p>
+            ) : (
+              <p>
+      
+< a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
+<div id='test-item' >
+
+
+
+    
+
+<img  src={prod.image} 
+
+
+
+id="testing-image"
+
+/>
+<h2 className='doc-name' >
+Dr. {prod.name} </h2>
+
+<p className='doc-field' >{prod.field}   </p>
+
+
+<p className='doc-exp' > {prod.experience} Years Exp</p>
+
+<p className='doc-fees' > Fees: ₹{prod.fees} </p>
 <br/>
+<p className='consult-now-1'  >Consult Now</p>
+
+
+
+
+
 
 </div>
 </a>
@@ -158,3 +156,73 @@ id="testing-image"
 
 
 }
+
+
+
+
+
+
+
+
+// import React , {useState, useEffect} from 'react'
+// import {Link} from 'react-router-dom'
+// import Rating from 'react-rating'
+// import '../screen/doctorgrid.css'
+// import {useDispatch ,  useSelector } from 'react-redux';
+// import './testing.css'
+
+// export default function DoctorGrid({prod})
+// {
+
+   
+
+  
+
+
+   
+
+
+
+//     return(
+//         <div   >
+
+// < a href= {`doctors/${prod._id}`} style={{textDecoration:'none' , color:'black' }}  >
+// <div id='test-item' >
+
+
+
+    
+
+// <img  src={prod.image} 
+
+
+
+// id="testing-image"
+
+// />
+// <h2 className='doc-name' >
+// Dr. {prod.name} </h2>
+
+// <p className='doc-field' >{prod.field}   </p>
+
+
+// <p className='doc-exp' > {prod.experience} Years Exp</p>
+
+// <p className='doc-fees' > Fees: ₹{prod.fees} </p>
+// <br/>
+// <p className='consult-now-1'  >Consult Now</p>
+
+
+
+
+
+
+// </div>
+// </a>
+
+
+//         </div>
+//     )
+
+
+// }

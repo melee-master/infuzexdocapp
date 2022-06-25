@@ -100,7 +100,7 @@ currentuser ? ( <div>
       <a href='/drpage'>
         <li className="box2" style={{ float: 'right', color: 'black' }}  >
 
-        হ্যালো  {doctor.name}
+        Dr.  {doctor.name}
         </li>
       </a>
 
@@ -284,7 +284,7 @@ currentuser ? ( <div>
       <a href='/drpage'>
         <li className="box2" style={{ float: 'right', color: 'black' }}  >
 
-          Hello  {doctor.name}
+          Dr.  {doctor.name}
         </li>
       </a>
 
@@ -469,7 +469,7 @@ currentuser ? ( <div>
       <a href='/drpage'>
         <li className="box2" style={{ float: 'right', color: 'black' }}  >
 
-          Hello  {doctor.name}
+          Dr.  {doctor.name}
         </li>
       </a>
 
