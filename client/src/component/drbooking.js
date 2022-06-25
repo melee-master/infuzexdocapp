@@ -35,7 +35,7 @@ const compounder = JSON.parse(localStorage.getItem('compounder'))
 
 
 
-
+var unavailableday 
 
     var today = new Date();
   
@@ -62,90 +62,99 @@ const dispatch = useDispatch()
        var date =  bookingdate.toString().substr(0,15)
       // alert(date)
 
-       if(user)
-       {
-           const details = {
-               name:user.name ,
-               lname:user.lname ,
-               email:user.email ,
-               contactnumber:user.contactnumber ,
-               doctorid:doctorid ,
-               userid:user._id ,
-               status:'Registered User' ,
-               date:date ,
-               slot:field , 
-               doctorname:doctors.name ,
-          speciality:doctors.field 
-           }
 
-           dispatch(BookPatientsAction(details))
-             window.location.href=`/bookingconfirmation`
-
-   alert('Please take a screenshot of this page')
-
-       }
-
-       if(doctor)
-       {
-           const details = {
-               name:doctor.name ,
-               lname:doctor.lname ,
-               email:doctor.email ,
-               contactnumber:doctor.contactnumber ,
-               doctorid:doctorid ,
-               status:'Doctor' ,
-               userid:doctor._id ,
-               date:date ,
-               slot:field , 
-               doctorname:doctors.name ,
-          speciality:doctors.field 
-           }
-
-           dispatch(BookPatientsAction(details))     
-            window.location.href=`/bookingconfirmation`
-
-           alert('Please take a screenshot of this page')
-
-          // window.location.href=`/bookingconfirmation`
-
-       }
-
-       if(compounder)
-       {
+if( unavailableday===`Doctor Isn't Available` )
+{
+    alert(`Doctor Isn't Available`)
+}
+else
+{
+    if(user)
+    {
         const details = {
-            name:compounder.name ,
-            lname:compounder.lname ,
-            email:compounder.email ,
-            contactnumber:compounder.contactnumber ,
+            name:user.name ,
+            lname:user.lname ,
+            email:user.email ,
+            contactnumber:user.contactnumber ,
             doctorid:doctorid ,
-            status:'Compounder' ,
-            userid:compounder._id ,
+            userid:user._id ,
+            status:'Registered User' ,
             date:date ,
-            slot:field ,
+            slot:field , 
             doctorname:doctors.name ,
-          speciality:doctors.field 
+       speciality:doctors.field 
         }
 
         dispatch(BookPatientsAction(details))
-        window.location.href=`/bookingconfirmation`
+          window.location.href=`/bookingconfirmation`
+
+alert('Please take a screenshot of this page')
+
+    }
+
+    if(doctor)
+    {
+        const details = {
+            name:doctor.name ,
+            lname:doctor.lname ,
+            email:doctor.email ,
+            contactnumber:doctor.contactnumber ,
+            doctorid:doctorid ,
+            status:'Doctor' ,
+            userid:doctor._id ,
+            date:date ,
+            slot:field , 
+            doctorname:doctors.name ,
+       speciality:doctors.field 
+        }
+
+        dispatch(BookPatientsAction(details))     
+         window.location.href=`/bookingconfirmation`
 
         alert('Please take a screenshot of this page')
-        
 
-       }
-      
+       // window.location.href=`/bookingconfirmation`
+
+    }
+
+    if(compounder)
+    {
+     const details = {
+         name:compounder.name ,
+         lname:compounder.lname ,
+         email:compounder.email ,
+         contactnumber:compounder.contactnumber ,
+         doctorid:doctorid ,
+         status:'Compounder' ,
+         userid:compounder._id ,
+         date:date ,
+         slot:field ,
+         doctorname:doctors.name ,
+       speciality:doctors.field 
+     }
+
+     dispatch(BookPatientsAction(details))
+     window.location.href=`/bookingconfirmation`
+
+     alert('Please take a screenshot of this page')
+     
+
+    }
+   
+
+}
 
 
-     //  window.location.href=`/bookingconfirmation`
-   // alert(bookingdate ,'timing is' , field)
-   //alert('Please take a screenshot of this page')
+     
+
+
         document.getElementById('show-date').innerHTML=bookingdate + field
        
     }
 
 
     const showcontact=()=>{
-       // alert(doctors.contactnumber)
+       
         document.getElementById('show-number').innerHTML=doctors.contactnumber
     }
 
@@ -202,6 +211,7 @@ minDetail = 'month'
 
 
 
+
 {
 
 day2==='Mon'?(
@@ -212,17 +222,37 @@ day2==='Mon'?(
  
 doctors.mon && doctors.mon.map(rev => {
 
-   
+    // if( rev==`Doctor Isn't Available` ) { alert('Hello') }
+    // return <option disabled value={rev} >
 
-    return <option value={rev} >
+       
+    
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -237,15 +267,32 @@ doctors.mon && doctors.mon.map(rev => {
     {
      
     doctors.tue && doctors.tue.map(rev => {
-        return <option value={rev} >
+        if(rev===`Doctor Isn't Available`)
+        {
+            return <option disabled value={rev} >
     
      
-            {rev} 
-    
-    
-    
-    
+    { unavailableday = rev }
+        
+        
+        
+        
             </option>
+    
+    
+        }
+        else
+        {
+            return <option value={rev} >
+    
+     
+            {rev  } 
+        
+        
+        
+        
+            </option>
+        }
     
     })
     
@@ -258,15 +305,32 @@ doctors.mon && doctors.mon.map(rev => {
 {
  
 doctors.wed && doctors.wed.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -279,15 +343,32 @@ doctors.wed && doctors.wed.map(rev => {
             {
              
             doctors.thu && doctors.thu.map(rev => {
-                return <option value={rev} >
+                if(rev===`Doctor Isn't Available`)
+                {
+                    return <option disabled value={rev} >
             
              
-                    {rev} 
-            
-            
-            
-            
+            { unavailableday = rev }
+                
+                
+                
+                
                     </option>
+            
+            
+                }
+                else
+                {
+                    return <option value={rev} >
+            
+             
+                    {rev  } 
+                
+                
+                
+                
+                    </option>
+                }
             
             })
             
@@ -300,15 +381,32 @@ doctors.wed && doctors.wed.map(rev => {
 {
  
 doctors.fri && doctors.fri.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -321,15 +419,32 @@ doctors.fri && doctors.fri.map(rev => {
 {
  
 doctors.sat && doctors.sat.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -342,15 +457,36 @@ doctors.sat && doctors.sat.map(rev => {
 {
  
 doctors.sun && doctors.sun.map(rev => {
-    return <option value={rev} >
+  
+    if(rev===`Doctor Isn't Available`)
+    {
+
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+        {/* {rev  }  */}
+    
+    
+        { unavailableday = rev }
+    
         </option>
+    
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
+        
 
 })
 
@@ -377,6 +513,14 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 <br/>
+
+
+
+
+
+
+<br/>
+
 
 
 
@@ -488,6 +632,7 @@ minDetail = 'month'
 
 
 
+
 {
 
 day2==='Mon'?(
@@ -498,17 +643,37 @@ day2==='Mon'?(
  
 doctors.mon && doctors.mon.map(rev => {
 
-   
+    // if( rev==`Doctor Isn't Available` ) { alert('Hello') }
+    // return <option disabled value={rev} >
 
-    return <option value={rev} >
+       
+    
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -523,15 +688,32 @@ doctors.mon && doctors.mon.map(rev => {
     {
      
     doctors.tue && doctors.tue.map(rev => {
-        return <option value={rev} >
+        if(rev===`Doctor Isn't Available`)
+        {
+            return <option disabled value={rev} >
     
      
-            {rev} 
-    
-    
-    
-    
+    { unavailableday = rev }
+        
+        
+        
+        
             </option>
+    
+    
+        }
+        else
+        {
+            return <option value={rev} >
+    
+     
+            {rev  } 
+        
+        
+        
+        
+            </option>
+        }
     
     })
     
@@ -544,15 +726,32 @@ doctors.mon && doctors.mon.map(rev => {
 {
  
 doctors.wed && doctors.wed.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -565,15 +764,32 @@ doctors.wed && doctors.wed.map(rev => {
             {
              
             doctors.thu && doctors.thu.map(rev => {
-                return <option value={rev} >
+                if(rev===`Doctor Isn't Available`)
+                {
+                    return <option disabled value={rev} >
             
              
-                    {rev} 
-            
-            
-            
-            
+            { unavailableday = rev }
+                
+                
+                
+                
                     </option>
+            
+            
+                }
+                else
+                {
+                    return <option value={rev} >
+            
+             
+                    {rev  } 
+                
+                
+                
+                
+                    </option>
+                }
             
             })
             
@@ -586,15 +802,32 @@ doctors.wed && doctors.wed.map(rev => {
 {
  
 doctors.fri && doctors.fri.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -607,15 +840,32 @@ doctors.fri && doctors.fri.map(rev => {
 {
  
 doctors.sat && doctors.sat.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -628,15 +878,36 @@ doctors.sat && doctors.sat.map(rev => {
 {
  
 doctors.sun && doctors.sun.map(rev => {
-    return <option value={rev} >
+  
+    if(rev===`Doctor Isn't Available`)
+    {
+
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+        {/* {rev  }  */}
+    
+    
+        { unavailableday = rev }
+    
         </option>
+    
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
+        
 
 })
 
@@ -668,6 +939,8 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 
+
+<br/>
 
 
 
@@ -787,17 +1060,37 @@ day2==='Mon'?(
  
 doctors.mon && doctors.mon.map(rev => {
 
-   
+    // if( rev==`Doctor Isn't Available` ) { alert('Hello') }
+    // return <option disabled value={rev} >
 
-    return <option value={rev} >
+       
+    
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -812,15 +1105,32 @@ doctors.mon && doctors.mon.map(rev => {
     {
      
     doctors.tue && doctors.tue.map(rev => {
-        return <option value={rev} >
+        if(rev===`Doctor Isn't Available`)
+        {
+            return <option disabled value={rev} >
     
      
-            {rev} 
-    
-    
-    
-    
+    { unavailableday = rev }
+        
+        
+        
+        
             </option>
+    
+    
+        }
+        else
+        {
+            return <option value={rev} >
+    
+     
+            {rev  } 
+        
+        
+        
+        
+            </option>
+        }
     
     })
     
@@ -833,15 +1143,32 @@ doctors.mon && doctors.mon.map(rev => {
 {
  
 doctors.wed && doctors.wed.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -854,15 +1181,32 @@ doctors.wed && doctors.wed.map(rev => {
             {
              
             doctors.thu && doctors.thu.map(rev => {
-                return <option value={rev} >
+                if(rev===`Doctor Isn't Available`)
+                {
+                    return <option disabled value={rev} >
             
              
-                    {rev} 
-            
-            
-            
-            
+            { unavailableday = rev }
+                
+                
+                
+                
                     </option>
+            
+            
+                }
+                else
+                {
+                    return <option value={rev} >
+            
+             
+                    {rev  } 
+                
+                
+                
+                
+                    </option>
+                }
             
             })
             
@@ -875,15 +1219,32 @@ doctors.wed && doctors.wed.map(rev => {
 {
  
 doctors.fri && doctors.fri.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -896,15 +1257,32 @@ doctors.fri && doctors.fri.map(rev => {
 {
  
 doctors.sat && doctors.sat.map(rev => {
-    return <option value={rev} >
+    if(rev===`Doctor Isn't Available`)
+    {
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+{ unavailableday = rev }
+    
+    
+    
+    
         </option>
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
 
 })
 
@@ -917,15 +1295,36 @@ doctors.sat && doctors.sat.map(rev => {
 {
  
 doctors.sun && doctors.sun.map(rev => {
-    return <option value={rev} >
+  
+    if(rev===`Doctor Isn't Available`)
+    {
+
+        return <option disabled value={rev} >
 
  
-        {rev} 
-
-
-
-
+        {/* {rev  }  */}
+    
+    
+        { unavailableday = rev }
+    
         </option>
+    
+
+
+    }
+    else
+    {
+        return <option value={rev} >
+
+ 
+        {rev  } 
+    
+    
+    
+    
+        </option>
+    }
+        
 
 })
 
@@ -952,6 +1351,11 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 <br/>
+
+
+
+
+
 
 
 

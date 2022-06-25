@@ -283,7 +283,7 @@ const ReviewComponent = ({ doctors }) => {
             {
 
                 doctors.reviews && doctors.reviews.map(rev => {
-                    return <div className='review-grid' >
+                    return <div className='review-grid' style={{padding:'auto'}} >
 
                         <div className='doc-grid' style={{
                              width: '90%',
