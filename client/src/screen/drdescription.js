@@ -191,7 +191,14 @@ BOOK APPOINTMENT
        
        <div style={{textAlign:'left' , marginLeft:'15px' }} >
 
-       <h2 >About the Doctor</h2>
+       <p>
+<span style={{ 
+    fontSize:'large' ,
+    fontWeight:'bolder'
+ }} > 
+ About Doctor  </span>
+
+</p>
 
 <p className='docdes-sub'> {doctors.description} </p>
 

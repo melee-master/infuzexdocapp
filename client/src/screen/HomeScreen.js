@@ -45,6 +45,8 @@ const HomeScreen=()=>{
 
 <DoctorBySpecialization/>
 
+<br/>
+
 <DoctorByIllness/>
 
         </p> ) : ( <p>
@@ -66,6 +68,9 @@ const HomeScreen=()=>{
 
 <DoctorBySpecialization/>
 
+<br/>
+
+
 <DoctorByIllness/>
 
 
@@ -85,6 +90,8 @@ const HomeScreen=()=>{
 <AllDoctors/>
 
 <DoctorBySpecialization/>
+<br/>
+<hr/>
 
 <DoctorByIllness/>
 
