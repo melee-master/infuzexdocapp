@@ -79,7 +79,9 @@ const dispatch = useDispatch()
            }
 
            dispatch(BookPatientsAction(details))
-         //  window.location.href=`/bookingconfirmation`
+             window.location.href=`/bookingconfirmation`
+
+   alert('Please take a screenshot of this page')
 
        }
 
@@ -99,7 +101,11 @@ const dispatch = useDispatch()
           speciality:doctors.field 
            }
 
-           dispatch(BookPatientsAction(details))
+           dispatch(BookPatientsAction(details))     
+            window.location.href=`/bookingconfirmation`
+
+           alert('Please take a screenshot of this page')
+
           // window.location.href=`/bookingconfirmation`
 
        }
@@ -121,15 +127,18 @@ const dispatch = useDispatch()
         }
 
         dispatch(BookPatientsAction(details))
+        window.location.href=`/bookingconfirmation`
+
+        alert('Please take a screenshot of this page')
         
 
        }
       
 
 
-       window.location.href=`/bookingconfirmation`
+     //  window.location.href=`/bookingconfirmation`
    // alert(bookingdate ,'timing is' , field)
-   alert('Please take a screenshot of this page')
+   //alert('Please take a screenshot of this page')
         document.getElementById('show-date').innerHTML=bookingdate + field
        
     }
