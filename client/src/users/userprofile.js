@@ -36,7 +36,7 @@ const UserProfile=()=>{
          
 <h2 className='user-name' >{user.name} {user.lname} </h2>
 <p className='user-exp'style={{color:'black'}} > {user.email}  </p>
-<p className='user-id' >ব্যবহারকারী আইডি: {user._id} </p>
+{/* <p className='user-id' >ব্যবহারকারী আইডি: {user._id} </p> */}
 <br/>
 
 <a href='/updateuser/chooselanguage' style={{textDecoration:'none' , color:'gray' , fontWeight:'bold' }}
@@ -108,7 +108,7 @@ const UserProfile=()=>{
          
 <h2 className='user-name' >{user.name} {user.lname} </h2>
 <p className='user-exp'style={{color:'black'}} > {user.email}  </p>
-<p className='user-id' >User Id: {user._id} </p>
+{/* <p className='user-id' >User Id: {user._id} </p> */}
 
 <br/>
 <a href='/updateuser/chooselanguage' style={{textDecoration:'none' , color:'gray' , fontWeight:'bold' }}

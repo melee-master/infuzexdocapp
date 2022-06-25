@@ -12,15 +12,13 @@ const ResetPassword = () => {
     const bengali = localStorage.getItem('bengali')
     const english = localStorage.getItem('english')
 
-
-
-
+    const resetpass = JSON.parse(sessionStorage.getItem('passdetails')) 
 
 
 
     const dispatch = useDispatch()
 
-    const [userid, setuserid] = useState('')
+    const [userid, setuserid] = useState(resetpass._id)
     const [password, setpassword] = useState('')
     const [cpassword, setcpassword] = useState('')
 
@@ -64,12 +62,7 @@ const ResetPassword = () => {
                         <form onSubmit={resetpassword}  >
 
 
-                            <input type='text' style={{ width: '80%', marginLeft: '10%', marginRight: 'auto' }}
-
-                                value={userid}
-                                placeholder='ইউজার আইডি দিন'
-                                onChange={(e) => { setuserid(e.target.value) }}
-                            ></input>
+                 
 
                             <input type='password' style={{ width: '80%', marginLeft: '10%', marginRight: 'auto' }}
 
@@ -137,17 +130,12 @@ const ResetPassword = () => {
                                 <div style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto', borderRadius: '12px', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} >
                                     <br />
                                     <h2>Password Reset</h2>
-                                    <h4 style={{ color: 'gray' }} >Enter details sent to you on your registered Email Id</h4>
+                                    
 
                                     <form onSubmit={resetpassword}  >
 
 
-                                        <input type='text' style={{ width: '80%', marginLeft: '10%', marginRight: 'auto' }}
-
-                                            value={userid}
-                                            placeholder='Enter the User ID'
-                                            onChange={(e) => { setuserid(e.target.value) }}
-                                        ></input>
+                       
 
                                         <input type='password' style={{ width: '80%', marginLeft: '10%', marginRight: 'auto' }}
 
@@ -203,24 +191,16 @@ const ResetPassword = () => {
 
 
 
-
-
-
-                                <br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br />
                                 <div style={{ width: '80%', marginLeft: 'auto', marginRight: 'auto', borderRadius: '12px', boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} >
                                     <br />
                                     <h2>Password Reset</h2>
-                                    <h4 style={{ color: 'gray' }} >Enter details sent to you on your registered Email Id</h4>
+                                    
 
                                     <form onSubmit={resetpassword}  >
 
 
-                                        <input type='text' style={{ width: '80%', marginLeft: '10%', marginRight: 'auto' }}
-
-                                            value={userid}
-                                            placeholder='Enter the User ID'
-                                            onChange={(e) => { setuserid(e.target.value) }}
-                                        ></input>
+                       
 
                                         <input type='password' style={{ width: '80%', marginLeft: '10%', marginRight: 'auto' }}
 
@@ -264,7 +244,6 @@ const ResetPassword = () => {
 
                                     <br />
                                 </div>
-
 
 
 
