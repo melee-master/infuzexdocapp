@@ -42,7 +42,7 @@ export const GetPatientsByUserIdAction=()=>(dispatch , getState )=>{
 
 export const GetBookingsByUserIdAction=()=>(dispatch , getState )=>{
 
-    const userid = getState().LoginUserReducer.currentuser._id
+    const userid = getState().LoginUserReducer.currentuser.contactnumber
 
 
     dispatch({type:'GET_BookingsBYID_REQUEST'})

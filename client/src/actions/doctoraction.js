@@ -365,13 +365,13 @@ export const FilterProductsTest=(searchkey,sortkey,category)=>dispatch=>{
 
 
 
-export const AddProductReviewAction=(review , doctorid )=>(dispatch , getState )=> {
+export const AddProductReviewAction=(review , doctorid , userid , curname)=>(dispatch , getState )=> {
 
     dispatch({type:'GET_DR_REVIEW' })
 
     const nowuser = getState().LoginUserReducer.currentuser
 
-    axios.post('/api/doctor/addreview' , {review , doctorid , nowuser}  ).then(res=>{
+    axios.post('/api/doctor/addreview' , {review , doctorid ,  userid , curname}  ).then(res=>{
 
         
         dispatch({type:'GET_DR_SUCCESS' })
