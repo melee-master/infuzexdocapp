@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter , Route ,Link , Switch } from "react-router-dom";
+import ChooseLanguage from "../doctors/chooselanguage";
 import BookingList from "./bookingslist";
 import UpdateUserProfile from "./updateuserprofile";
 import './user.css'
@@ -36,6 +37,14 @@ const UserProfile=()=>{
 <h2 className='user-name' >{user.name} {user.lname} </h2>
 <p className='user-exp'style={{color:'black'}} > {user.email}  </p>
 <p className='user-id' >ব্যবহারকারী আইডি: {user._id} </p>
+<br/>
+
+<a href='/updateuser/chooselanguage' style={{textDecoration:'none' , color:'gray' , fontWeight:'bold' }}
+
+
+>
+<p className='user-exp' >এখানে আপনার ভাষা পরিবর্তন করুন</p>
+</a>
 
 <hr/>
 <div id='containerbox' >
@@ -69,6 +78,9 @@ const UserProfile=()=>{
 <Route path="/updateuser/update" component={UpdateUserProfile}   ></Route>
 
 <Route path="/updateuser/bookinglist"    ><BookingList userid={user._id} /></Route>
+<Route path="/updateuser/chooselanguage"  component={ChooseLanguage}   ></Route>
+
+
 </Switch>
 
 
@@ -98,6 +110,14 @@ const UserProfile=()=>{
 <p className='user-exp'style={{color:'black'}} > {user.email}  </p>
 <p className='user-id' >User Id: {user._id} </p>
 
+<br/>
+<a href='/updateuser/chooselanguage' style={{textDecoration:'none' , color:'gray' , fontWeight:'bold' }}
+
+
+>
+<p className='user-exp' >Change Your Language Here</p>
+</a>
+
 <hr/>
 <div id='containerbox' >
 
@@ -130,6 +150,7 @@ const UserProfile=()=>{
 <Route path="/updateuser/update" component={UpdateUserProfile}   ></Route>
 
 <Route path="/updateuser/bookinglist"    ><BookingList userid={user._id} /></Route>
+<Route path="/updateuser/chooselanguage"  component={ChooseLanguage}   ></Route>
 </Switch>
 
 
@@ -159,6 +180,15 @@ const UserProfile=()=>{
 <p className='user-exp'style={{color:'black'}} > {user.email}  </p>
 <p className='user-id' >User Id: {user._id} </p>
 
+<br/>
+<a href='/updateuser/chooselanguage' style={{textDecoration:'none' , color:'gray' , fontWeight:'bold' }}
+
+
+>
+<p className='user-exp' >Change Your Language Here</p>
+</a>
+
+
 <hr/>
 <div id='containerbox' >
 
@@ -191,6 +221,7 @@ const UserProfile=()=>{
 <Route path="/updateuser/update" component={UpdateUserProfile}   ></Route>
 
 <Route path="/updateuser/bookinglist"    ><BookingList userid={user._id} /></Route>
+<Route path="/updateuser/chooselanguage"  component={ChooseLanguage}   ></Route>
 </Switch>
 
 

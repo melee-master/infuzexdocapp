@@ -8,6 +8,13 @@ import { wind } from "fontawesome";
 
 const ForgotPassword=()=>{
 
+    const bengali = localStorage.getItem('bengali')
+    const english = localStorage.getItem('english')
+
+
+
+
+
     const dispatch = useDispatch()
 
     const [email,setemail]=useState('')
@@ -30,7 +37,71 @@ const ForgotPassword=()=>{
 
     return(
         <div>
-           <br/><br/><br/><br/><br/>
+
+
+
+
+{
+        bengali ? ( <p>
+
+
+
+<br/><br/><br/><br/><br/>
+            <div style={{  width:'80%' , marginLeft:'auto' , marginRight:'auto' , borderRadius:'12px' , boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} >
+        <br/>
+            <h2>
+পাসওয়ার্ড ভুলে গেছেন ?</h2>
+            <h4 style={{color:'gray'}} >নিবন্ধিত ইমেল লিখুন
+</h4>
+
+            <form onSubmit={sendmail}  >
+
+                <input type='text' style={{width:'80%', marginLeft:'10%' , marginRight:'auto'}} 
+                
+                value={email}
+
+                onChange={ (e)=>{ setemail(e.target.value) } }
+                
+                placeholder='নিবন্ধিত ইমেল লিখুন
+                '
+
+                ></input>
+
+
+<div>
+<button  
+
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , marginTop:'3%'  }} 
+
+
+//style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
+
+value='submit'
+
+>
+পরবর্তী<i class="fa-solid fa-arrow-right"></i>
+</button>
+</div>
+            </form>
+
+<br/><br/><br/><br/><br/>
+                </div>
+
+
+
+
+
+
+        </p> ) : ( <p>
+          {
+            english ? (
+              <p>
+
+
+
+<br/><br/><br/><br/><br/>
             <div style={{  width:'80%' , marginLeft:'auto' , marginRight:'auto' , borderRadius:'12px' , boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} >
         <br/>
             <h2>Forgot Password ?</h2>
@@ -69,6 +140,77 @@ Next<i class="fa-solid fa-arrow-right"></i>
 
 <br/><br/><br/><br/><br/>
                 </div>
+
+
+
+
+
+
+              </p>
+            ) : (
+              <p>
+
+
+
+
+
+<br/><br/><br/><br/><br/>
+            <div style={{  width:'80%' , marginLeft:'auto' , marginRight:'auto' , borderRadius:'12px' , boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px' }} >
+        <br/>
+            <h2>Forgot Password ?</h2>
+            <h4 style={{color:'gray'}} >Enter Your Registered Email Id</h4>
+
+            <form onSubmit={sendmail}  >
+
+                <input type='text' style={{width:'80%', marginLeft:'10%' , marginRight:'auto'}} 
+                
+                value={email}
+
+                onChange={ (e)=>{ setemail(e.target.value) } }
+                
+                placeholder='Enter Registered Email'
+
+                ></input>
+
+
+<div>
+<button  
+
+className='docdes-box1'
+// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , marginTop:'3%'  }} 
+
+
+//style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
+
+value='submit'
+
+>
+Next<i class="fa-solid fa-arrow-right"></i>
+</button>
+</div>
+            </form>
+
+<br/><br/><br/><br/><br/>
+                </div>
+
+
+
+
+
+
+
+
+
+                </p>
+            )
+          }
+        </p> )
+      }
+
+
+
+   
 
         </div>
     )
