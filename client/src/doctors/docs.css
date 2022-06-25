@@ -1,0 +1,32 @@
+#image-language-select
+{
+    background-image: url('https://img.freepik.com/free-vector/flat-international-mother-language-day-illustration_23-2149219243.jpg?w=2000');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 120%;
+}
+
+
+
+
+#set-bg-img-1
+{
+    margin-top: 10%;
+    background-image: url('https://stptrans.com/wp-content/uploads/2021/06/WhySandberg.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+
+#lang-box
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+

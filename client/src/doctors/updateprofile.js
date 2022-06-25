@@ -408,7 +408,7 @@ return(
                   <div>
                      
 
-                <h1> {doctors.name} </h1>
+                <h1>Dr. {doctors.name} </h1>
 
                 <form onSubmit={editdoctor} >
                 <div className="boxgrid"  style={{ width:'95%' , marginLeft:'1%' }}  >
