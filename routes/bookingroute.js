@@ -33,17 +33,17 @@ router.post('/booking' , (req,res)=>{
     
 
 
-    client.messages 
-      .create({ 
-         body: `This is to inform ${req.body.name} ${req.body.lname} that your appointment has been booked 
-         for Dr.${req.body.doctorname} on ${req.body.date} at time ${req.body.slot} . 
+    // client.messages 
+    //   .create({ 
+    //      body: `This is to inform ${req.body.name} ${req.body.lname} that your appointment has been booked 
+    //      for Dr.${req.body.doctorname} on ${req.body.date} at time ${req.body.slot} . 
 
-         `,  
-         messagingServiceSid: 'MGb4b7ae325252ab96d0ff4429f17046b0',      
-         to: `+91${req.body.contactnumber}` 
-       }) 
-      .then(message => console.log('Message has been sent to',req.body.contactnumber , message.sid)) 
-      .done();
+    //      `,  
+    //      messagingServiceSid: 'MGb4b7ae325252ab96d0ff4429f17046b0',      
+    //      to: `+91${req.body.contactnumber}` 
+    //    }) 
+    //   .then(message => console.log('Message has been sent to',req.body.contactnumber , message.sid)) 
+    //   .done();
 
 
 
