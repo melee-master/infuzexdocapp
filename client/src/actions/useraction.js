@@ -234,15 +234,17 @@ export const DeleteUserAction = (userid) => dispatch => {
 
 
 
-export const UserForgotPasswordAction=(email)=>dispatch=>{
+export const UserForgotPasswordAction=(contactnumber)=>dispatch=>{
     dispatch({ type: 'USER_ForgotPassword_REQUEST' })
 
-    axios.post('/api/users/forgetpassword' , {email} ).then(res=>{
+    axios.post('/api/users/forgetpassword' , {contactnumber} ).then(res=>{
         dispatch({ type: 'USER_ForgotPassword_SUCESS' })
-        alert(`Email rec is ${email} `)
+        console.log('Successfully recieved data ')
+        sessionStorage.setItem('passdetails', JSON.stringify(res.data))
 
     }).catch(err=>{
         dispatch({ type: 'USER_ForgotPassword_Failed' , payload:err })
+        console.log('There is an error')
         console.log(err)
     })
 
@@ -274,3 +276,23 @@ export const UserResetPasswordAction=(userid,password)=>dispatch=>{
 
 
 
+
+
+export const GetUserByIdAction=({userid})=>dispatch=>{
+
+    dispatch({type:'GET_User_BY_ID_REQUEST'})
+
+    axios.post('/api/users/getuserbyid' , {userid} ).then(res=>{
+       
+      
+
+        dispatch({type:'GET_User_BY_ID_SUCCESS' , payload:res.data })
+
+    }).catch(err=>{
+
+       
+        
+        dispatch({type:'GET_User_BY_ID_FAILED' , payload:err.response.data })
+    })
+
+}
