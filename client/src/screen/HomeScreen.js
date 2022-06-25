@@ -91,7 +91,7 @@ const HomeScreen=()=>{
 
 <DoctorBySpecialization/>
 <br/>
-<hr/>
+
 
 <DoctorByIllness/>
 

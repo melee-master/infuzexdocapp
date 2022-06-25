@@ -49,6 +49,12 @@
 }
 
 
+#gen-otp
+{
+    margin-top: 24%;
+    font-size: 15px;
+}
+
 
 
 
@@ -234,6 +240,16 @@
         margin-top: 10px;
         align-content: center;
     }
+
+
+
+    #gen-otp
+{
+    margin-top: 38%;
+    font-size: 10px;
+}
+
+
 
     
 }

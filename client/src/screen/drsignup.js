@@ -424,6 +424,10 @@ const onSubmitOTP = (e) =>{
         {
             window.location.href='/drpage'
         }
+        else if((localStorage.getItem('currentuser')) ||   (localStorage.getItem('compounder')) ||  (localStorage.getItem('admin'))) 
+        {
+          window.location.href='/'
+        }
 
 
     } ,[])
@@ -952,10 +956,11 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
 
 
     <br/> <br/> <br/><br/> <br/><br/>
-    <button type='submit' className='box1' id="signupbtn" style={{
-
-
-    }}  >SignUp</button>
+    <button type='submit' className='box1' id="signupbtn" 
+    
+    style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
+    
+    >SignUp</button>
 
 
 

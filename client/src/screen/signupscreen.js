@@ -6,7 +6,7 @@ import Loader from "../component/loader";
 import { RegisterNewUser } from "../actions/useraction";
 import { RegisterUserReducer } from "../reducers/userreducer";
 import firebase from "../firebase";
-
+import './userscreen.css'
 
 
 const SignUpScreen = () => {
@@ -153,7 +153,7 @@ const SignUpScreen = () => {
 
     useEffect( ()=>{
 
-        if(localStorage.getItem('currentuser'))
+        if((localStorage.getItem('currentuser')) || (localStorage.getItem('doctor')) ||  (localStorage.getItem('compounder')) ||  (localStorage.getItem('admin')))
         {
             window.location.href='/'
         }
@@ -272,7 +272,7 @@ style={{backgroundColor:'black',color:'white' , border:'2px solid black' , margi
 //style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
 
 onClick={onSignInSubmit}
-
+id='gen-otp'
 >
 OTP জেনারেট করুন
 </button>
@@ -302,7 +302,7 @@ className='docdes-box1'
 style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' ,marginTop:'22%' }} 
 
 onClick={onSubmitOTP}
-
+id='gen-otp'
 >
 OTP যাচাই করুন
 </button>
@@ -350,10 +350,11 @@ OTP যাচাই করুন
 
 
             </div>
-            <button type='submit' className='box1' id="signupbtn" style={{
+            <button type='submit' className='box1' id="signupbtn" 
+            
+            style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
-
-            }}  >নিবন্ধন করুন</button>
+            >নিবন্ধন করুন</button>
 
         
 
@@ -502,11 +503,9 @@ placeholder='Contact Number' />
 <button  
 
 className='docdes-box1'
-// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
-style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'  ,marginTop:'22%'  }} 
 
-
-//style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'   }} 
+id='gen-otp'
 
 onClick={onSignInSubmit}
 
@@ -533,9 +532,8 @@ placeholder='Enter OTP' />
 <div>
 <button 
 className='docdes-box1'
-// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
-style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' ,marginTop:'22%' }} 
-
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'   }} 
+id='gen-otp'
 onClick={onSubmitOTP}
 
 >
@@ -585,10 +583,11 @@ Verify OTP
 
 
                 </div>
-                <button type='submit' className='box1' id="signupbtn" style={{
+                <button type='submit' className='box1' id="signupbtn"
+                
+                style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
-
-                }}  >SignUp</button>
+                >SignUp</button>
 
             
 
@@ -821,10 +820,8 @@ Verify OTP
 
 
                 </div>
-                <button type='submit' className='box1' id="signupbtn" style={{
-
-
-                }}  >SignUp</button>
+                <button type='submit' className='box1' id="signupbtn" 
+                style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}  >SignUp</button>
 
             
 

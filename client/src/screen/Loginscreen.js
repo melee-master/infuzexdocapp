@@ -37,7 +37,7 @@ const LoginScreen = () => {
 
     useEffect( ()=>{
 
-        if(localStorage.getItem('currentuser'))
+        if( (localStorage.getItem('currentuser')) ||  (localStorage.getItem('doctor')) ||  (localStorage.getItem('compounder')) ||  (localStorage.getItem('admin')) )
         {
             window.location.href='/'
         }
@@ -106,7 +106,7 @@ className='box1'
 
 id="signupbtn"
 
-style={{marginTop:'10px'   }}
+style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
 
 >প্রবেশ করুন</button>
@@ -186,7 +186,7 @@ className='box1'
 
 id="signupbtn"
 
-style={{marginTop:'10px'   }}
+style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
 
 >Login</button>
@@ -260,7 +260,7 @@ className='box1'
 
 id="signupbtn"
 
-style={{marginTop:'10px'   }}
+style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
 
 >Login</button>

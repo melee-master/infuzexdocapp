@@ -19,7 +19,8 @@ const DoctorByIllness=()=>{
 
 
 <h2 className='h2-header' >
-যেকোনো স্বাস্থ্য উদ্বেগের জন্য অনলাইনে শীর্ষ চিকিৎসকদের সাথে পরামর্শ করুন</h2>
+আপনার অসুস্থতা কি?
+</h2>
 
 <br/>
 
@@ -85,8 +86,8 @@ const DoctorByIllness=()=>{
 
 
 
-<a href='/doctor-by-symptom' style={{textDecoration:'none'}} >
-<p className='docdes-box1' style={{backgroundColor:'#0EB9B8' , border:'1px solid white' , marginRight:'auto' , marginLeft:'left' , color:'white'  }} > সব দেখ </p>
+<a href='/doctor-by-symptom' style={{textDecoration:'none'  }} >
+<p className='docdes-box1' style={{backgroundColor:'#0EB9B8' , border:'1px solid white' , marginRight:'auto' , marginLeft:'auto' , color:'white'  }} > সব দেখ </p>
 </a>
 
 

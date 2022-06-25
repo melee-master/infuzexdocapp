@@ -65,6 +65,15 @@ const DoctorLogin = () => {
             window.location.href='/drpage'
         }
 
+        else  if( (localStorage.getItem('currentuser')) ||   (localStorage.getItem('compounder')) ||  (localStorage.getItem('admin')) )
+        {
+          window.location.href='/'
+    
+
+        }
+
+    
+
 
     } ,[])
 
@@ -125,7 +134,7 @@ value={password}
 
 <button  type='submit' className='box1' id="signupbtn"
 
-style={{marginTop:'10px'}}
+style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
 
 >প্রবেশ করুন
@@ -200,7 +209,7 @@ value={password}
 
 <button  type='submit' className='box1' id="signupbtn"
 
-style={{marginTop:'10px'}}
+style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
 
 >LOGIN</button>
@@ -265,7 +274,7 @@ value={password}
 
 <button  type='submit' className='box1' id="signupbtn"
 
-style={{marginTop:'10px'}}
+style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
 
 >LOGIN</button>
