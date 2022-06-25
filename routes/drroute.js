@@ -168,13 +168,14 @@ router.post('/register', upload.fields('image'), (req,res)=>{
 
 
 router.post('/addreview' , async(req,res)=>{
-    const {review , doctorid, nowuser} = req.body
+    const {review , doctorid,  userid , curname} = req.body
 
     const doc = await Doctor.findById({_id:doctorid})
 
+   
     const reviewmodel ={
-        name : nowuser.name ,
-        userid : nowuser._id ,
+        name : req.body.curname ,
+        userid : req.body.userid ,
         comment : review.comment
     
     

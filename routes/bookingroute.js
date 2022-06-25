@@ -3,13 +3,34 @@ const router = express.Router();
 const mongoose = require('mongoose')
 
 const Booking = require('../models/Booking')
-const accountSid =process.env.accountSid; 
-const authToken = process.env.authToken; 
-const client = require('twilio')('AC25e57c35ff0fa2cffd8b8dc7668fb3a0', '0226bdd15fc9b9278110ea171a772561'); 
+// const accountSid = process.env.accountSid; 
+// const authToken = process.env.authToken; 
+// const client = require('twilio')('AC25e57c35ff0fa2cffd8b8dc7668fb3a0', '0226bdd15fc9b9278110ea171a772561'); 
+
+const wbm = require('wbm');
+
+
+const Vonage = require('@vonage/server-sdk')
+
+const vonage = new Vonage({
+  apiKey: "98fac372",
+  apiSecret: "wQoKewL083mjA0SI"
+})
+
+
+
+const accountSid = '123testAC4b987f9ad23a9b5d52b20b55cac0f81f'; 
+const authToken = '123d2af4975471f0d3f630371ffca7becfd'; 
+const client = require('twilio')('AC4b987f9ad23a9b5d52b20b55cac0f81f', 'd2af4975471f0d3f630371ffca7becfd'); 
+ 
+
 
 
 
 router.post('/booking' , (req,res)=>{
+
+
+    
 
 
     client.messages 
@@ -23,6 +44,42 @@ router.post('/booking' , (req,res)=>{
        }) 
       .then(message => console.log('Message has been sent to',req.body.contactnumber , message.sid)) 
       .done();
+
+
+
+
+//       const from = "Vonage APIs"
+// const to = `91${req.body.contactnumber}`
+// const text = `This is to inform ${req.body.name} ${req.body.lname} that your appointment has been booked 
+//          for Dr.${req.body.doctorname} on ${req.body.date} at time ${req.body.slot} . `
+
+// vonage.message.sendSms(from, to, text, (err, responseData) => {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         if(responseData.messages[0]['status'] === "0") {
+//             console.log("Message sent successfully.");
+//         } else {
+//             console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+//         }
+//     }
+// })
+
+
+
+
+    //   wbm.start().then(async () => {
+    //     const phones = `+91${req.body.contactnumber}`;
+    //     const message = `This is to inform ${req.body.name} ${req.body.lname} that your appointment has been booked 
+    //     for Dr.${req.body.doctorname} on ${req.body.date} at time ${req.body.slot} . 
+
+    //     `;
+    //     await wbm.send(phones, message);
+
+    //     console.log('Whatsapp Message sent to' , req.body.contactnumber )
+    //     await wbm.end();
+    // }).catch(err => console.log(err));
+
 
 
 
@@ -136,11 +193,12 @@ router.post('/getbookingssbyuserid', (req, res) => {
 
     const userid = req.body.userid
 
-    Booking.find({ userid: userid }, (err, docs) => {
+    Booking.find({ contactnumber: userid }, (err, docs) => {
         if (err) {
             return res.status(400).json({ message: 'Something Went Wrong' })
         }
         else {
+           
             res.send(docs)
         }
     })
