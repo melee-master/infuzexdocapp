@@ -58,6 +58,13 @@
     grid-template-columns: auto auto auto;
     padding: 10px;
 }
+
+.Doc-by-Spec
+{
+    margin-top: 110px;
+    display: grid;
+    grid-template-columns: auto auto  ;
+}
     
 }
 

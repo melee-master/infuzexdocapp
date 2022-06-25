@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import DocumentMeta from 'react-document-meta';
 import './login.css'
@@ -8,286 +8,286 @@ import { LoginUserReducer } from "../reducers/userreducer";
 
 const LoginScreen = () => {
 
-    const loginreducer = useSelector(state=>state.LoginUserReducer)
+  const loginreducer = useSelector(state => state.LoginUserReducer)
 
-    const {loading , error} = loginreducer
+  const { loading, error } = loginreducer
 
-    const [name , setname] = useState('')
-    const [email , setemail] = useState('')
-    const [password , setpassword] = useState('')
-    
-
-    const dispatch = useDispatch()
-
-    const login=(e)=>{
-
-        e.preventDefault()
-
-        const user ={
-            name : name , 
-            email:email ,
-            password:password
-        }
+  const [name, setname] = useState()
+  const [email, setemail] = useState('')
+  const [password, setpassword] = useState('')
 
 
-      dispatch(LoginUser(user))
-      document.getElementById('Message').innerHTML=error
+  const dispatch = useDispatch()
+
+  const login = (e) => {
+
+    e.preventDefault()
+
+    const user = {
+      name: name,
+      email: email,
+      password: password
     }
 
 
-    useEffect( ()=>{
-
-        if( (localStorage.getItem('currentuser')) ||  (localStorage.getItem('doctor')) ||  (localStorage.getItem('compounder')) ||  (localStorage.getItem('admin')) )
-        {
-            window.location.href='/'
-        }
+    dispatch(LoginUser(user))
+    document.getElementById('Message').innerHTML = error
+  }
 
 
-    } ,[])
+  useEffect(() => {
+
+    if ((localStorage.getItem('currentuser')) || (localStorage.getItem('doctor')) || (localStorage.getItem('compounder')) || (localStorage.getItem('admin'))) {
+      window.location.href = '/'
+    }
 
 
-    const bengali = localStorage.getItem('bengali')
-    const english = localStorage.getItem('english')
-    
+  }, [])
 
 
-
-    return (
-        <div>
-
-{
-        bengali ? ( <p>
-
-
-<div className="boxgrid-notinuse" >
-
-               
+  const bengali = localStorage.getItem('bengali')
+  const english = localStorage.getItem('english')
 
 
 
 
-<br/> <br/> <br/>
+  return (
+    <div>
+
+      {
+        bengali ? (<p>
 
 
-      <div id="loginbox" >
-      <form onSubmit={login}   >
-          <h1> প্রবেশ করুন </h1>
-          <h5> এখানে নতুন ? <a href="/signup"> এখানে নিবন্ধন করুন </a>  </h5>
-          <hr/>
-
-      <label className="formtext" >ইমেইল প্রদান করুন</label>
-                      <input type="text"
-
-value={email} 
-                          required
-                        
-                          onChange={ (e)=>{ setemail(e.target.value) } }   
-                          placeholder='ইমেইল প্রদান করুন' />
-
-
-
-      <label className="formtext" >পাসওয়ার্ড লিখুন</label>
-                      <input type="password"
-value={password}
-                         
-                          required
-
-                          onChange={ (e)=>{ setpassword(e.target.value) } } 
-                        
-
-                          placeholder='পাসওয়ার্ড লিখুন' />   
-
-
-     
-
-<button  type='submit' 
-className='box1' 
-
-
-id="signupbtn"
-
-style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
-
-
->প্রবেশ করুন</button>
-
-{loading && <Loader/>}
-<p id='Message'   ></p>
-
-
-</form>
-<br/>
-<h6>পাসওয়ার্ড ভুলে গেছেন
-
- <a href='/forgotpass'>এখানে ক্লিক করুন
-</a> </h6>
-
-      </div>
-
-
-  
-   
+          <div className="boxgrid-notinuse" >
 
 
 
 
-</div>
+
+
+            <br /> <br /> <br />
+
+
+            <div id="loginbox" >
+              <form onSubmit={login}   >
+                <h1> প্রবেশ করুন </h1>
+                <h5> এখানে নতুন ? <a href="/signup"> এখানে নিবন্ধন করুন </a>  </h5>
+                <hr />
+
+                <label className="formtext" >যোগাযোগের নম্বর লিখুন
+</label>
+                <input type="Number"
+
+                  value={email}
+                  required
+
+                  onChange={(e) => { setemail(e.target.value) }}
+                  placeholder='যোগাযোগের নম্বর লিখুন' />
 
 
 
-        </p> ) : ( <p>
+                <label className="formtext" >পাসওয়ার্ড লিখুন</label>
+                <input type="password"
+                  value={password}
+
+                  required
+
+                  onChange={(e) => { setpassword(e.target.value) }}
+
+
+                  placeholder='পাসওয়ার্ড লিখুন' />
+
+
+
+
+                <button type='submit'
+                  className='box1'
+
+
+                  id="signupbtn"
+
+                  style={{ marginTop: '10px', marginLeft: '40%', marginRight: '40%' }}
+
+
+                >প্রবেশ করুন</button>
+
+                {loading && <Loader />}
+                <p id='Message'   ></p>
+
+
+              </form>
+              <br />
+              <h6>পাসওয়ার্ড ভুলে গেছেন
+
+                <a href='/forgotpass'>এখানে ক্লিক করুন
+                </a> </h6>
+
+            </div>
+
+
+
+
+
+
+
+
+          </div>
+
+
+
+        </p>) : (<p>
           {
             english ? (
-              
-            <div className="boxgrid-notinuse" >
 
-               
+              <div className="boxgrid-notinuse" >
 
 
 
 
-            <br/> <br/> <br/>
 
-           
-                  <div id="loginbox" >
+
+                <br /> <br /> <br />
+
+
+                <div id="loginbox" >
                   <form onSubmit={login}   >
-                      <h1> Login </h1>
-                      <h5> New Here ? <a href="/signup"> Registere Here </a>  </h5>
-                      <hr/>
+                    <h1> Login </h1>
+                    <h5> New Here ? <a href="/signup"> Registere Here </a>  </h5>
+                    <hr />
 
-                  <label className="formtext" >Enter Email</label>
-                                  <input type="text"
+                    <label className="formtext" >Enter Contact Number</label>
+                    <input type="Number"
 
-value={email} 
-                                      required
-                                    
-                                      onChange={ (e)=>{ setemail(e.target.value) } }   
-                                      placeholder='Enter Email' />
+                      value={email}
+                      required
 
-
-
-                  <label className="formtext" >Enter Password</label>
-                                  <input type="password"
-value={password}
-                                     
-                                      required
-
-                                      onChange={ (e)=>{ setpassword(e.target.value) } } 
-                                    
-
-                                      placeholder='Enter Password' />   
+                      onChange={(e) => { setemail(e.target.value) }}
+                      placeholder='Contact Number' />
 
 
-                 
 
-<button  type='submit' 
-className='box1' 
+                    <label className="formtext" >Enter Password</label>
+                    <input type="password"
+                      value={password}
 
+                      required
 
-id="signupbtn"
-
-style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
-
-
->Login</button>
-
-{loading && <Loader/>}
-<p id='Message'   ></p>
+                      onChange={(e) => { setpassword(e.target.value) }}
 
 
-</form>
-
-
-<h5>Forgot Password? <a href='/forgotpass'>Click Here</a> </h5>
-
-                  </div>
-
-
-              
-          
+                      placeholder='Enter Password' />
 
 
 
 
-          </div>
+                    <button type='submit'
+                      className='box1'
+
+
+                      id="signupbtn"
+
+                      style={{ marginTop: '10px', marginLeft: '40%', marginRight: '40%' }}
+
+
+                    >Login</button>
+
+                    {loading && <Loader />}
+                    <p id='Message'   ></p>
+
+
+                  </form>
+
+
+                  <h5>Forgot Password? <a href='/forgotpass'>Click Here</a> </h5>
+
+                </div>
+
+
+
+
+
+
+
+
+              </div>
 
             ) : (
-              
-            <div className="boxgrid-notinuse" >
 
-               
+              <div className="boxgrid-notinuse" >
 
 
 
 
-            <br/> <br/> <br/>
 
-           
-                  <div id="loginbox" >
+
+                <br /> <br /> <br />
+
+
+                <div id="loginbox" >
                   <form onSubmit={login}   >
-                      <h1> Login </h1>
-                      <h5> New Here ? <a href="/signup"> Registere Here </a>  </h5>
-                      <hr/>
+                    <h1> Login </h1>
+                    <h5> New Here ? <a href="/signup"> Registere Here </a>  </h5>
+                    <hr />
 
-                  <label className="formtext" >Enter Email</label>
-                                  <input type="text"
+                    <label className="formtext" >Enter Contact Number</label>
+                    <input type="Number"
 
-value={email} 
-                                      required
-                                    
-                                      onChange={ (e)=>{ setemail(e.target.value) } }   
-                                      placeholder='Enter Email' />
+                      value={email}
+                      required
 
-
-
-                  <label className="formtext" >Enter Password</label>
-                                  <input type="password"
-value={password}
-                                     
-                                      required
-
-                                      onChange={ (e)=>{ setpassword(e.target.value) } } 
-                                    
-
-                                      placeholder='Enter Password' />   
+                      onChange={(e) => { setemail(e.target.value) }}
+                      placeholder='Contact Number' />
 
 
-                 
 
-<button  type='submit' 
-className='box1' 
+                    <label className="formtext" >Enter Password</label>
+                    <input type="password"
+                      value={password}
 
+                      required
 
-id="signupbtn"
-
-style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
-
-
->Login</button>
-
-{loading && <Loader/>}
-<p id='Message'   ></p>
+                      onChange={(e) => { setpassword(e.target.value) }}
 
 
-</form>
-
-
-<h5>Forgot Password? <a href='/forgotpass'>Click Here</a> </h5>
-
-                  </div>
-
-
-              
-          
+                      placeholder='Enter Password' />
 
 
 
 
-          </div>
+                    <button type='submit'
+                      className='box1'
+
+
+                      id="signupbtn"
+
+                      style={{ marginTop: '10px', marginLeft: '40%', marginRight: '40%' }}
+
+
+                    >Login</button>
+
+                    {loading && <Loader />}
+                    <p id='Message'   ></p>
+
+
+                  </form>
+
+
+                  <h5>Forgot Password? <a href='/forgotpass'>Click Here</a> </h5>
+
+                </div>
+
+
+
+
+
+
+
+
+              </div>
 
             )
           }
-        </p> )
+        </p>)
       }
 
 
@@ -297,8 +297,8 @@ style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }}
 
 
 
-        </div>
-    )
+    </div>
+  )
 
 
 }

@@ -235,7 +235,7 @@ const SignUpScreen = () => {
 <input type="text"
 
     value={email}
-    required
+    
     onChange={(e) => { setemail(e.target.value) }}
 
     placeholder='ইমেইল আইডি দিন' />
@@ -473,7 +473,7 @@ OTP যাচাই করুন
                         <input type="text"
 
                             value={email}
-                            required
+                            
                             onChange={(e) => { setemail(e.target.value) }}
 
                             placeholder='Enter Email Id' />
@@ -596,7 +596,7 @@ Verify OTP
                 <br/><br/>
 
 
-                {error && ( <p  id="message" >Email Already Registered</p> )  }
+                {error && ( <p  id="message" >Phone Number Already Registered</p> )  }
 
 {success && ( <p  id="message" > Registered Successfully</p> ) }
 
@@ -707,7 +707,7 @@ Verify OTP
                         <input type="text"
 
                             value={email}
-                            required
+                            
                             onChange={(e) => { setemail(e.target.value) }}
 
                             placeholder='Enter Email Id' />
@@ -830,7 +830,7 @@ Verify OTP
                 <br/><br/>
 
 
-                {error && ( <p  id="message" >Email Already Registered</p> )  }
+                {error && ( <p  id="message" >Phone Number Already Registered</p> )  }
 
 {success && ( <p  id="message" > Registered Successfully</p> ) }
 
