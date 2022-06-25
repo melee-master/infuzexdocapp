@@ -52,6 +52,7 @@ const BookingList=({userid})=>{
                             <th scope="col" >Contact Details</th>
                             <th scope="col"  >Appointment Booked For</th>
                             <th scope="col" >Slot</th>
+                            <th scope="col">See More</th>
 
                            
                         </tr>
@@ -61,10 +62,10 @@ const BookingList=({userid})=>{
                                     {orders && (
                                           orders.map( ord =>{
 
-                                               if( userid===ord.userid )
+                                               if( 1 )
                                                {
                                                 return <tr>
-                                               
+                                             
                                                 <td data-label="Booking Id" >{ord._id}</td>
                                                                                     <td data-label="Doctor's Name" > {ord.doctorname}  </td>
                                                 
@@ -76,7 +77,11 @@ const BookingList=({userid})=>{
                                                                                     {/* <td>{ord.createdAt.substr(0,10)}</td> */}
                                                                                     <td data-label="Appointment Booked For" > {ord.date} </td>
                                                                                     <td data-label="Slot" >{ord.slot}</td>
-                                                                                    
+                                                                                    <a  href={`/bookings/${ord._id}`} >
+                                                                                    <td data-label="See More" >
+                                                                                    <i class="fas fa-file-invoice" style={{color:'black' , border:'none' }} ></i>
+                                                                                        </td>
+                                                    </a>                                
                                                     </tr>
                                                }
                                                     
