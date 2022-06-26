@@ -18,7 +18,7 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 120%;
+    width: 100%;
 }
 
 #set-bg-img-makechoice
@@ -28,7 +28,7 @@
     background-size: contain;
     height: 400px;
     background-repeat: no-repeat;
-    width: 120%;
+    width: 100%;
 }
 
 
