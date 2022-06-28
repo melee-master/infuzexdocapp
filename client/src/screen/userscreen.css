@@ -45,7 +45,7 @@
 {
     display: grid;
     grid-template-columns: auto auto;
-    margin-top: 20%;
+    margin-top: 1%;
 }
 
 
@@ -101,7 +101,7 @@
         display: grid;
         grid-template-columns: auto auto;
       
-        margin-top: 70%;
+        margin-top: 30%;
     }
 
 
@@ -124,7 +124,7 @@
         display: grid;
         grid-template-columns: auto auto;
       
-        margin-top: 60%;
+        margin-top: 50%;
     }
     
 
@@ -245,8 +245,9 @@
 
     #gen-otp
 {
-    margin-top: 38%;
+    margin-top: 36%;
     font-size: 10px;
+    margin-left: 5px;
 }
 
 
@@ -310,7 +311,7 @@
     display: grid;
     grid-template-columns: auto auto;
   
-    margin-top: 110%;
+    margin-top: 60%;
 }
 
 

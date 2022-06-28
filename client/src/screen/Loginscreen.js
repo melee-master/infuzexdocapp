@@ -31,7 +31,11 @@ const LoginScreen = () => {
 
 
     dispatch(LoginUser(user))
-    document.getElementById('Message').innerHTML = error
+    if(error)
+    {
+      document.getElementById('Message').innerHTML = error
+    }
+
   }
 
 
@@ -192,7 +196,7 @@ const LoginScreen = () => {
                     >Login</button>
 
                     {loading && <Loader />}
-                    <p id='Message'   ></p>
+                    <p id='Message'  ></p>
 
 
                   </form>
@@ -266,8 +270,8 @@ const LoginScreen = () => {
                     >Login</button>
 
                     {loading && <Loader />}
-                    <p id='Message'   ></p>
-
+                    
+                    <p id='Message'  ></p>
 
                   </form>
 

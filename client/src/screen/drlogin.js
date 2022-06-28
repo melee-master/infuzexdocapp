@@ -39,7 +39,11 @@ const DoctorLogin = () => {
 
 
       dispatch(LoginUser(user))
-      document.getElementById('Message').innerHTML=error
+      if(error)
+      {
+        document.getElementById('Message').innerHTML=error
+      }
+      
     }
 
     const meta = {

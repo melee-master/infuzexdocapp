@@ -259,7 +259,7 @@ style={{backgroundColor:'#0EB9B8' , border:'1px solid white' , marginRight:'auto
 
 <br/><br/>
 
-<h2 className='h2-header'  >SPECIALIZATION</h2>
+<h2 className='h2-header'  >Specialization</h2>
 
 
 {isMobile? (<p>
@@ -460,7 +460,7 @@ style={{backgroundColor:'#0EB9B8' , border:'1px solid white' , marginRight:'auto
 
 <br/><br/>
 
-<h2 className='h2-header'  >SPECIALIZATION</h2>
+<h2 className='h2-header'  >Specialization</h2>
 
 
 {isMobile? (<p>

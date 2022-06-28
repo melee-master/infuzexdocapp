@@ -45,7 +45,9 @@ useEffect( ()=>{
         bengali ? ( <p>
 
 <br/><br/><br/><br/>
+<div id='book-app' >
             <h2 id='smallh2' >একটি ইন-ক্লিনিকে পরামর্শের জন্য একটি অ্যাপয়েন্টমেন্ট বুক করুন</h2>
+            </div>
             <h4 style={{color:'grey'}} id='smallh6'  ></h4>
 
             
@@ -113,7 +115,9 @@ style={{backgroundColor:'#0EB9B8' , border:'1px solid white' , marginRight:'auto
 
 
 <br/><br/><br/><br/>
+<div id='book-app' >
             <h2 id='smallh2' >Book an appointment for an in-clinic consultation</h2>
+            </div>
              {/*<h4 style={{color:'grey'}} id='smallh6'  >Find experienced doctors across all specialties</h4>
 
 
@@ -181,7 +185,10 @@ style={{backgroundColor:'#0EB9B8' , border:'1px solid white', marginRight:'auto'
 
 
 <br/><br/><br/><br/>
+<div id='book-app' >
             <h2 id='smallh2' >Book an appointment for an in-clinic consultation</h2>
+
+       </div>     
              {/*<h4 style={{color:'grey'}} id='smallh6'  >Find experienced doctors across all specialties</h4>
 
 

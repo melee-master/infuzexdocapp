@@ -30,7 +30,7 @@ const SignUpScreen = () => {
     const [email, setemail] = useState('')
     const [contactnumber, setcontactnumber] = useState();
     const [password, setpassword] = useState('')
-    const [cpassword, setcpassword] = useState('')
+    //const [cpassword, setcpassword] = useState('')
     const [verify,setverify] = useState()
 
 
@@ -63,7 +63,7 @@ const SignUpScreen = () => {
           .then((confirmationResult) => {
           
             window.confirmationResult = confirmationResult;
-            console.log("OTP has been sent")
+            alert("OTP has been sent")
             
           }).catch((error) => {
            
@@ -81,7 +81,7 @@ const SignUpScreen = () => {
     window.confirmationResult.confirm(code).then((result) => {
       
       const user = result.user;
-      console.log(JSON.stringify(user))
+      //console.log(JSON.stringify(user))
       setverify(1)
       alert("OTP verified")
       setverify(1)
@@ -113,14 +113,8 @@ const SignUpScreen = () => {
                 password: password
             }
     
-    
-            if (password === cpassword) {
-                dispatch(RegisterNewUser(user))
-            }
-            else {
-                document.getElementById('Message').innerHTML = 'Passwords Not Matched'
-                //alert('Passwords Not Matched')
-            }
+            dispatch(RegisterNewUser(user))
+           
         }
         else{
             alert('Error')
@@ -230,7 +224,7 @@ const SignUpScreen = () => {
 
                 
 
-                <p>
+                {/* <p>
                 <label className="formtext">ইমেইল আইডি</label>
 <input type="text"
 
@@ -240,7 +234,7 @@ const SignUpScreen = () => {
 
     placeholder='ইমেইল আইডি দিন' />
 
-                </p>
+                </p> */}
 
 
 <div id='otp-screen' >
@@ -332,7 +326,7 @@ OTP যাচাই করুন
 
                 </p>
 
-                <p style={{ marginLeft: '5px' }} >
+                {/* <p style={{ marginLeft: '5px' }} >
                 <label className="formtext">পাসওয়ার্ড নিশ্চিত করুন</label>
                                     <input type="password" placeholder='কনফার্ম পাসওয়ার্ড দিন'
 
@@ -344,7 +338,7 @@ OTP যাচাই করুন
 
                                     />
 
-                </p>
+                </p> */}
 
 
 
@@ -463,7 +457,7 @@ OTP যাচাই করুন
 
                     
 
-                    <p>
+                    {/* <p>
                         <label className="formtext"
 
 
@@ -478,7 +472,7 @@ OTP যাচাই করুন
 
                             placeholder='Enter Email Id' />
 
-                    </p>
+                    </p> */}
 
 
 <div id='otp-screen' >
@@ -565,7 +559,7 @@ Verify OTP
 
                     </p>
 
-                    <p style={{ marginLeft: '5px' }} >
+                    {/* <p style={{ marginLeft: '5px' }} >
                         <label className="formtext">Confirm Password</label>
                         <input type="password" placeholder='Enter Confirm Password'
 
@@ -577,7 +571,7 @@ Verify OTP
 
                         />
 
-                    </p>
+                    </p> */}
 
 
 
@@ -697,7 +691,7 @@ Verify OTP
 
                     
 
-                    <p>
+                    {/* <p>
                         <label className="formtext"
 
 
@@ -712,7 +706,7 @@ Verify OTP
 
                             placeholder='Enter Email Id' />
 
-                    </p>
+                    </p> */}
 
 
 <div id='otp-screen' >
@@ -801,7 +795,7 @@ Verify OTP
                             placeholder='Enter Password' />
 
                     </p>
-
+{/* 
                     <p style={{ marginLeft: '5px' }} >
                         <label className="formtext">Confirm Password</label>
                         <input type="password" placeholder='Enter Confirm Password'
@@ -814,7 +808,7 @@ Verify OTP
 
                         />
 
-                    </p>
+                    </p> */}
 
 
 
