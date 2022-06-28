@@ -38,7 +38,11 @@ const CompounderLogin = () => {
 
 
         dispatch(LoginCompounder(user))
-        document.getElementById('Message').innerHTML = error
+        if(error)
+        {
+            document.getElementById('Message').innerHTML = error
+        }
+       
     }
 
     const meta = {
@@ -177,7 +181,7 @@ const CompounderLogin = () => {
                                             <hr />
 
                                             <label className="formtext" >Enter Number</label>
-                                            <input type="text"
+                                            <input type="number"
 
                                                 value={email}
                                                 required
