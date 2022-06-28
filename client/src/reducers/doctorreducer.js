@@ -276,7 +276,52 @@ export const UpdateDoctorReducer=( state={} , action )=>{
 
 
 
-export const DoctorResetPasswordReducer=(state = { }, action) => {
+
+export const DoctorForgotPasswordReducer=(state = {  }, action) => {
+
+    switch (action.type) {
+        case 'DR_ForgotPassword_REQUEST': return {
+            ...state,
+            loading: true
+        }
+
+        case 'DR_ForgotPassword_SUCESS': return {
+            ...state,
+            loading: false,
+            success: true
+        }
+
+        case 'DR_ForgotPassword_Failed': return {
+            ...state,
+            loading: true,
+            error: true
+        }
+
+
+        default: return state
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const DoctorResetPasswordReducer=(state = {  }, action) => {
 
     switch (action.type) {
         case 'DR_ResetPass_Request': return {
@@ -290,7 +335,7 @@ export const DoctorResetPasswordReducer=(state = { }, action) => {
             success: true
         }
 
-        case 'UDR_ResetPass_Failed': return {
+        case 'DR_ResetPass_Failed': return {
             ...state,
             loading: true,
             error: true
