@@ -66,6 +66,7 @@ import MakeChoice from './makechoice';
 
 
 
+
 function App() {
   const user = JSON.parse(localStorage.getItem('currentuser'))
   const admin=JSON.parse(localStorage.getItem('admin'))
@@ -79,7 +80,15 @@ function App() {
       <Navbar/>
     
       <hr id="spacing" />
-  
+
+
+
+
+
+
+
+
+
 
 
    <BrowserRouter>
@@ -441,3 +450,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+

@@ -14,6 +14,16 @@ const compounder = JSON.parse(localStorage.getItem('compounder'))
 
 
 
+//Some Hashing
+
+
+
+
+
+
+//
+
+
 
     const touser=()=>{
        
@@ -33,16 +43,16 @@ const compounder = JSON.parse(localStorage.getItem('compounder'))
                 bengali ? (
                     <p>
                               {
-                                        user?( <p>
+                                        user?( <p style={{color:'white'}} >
                                             {window.location.href='/homescreen'}
                                         </p> ) : ( <p>
 
                                                             {
-                                                                doctor ? (<p>
+                                                                doctor ? (<p style={{color:'white'}}>
                                                                      {window.location.href='/homescreen'}
                                                                 </p>) : (<p>
                                                                           {
-                                                                              compounder?  (<p>
+                                                                              compounder?  (<p style={{color:'white'}}>
                                                                                   {window.location.href='/homescreen'}
                                                                               </p>) : (
                                                                                   <p>
@@ -88,6 +98,7 @@ id="boxcontain21"
          onClick={todoctor}
          
          >
+              <i class="fa fa-stethoscope" id="steth"   ></i>
         ডাক্তার
 
          </button>
@@ -101,6 +112,7 @@ id="boxcontain21"
    onClick={touser}
          
          >
+              <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
       ব্যবহারকারী  
          </button>
          
@@ -195,6 +207,7 @@ id="boxcontain21"
          onClick={todoctor}
          
          >
+              <i class="fa fa-stethoscope" id="steth"   ></i>
          Doctor
          </button>
 
@@ -207,6 +220,7 @@ id="boxcontain21"
    onClick={touser}
          
          >
+              <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
       &nbsp;  User  &nbsp;
          </button>
          
@@ -284,6 +298,7 @@ id="boxcontain21"
          onClick={todoctor}
          
          >
+              <i class="fa fa-stethoscope" id="steth"   ></i>
          Doctor
          </button>
 
@@ -296,6 +311,7 @@ id="boxcontain21"
    onClick={touser}
          
          >
+              <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
         User
          </button>
          

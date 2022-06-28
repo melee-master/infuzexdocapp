@@ -22,7 +22,7 @@ const english = localStorage.getItem('english')
 
 
     return(
-        <div>
+        <div style={{color:'white'}} >
 
             {
                 bengali ? (
@@ -38,7 +38,7 @@ const english = localStorage.getItem('english')
 
                         {
                             english ? (
-                                <div>
+                                <div style={{color:'white'}} >
                      {
                            window.location.href='/makechoice'
                        }

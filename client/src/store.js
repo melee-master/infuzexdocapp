@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { RegisterDoctorReducer , LoginDocUserReducer , DoctorTimingReducer } from './reducers/doctorreducer';
 import { LoginUserReducer , UpdateUserReducer , DeleteUserReducer , GetAllUserReducer , RegisterUserReducer , UserResetPasswordReducer , UserForgotPasswordReducer , GetUserByIdReducer } from '../src/reducers/userreducer'
-import { GetAllDoctorReducer , GetDoctorByIdReducer , ReviewReducer , GetAllReqDoctorReducer , ApproveDrReducer , DoctorResetPasswordReducer } from './reducers/doctorreducer';
+import { GetAllDoctorReducer , GetDoctorByIdReducer , ReviewReducer , GetAllReqDoctorReducer , ApproveDrReducer  , DoctorForgotPasswordReducer , DoctorResetPasswordReducer } from './reducers/doctorreducer';
 import {LoginAdminReducer ,RegisterAdminReducer} from './reducers/adminred'
 import { UpdateDoctorReducer } from './reducers/doctorreducer';
 import {RegisterCompounderReducer , LoginCompounderReducer  , GetCompounderByIdReducer , CompounderDeleteReducer
@@ -45,12 +45,14 @@ const FinalReducer = combineReducers(
     GetAllPatientsReducer:GetAllPatientsReducer ,
     DoctorTimingReducer:DoctorTimingReducer , 
     GetBookingsByUserIdReducer:GetBookingsByUserIdReducer ,
-    DoctorResetPasswordReducer:DoctorResetPasswordReducer ,
+   
     UserResetPasswordReducer:UserResetPasswordReducer ,
     GetBookingsByBookingIdReducer:GetBookingsByBookingIdReducer ,
     UpdateBookingReducer:UpdateBookingReducer , 
     UserForgotPasswordReducer:UserForgotPasswordReducer ,
-    GetUserByIdReducer:GetUserByIdReducer
+    GetUserByIdReducer:GetUserByIdReducer ,
+    DoctorForgotPasswordReducer:DoctorForgotPasswordReducer , 
+    DoctorResetPasswordReducer:DoctorResetPasswordReducer
 
    
 
