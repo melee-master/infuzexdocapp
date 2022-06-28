@@ -18,7 +18,7 @@ const ReviewComponent = ({ doctors }) => {
 
     const senreview = () => {
 
-        if ( localStorage.getItem('currentuser') ) {
+        if (localStorage.getItem('currentuser')) {
             const currentuser = JSON.parse(localStorage.getItem('currentuser'))
 
             let alreadyreviewd
@@ -40,19 +40,19 @@ const ReviewComponent = ({ doctors }) => {
                 }
 
 
-                const userid=currentuser._id 
+                const userid = currentuser._id
                 const curname = currentuser.name
 
 
-                dispach(AddProductReviewAction(review, doctors._id , userid , curname ))
+                dispach(AddProductReviewAction(review, doctors._id, userid, curname))
 
             }
 
         }
-        
 
 
-      else  if ( localStorage.getItem('doctor') ) {
+
+        else if (localStorage.getItem('doctor')) {
             const doc = JSON.parse(localStorage.getItem('doctor'))
 
             let alreadyreviewd
@@ -77,11 +77,11 @@ const ReviewComponent = ({ doctors }) => {
 
 
 
-                const userid=doc._id 
+                const userid = doc._id
                 const curname = doc.name
 
 
-                dispach(AddProductReviewAction(review, doctors._id , userid , curname ))
+                dispach(AddProductReviewAction(review, doctors._id, userid, curname))
 
             }
 
@@ -101,173 +101,116 @@ const ReviewComponent = ({ doctors }) => {
 
 
 
-{
-        bengali ? ( <p>
-
-
-
-
-<p style={{textAlign:'left' , marginLeft:'0.5%' }} >
-<span style={{ 
-    fontSize:'large' ,
-    fontWeight:'bolder' 
-    
- }} > 
-&nbsp; আপনার অভিজ্ঞতা সম্পর্কে বলুন  </span>
-
-</p>
-
-
-<div className='grid-box' >
-
-    <input type="text" value={comment} onChange={(e) => { setcomment(e.target.value) }} className='grid-part1'
-
-        style={{
-            marginLeft: '10%'
-
-        }}
-
-    ></input>
-
-    <button onClick={senreview} className='docdes-box1' style={{
-        backgroundColor: '#0EB9B8',
-
-        color: 'white',
-        width: '25%',
-        marginLeft: '15%'
-
-
-
-    }} id='post-button'  > পোস্ট </button>
-
-
-
-</div>
-
-
-
-<h2> রোগীর পর্যালোচনা
- </h2>
-<div className="grid-review">
             {
-
-                doctors.reviews && doctors.reviews.map(rev => {
-                    return <div className='review-grid' >
-
-                        <div className='doc-grid' style={{
-                             width: '90%',
-                            marginRight: 'auto', marginLeft: 'auto' ,
-                            
-
-
-                        }} id='style-review-box' >
-                            <p  >
-                                <i class="fa fa-user"
-
-                                    id='user-icon'
-
-                                    aria-hidden="true"></i>
-
-                            </p>
-
-                            <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
-                            <h3 >
-<span style={{ 
-    fontSize:'larger' ,
-    fontWeight:'bold' 
-    
- }} > 
-&nbsp; {rev.name}  </span>
-
-</h3>
-                                <br />
-
-                                <p className='doc-field' id='review-comment' style={{ 
-    fontSize:'large' ,
-    fontWeight:'bolder' 
-    
- }} > {rev.comment} </p>
-
-
-                                <p className='doc-exp' style={{fontSize:'small'}} > On : {rev.updatedAt.substring(0, 10)} </p>
+                bengali ? (<p>
 
 
 
 
-                            </p>
+                    <p style={{ textAlign: 'left', marginLeft: '0.5%' }} >
+                        <span style={{
+                            fontSize: 'large',
+                            fontWeight: 'bolder'
+
+                        }} >
+                            &nbsp; আপনার অভিজ্ঞতা সম্পর্কে বলুন  </span>
+
+                    </p>
+
+
+                    <div className='grid-box' >
+
+                        <input type="text" value={comment} onChange={(e) => { setcomment(e.target.value) }} className='grid-part1'
+
+                            style={{
+                                marginLeft: '10%'
+
+                            }}
+
+                        ></input>
+
+                        <button onClick={senreview} className='docdes-box1' style={{
+                            backgroundColor: '#0EB9B8',
+
+                            color: 'white',
+                            width: '25%',
+                            marginLeft: '15%'
 
 
 
-
-
-                        </div>
+                        }} id='post-button'  > পোস্ট </button>
 
 
 
                     </div>
 
-                })
-
-            }
-            </div>
-            <br />
 
 
+                    <h2> রোগীর পর্যালোচনা
+                    </h2>
+                    <div className="grid-review">
+                        {
 
+                            doctors.reviews && doctors.reviews.map(rev => {
+                                return <div className='review-grid' >
 
-
-
-
-
-
-
-        </p> ) : ( <p>
-          {
-            english ? (
-              <p>
+                                    <div className='doc-grid' style={{
+                                        width: '90%',
+                                        marginRight: 'auto', marginLeft: 'auto',
 
 
 
-<p style={{textAlign:'left' , marginLeft:'0.5%' }} >
-<span style={{ 
-    fontSize:'large' ,
-    fontWeight:'bolder' 
-    
- }} > 
-&nbsp; Tell About Your Experience  </span>
+                                    }} id='style-review-box' >
+                                        <p  >
+                                            <i class="fa fa-user"
 
-</p>
+                                                id='user-icon'
 
-            <div className='grid-box' >
+                                                aria-hidden="true"></i>
 
-                <input type="text" value={comment} onChange={(e) => { setcomment(e.target.value) }} className='grid-part1'
+                                        </p>
 
-                    style={{
-                        marginLeft: '10%'
+                                        <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
+                                            <h3 >
+                                                <span style={{
+                                                    fontSize: 'larger',
+                                                    fontWeight: 'bold'
 
-                    }}
+                                                }} >
+                                                    &nbsp; {rev.name}  </span>
 
-                ></input>
+                                            </h3>
+                                            <br />
 
-                <button onClick={senreview} className='docdes-box1' style={{
-                    backgroundColor: '#0EB9B8',
+                                            <p className='doc-field' id='review-comment' style={{
+                                                fontSize: 'large',
+                                                fontWeight: 'bolder'
 
-                    color: 'white',
-                    width: '25%',
-                    marginLeft: '15%'
-
-
-
-                }} id='post-button'  > Post </button>
+                                            }} > {rev.comment} </p>
 
 
+                                            <p className='doc-exp' style={{ fontSize: 'small' }} > On : {rev.updatedAt.substring(0, 10)} </p>
 
-            </div>
+
+
+
+                                        </p>
 
 
 
 
 
+                                    </div>
+
+
+
+                                </div>
+
+                            })
+
+                        }
+                    </div>
+                    <br />
 
 
 
@@ -278,116 +221,173 @@ const ReviewComponent = ({ doctors }) => {
 
 
 
-            <h2> PATIENT REVIEWS </h2>
-<div className="grid-review">
-            {
-
-                doctors.reviews && doctors.reviews.map(rev => {
-                    return <div className='review-grid' style={{padding:'auto'}} >
-
-                        <div className='doc-grid' style={{
-                             width: '90%',
-                            marginRight: 'auto', marginLeft: 'auto' ,
-                            
+                </p>) : (<p>
+                    {
+                        english ? (
+                            <p>
 
 
-                        }} id='style-review-box' >
-                            <p  >
-                                <i class="fa fa-user"
 
-                                    id='user-icon'
+                                <p style={{ textAlign: 'left', marginLeft: '0.5%' }} >
+                                    <span style={{
+                                        fontSize: 'large',
+                                        fontWeight: 'bolder'
 
-                                    aria-hidden="true"></i>
+                                    }} >
+                                        &nbsp; Tell About Your Experience  </span>
 
-                            </p>
+                                </p>
 
-                            <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
-                            <h3 >
-<span style={{ 
-    fontSize:'larger' ,
-    fontWeight:'bold' 
-    
- }} > 
-&nbsp; {rev.name}  </span>
+                                <div className='grid-box' >
 
-</h3>
+                                    <input type="text" value={comment} onChange={(e) => { setcomment(e.target.value) }} className='grid-part1'
+
+                                        style={{
+                                            marginLeft: '10%'
+
+                                        }}
+
+                                    ></input>
+
+                                    <button onClick={senreview} className='docdes-box1' style={{
+                                        backgroundColor: '#0EB9B8',
+
+                                        color: 'white',
+                                        width: '25%',
+                                        marginLeft: '15%'
+
+
+
+                                    }} id='post-button'  > Post </button>
+
+
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <h2> PATIENT REVIEWS </h2>
+                                <div className="grid-review">
+                                    {
+
+                                        doctors.reviews && doctors.reviews.map(rev => {
+                                            return <div className='review-grid' style={{ padding: 'auto' }} >
+
+                                                <div className='doc-grid' style={{
+                                                    width: '90%',
+                                                    marginRight: 'auto', marginLeft: 'auto',
+
+
+
+                                                }} id='style-review-box' >
+                                                    <p  >
+                                                        <i class="fa fa-user"
+
+                                                            id='user-icon'
+
+                                                            aria-hidden="true"></i>
+
+                                                    </p>
+
+                                                    <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
+                                                        <p >
+                                                            <span style={{
+                                                                fontSize: 'larger',
+                                                                fontWeight: 'bold'
+
+                                                            }} >
+                                                                &nbsp; {rev.name}  </span>
+
+                                                        </p>
+                                                        <br />
+
+                                                        <p className='doc-field' id='review-comment' style={{
+                                                           // fontSize: 'large',
+                                                            fontWeight:'initial'
+
+                                                        }} > {rev.comment} </p>
+
+
+                                                        <p className='doc-exp' style={{ fontSize: 'small' , marginTop:'1%' }} > On : {rev.updatedAt.substring(0, 10)} </p>
+
+
+
+
+                                                    </p>
+
+
+
+
+
+                                                </div>
+
+
+
+                                            </div>
+
+                                        })
+
+                                    }
+                                </div>
                                 <br />
 
-                                <p className='doc-field' id='review-comment' style={{ 
-    fontSize:'large' ,
-    fontWeight:'bolder' 
-    
- }} > {rev.comment} </p>
-
-
-                                <p className='doc-exp' style={{fontSize:'small'}} > On : {rev.updatedAt.substring(0, 10)} </p>
 
 
 
 
                             </p>
+                        ) : (
+                            <p>
 
 
 
+                                <p style={{ textAlign: 'left', marginLeft: '0.5%' }} >
+                                    <span style={{
+                                        fontSize: 'large',
+                                        fontWeight: 'bolder'
 
+                                    }} >
+                                        &nbsp; Tell About Your Experience  </span>
 
-                        </div>
+                                </p>
 
+                                <div className='grid-box' >
 
+                                    <input type="text" value={comment} onChange={(e) => { setcomment(e.target.value) }} className='grid-part1'
 
-                    </div>
+                                        style={{
+                                            marginLeft: '10%'
 
-                })
+                                        }}
 
-            }
-            </div>
-            <br />
+                                    ></input>
 
+                                    <button onClick={senreview} className='docdes-box1' style={{
+                                        backgroundColor: '#0EB9B8',
 
-
-
-
-              </p>
-            ) : (
-              <p>
-
-
-
-<p style={{textAlign:'left' , marginLeft:'0.5%' }} >
-<span style={{ 
-    fontSize:'large' ,
-    fontWeight:'bolder' 
-    
- }} > 
-&nbsp; Tell About Your Experience  </span>
-
-</p>
-
-            <div className='grid-box' >
-
-                <input type="text" value={comment} onChange={(e) => { setcomment(e.target.value) }} className='grid-part1'
-
-                    style={{
-                        marginLeft: '10%'
-
-                    }}
-
-                ></input>
-
-                <button onClick={senreview} className='docdes-box1' style={{
-                    backgroundColor: '#0EB9B8',
-
-                    color: 'white',
-                    width: '25%',
-                    marginLeft: '15%'
+                                        color: 'white',
+                                        width: '25%',
+                                        marginLeft: '15%'
 
 
 
-                }} id='post-button'  > Post </button>
+                                    }} id='post-button'  > Post </button>
 
 
 
-            </div>
+                                </div>
 
 
 
@@ -403,82 +403,82 @@ const ReviewComponent = ({ doctors }) => {
 
 
 
-            <h2> PATIENT REVIEWS </h2>
-<div className="grid-review">
-            {
+                                <h2> PATIENT REVIEWS </h2>
+                                <div className="grid-review">
+                                    {
 
-                doctors.reviews && doctors.reviews.map(rev => {
-                    return <div className='review-grid' >
+                                        doctors.reviews && doctors.reviews.map(rev => {
+                                            return <div className='review-grid' >
 
-                        <div className='doc-grid' style={{
-                             width: '90%',
-                            marginRight: 'auto', marginLeft: 'auto' ,
-                            
+                                                <div className='doc-grid' style={{
+                                                    width: '90%',
+                                                    marginRight: 'auto', marginLeft: 'auto',
 
 
-                        }} id='style-review-box' >
-                            <p  >
-                                <i class="fa fa-user"
 
-                                    id='user-icon'
+                                                }} id='style-review-box' >
+                                                    <p  >
+                                                        <i class="fa fa-user"
 
-                                    aria-hidden="true"></i>
+                                                            id='user-icon'
 
-                            </p>
+                                                            aria-hidden="true"></i>
 
-                            <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
-                            <h3 >
-<span style={{ 
-    fontSize:'larger' ,
-    fontWeight:'bold' 
-    
- }} > 
-&nbsp; {rev.name}  </span>
+                                                    </p>
 
-</h3>
+                                                    <p style={{ marginLeft: '15px', marginTop: '-10px', float: 'left' }} >
+                                                        <h3 >
+                                                            <span style={{
+                                                                fontSize: 'larger',
+                                                                fontWeight: 'bold'
+
+                                                            }} >
+                                                                &nbsp; {rev.name}  </span>
+
+                                                        </h3>
+                                                        <br />
+
+                                                        <p className='doc-field' id='review-comment' style={{
+                                                            fontSize: 'large',
+                                                            fontWeight: 'bolder'
+
+                                                        }} > {rev.comment} </p>
+
+
+                                                        <p className='doc-exp' style={{ fontSize: 'small' }} > On : {rev.updatedAt.substring(0, 10)} </p>
+
+
+
+
+                                                    </p>
+
+
+
+
+
+                                                </div>
+
+
+
+                                            </div>
+
+                                        })
+
+                                    }
+                                </div>
                                 <br />
 
-                                <p className='doc-field' id='review-comment' style={{ 
-    fontSize:'large' ,
-    fontWeight:'bolder' 
-    
- }} > {rev.comment} </p>
 
 
-                                <p className='doc-exp' style={{fontSize:'small'}} > On : {rev.updatedAt.substring(0, 10)} </p>
 
 
 
 
                             </p>
-
-
-
-
-
-                        </div>
-
-
-
-                    </div>
-
-                })
-
+                        )
+                    }
+                </p>)
             }
-            </div>
-            <br />
-
-
-
-
-
-
-
-                </p>
-            )
-          }
-        </p> )
-      }
 
 
 

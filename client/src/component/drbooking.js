@@ -10,6 +10,7 @@ import { GetDoctorByIdReducer } from '../reducers/doctorreducer';
 import Calendar from 'react-calendar';
 import './drbooking.css';
 import Loader from './loader';
+import { TextField } from '@mui/material'
 
 import { BookPatientsAction } from '../actions/bookingaction';
 
@@ -27,6 +28,9 @@ const DrBooking=({doctorid})=>{
     const [time , settime ] = useState('')
     const [bookingdate, onChange] = useState(new Date());
 const [field , setfield] = useState('')
+const [name , setname ] = useState('')
+const [lname , setlname ] = useState('')
+
 
 const user = JSON.parse(localStorage.getItem('currentuser'))
 const admin=JSON.parse(localStorage.getItem('admin'))
@@ -72,8 +76,8 @@ else
     if(user)
     {
         const details = {
-            name:user.name ,
-            lname:user.lname ,
+            name:name ,
+            lname:lname ,
             email:user.email ,
             contactnumber:user.contactnumber ,
             doctorid:doctorid ,
@@ -95,8 +99,8 @@ alert('Please take a screenshot of this page')
     if(doctor)
     {
         const details = {
-            name:doctor.name ,
-            lname:doctor.lname ,
+            name:name ,
+            lname:lname ,
             email:doctor.email ,
             contactnumber:doctor.contactnumber ,
             doctorid:doctorid ,
@@ -120,8 +124,8 @@ alert('Please take a screenshot of this page')
     if(compounder)
     {
      const details = {
-         name:compounder.name ,
-         lname:compounder.lname ,
+        name:name ,
+        lname:lname ,
          email:compounder.email ,
          contactnumber:compounder.contactnumber ,
          doctorid:doctorid ,
@@ -620,6 +624,7 @@ minDetail = 'month'
 
 
 
+<br/>
 
 
 <p>
@@ -932,18 +937,6 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 
-
-<br/>
-
-
-
-
-
-
-<br/>
-
-
-
 <br/>
 
 
@@ -964,6 +957,26 @@ doctors.sun && doctors.sun.map(rev => {
 </div>
 
 
+
+
+
+<input  
+
+placeholder="Patient's Name" type='text'
+
+value={name}
+
+onChange={ (e)=>setname(e.target.value) }
+
+style={{width:'90%', marginLeft:'5%'  }}
+
+/>
+
+
+
+
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 <button 
 value='submit' 
@@ -1000,7 +1013,7 @@ onClick={ showcontact }
 <p id="show-number" ></p>
 <p id="show-date" ></p>
 
-
+<br/><br/>
 
          </div>
  )
