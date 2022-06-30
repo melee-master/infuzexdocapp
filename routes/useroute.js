@@ -5,7 +5,14 @@ const mongoose = require('mongoose')
 
 const User = require('../models/usermodel')
 
+var universalhash = '0xff51afd7ed558ccb9fe1a85ec53LdL'
+var backendhash = '1a85ec53LdL0xc4ceb9fe1a85ec50x'
+
 router.post('/register', (req,res)=>{
+
+const {password} = req.body
+
+var hashedpass = universalhash+req.body.password+backendhash
 
 
     User.find({contactnumber:req.body.contactnumber} , (err,docs)=>{
@@ -19,7 +26,7 @@ router.post('/register', (req,res)=>{
                     name : req.body.name ,
                     lname : req.body.lname ,
                     email : req.body.email ,
-                    password : req.body.password ,
+                    password : hashedpass ,
                     contactnumber:req.body.contactnumber
                 }
             )
@@ -28,6 +35,7 @@ router.post('/register', (req,res)=>{
         
                 if(!err)
                 {
+                    
                    return  res.send({message :'Registration Successful' }  )
                 }
                 else{
@@ -62,7 +70,11 @@ router.post('/register', (req,res)=>{
 
 router.post('/login' , (req,res)=>{
 
-    User.find({contactnumber:req.body.email , password:req.body.password} , (err,docs)=>{
+   const usepass = universalhash + req.body.password + backendhash
+
+ 
+
+    User.find({contactnumber:req.body.email , password:usepass} , (err,docs)=>{
 
         if(docs.length>0)
         {
@@ -159,15 +171,14 @@ router.post('/forgetpassword' , (req,res)=>{
     const {contactnumber} = req.body
 
     // getidbymail(req.body.email)
-console.log('The Phone Number rec is' ,req.body.contactnumber  )
+
     var idvariable 
     var strires
 
     User.find({contactnumber:req.body.contactnumber} , (err,docs)=>{
         if(err)
         {
-            console.log('Number Not Registered')
-            console.log(`Something Went Wrong with the Phone Number : ${err} `)
+           
             return  res.status(400).json({message:`Something Went Wrong  `})
 
         }
@@ -208,9 +219,12 @@ console.log('The Phone Number rec is' ,req.body.contactnumber  )
 
 router.post('/resetpassword' , (req,res)=>{
     const {userid , password} = req.body
+    
+    var hashedpass = universalhash+req.body.password+backendhash
+
     User.findByIdAndUpdate({_id : userid} , {
    
-        password :req.body.password
+        password :hashedpass
     } , (err)=>{
 
         if(err)

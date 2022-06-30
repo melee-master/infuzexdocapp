@@ -8,6 +8,14 @@ const fs = require('fs')
 
 const {uploadFile} = require('./s3')
 
+
+var universalhash = '0xff51afd7ed558ccb9fe1a85ec53LdL'
+var backendhash = '1a85ec53LdL0xc4ceb9fe1a85ec50x'
+
+
+
+
+
 const storage = multer.diskStorage({
     //destination for files
     destination: function (request, file, callback) {
@@ -102,7 +110,7 @@ console.log('result is' , result )
 
 router.post('/register', upload.fields('image'), (req,res)=>{
 
-
+    var hashedpass = universalhash+req.body.password+backendhash
 
     Doctor.find({email:req.body.email} , (err,docs)=>{
         if(docs.length>0)
@@ -115,7 +123,7 @@ router.post('/register', upload.fields('image'), (req,res)=>{
                     name : req.body.name ,
                     lname : req.body.lname ,
                     email : req.body.email ,
-                    password : req.body.password ,
+                    password : hashedpass ,
                     contactnumber:req.body.contactnumber ,
                     fees:req.body.fees , 
                     college:req.body.college ,
@@ -201,7 +209,9 @@ router.post('/addreview' , async(req,res)=>{
 
 router.post('/login' , (req,res)=>{
 
-    Doctor.find({email:req.body.email , password:req.body.password} , (err,docs)=>{
+    const usepass = universalhash + req.body.password + backendhash
+
+    Doctor.find({email:req.body.email , password:usepass} , (err,docs)=>{
 
         if(docs.length>0)
         {
@@ -328,47 +338,42 @@ host: 'smtp.gmail.com',
 
 router.post('/forgetpassword' , (req,res)=>{
 
-    const {email} = req.body
+    const {contactnumber} = req.body
 
     // getidbymail(req.body.email)
-
+console.log('The Phone Number rec is' ,req.body.contactnumber  )
     var idvariable 
     var strires
 
-    Doctor.find({email:req.body.email} , (err,res)=>{
+    Doctor.find({contactnumber:req.body.contactnumber} , (err,docs)=>{
         if(err)
         {
-            console.log('Email Not Registered')
-            console.log(`Something Went Wrong with the email id : ${err} `)
+           
             return  res.status(400).json({message:`Something Went Wrong  `})
 
         }
         else
         {
-            strires = JSON.stringify(res)
             
-           
-
-
-            var mailOptions = {
-                            from: 'awanishsampleprojects@gmail.com',
-                            to: `${req.body.email}`,
-                            subject: 'Password Reset For Doctor',
-                            text: `These are your details ${res} .
-                           
-                            Please note your User ID . i.e the ObjectID , as it is required. 
-
-                            `
-                          };
-                          
-                          transporter.sendMail(mailOptions, function(error, info){
-                            if (error) {
-                              console.log(error);
-                            } else {
-                              console.log('Email sent: ' + info.response);
-                            }
-                          });
             
+            // console.log('The Data is' , docs )
+
+            
+
+            const localsave = {
+                name : docs[0].name ,
+                _id: docs[0]._id ,
+                
+                contactnumber:docs[0].contactnumber ,
+                lname:docs[0].lname
+            }
+
+ console.log('The Local Save is' , localsave )
+
+          
+
+            res.send(localsave)
+
            
             
         }
@@ -384,17 +389,22 @@ router.post('/forgetpassword' , (req,res)=>{
 
 router.post('/resetpassword' , (req,res)=>{
     const {userid , password} = req.body
+
+    var hashedpass = universalhash+req.body.password+backendhash
+    console.log('The user id and new pass is' , userid , password )
     Doctor.findByIdAndUpdate({_id : userid} , {
    
-        password :req.body.password
+        password :hashedpass
     } , (err)=>{
 
         if(err)
         {
+            console.log('The Error is' , err )
             return  res.status(400).json({message:`Couldn't update user  `})
 
         }
         else{
+            console.log('Updated the user with user id' , userid )
             res.send({message :'Updated Successfully' } )
         }
 
