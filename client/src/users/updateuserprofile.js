@@ -130,7 +130,7 @@ const UpdateUserProfile = () => {
                             <input type="text" value={name} placeholder=''
 
                                 onChange={(e) => { setname(e.target.value) }} required
-
+                                style={{fontSize:'large'}}
                                 id='formtext'
 
                             />
@@ -138,7 +138,7 @@ const UpdateUserProfile = () => {
                             <input type="text" value={lname} placeholder=''
 
                                 onChange={(e) => { setlname(e.target.value) }} required
-
+                                style={{fontSize:'large'}}
 
                                 id='formtext'
 
@@ -152,7 +152,7 @@ const UpdateUserProfile = () => {
 
                             <input type="text" value={email} placeholder='ইমেইল আইডি'
                                 onChange={(e) => { setemail(e.target.value) }}
-
+                                style={{fontSize:'large'}}
                                 id='formtext'
                             />
 
@@ -161,7 +161,7 @@ const UpdateUserProfile = () => {
                                 onChange={(e) => { setcontactnumber(e.target.value) }}
 
                                 id='formtext'
-
+                                style={{fontSize:'large'}}
                                 required
 
                             />
@@ -192,7 +192,7 @@ const UpdateUserProfile = () => {
 
                             <span id="message" style={{ fontSize: "25px", color: '#023047' }} ></span>
                             {success && (<span style={{ fontSize: "25px", color: '#023047' }} >সফলভাবে আপডেট করা হয়েছে</span>)}
-                            {error && (<span style={{ fontSize: "25px", color: '#023047' }} >কিছু ভুল হয়েছে</span>)}
+                            {error && (<span style={{ fontSize: "25px", color: '#FF0000' }} >কিছু ভুল হয়েছে</span>)}
                         </form>
 
 
@@ -217,19 +217,21 @@ const UpdateUserProfile = () => {
 
 
 
-                                        <input type="text" value={name} placeholder='Enter Name'
+                                        <input type="text" value={name} placeholder='First Name'
 
                                             onChange={(e) => { setname(e.target.value) }} required
+
+                                            style={{fontSize:'large'}}
 
                                             id='formtext'
 
                                         />
 
-                                        <input type="text" value={lname} placeholder='First Name'
+                                        <input type="text" value={lname} placeholder='Last Name'
 
                                             onChange={(e) => { setlname(e.target.value) }} required
 
-
+                                            style={{fontSize:'large'}}
                                             id='formtext'
 
                                         ></input>
@@ -242,16 +244,16 @@ const UpdateUserProfile = () => {
 
                                         <input type="text" value={email} placeholder='Email Id'
                                             onChange={(e) => { setemail(e.target.value) }}
-
+                                            style={{fontSize:'large'}}
                                             id='formtext'
                                         />
 
-                                        <input type="number" value={contactnumber} placeholder='Enter New Email'
+                                        <input type="number" value={contactnumber} placeholder='Contact Number'
 
                                             onChange={(e) => { setcontactnumber(e.target.value) }}
-
+                                            style={{fontSize:'large'}}
                                             id='formtext'
-
+                                           
                                             required
 
                                         />
@@ -284,7 +286,7 @@ const UpdateUserProfile = () => {
 
                                         <span id="message" style={{ fontSize: "25px", color: '#023047' }} ></span>
                                         {success && (<span style={{ fontSize: "25px", color: '#023047' }} >Updated Successfully</span>)}
-                                        {error && (<span style={{ fontSize: "25px", color: '#023047' }} >Something Went Wrong</span>)}
+                                        {error && (<span style={{ fontSize: "25px", color: '#FF0000' }} >Something Went Wrong</span>)}
                                     </form>
 
 
@@ -311,7 +313,7 @@ const UpdateUserProfile = () => {
                                         <input type="text" value={name} placeholder='Enter Name'
 
                                             onChange={(e) => { setname(e.target.value) }} required
-
+                                            style={{fontSize:'large'}}
                                             id='formtext'
 
                                         />
@@ -320,7 +322,7 @@ const UpdateUserProfile = () => {
 
                                             onChange={(e) => { setlname(e.target.value) }} required
 
-
+                                            style={{fontSize:'large'}}
                                             id='formtext'
 
                                         ></input>
@@ -333,7 +335,7 @@ const UpdateUserProfile = () => {
 
                                         <input type="text" value={email} placeholder='Email Id'
                                             onChange={(e) => { setemail(e.target.value) }}
-
+                                            style={{fontSize:'large'}}
                                             id='formtext'
                                         />
 
@@ -342,7 +344,7 @@ const UpdateUserProfile = () => {
                                             onChange={(e) => { setcontactnumber(e.target.value) }}
 
                                             id='formtext'
-
+                                            style={{fontSize:'large'}}
                                             required
 
                                         />
@@ -372,7 +374,7 @@ const UpdateUserProfile = () => {
 
                                         <span id="message" style={{ fontSize: "25px", color: '#023047' }} ></span>
                                         {success && (<span style={{ fontSize: "25px", color: '#023047' }} >Updated Successfully</span>)}
-                                        {error && (<span style={{ fontSize: "25px", color: '#023047' }} >Something Went Wrong</span>)}
+                                        {error && (<span style={{ fontSize: "25px", color: '#FF0000' }} >Something Went Wrong</span>)}
                                     </form>
 
 
