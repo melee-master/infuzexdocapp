@@ -83,7 +83,11 @@ const booking = JSON.parse(sessionStorage.getItem('bookingdetails'))
 
 <br/>
 
+<br/><br/><br/><br/>
 
+<p className='doc-exp' >আপনার বুকিং নিশ্চিত করতে বা আরও বিশদ পেতে, অনুগ্রহ করে ক্লিনিকে যোগাযোগ করুন {booking.doctorcontact} </p>
+
+<br/>   
 
 
 
@@ -143,11 +147,16 @@ const booking = JSON.parse(sessionStorage.getItem('bookingdetails'))
 
 </div>
 
+<br/><br/><br/><br/>
+
+<p className='doc-exp' >To Confirm Your Booking or to get more details , Please contact clinic {booking.doctorcontact}
+
+{/* <a href={`+91${booking.doctorcontact}`}> */}
+
+ {/* </a> */}
+  </p>
+
 <br/>
-
-
-
-
 
 
               </p>
@@ -205,8 +214,11 @@ const booking = JSON.parse(sessionStorage.getItem('bookingdetails'))
 
 <br/>
 
+<br/><br/><br/><br/>
 
-              
+<p className='doc-exp' >To Confirm Your Booking or to get more details , Please contact clinic {booking.doctorcontact} </p>
+
+<br/>     
 
 
                 </p>

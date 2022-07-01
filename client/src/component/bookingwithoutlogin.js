@@ -24,6 +24,15 @@ const DoctorBookingWithoutLogin=({doctorid})=>{
     const english = localStorage.getItem('english')
 
     
+    const user = JSON.parse(localStorage.getItem('currentuser'))
+    const admin=JSON.parse(localStorage.getItem('admin'))
+    const doctor = JSON.parse(localStorage.getItem('doctor'))
+    const compounder = JSON.parse(localStorage.getItem('compounder'))
+
+
+
+
+
 
 
     const [docid , setdocid] = useState(doctorid)
@@ -49,7 +58,7 @@ var yyyy = today.getFullYear();
 
 var day = today.toString().substr(0,3)
 
-const compounder = JSON.parse(localStorage.getItem('compounder'))
+
 
 var dd2 = today.getDate() + 7
 
