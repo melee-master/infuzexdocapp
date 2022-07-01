@@ -83,93 +83,105 @@ if( unavailableday===`Doctor Isn't Available` )
 {
     alert(`Doctor Isn't Available`)
 }
+
+
+
 else if( date==currentday )
 {
     if(fieldslot==='PM')
     {
         bookingtime = bookingtime+12 
        // alert(bookingtime)
+    }
 
+    if( timeinnum > bookingtime  )
+    {
+        alert(`Can't Book this Slot`)
+    }
+    else
+    {
         if(user)
-    {
-        const details = {
+        {
+            const details = {
+                name:name ,
+                lname:lname ,
+                email:user.email ,
+                contactnumber:user.contactnumber ,
+                doctorid:doctorid ,
+                userid:user._id ,
+                status:'Registered User' ,
+                date:date ,
+                slot:field , 
+                doctorname:doctors.name ,
+           speciality:doctors.field  ,
+           doctorcontact:doctors.contactnumber
+            }
+    
+            dispatch(BookPatientsAction(details))
+              window.location.href=`/bookingconfirmation`
+    
+    alert('Please take a screenshot of this page')
+    
+        }
+    
+        if(doctor)
+        {
+            const details = {
+                name:name ,
+                lname:lname ,
+                email:doctor.email ,
+                contactnumber:doctor.contactnumber ,
+                doctorid:doctorid ,
+                status:'Doctor' ,
+                userid:doctor._id ,
+                date:date ,
+                slot:field , 
+                doctorname:doctors.name ,
+           speciality:doctors.field  ,
+           doctorcontact:doctors.contactnumber
+            }
+    
+            dispatch(BookPatientsAction(details))     
+             window.location.href=`/bookingconfirmation`
+    
+            alert('Please take a screenshot of this page')
+    
+           // window.location.href=`/bookingconfirmation`
+    
+        }
+    
+        if(compounder)
+        {
+         const details = {
             name:name ,
             lname:lname ,
-            email:user.email ,
-            contactnumber:user.contactnumber ,
-            doctorid:doctorid ,
-            userid:user._id ,
-            status:'Registered User' ,
-            date:date ,
-            slot:field , 
-            doctorname:doctors.name ,
-       speciality:doctors.field  ,
-       doctorcontact:doctors.contactnumber
-        }
-
-        dispatch(BookPatientsAction(details))
-          window.location.href=`/bookingconfirmation`
-
-alert('Please take a screenshot of this page')
-
-    }
-
-    if(doctor)
-    {
-        const details = {
-            name:name ,
-            lname:lname ,
-            email:doctor.email ,
-            contactnumber:doctor.contactnumber ,
-            doctorid:doctorid ,
-            status:'Doctor' ,
-            userid:doctor._id ,
-            date:date ,
-            slot:field , 
-            doctorname:doctors.name ,
-       speciality:doctors.field  ,
-       doctorcontact:doctors.contactnumber
-        }
-
-        dispatch(BookPatientsAction(details))     
+             email:compounder.email ,
+             contactnumber:compounder.contactnumber ,
+             doctorid:doctorid ,
+             status:'Compounder' ,
+             userid:compounder._id ,
+             date:date ,
+             slot:field ,
+             doctorname:doctors.name ,
+           speciality:doctors.field ,
+           doctorcontact:doctors.contactnumber
+         }
+    
+         dispatch(BookPatientsAction(details))
          window.location.href=`/bookingconfirmation`
-
-        alert('Please take a screenshot of this page')
-
-       // window.location.href=`/bookingconfirmation`
-
-    }
-
-    if(compounder)
-    {
-     const details = {
-        name:name ,
-        lname:lname ,
-         email:compounder.email ,
-         contactnumber:compounder.contactnumber ,
-         doctorid:doctorid ,
-         status:'Compounder' ,
-         userid:compounder._id ,
-         date:date ,
-         slot:field ,
-         doctorname:doctors.name ,
-       speciality:doctors.field ,
-       doctorcontact:doctors.contactnumber
-     }
-
-     dispatch(BookPatientsAction(details))
-     window.location.href=`/bookingconfirmation`
-
-     alert('Please take a screenshot of this page')
-     
+    
+         alert('Please take a screenshot of this page')
+         
+    
+        }
 
     }
-    }
 
-   if( timeinnum > bookingtime  )
-   {
-       alert(`Can't Book this Slot`)
-   }
+
+       
+    
+
+  
 }
 
 
