@@ -9,7 +9,7 @@ import { LogOutUserDoc } from "../actions/doctoraction";
 import { LogOutUserCompounder } from "../actions/compounderaction";
 import UpdateUser from "../screen/updateuser";
 import { Link } from "react-router-dom";
-import { BrowserRouter , Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -23,105 +23,17 @@ const Navbar = () => {
 
 
 
+
+
+
   return (
     <div>
 
-{
-        bengali ? ( <p>
-{ 
+      {
+        bengali ? (<p>
+          {
 
-currentuser ? ( <div>
-
-  <ul  >
-
-    <a href="/homescreen">
-      <li> <img src={img1} id="topimg" />  </li>
-    </a>
-
-
-
-
-
-    <li className="box1" style={{ float: 'right' }}
-
-      onClick={() => { dispatch(LogOutUser()) }}
-
-    >
-
-প্রস্থান
-    </li>
-
-
-<a href='/updateuser'>
-
-    <li className="box2" style={{ float: 'right', color: 'black' }}  >
-
-    হ্যালো  {currentuser.name}
-    </li>
- 
-</a>
-
-
-
-
-
-
-
-
-  </ul>
-
-
-
-</div> ) : (
-
-  doctor ? ( <div>
-
-    <ul  >
-
-      <a href="/homescreen">
-        <li> <img src={img1} id="topimg" />  </li>
-      </a>
-
-
-
-
-
-      <li className="box1" style={{ float: 'right' }}
-
-        onClick={() => { dispatch(LogOutUserDoc()) }}
-
-      >
-
-প্রস্থান
-      </li>
-
-
-
-      <a href='/drpage'>
-        <li className="box2" style={{ float: 'right', color: 'black' }}  >
-
-        Dr.  {doctor.name}
-        </li>
-      </a>
-
-
-
-
-
-
-
-
-
-    </ul>
-
-
-
-  </div> ) : (
-    compounder ? (
-
-
-      <div>
-
+            currentuser ? (<div>
 
               <ul  >
 
@@ -129,82 +41,173 @@ currentuser ? ( <div>
                   <li> <img src={img1} id="topimg" />  </li>
                 </a>
 
-         
 
 
-                <li className="box1" style={{ float: 'right' }}
-
-onClick={() => { dispatch(LogOutUserCompounder()) }}
-
->
-প্রস্থান
-</li>
 
 
-       <a href='/compounder'>
-        <li className="box2" style={{ float: 'right', color: 'black' }}  >
-        <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
-           &nbsp; {compounder.name}
-        </li>
-      </a>
+                {/* <li className="box1" style={{ float: 'right' }}
+
+                  onClick={() => { dispatch(LogOutUser()) }}
+
+                >
+
+                  প্রস্থান
+                </li> */}
+
+
+                <a href='/updateuser'>
+
+                  <li className="box2" style={{ float: 'right', color: 'black' }}  >
+
+                    হ্যালো  {currentuser.name}
+                  </li>
+
+                </a>
+
+
+
+
+
+
 
 
               </ul>
 
-            </div>
 
 
+            </div>) : (
 
+              doctor ? (<div>
 
-    ) : (
-     admin ? ( <p><AdminNavBar /></p> ) : (
-      <div>
+                <ul  >
 
-
-      <ul  >
-
-        <a href="/">
-          <li> <img src={img1} id="topimg" />  </li>
-        </a>
-
-
-
-        <a href="/user" style={{ color: 'black' }}  >
-          <li className="box2" style={{ float: 'right', color: 'black' }} >
-
-            <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
-            রোগী
-
-          </li>
-        </a>
-
-
-
-
-        <a href="/doctor">
-          <li className="box1" style={{ float: 'right' }}  >
-            <i class="fa fa-stethoscope" id="steth"   ></i>
-            ডাক্তার
-          </li>
-        </a>
+                  <a href="/homescreen">
+                    <li> <img src={img1} id="topimg" />  </li>
+                  </a>
 
 
 
 
 
-      </ul>
+                  <li className="box1" style={{ float: 'right' }}
 
-    </div>
-     )
-    )
-  )
+                    onClick={() => { dispatch(LogOutUserDoc()) }}
+
+                  >
+
+                    প্রস্থান
+                  </li>
 
 
-)
 
-} 
+                  <a href='/drpage'>
+                    <li className="box2" style={{ float: 'right', color: 'black' }}  >
 
-        </p> ) : ( <p>
+                      Dr.  {doctor.name}
+                    </li>
+                  </a>
+
+
+
+
+
+
+
+
+
+                </ul>
+
+
+
+              </div>) : (
+                compounder ? (
+
+
+                  <div>
+
+
+                    <ul  >
+
+                      <a href="/homescreen">
+                        <li> <img src={img1} id="topimg" />  </li>
+                      </a>
+
+
+
+
+                      <li className="box1" style={{ float: 'right' }}
+
+                        onClick={() => { dispatch(LogOutUserCompounder()) }}
+
+                      >
+                        প্রস্থান
+                      </li>
+
+
+                      <a href='/compounder'>
+                        <li className="box2" style={{ float: 'right', color: 'black' }}  >
+                          <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+                          &nbsp; {compounder.name}
+                        </li>
+                      </a>
+
+
+                    </ul>
+
+                  </div>
+
+
+
+
+                ) : (
+                  admin ? (<p><AdminNavBar /></p>) : (
+                    <div>
+
+
+                      <ul  >
+
+                        <a href="/">
+                          <li> <img src={img1} id="topimg" />  </li>
+                        </a>
+
+
+
+                        <a href="/user" style={{ color: 'black' }}  >
+                          <li className="box2" style={{ float: 'right', color: 'black' }} >
+
+                            <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+                            রোগী
+
+                          </li>
+                        </a>
+
+
+
+
+                        <a href="/doctor">
+                          <li className="box1" style={{ float: 'right' }}  >
+                            <i class="fa fa-stethoscope" id="steth"   ></i>
+                            ডাক্তার
+                          </li>
+                        </a>
+
+
+
+
+
+                      </ul>
+
+                    </div>
+                  )
+                )
+              )
+
+
+            )
+
+          }
+
+        </p>) : (<p>
           {
             english ? (
               <p>
@@ -212,181 +215,218 @@ onClick={() => { dispatch(LogOutUserCompounder()) }}
 
 
 
-{ 
+                {
 
-currentuser ? ( <div>
+                  currentuser ? (<div>
 
-  <ul  >
+                    <ul  >
 
-    <a href="/homescreen">
-      <li> <img src={img1} id="topimg" />  </li>
-    </a>
-
-
-
-
-
-    <li className="box1" style={{ float: 'right' }}
-
-      onClick={() => { dispatch(LogOutUser()) }}
-
-    >
-
-      Logout
-    </li>
-
-
-<a href='/updateuser'>
-
-    <li className="box2" style={{ float: 'right', color: 'black' }}  >
-
-      Hello  {currentuser.name}
-    </li>
- 
-</a>
+                      <a href="/homescreen">
+                        <li> <img src={img1} id="topimg" />  </li>
+                      </a>
 
 
 
 
 
+                      {/* <li className="box1" style={{ float: 'right' }}
+
+                        onClick={() => { dispatch(LogOutUser()) }}
+
+                      >
+
+                        Logout
+                      </li> */}
+
+
+                      <a href='/updateuser'>
+
+                        <li className="box2" style={{ float: 'right', color: 'black' }}>
+                         Hello  {currentuser.name}
+
+
+                        </li>
 
 
 
-  </ul>
+                      </a>
 
 
 
-</div> ) : (
+{/* <div class="dropdown"
 
-  doctor ? ( <div>
-
-    <ul  >
-
-      <a href="/homescreen">
-        <li> <img src={img1} id="topimg" />  </li>
-      </a>
-
-
-
-
-
-      <li className="box1" style={{ float: 'right' }}
-
-        onClick={() => { dispatch(LogOutUserDoc()) }}
-
-      >
-
-        Logout
-      </li>
-
-
-
-      <a href='/drpage'>
-        <li className="box2" style={{ float: 'right', color: 'black' }}  >
-
-          Dr.  {doctor.name}
-        </li>
-      </a>
-
-
-
-
-
-
-
-
-
-    </ul>
-
-
-
-  </div> ) : (
-    compounder ? (
-
-
-      <div>
-
-
-              <ul  >
-
-                <a href="/homescreen">
-                  <li> <img src={img1} id="topimg" />  </li>
-                </a>
-
-         
-
-
-                <li className="box1" style={{ float: 'right' }}
-
-onClick={() => { dispatch(LogOutUserCompounder()) }}
+// className="box2" style={{ float: 'right', color: 'black' }}
 
 >
-Logout
-</li>
-
-
-       <a href='/compounder'>
-        <li className="box2" style={{ float: 'right', color: 'black' }}  >
-        <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
-           &nbsp; {compounder.name}
-        </li>
-      </a>
-
-
-              </ul>
-
-            </div>
-
-
-
-
-    ) : (
-     admin ? ( <p><AdminNavBar /></p> ) : (
-      <div>
-
-
-      <ul  >
-
-        <a href="/">
-          <li> <img src={img1} id="topimg" />  </li>
-        </a>
-
-
-
-        <a href="/user" style={{ color: 'black' }}  >
-          <li className="box2" style={{ float: 'right', color: 'black' }} >
-
-            <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
-            Users
-
-          </li>
-        </a>
-
-
-
-
-        <a href="/doctor">
-          <li className="box1" style={{ float: 'right' }}  >
-            <i class="fa fa-stethoscope" id="steth"   ></i>
-             Doctors
-          </li>
-        </a>
-
-
-
-
-
-      </ul>
-
+    <li class="dropbtn" style={{ float: 'right', color: 'black' }}> Hello  {currentuser.name}
+      <i class="fa fa-caret-down"></i>
+    </li>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
     </div>
-     )
-    )
-  )
+  </div>  */}
 
 
-)
 
-} 
+
+
+
+
+
+                    </ul>
+
+
+
+{/* <div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div> 
+</div> */}
+
+
+
+                  </div>) : (
+
+                    doctor ? (<div>
+
+                      <ul  >
+
+                        <a href="/homescreen">
+                          <li> <img src={img1} id="topimg" />  </li>
+                        </a>
+
+
+
+
+
+                        <li className="box1" style={{ float: 'right' }}
+
+                          onClick={() => { dispatch(LogOutUserDoc()) }}
+
+                        >
+
+                          Logout
+                        </li>
+
+
+
+                        <a href='/drpage'>
+                          <li className="box2" style={{ float: 'right', color: 'black' }}  >
+
+                            Dr.  {doctor.name}
+                          </li>
+                        </a>
+
+
+
+
+
+
+
+
+
+                      </ul>
+
+
+
+                    </div>) : (
+                      compounder ? (
+
+
+                        <div>
+
+
+                          <ul  >
+
+                            <a href="/homescreen">
+                              <li> <img src={img1} id="topimg" />  </li>
+                            </a>
+
+
+
+
+                            <li className="box1" style={{ float: 'right' }}
+
+                              onClick={() => { dispatch(LogOutUserCompounder()) }}
+
+                            >
+                              Logout
+                            </li>
+
+
+                            <a href='/compounder'>
+                              <li className="box2" style={{ float: 'right', color: 'black' }}  >
+                                <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+                                &nbsp; {compounder.name}
+                              </li>
+                            </a>
+
+
+                          </ul>
+
+                        </div>
+
+
+
+
+                      ) : (
+                        admin ? (<p><AdminNavBar /></p>) : (
+                          <div>
+
+
+                            <ul  >
+
+                              <a href="/">
+                                <li> <img src={img1} id="topimg" />  </li>
+                              </a>
+
+
+
+                              <a href="/user" style={{ color: 'black' }}  >
+                                <li className="box2" style={{ float: 'right', color: 'black' }} >
+
+                                  <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+                                  Users
+
+                                </li>
+                              </a>
+
+
+
+
+                              <a href="/doctor">
+                                <li className="box1" style={{ float: 'right' }}  >
+                                  <i class="fa fa-stethoscope" id="steth"   ></i>
+                                  Doctors
+                                </li>
+                              </a>
+
+
+
+
+
+                            </ul>
+
+                          </div>
+                        )
+                      )
+                    )
+
+
+                  )
+
+                }
 
 
 
@@ -397,38 +437,38 @@ Logout
 
 
 
-{ 
+                {
 
-currentuser ? ( <div>
+                  currentuser ? (<div>
 
-  <ul  >
+                    <ul  >
 
-    <a href="/homescreen">
-      <li> <img src={img1} id="topimg" />  </li>
-    </a>
+                      <a href="/homescreen">
+                        <li> <img src={img1} id="topimg" />  </li>
+                      </a>
 
 
 
 
+{/* 
+                      <li className="box1" style={{ float: 'right' }}
 
-    <li className="box1" style={{ float: 'right' }}
+                        onClick={() => { dispatch(LogOutUser()) }}
 
-      onClick={() => { dispatch(LogOutUser()) }}
+                      >
 
-    >
+                        Logout
+                      </li> */}
 
-      Logout
-    </li>
 
+                      <a href='/updateuser'>
 
-<a href='/updateuser'>
+                        <li className="box2" style={{ float: 'right', color: 'black' }}  >
 
-    <li className="box2" style={{ float: 'right', color: 'black' }}  >
+                          Hello  {currentuser.name}
+                        </li>
 
-      Hello  {currentuser.name}
-    </li>
- 
-</a>
+                      </a>
 
 
 
@@ -437,41 +477,41 @@ currentuser ? ( <div>
 
 
 
-  </ul>
+                    </ul>
 
 
 
-</div> ) : (
+                  </div>) : (
 
-  doctor ? ( <div>
+                    doctor ? (<div>
 
-    <ul  >
+                      <ul  >
 
-      <a href="/homescreen">
-        <li> <img src={img1} id="topimg" />  </li>
-      </a>
+                        <a href="/homescreen">
+                          <li> <img src={img1} id="topimg" />  </li>
+                        </a>
 
 
 
 
 
-      <li className="box1" style={{ float: 'right' }}
+                        <li className="box1" style={{ float: 'right' }}
 
-        onClick={() => { dispatch(LogOutUserDoc()) }}
+                          onClick={() => { dispatch(LogOutUserDoc()) }}
 
-      >
+                        >
 
-        Logout
-      </li>
+                          Logout
+                        </li>
 
 
 
-      <a href='/drpage'>
-        <li className="box2" style={{ float: 'right', color: 'black' }}  >
+                        <a href='/drpage'>
+                          <li className="box2" style={{ float: 'right', color: 'black' }}  >
 
-          Dr.  {doctor.name}
-        </li>
-      </a>
+                            Dr.  {doctor.name}
+                          </li>
+                        </a>
 
 
 
@@ -481,103 +521,103 @@ currentuser ? ( <div>
 
 
 
-    </ul>
+                      </ul>
 
 
 
-  </div> ) : (
-    compounder ? (
+                    </div>) : (
+                      compounder ? (
 
 
-      <div>
+                        <div>
 
 
-              <ul  >
+                          <ul  >
 
-                <a href="/homescreen">
-                  <li> <img src={img1} id="topimg" />  </li>
-                </a>
+                            <a href="/homescreen">
+                              <li> <img src={img1} id="topimg" />  </li>
+                            </a>
 
-         
 
 
-                <li className="box1" style={{ float: 'right' }}
 
-onClick={() => { dispatch(LogOutUserCompounder()) }}
+                            <li className="box1" style={{ float: 'right' }}
 
->
-Logout
-</li>
+                              onClick={() => { dispatch(LogOutUserCompounder()) }}
 
+                            >
+                              Logout
+                            </li>
 
-       <a href='/compounder'>
-        <li className="box2" style={{ float: 'right', color: 'black' }}  >
-        <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
-           &nbsp; {compounder.name}
-        </li>
-      </a>
 
+                            <a href='/compounder'>
+                              <li className="box2" style={{ float: 'right', color: 'black' }}  >
+                                <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+                                &nbsp; {compounder.name}
+                              </li>
+                            </a>
 
-              </ul>
 
-            </div>
+                          </ul>
 
+                        </div>
 
 
 
-    ) : (
-     admin ? ( <p><AdminNavBar /></p> ) : (
-      <div>
 
+                      ) : (
+                        admin ? (<p><AdminNavBar /></p>) : (
+                          <div>
 
-      <ul  >
 
-        <a href="/">
-          <li> <img src={img1} id="topimg" />  </li>
-        </a>
+                            <ul  >
 
+                              <a href="/">
+                                <li> <img src={img1} id="topimg" />  </li>
+                              </a>
 
 
-        <a href="/user" style={{ color: 'black' }}  >
-          <li className="box2" style={{ float: 'right', color: 'black' }} >
 
-            <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
-            Users
+                              <a href="/user" style={{ color: 'black' }}  >
+                                <li className="box2" style={{ float: 'right', color: 'black' }} >
 
-          </li>
-        </a>
+                                  <i class="fa fa-user" aria-hidden="true" id="steth" ></i>
+                                  User
 
+                                </li>
+                              </a>
 
 
 
-        <a href="/doctor">
-          <li className="box1" style={{ float: 'right' }}  >
-            <i class="fa fa-stethoscope" id="steth"   ></i>
-             Doctors
-          </li>
-        </a>
 
+                              <a href="/doctor">
+                                <li className="box1" style={{ float: 'right' }}  >
+                                  <i class="fa fa-stethoscope" id="steth"   ></i>
+                                  Doctor
+                                </li>
+                              </a>
 
 
 
 
-      </ul>
 
-    </div>
-     )
-    )
-  )
+                            </ul>
 
+                          </div>
+                        )
+                      )
+                    )
 
-)
 
-} 
+                  )
 
+                }
 
-                </p>
+
+              </p>
             )
           }
-        </p> )
+        </p>)
       }
 
 
