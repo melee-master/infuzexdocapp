@@ -87,42 +87,7 @@ const DoctorSchema = mongoose.Schema({
 
     },
 
-    // start1: {
-    //     type: Number,
-    //     require
-    // },
-    // end1: {
-    //     type: Number,
-    //     require
-    // },
-    // start2: {
-    //     type: Number,
-    //     require
-    // },
-    // end2: {
-    //     type: Number,
-    //     require
-    // },
-    // val1: {
-    //     type: String,
-    //     require
-    // },
-    // val2: {
-    //     type: String,
-    //     require
-    // },
-    // val3: {
-    //     type: String,
-    //     require
-    // },
-    // val4: {
-    //     type: String,
-    //     require
-    // },
-    // time1: {
-    //     type: Date,
-
-    // },
+ 
 
 
     reviews: [reviewschema],
@@ -133,12 +98,7 @@ const DoctorSchema = mongoose.Schema({
 
     },
 
-    // timecheck : [timingscehma]
 
-    // checked: [{
-    //     type: String,
-    //     require
-    // }],
 
     mon: [{
         type: String,
@@ -177,6 +137,10 @@ const DoctorSchema = mongoose.Schema({
     }],
 
 
+    search_tags:{
+        type:String  ,
+        require : true 
+    }
 
 
 

@@ -15,6 +15,10 @@ const trackingschema = mongoose.Schema({
 })
 
 const BookingSchema = mongoose.Schema({
+    // _id:{
+    //     type:String,
+    //     require
+    // } ,
 
     name:{
         type:String,
@@ -70,6 +74,17 @@ const BookingSchema = mongoose.Schema({
       
     } ,
     speciality :{
+        type:String ,
+        require ,
+    } ,
+
+    checkif:{
+        type:String ,
+        require ,
+    } ,
+
+
+    doctorcontact:{
         type:String ,
         require ,
     } ,
