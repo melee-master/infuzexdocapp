@@ -62,9 +62,9 @@ const dispatch = useDispatch()
 
 
 
-    const bookappointment=(e)=>{
+    const bookappointment=()=>{
 
-        e.preventDefault()
+      
 
        var date =  bookingdate.toString().substr(0,15)
      var fieldslot = field.toString().substr(5)
@@ -94,7 +94,7 @@ else if( date==currentday )
        // alert(bookingtime)
     }
 
-    if( timeinnum > bookingtime  )
+    if( timeinnum >= bookingtime  )
     {
         alert(`Can't Book this Slot`)
     }
