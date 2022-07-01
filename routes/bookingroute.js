@@ -98,7 +98,8 @@ router.post('/booking' , (req,res)=>{
             userid:req.body.userid ,
             doctorid:req.body.doctorid ,
             speciality : req.body.speciality ,
-            checkif:"false"
+            doctorcontact:req.body.doctorcontact ,
+            checkif:"false" 
            
 
        } ) 
