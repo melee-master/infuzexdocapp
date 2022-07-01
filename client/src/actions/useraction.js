@@ -20,8 +20,8 @@ export const RegisterNewUser = (user) => dispatch => {
 
 
 
-        localStorage.setItem('currentuser', JSON.stringify(res.data))
-        window.location.href = '/'
+        //localStorage.setItem('currentuser', JSON.stringify(res.data))
+        window.location.href = '/login'
 
 
 

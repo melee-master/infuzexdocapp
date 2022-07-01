@@ -204,28 +204,7 @@ export const FilterProducts=(searchkey)=>dispatch=>{
             } )
         }
 
-        // if(sortkey!=='popular')
-        // {
-        //     if(sortkey=='htl')
-        //     {
-        //         filterproduct = res.data.sort( (a,b)=>{
-        //             return -a.price + b.price
-        //         } )
-        //     }
-        //     else{
-        //         filterproduct = res.data.sort( (a,b)=>{
-        //             return a.price - b.price
-        //         } )
-        //     }
-        // }
-
-        // if(category!=='all')
-        // {
-        //     filterproduct = res.data.filter( product=> {
-        //         return product.category.toLowerCase().includes(category)
-        //     } )
-        // }
-
+    
         dispatch({ type:'DRGET_ALL_SUCCESS' , payload:filterproduct })
 
 
@@ -248,27 +227,8 @@ export const FilterProducts2=(searchkey)=>dispatch=>{
 
     axios.get( '/api/doctor/getalldoctors' ).then(res=>{
         filterproduct = res.data
-        // if(searchkey)
-        // {
-        //     filterproduct = res.data.filter(product=> {
-        //         return product.name.toLowerCase().includes(searchkey)
-        //     } )
-        // }
-
-        // if(sortkey!=='popular')
-        // {
-        //     if(sortkey=='htl')
-        //     {
-        //         filterproduct = res.data.sort( (a,b)=>{
-        //             return -a.price + b.price
-        //         } )
-        //     }
-        //     else{
-        //         filterproduct = res.data.sort( (a,b)=>{
-        //             return a.price - b.price
-        //         } )
-        //     }
-        // }
+        
+     
 
         if(searchkey!=='all')
         {
@@ -441,15 +401,57 @@ export const UpdateDoctorAction= (doctorid , updatedproduct )=> dispatch=>{
 
 
 
-export const DoctorForgotPasswordAction=(email)=>dispatch=>{
+// export const DoctorForgotPasswordAction=(email)=>dispatch=>{
+//     dispatch({ type: 'DR_ForgotPassword_REQUEST' })
+
+//     axios.post('/api/doctor/forgetpassword' , {email} ).then(res=>{
+//         dispatch({ type: 'DR_ForgotPassword_SUCESS' })
+//         alert(`Email rec is ${email} `)
+
+//     }).catch(err=>{
+//         dispatch({ type: 'DR_ForgotPassword_Failed' , payload:err })
+//         console.log(err)
+//     })
+
+// }
+
+
+// export const DoctorResetPasswordAction=(userid,password)=>dispatch=>{
+
+//     dispatch({ type: 'DR_ResetPass_Request' })
+
+
+
+//     axios.post('/api/doctor/resetpassword', { password, userid }).then((res) => {
+//         dispatch({ type: 'DR_ResetPass_Success' })
+
+
+
+
+
+//     }).catch(err => {
+//         dispatch({ type: 'DR_ResetPass_Failed', payload: err })
+//         console.log(err)
+//     })
+
+
+
+// }
+
+
+
+
+export const DoctorForgotPasswordAction=(contactnumber)=>dispatch=>{
     dispatch({ type: 'DR_ForgotPassword_REQUEST' })
 
-    axios.post('/api/doctor/forgetpassword' , {email} ).then(res=>{
+    axios.post('/api/doctor/forgetpassword' , {contactnumber} ).then(res=>{
         dispatch({ type: 'DR_ForgotPassword_SUCESS' })
-        alert(`Email rec is ${email} `)
+        console.log('Successfully recieved data ')
+        sessionStorage.setItem('passdetails', JSON.stringify(res.data))
 
     }).catch(err=>{
-        dispatch({ type: 'DR_ForgotPassword_Failed' , payload:err })
+        dispatch({ type: 'USER_ForgotPassword_Failed' , payload:err })
+        console.log('There is an error')
         console.log(err)
     })
 
@@ -463,17 +465,18 @@ export const DoctorResetPasswordAction=(userid,password)=>dispatch=>{
 
 
     axios.post('/api/doctor/resetpassword', { password, userid }).then((res) => {
-        dispatch({ type: 'DR_ResetPass_Success' })
+        dispatch({ type: 'User_ResetPass_Success' })
 
 
 
 
 
     }).catch(err => {
-        dispatch({ type: 'DR_ResetPass_Failed', payload: err })
+        dispatch({ type: 'User_ResetPass_Failed', payload: err })
         console.log(err)
     })
 
 
 
 }
+
