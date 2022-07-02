@@ -17,7 +17,9 @@ const PatientsList=()=>{
 
 
 
+const doc = JSON.parse( localStorage.getItem('doctor') )
 
+var userid = doc._id
 
     const dispatch = useDispatch()
 
@@ -28,12 +30,12 @@ const patientstate = useSelector(state=>state.GetPatientsByUserIdReducer)
 const {orders , error , loading } = patientstate
 
 
-const doc = localStorage.getItem('doctor')
+
     useEffect( ()=>{
 
         if(localStorage.getItem('doctor'))
         {
-            dispatch(GetPatientsByUserIdAction())
+            dispatch(GetPatientsByUserIdAction({userid}))
         }
         else{
             window.location.href='/drlogin'
