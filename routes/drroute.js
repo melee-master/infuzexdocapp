@@ -133,6 +133,7 @@ router.post('/register', upload.fields('image'), (req,res)=>{
                    //image:req.file.filename ,
                     image:req.body.image ,
                     description:req.body.description ,
+                    patientsperhr:req.body.patientsperhr ,
                     status:"false" ,
                     mon:req.body.checked ,
                     tue:req.body.checked1 ,
