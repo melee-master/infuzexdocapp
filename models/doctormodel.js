@@ -94,7 +94,7 @@ const DoctorSchema = mongoose.Schema({
 
     patientsperhr: {
         type: Number,
-        default: 0,
+        default: 1,
 
     },
 
