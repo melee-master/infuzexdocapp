@@ -123,14 +123,27 @@ const ShowAvailabilityBengali=()=>{
 
     return(
         <div>
-            { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
-               {doctors.patientsperhr-x} স্লট উপলব্ধ 
+            {
+                unavailableday===`Doctor Isn't Available`?(
+                    <p  style={{fontWeight:'bold' , color:'#FF0000' }}>
+                        ডাক্তার পাওয়া যাচ্ছে না
+
+             <br/><br/>
+                    </p>
+                ):(
+                    <p>
+                        { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
+               {doctors.patientsperhr-x} স্লট উপলব্ধ
+
                <br/><br/>
             </p>):(<p style={{fontWeight:'bold' , color:'#FF0000' }} >
-            
-সমস্ত স্লট বুক করা হয়েছে, অন্য স্লট চেষ্টা করুন
+            সমস্ত স্লট বুক করা হয়েছে, অন্য স্লট চেষ্টা করুন
              <br/><br/>
             </p>) }
+                    </p>
+                )
+            }
+           
            
           
         </div>
@@ -147,19 +160,32 @@ const ShowAvailabilityEnglish=()=>{
 
     return(
         <div>
-            { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
+            {
+                unavailableday===`Doctor Isn't Available`?(
+                    <p  style={{fontWeight:'bold' , color:'#FF0000' }}>
+                         Doctor Is Unavailable
+             <br/><br/>
+                    </p>
+                ):(
+                    <p>
+                        { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
                {doctors.patientsperhr-x} Slots Available 
                <br/><br/>
             </p>):(<p style={{fontWeight:'bold' , color:'#FF0000' }} >
              All Slots Booked , Please Try Another Slot
              <br/><br/>
             </p>) }
+                    </p>
+                )
+            }
+           
            
           
         </div>
     )
 
 }
+
 
 
 
