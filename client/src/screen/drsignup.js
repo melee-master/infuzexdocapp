@@ -46,6 +46,7 @@ const DrSignUp=()=>{
     const [field , setfield] = useState('')
     const [image , setimage]=useState('')
     const [description,setdescription]=useState('')
+    const [patientsperhr,setpatientsperhr] = useState()
     const [checked, setChecked] = useState([]);
     const [checked1, setChecked1] = useState([]);
     const [wed, setwed] = useState([]);
@@ -53,6 +54,7 @@ const DrSignUp=()=>{
     const [fri, setfri] = useState([]);
     const [sat, setsat] = useState([]);
     const [sun, setsun] = useState([]);
+
 
     const [verify,setverify] = useState()
 
@@ -704,6 +706,21 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
             />
 
         </p>
+
+        <p style={{ marginLeft: '5px' }}>
+            <label className="formtext">Enter Patients Per Hr.</label>
+
+
+            <input type="Number" placeholder='Patients Per Hr'
+
+                value={patientsperhr}
+                required
+                onChange={(e) => { setpatientsperhr(e.target.value) }}
+
+            />
+
+        </p>
+
 
 
 
