@@ -7,12 +7,17 @@ import DocumentMeta from 'react-document-meta';
 import axios from 'axios';
 import { GetDoctorById } from '../actions/doctoraction';
 import { GetDoctorByIdReducer } from '../reducers/doctorreducer';
+import { GetPatientsByUserId2Action } from "../actions/bookingaction";
+import { GetPatientsByUserIdReducer } from "../reducers/bookingreducer";
+
+
+
 import Calendar from 'react-calendar';
 import './drbooking.css';
 import Loader from './loader';
 // import { TextField } from '@mui/material'
 
-import { BookPatientsAction } from '../actions/bookingaction';
+import { BookPatientsAction, GetBookingsByDate } from '../actions/bookingaction';
 
 
 const DrBooking=({doctorid})=>{
@@ -27,15 +32,19 @@ const DrBooking=({doctorid})=>{
     const [docid , setdocid] = useState(doctorid)
     const [time , settime ] = useState('')
     const [bookingdate, onChange] = useState(new Date());
-const [field , setfield] = useState('')
+const [field , setfield] = useState('8:00 AM')
 const [name , setname ] = useState('')
 const [lname , setlname ] = useState('')
+
+var redirect = false 
 
 
 const user = JSON.parse(localStorage.getItem('currentuser'))
 const admin=JSON.parse(localStorage.getItem('admin'))
 const doctor = JSON.parse(localStorage.getItem('doctor'))
 const compounder = JSON.parse(localStorage.getItem('compounder'))
+
+
 
 
 
@@ -58,15 +67,110 @@ const dispatch = useDispatch()
     const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
     const { loading, doctors ,error} = dridstate
 
+  
+
+var userid = doctors._id
+
+    useEffect( ()=>{
+
+        if(localStorage.getItem('doctor') || localStorage.getItem('currentuser') || localStorage.getItem('compounder') || localStorage.getItem('admin')  )
+        {
+            dispatch(GetPatientsByUserId2Action({userid}))
+        }
+        else{
+            window.location.href='/makechoice'
+        }
 
 
+
+    } ,[dispatch]  )
+
+
+    const patientstate = useSelector(state=>state.GetPatientsByUserIdReducer)
+
+    const {orders  } = patientstate
+
+
+    
+    var date =  bookingdate.toString().substr(0,15)
+  
+
+
+  var x= 0;
+
+
+
+  if(loading==false)
+  {
+  orders.map( i =>{
+    if(( i.date===date ) && ( i.slot===field ) )
+    {
+        console.log(i)
+        x++;
+    }
+} )
+  }
+
+
+   
+
+//    console.log('Total Bookings on' , date ,'at', field  , 'are' , x )
+
+
+const ShowAvailabilityBengali=()=>{
+
+   
+
+    return(
+        <div>
+            { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
+               {doctors.patientsperhr-x} স্লট উপলব্ধ 
+               <br/><br/>
+            </p>):(<p style={{fontWeight:'bold' , color:'#FF0000' }} >
+            
+সমস্ত স্লট বুক করা হয়েছে, অন্য স্লট চেষ্টা করুন
+             <br/><br/>
+            </p>) }
+           
+          
+        </div>
+    )
+
+}
+
+
+
+
+const ShowAvailabilityEnglish=()=>{
+
+   
+
+    return(
+        <div>
+            { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
+               {doctors.patientsperhr-x} Slots Available 
+               <br/><br/>
+            </p>):(<p style={{fontWeight:'bold' , color:'#FF0000' }} >
+             All Slots Booked , Please Try Another Slot
+             <br/><br/>
+            </p>) }
+           
+          
+        </div>
+    )
+
+}
+
+
+
+   
 
 
     const bookappointment=()=>{
 
-      
+       
 
-       var date =  bookingdate.toString().substr(0,15)
+      
      var fieldslot = field.toString().substr(5)
 
 
@@ -77,8 +181,14 @@ const dispatch = useDispatch()
       let text = d.toTimeString();
       var timeinnum = parseInt(`${text}`)
 
-
-
+      
+ if(x>doctors.patientsperhr)
+ {
+     alert('This Slot is Booked , Please Try Another Slot')
+     return 
+    
+ }
+ else {
 if( unavailableday===`Doctor Isn't Available` )
 {
     alert(`Doctor Isn't Available`)
@@ -91,8 +201,10 @@ else if( date==currentday )
     if(fieldslot==='PM')
     {
         bookingtime = bookingtime+12 
-       // alert(bookingtime)
+       
     }
+
+   
 
     if( timeinnum >= bookingtime  )
     {
@@ -118,9 +230,15 @@ else if( date==currentday )
             }
     
             dispatch(BookPatientsAction(details))
-              window.location.href=`/bookingconfirmation`
+          
+             
     
-    alert('Please take a screenshot of this page')
+    
+           window.location.href=`/bookingconfirmation`
+           alert('Please take a screenshot of this page')
+
+          
+    
     
         }
     
@@ -141,12 +259,13 @@ else if( date==currentday )
            doctorcontact:doctors.contactnumber
             }
     
-            dispatch(BookPatientsAction(details))     
-             window.location.href=`/bookingconfirmation`
+            dispatch(BookPatientsAction(details))   
+           
+           
     
             alert('Please take a screenshot of this page')
     
-           // window.location.href=`/bookingconfirmation`
+           window.location.href=`/bookingconfirmation`
     
         }
     
@@ -168,12 +287,16 @@ else if( date==currentday )
          }
     
          dispatch(BookPatientsAction(details))
+        //  setredirect(1)  
          window.location.href=`/bookingconfirmation`
     
          alert('Please take a screenshot of this page')
          
     
         }
+
+
+    
 
     }
 
@@ -264,12 +387,15 @@ alert('Please take a screenshot of this page')
    
 
 }
+ }
 
 
      
 
 
         document.getElementById('show-date').innerHTML=bookingdate + field
+
+      
        
     }
 
@@ -278,6 +404,10 @@ alert('Please take a screenshot of this page')
        
         document.getElementById('show-number').innerHTML=doctors.contactnumber
     }
+
+
+
+ 
 
 var timevar = []
 timevar =  doctors.checked
@@ -640,7 +770,7 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 
-
+{ShowAvailabilityBengali()}
 
 
 
@@ -655,6 +785,7 @@ doctors.sun && doctors.sun.map(rev => {
 placeholder="রোগীর নাম" type='text'
 
 value={name}
+required
 
 onChange={ (e)=>setname(e.target.value) }
 
@@ -1072,7 +1203,6 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 
-<br/>
 
 
 
@@ -1081,7 +1211,7 @@ doctors.sun && doctors.sun.map(rev => {
 
 
 
-
+{ShowAvailabilityEnglish()}
 
 
 
@@ -1100,6 +1230,7 @@ doctors.sun && doctors.sun.map(rev => {
 placeholder="Patient's Name" type='text'
 
 value={name}
+required
 
 onChange={ (e)=>setname(e.target.value) }
 
@@ -1502,11 +1633,8 @@ onClick={ showcontact }
                
                
                
-               
-               <br/>
-               
-               
-               
+               {ShowAvailabilityEnglish()}
+
                
                
                
@@ -1531,7 +1659,7 @@ onClick={ showcontact }
                placeholder="Patient's Name" type='text'
                
                value={name}
-               
+               required
                onChange={ (e)=>setname(e.target.value) }
                
                style={{width:'90%', marginLeft:'5%'  }}
