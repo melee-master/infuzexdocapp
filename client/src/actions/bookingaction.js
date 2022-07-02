@@ -9,7 +9,12 @@ export const BookPatientsAction=(details)=>dispatch=>{
 
     axios.post('/api/booking/booking' , details ).then(res=>{
         dispatch({type:'Book_Patients_Success'})
+       
+       
         sessionStorage.setItem('bookingdetails' ,  JSON.stringify(res.data) );
+// alert('redirecting.....')
+// console.log('redirecting.....')
+//         window.location.href=`/bookingconfirmation`
     }).catch(err=>{
         dispatch({type:'Book_Patients_Failed'})
         console.log(err)
@@ -38,6 +43,30 @@ export const GetPatientsByUserIdAction=()=>(dispatch , getState )=>{
 
 
 }
+
+
+
+export const GetPatientsByUserId2Action=({userid})=>(dispatch , getState )=>{
+
+  
+
+
+    dispatch({type:'GET_PatientsBYID_REQUEST'})
+
+    axios.post('/api/booking/getpatientsbyuserid2' , {userid:userid} ).then( res=>{
+
+        dispatch({type:'GET_PatientsBYID_SUCCESS' , payload:res.data })
+       
+
+    } ).catch(err=>{
+        dispatch({type:'GET_PatientsBYID_FAILED' , payload:err })
+        console.log(err)
+    })
+
+
+}
+
+
 
 
 export const GetBookingsByUserIdAction=()=>(dispatch , getState )=>{
@@ -169,10 +198,36 @@ export const GetAllOrderAction=(orderid)=>(dispatch , getState )=>{
     axios.get('/api/orders/getallorder'  ).then( res=>{
 
         dispatch({type:'GET_ALL_ORDERSUCCESS' , payload:res.data })
-        console.log(res.data)
+       
 
     } ).catch(err=>{
         dispatch({type:'GET_ALL_ORDER_FAILED' , payload:err })
+        console.log(err)
+    })
+
+
+}
+
+
+
+
+
+
+
+export const GetBookingsByDate=({doctorid,date2})=>(dispatch  )=>{
+
+    
+
+
+    dispatch({type:'GET_Booking_By_Date_REQUEST'})
+
+    axios.get('/api/booking/getpatientsbydate'  , { doctorid,date2 } ).then( res=>{
+
+        dispatch({type:'GET_Booking_By_DateSUCCESS' , payload:res.data })
+       
+
+    } ).catch(err=>{
+        dispatch({type:'GET_Booking_By_Date_FAILED' , payload:err })
         console.log(err)
     })
 
