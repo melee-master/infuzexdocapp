@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express')
 const bodyparser= require('body-parser')
 const app = express()
@@ -37,7 +39,7 @@ if(process.env.NODE_ENV==='production')
 
 
 
-const port = process.env.PORT ||  7000 ;
+const port = process.env.PORT ||  7010 ;
 
 var server = app.listen( port , ()=>{
     console.log('Server started at Docapp')

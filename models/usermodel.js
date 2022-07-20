@@ -1,37 +1,32 @@
 const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema({
-
-    name:{
-        type:String,
+    name: {
+        type: String,
         require
-    } ,
-    lname :{
-        type:String,
+    },
+    profile: {
+        fileurl: String,
+        filename: String
+    },
+    lname: {
+        type: String,
         require
-    } ,
-
-    email:{
-        type:String,
-       
-
+    },
+    email: {
+        type: String,
         require
-    } ,
-    password:{
-        type:String,
+    },
+    password: {
+        type: String,
         require
-    } ,
-    contactnumber : {
-        type:Number ,
-        require 
+    },
+    contactnumber: {
+        type: Number,
+        require
     }
-    
-    
+}, { timestamps: true })
 
+const User = mongoose.model('users', userSchema)
 
-
-} ,  {timestamps:true } )
-
-const User = mongoose.model('users',userSchema)
-
-module.exports=User
+module.exports = User

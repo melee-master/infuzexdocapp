@@ -76,7 +76,9 @@ const DoctorSchema = mongoose.Schema({
         require
     },
     image: {
-        type: String
+         type: String
+        // fileurl: String,
+        // filename: String
     },
     description: {
         type: String,
