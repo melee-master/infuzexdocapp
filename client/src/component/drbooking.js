@@ -106,7 +106,7 @@ var userid = doctors._id
   orders.map( i =>{
     if(( i.date===date ) && ( i.slot===field ) )
     {
-        console.log(i)
+       
         x++;
     }
 } )
@@ -115,7 +115,6 @@ var userid = doctors._id
 
    
 
-//    console.log('Total Bookings on' , date ,'at', field  , 'are' , x )
 
 
 const ShowAvailabilityBengali=()=>{
