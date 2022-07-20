@@ -1,0 +1,50 @@
+#ambulance-list
+{
+   text-align: center;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#amb-img
+{
+    width: 40%;
+    float: left;
+}
+
+#left-text
+{
+    /* width: 50%; */
+}
+
+#right-text
+{
+    margin-top: 10%;
+    margin-right: 50%;
+   
+}
+
+
+@media screen and (max-width:650px) {
+    #ambulance-list
+{
+    
+    display: block;
+    
+}
+
+#amb-img
+{
+    width: 90%;
+   
+}
+
+
+#right-text
+{
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+
+}

@@ -4,6 +4,7 @@ import AllDoctors from "./alldoctor";
 import './general.css'
 import DoctorBySpecialization  from "./doctorbyspec";
 import DoctorByIllness from "./doctorbyillness";
+import AmbulanceService from "./ambulance";
 
 const HomeScreen=()=>{
 
@@ -40,7 +41,7 @@ const HomeScreen=()=>{
 
 </div>
 
-
+<AmbulanceService/>
 <AllDoctors/>
 
 <DoctorBySpecialization/>
@@ -63,6 +64,7 @@ const HomeScreen=()=>{
 
 </div>
 
+<AmbulanceService/>
 
 <AllDoctors/>
 
@@ -85,6 +87,8 @@ const HomeScreen=()=>{
 
 
 </div>
+
+<AmbulanceService/>
 
 
 <AllDoctors/>
