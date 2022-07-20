@@ -22,6 +22,8 @@ const UpdateProfile=({match})=>{
     // const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
     // const { loading, doctors ,error} = dridstate
 
+
+
     const [name,setname] = useState('')
     const [lname,setlname] = useState('')
     const [email,setemail] = useState('')
@@ -34,6 +36,7 @@ const UpdateProfile=({match})=>{
     const [image,setimage]=useState('')
     const [description,setdescription]=useState('')
     const [status,setstatus] = useState('false')
+    const [patientsperhr,setpatientsperhr] = useState()
     const [checked, setChecked] = useState([]);
     const [checked1, setChecked1] = useState([]);
     const [wed, setwed] = useState([]);
@@ -305,6 +308,7 @@ const handleCheckSun = (event) => {
                 setfri(doctors.fri)
                 setsat(doctors.sat)
                 setsun(doctors.sun)
+                setpatientsperhr(doctors.patientsperhr)
 
                 
             }
@@ -338,6 +342,7 @@ const handleCheckSun = (event) => {
             college:college ,
             experience:experience ,
             email : email ,
+            patientsperhr:patientsperhr ,
             contactnumber :contactnumber  ,
             address : address ,
             checked:checked ,
@@ -372,34 +377,7 @@ return(
 
 
 
-{/* { loading ? (<Loader/>) : error ? ( <h1>There's an error</h1> ) :
-           
-           (
-               <div  >
 
-                   <img src={doctors.image} id="img-docdes"/>
-
-                  <h3 className='docdes-name' > Dr. {doctors.name}  {doctors.lname}  </h3>
-                   <p className='docdes-sub' > {doctors.field} </p>
-                   <br/>
-                   <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} Years Exp </p>
-                   <br/>
-                  <h4 className='docdes-sub'> {doctors.address} </h4>
-
-                  <hr/>
-
-   
-               
-                
-
-               
-                 
-
-                   </div>
-           )
-           
-           
-           } */}
 
 
 
@@ -506,20 +484,22 @@ return(
 
 
 
+        <p >
+    <label className="formtext">Enter Patients Per Hr</label>
 
 
-        <p>
-            <label className="formtext">Field</label>
-            <input type="text"
+    <input type="text" placeholder='Patients in an hr'
 
-                value={field}
-                required
-                onChange={(e) => { setfield(e.target.value) }}
+        value={patientsperhr}
+        required
+        onChange={(e) => { setpatientsperhr(e.target.value) }}
+
+    />
+
+</p>
 
 
-                placeholder='Enter Field' />
-
-        </p>
+  
 
         <p style={{ marginLeft: '5px' }} >
             <label className="formtext">Clinic Address</label>
@@ -537,7 +517,7 @@ return(
 
 
 
-        <p style={{ marginLeft: '5px' }}>
+        <p >
             <label className="formtext">Years of Experience</label>
 
 
@@ -577,10 +557,54 @@ return(
     className='doc-descroption-input'
     
     />
+  </p>
 
-   
 
-            </p>
+  <p style={{marginLeft:'5px'}}>
+
+<label className="formtext"  >Field</label>
+
+
+<select value={field} onChange={ (e)=>{ setfield(e.target.value) } }  id='select-doc' style={{marginTop:'50px' , float:'left' }}  >
+
+<option value='Physician'  >Field</option>
+<option value='Physician'  >Physician</option>
+<option value='Cardiologist' >Cardiologist</option>
+<option value='Orthopaedic' >Orthopaedic</option>
+<option value='Gynecologist' >Gynecologist</option>
+<option value='Pummonologist' >Pummonologist</option>
+<option value='Neurologist' >Neurologist</option>
+<option value='Endocrinologist' >Endocrinologist</option>
+<option value='Dermatologist' >Dermatologist</option>
+<option value='Paediatrician' >Paediatrician</option>
+<option value='Dentist' >Dentist</option>
+<option value='Diabetologist' >Diabetologist</option>
+<option value='Ophthalmologist' >Ophthalmologist</option>
+<option value='Sexologist' >Sexologist</option>
+<option value='Ophthalmologist' >Ophthalmologist</option>
+<option value='Nutrition' >Nutritionist</option>
+<option value='ENT-Specialist' >ENT Specialist</option>
+<option value='Psychiatrist' >Psychiatrist</option>
+<option value='Nephrologist' >Nephrologist</option>
+<option value='Oncologist' >Oncologist</option>
+<option value='Urologist' >Urologist</option>
+<option value='Gastroenterologists' >Gastroenterologists</option>
+<option value='Obstetricians' >Obstetricians</option>
+
+
+</select> 
+
+
+
+ 
+
+</p>
+
+            
+
+
+
+
 
            {/* <p></p>
 

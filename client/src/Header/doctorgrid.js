@@ -35,7 +35,7 @@ export default function DoctorGrid({prod})
 
 <img  src={prod.image} 
 
-
+style={{width:'90%' , borderRadius:'5%' }}
 
 id="testing-image"
 
@@ -78,6 +78,7 @@ id="testing-image"
 
 
 id="testing-image"
+style={{width:'90%' , borderRadius:'5%' }}
 
 />
 <h2 className='doc-name' >
@@ -114,7 +115,7 @@ Dr. {prod.name} </h2>
 <img  src={prod.image} 
 
 
-
+style={{width:'90%' , borderRadius:'5%' }}
 id="testing-image"
 
 />
