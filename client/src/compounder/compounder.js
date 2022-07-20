@@ -58,7 +58,7 @@ const Compounder=()=>{
 
 
 <ul className='makebig'  >
-                    {/* <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li> */}
+                    <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li>
                     <li ><Link to='/compounder/checkschedule'   className='stylebar' >আজকের সূচি
  </Link>   </li>
                     {/* <li ><Link to='/compounder/adduser'  className='stylebar'>Add New Patient</Link>   </li> */}
@@ -73,7 +73,7 @@ const Compounder=()=>{
 
                 <Switch>
                     <Route exact path='/compounder' ><CheckSchedule doctorid={compounder.docid} /></Route>
-                {/* <Route path="/compounder/makebooking"   ><CompounderBooking doctorid={compounder.docid} /></Route> */}
+                <Route path="/compounder/makebooking"   ><CompounderBooking doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/checkschedule"   ><CheckSchedule doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/futureschedule"   ><FutureScheduleCompounder doctorid={compounder.docid}  /></Route>
                 {/* <Route path='/compounder/adduser' ><AddUserCompounder/></Route> */}
@@ -98,7 +98,7 @@ const Compounder=()=>{
 
 
 <ul className='makebig'  >
-                    {/* <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li> */}
+                    <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li>
                     <li ><Link to='/compounder/checkschedule'   className='stylebar' >Today's Schedule </Link>   </li>
                     {/* <li ><Link to='/compounder/adduser'  className='stylebar'>Add New Patient</Link>   </li> */}
                     <li> <Link to='/compounder/futureschedule'   className='stylebar' >Check Schedule </Link> </li>
@@ -110,7 +110,7 @@ const Compounder=()=>{
 
                 <Switch>
                     <Route exact path='/compounder' ><CheckSchedule doctorid={compounder.docid} /></Route>
-                {/* <Route path="/compounder/makebooking"   ><CompounderBooking doctorid={compounder.docid} /></Route> */}
+                <Route path="/compounder/makebooking"   ><CompounderBooking doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/checkschedule"   ><CheckSchedule doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/changelanguage"   ><ChooseLanguage /></Route>
                 <Route path="/compounder/futureschedule"   ><FutureScheduleCompounder doctorid={compounder.docid}  /></Route>
@@ -132,7 +132,7 @@ const Compounder=()=>{
 
 
 <ul className='makebig'  >
-                    {/* <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li> */}
+                    <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li>
                     <li ><Link to='/compounder/checkschedule'   className='stylebar' >Today's Schedule </Link>   </li>
                     {/* <li ><Link to='/compounder/adduser'  className='stylebar'>Add New Patient</Link>   </li> */}
                     <li> <Link to='/compounder/futureschedule'   className='stylebar' >Check Schedule </Link> </li>
@@ -144,7 +144,7 @@ const Compounder=()=>{
 
                 <Switch>
                     <Route exact path='/compounder' ><CheckSchedule doctorid={compounder.docid} /></Route>
-                {/* <Route path="/compounder/makebooking"   ><CompounderBooking doctorid={compounder.docid} /></Route> */}
+                <Route path="/compounder/makebooking"   ><CompounderBooking doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/checkschedule"   ><CheckSchedule doctorid={compounder.docid} /></Route>
                 <Route path="/compounder/changelanguage"   ><ChooseLanguage /></Route>
                 <Route path="/compounder/futureschedule"   ><FutureScheduleCompounder doctorid={compounder.docid}  /></Route>

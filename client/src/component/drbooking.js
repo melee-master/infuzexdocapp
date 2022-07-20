@@ -35,6 +35,7 @@ const DrBooking=({doctorid})=>{
 const [field , setfield] = useState('8:00 AM')
 const [name , setname ] = useState('')
 const [lname , setlname ] = useState('')
+const [contactnumber,setcontactnumber]=useState()
 
 var redirect = false 
 
@@ -100,7 +101,7 @@ var userid = doctors._id
 
 
 
-  if(loading==false)
+  if(loading===false)
   {
   orders.map( i =>{
     if(( i.date===date ) && ( i.slot===field ) )
@@ -208,7 +209,7 @@ const ShowAvailabilityEnglish=()=>{
       var timeinnum = parseInt(`${text}`)
 
       
- if(x>doctors.patientsperhr)
+ if(x>doctors.patientsperhr-1)
  {
      alert('This Slot is Booked , Please Try Another Slot')
      return 
@@ -244,7 +245,7 @@ else if( date==currentday )
                 name:name ,
                 lname:lname ,
                 email:user.email ,
-                contactnumber:user.contactnumber ,
+                contactnumber:contactnumber ,
                 doctorid:doctorid ,
                 userid:user._id ,
                 status:'Registered User' ,
@@ -274,7 +275,7 @@ else if( date==currentday )
                 name:name ,
                 lname:lname ,
                 email:doctor.email ,
-                contactnumber:doctor.contactnumber ,
+                contactnumber:contactnumber ,
                 doctorid:doctorid ,
                 status:'Doctor' ,
                 userid:doctor._id ,
@@ -301,7 +302,7 @@ else if( date==currentday )
             name:name ,
             lname:lname ,
              email:compounder.email ,
-             contactnumber:compounder.contactnumber ,
+             contactnumber:contactnumber ,
              doctorid:doctorid ,
              status:'Compounder' ,
              userid:compounder._id ,
@@ -342,7 +343,7 @@ else
             name:name ,
             lname:lname ,
             email:user.email ,
-            contactnumber:user.contactnumber ,
+            contactnumber:contactnumber ,
             doctorid:doctorid ,
             userid:user._id ,
             status:'Registered User' ,
@@ -366,7 +367,7 @@ alert('Please take a screenshot of this page')
             name:name ,
             lname:lname ,
             email:doctor.email ,
-            contactnumber:doctor.contactnumber ,
+            contactnumber:contactnumber ,
             doctorid:doctorid ,
             status:'Doctor' ,
             userid:doctor._id ,
@@ -392,7 +393,7 @@ alert('Please take a screenshot of this page')
         name:name ,
         lname:lname ,
          email:compounder.email ,
-         contactnumber:compounder.contactnumber ,
+         contactnumber:contactnumber ,
          doctorid:doctorid ,
          status:'Compounder' ,
          userid:compounder._id ,
@@ -1265,6 +1266,14 @@ style={{width:'90%', marginLeft:'5%'  }}
 />
 
 
+<br/>
+<input 
+style={{width:'90%', marginLeft:'5%'}}
+type='Number' value={contactnumber} placeholder="Patient's/Guardians Contact Number  "
+
+required
+onChange={ (e)=>{ setcontactnumber(e.target.value) } }  />
+
 
 
 
@@ -1693,6 +1702,14 @@ onClick={ showcontact }
                />
                
                
+               
+<br/>
+<input 
+style={{width:'90%', marginLeft:'5%'}}
+type='Number' value={contactnumber} placeholder='Enter Contact Number'
+
+required
+onChange={ (e)=>{ setcontactnumber(e.target.value) } }  />
                
                
                
