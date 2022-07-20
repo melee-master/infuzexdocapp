@@ -3,26 +3,9 @@ const router = express.Router();
 const mongoose = require('mongoose')
 
 const Booking = require('../models/Booking')
-// const accountSid = process.env.accountSid; 
-// const authToken = process.env.authToken; 
-// const client = require('twilio')('AC25e57c35ff0fa2cffd8b8dc7668fb3a0', '0226bdd15fc9b9278110ea171a772561'); 
 
 const wbm = require('wbm');
 
-
-// const Vonage = require('@vonage/server-sdk')
-
-// const vonage = new Vonage({
-//   apiKey: "98fac372",
-//   apiSecret: "wQoKewL083mjA0SI"
-// })
-
-
-
-// const accountSid = '123testAC4b987f9ad23a9b5d52b20b55cac0f81f'; 
-// const authToken = '123d2af4975471f0d3f630371ffca7becfd'; 
-// const client = require('twilio')('AC4b987f9ad23a9b5d52b20b55cac0f81f', 'd2af4975471f0d3f630371ffca7becfd'); 
- 
 
 
 
@@ -61,7 +44,6 @@ router.post('/booking' , (req,res)=>{
         
         if(!err)
         {
-            
             
            return  res.send(book  )
         }
@@ -186,8 +168,8 @@ router.post('/getpatientsbydate', (req, res) => {
 router.post('/getbookingssbyuserid', (req, res) => {
 
     const userid = req.body.userid
-
-    Booking.find({ contactnumber: userid }, (err, docs) => {
+console.log('The user id is' , userid )
+    Booking.find({ userid: userid }, (err, docs) => {
         if (err) {
             return res.status(400).json({ message: 'Something Went Wrong' })
         }
