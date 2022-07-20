@@ -101,18 +101,20 @@ var userid = doctors._id
 
 
 
-  if(loading===false)
+setTimeout( function()
   {
-  orders.map( i =>{
-    if(( i.date===date ) && ( i.slot===field ) )
+    if(loading===false)
     {
-       
-        x++;
+    orders.map( i =>{
+      if(( i.date===date ) && ( i.slot===field ) )
+      {
+         
+          x++;
+      }
+  } )
     }
-} )
-  }
 
-
+  } , 5000 )
    
 
 
