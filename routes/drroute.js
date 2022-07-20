@@ -235,9 +235,17 @@ router.post('/addreview', async (req, res) => {
 
 router.post('/login', (req, res) => {
 
-    const usepass = universalhash + req.body.password + backendhash
+    var x=req.body.password
+    var hash = 0;
+    for (var i = 0; i < x.length; i++) {
+      var char = x.charCodeAt(i);
+      hash = ((hash << 5) - hash) + char;
+      hash = hash & hash;
+    }
+    
+        var hashedpass = universalhash + hash + backendhash
 
-    Doctor.find({ email: req.body.email, password: usepass }, (err, docs) => {
+    Doctor.find({ email: req.body.email, password: hashedpass }, (err, docs) => {
 
         if (docs.length > 0) {
 
@@ -258,7 +266,6 @@ router.post('/login', (req, res) => {
     })
 
 })
-
 
 
 
@@ -361,8 +368,7 @@ router.post('/forgetpassword', (req, res) => {
 
     const { contactnumber } = req.body
 
-    // getidbymail(req.body.email)
-    console.log('The Phone Number rec is', req.body.contactnumber)
+   
     var idvariable
     var strires
 
@@ -375,7 +381,7 @@ router.post('/forgetpassword', (req, res) => {
         else {
 
 
-            // console.log('The Data is' , docs )
+           
 
 
 
@@ -387,7 +393,7 @@ router.post('/forgetpassword', (req, res) => {
                 lname: docs[0].lname
             }
 
-            console.log('The Local Save is', localsave)
+           
 
 
 
@@ -409,8 +415,23 @@ router.post('/forgetpassword', (req, res) => {
 router.post('/resetpassword', (req, res) => {
     const { userid, password } = req.body
 
-    var hashedpass = universalhash + req.body.password + backendhash
-    console.log('The user id and new pass is', userid, password)
+
+
+
+var x=req.body.password
+var hash = 0;
+for (var i = 0; i < x.length; i++) {
+  var char = x.charCodeAt(i);
+  hash = ((hash << 5) - hash) + char;
+  hash = hash & hash;
+}
+
+   
+    
+  
+        var hashedpass = universalhash + hash + backendhash
+
+
     Doctor.findByIdAndUpdate({ _id: userid }, {
 
         password: hashedpass
@@ -422,7 +443,7 @@ router.post('/resetpassword', (req, res) => {
 
         }
         else {
-            console.log('Updated the user with user id', userid)
+            
             res.send({ message: 'Updated Successfully' })
         }
 
