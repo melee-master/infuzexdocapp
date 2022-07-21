@@ -6,6 +6,7 @@ import ChooseLanguage from "./chooselanguage";
 import CompounderRegister from "./compunderreg";
 import DailySchedule from "./dailyschedule";
 import CheckSchedule from "./drcheckschedule";
+import DoctorWelcomeScreen from "./drwelcomescreen";
 import PatientsList from "./patientslist";
 import UpdateProfile from "./updateprofile";
 
@@ -22,7 +23,7 @@ const DoctorPage=()=>{
 
     const doctor = JSON.parse(localStorage.getItem('doctor'))
 
-    console.log('This is doc page' , doctor._id )
+   
 
     return(
         <div>
@@ -85,7 +86,7 @@ const DoctorPage=()=>{
 
 
         <Switch>
-        <Route path="/drpage" exact  component={DailySchedule}  ></Route>
+        <Route path="/drpage" exact  component={DoctorWelcomeScreen}  ></Route>
         <Route path="/drpage/dailyschedule"  component={DailySchedule}  ></Route>
 <Route path="/drpage/allpatients"  component={PatientsList}  ></Route>
 <Route path="/drpage/addcompounder"  ><CompounderRegister docid={doctor._id} /></Route>

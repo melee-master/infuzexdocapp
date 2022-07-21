@@ -32,7 +32,7 @@ const DrBooking=({doctorid})=>{
     const [docid , setdocid] = useState(doctorid)
     const [time , settime ] = useState('')
     const [bookingdate, onChange] = useState(new Date());
-const [field , setfield] = useState('8:00 AM')
+const [field , setfield] = useState('')
 const [name , setname ] = useState('')
 const [lname , setlname ] = useState('')
 const [contactnumber,setcontactnumber]=useState()
@@ -92,15 +92,14 @@ var userid = doctors._id
     const {orders  } = patientstate
 
 
+
+
     
     var date =  bookingdate.toString().substr(0,15)
   
 
 
   var x= 0;
-
-
-
 
 
   if(orders)
@@ -114,6 +113,12 @@ var userid = doctors._id
 } )
   }
 
+ 
+
+
+   
+
+//    console.log('Total Bookings on' , date ,'at', field  , 'are' , x )
 
 
 const ShowAvailabilityBengali=()=>{
@@ -168,7 +173,7 @@ const ShowAvailabilityEnglish=()=>{
                 ):(
                     <p>
                         { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
-               {doctors.patientsperhr-x} Slots Available 
+               {doctors.patientsperhr-x} Slots Available at {field}
                <br/><br/>
             </p>):(<p style={{fontWeight:'bold' , color:'#FF0000' }} >
              All Slots Booked , Please Try Another Slot
@@ -836,8 +841,7 @@ style={{width:'90%', marginLeft:'5%'  }}
 
 
 
-
-<br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
 
 
 <button 
@@ -1275,7 +1279,7 @@ onChange={ (e)=>{ setcontactnumber(e.target.value) } }  />
 
 
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/>
 
 <button 
 value='submit' 
@@ -1685,7 +1689,7 @@ onClick={ showcontact }
                
                
                
-               
+               <h4 style={{float:'left', marginLeft:'5%'}} > Enter Name </h4>
                
                <input  
                
@@ -1711,7 +1715,7 @@ onChange={ (e)=>{ setcontactnumber(e.target.value) } }  />
                
                
                
-               <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+               <br/><br/><br/><br/><br/><br/><br/><br/>
                
                <button 
                value='submit' 

@@ -51,6 +51,7 @@ const ForgotPassword = () => {
       .then((confirmationResult) => {
 
         window.confirmationResult = confirmationResult;
+        document.getElementById('message-show').innerHTML=`OTP Has Been Sent`
         console.log("OTP has been sent")
 
       }).catch((error) => {
@@ -71,7 +72,8 @@ const ForgotPassword = () => {
       const user = result.user;
       console.log(JSON.stringify(user))
       setverify(1)
-      alert("OTP verified")
+     // alert("OTP verified")
+     document.getElementById('message-show').innerHTML=`OTP Verified , Please Click Next`
       dispatch(DoctorForgotPasswordAction(contactnumber))
       // window.location.href='/resetpassword'
       setverify(1)
@@ -220,6 +222,7 @@ const ForgotPassword = () => {
                   পরবর্তী<i class="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
+              <div id="message-show" style={{color:'green'}} ></div>
             </form>
 
             <br /><br /><br /><br /><br />
@@ -333,6 +336,7 @@ const ForgotPassword = () => {
                         Next<i class="fa-solid fa-arrow-right"></i>
                       </button>
                     </div>
+                    <div id="message-show" style={{color:'green'}} ></div>
                   </form>
 
                   <br /><br /><br /><br /><br />
@@ -444,6 +448,7 @@ const ForgotPassword = () => {
                         Next<i class="fa-solid fa-arrow-right"></i>
                       </button>
                     </div>
+                    <div id="message-show" style={{color:'green'}} ></div>
                   </form>
 
                   <br /><br /><br /><br /><br />

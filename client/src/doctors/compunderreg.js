@@ -213,7 +213,8 @@ const CompounderRegister=({docid})=>{
     <br/><br/>
 
 
-    {error && ( <p  id="message" >ইমেলটি ইতিমধ্যেই নিবন্ধন</p> )  }
+    {error && ( <p  id="message" >ফোন নম্বর ইতিমধ্যে নিবন্ধিত
+</p> )  }
 
 {success && ( <p  id="message" >সাফল্যের সাথে নিবন্ধিত</p> ) }
 
@@ -318,7 +319,7 @@ const CompounderRegister=({docid})=>{
     <br/><br/>
 
 
-    {error && ( <p  id="message" >Email Already Registered</p> )  }
+    {error && ( <p  id="message" >Phone Number Already Registered</p> )  }
 
 {success && ( <p  id="message" > Registered Successfully</p> ) }
 
@@ -404,7 +405,7 @@ const CompounderRegister=({docid})=>{
 
     <br/> <br/> <br/><br/> <br/><br/>
     <button type='submit' className='box1' id="signupbtn" 
-    style={{marginTop:'10px' , marginLeft:'40%' , marginRight:'40%'  }} 
+    style={{marginTop:'10px' , marginLeft:'45%' , marginRight:'45%'  }} 
      >Register</button>
 
 
@@ -414,7 +415,7 @@ const CompounderRegister=({docid})=>{
     <br/><br/>
 
 
-    {error && ( <p  id="message" >Email Already Registered</p> )  }
+    {error && ( <p  id="message" >Phone Number Already Registered</p> )  }
 
 {success && ( <p  id="message" > Registered Successfully</p> ) }
 

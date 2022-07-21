@@ -62,6 +62,7 @@ import IndividualBooking from './doctors/individualpatient';
 import LanguageSelector from './language';
 import Invoice from './users/invoice';
 import MakeChoice from './makechoice';
+import AmbulanceService from './screen/ambulance';
 
 
 
@@ -97,6 +98,7 @@ function App() {
   user?( <p>
     
    <Route path="/homescreen" exact component={HomeScreen} ><HomeScreen/></Route>
+   <Route path="/ambulance-list" exact component={AmbulanceService} ></Route>
    <Route path='/alldoctors' component={AllDoctorSearch} ></Route>
  <Route path="/doctors/:id" component = { DoctorDescription} ></Route>
  <Route path="/dr-by-specialization" component={IndividualDrSpecialization} ></Route>
@@ -110,6 +112,7 @@ function App() {
         doctor?(<p>
            
    <Route path="/homescreen" exact component={HomeScreen} ><HomeScreen/></Route>
+   <Route path="/ambulance-list" exact component={AmbulanceService} ></Route>
    <Route path='/alldoctors' component={AllDoctorSearch} ></Route>
  <Route path="/doctors/:id" component = { DoctorDescription} ></Route>
  <Route path="/dr-by-specialization" component={IndividualDrSpecialization} ></Route>
@@ -124,6 +127,7 @@ function App() {
               compounder?( <p>
                 
    <Route path="/homescreen" exact component={HomeScreen} ><HomeScreen/></Route>
+   <Route path="/ambulance-list" exact component={AmbulanceService} ></Route>
    <Route path='/alldoctors' component={AllDoctorSearch} ></Route>
  <Route path="/doctors/:id" component = { DoctorDescription} ></Route>
  <Route path="/dr-by-specialization" component={IndividualDrSpecialization} ></Route>
