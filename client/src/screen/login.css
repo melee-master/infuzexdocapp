@@ -190,7 +190,13 @@ input[type=text] {
     display: grid;
     grid-template-columns: auto auto auto ;
 }
-    
+
+#time-slot
+{
+    margin-top: -50%;
+}
+
+
 }
 
 
@@ -274,6 +280,11 @@ input{
     margin-top: 1100px
 }
 
+#time-slot
+{
+    margin-top: -130%;
+}
+
 
 
     
@@ -321,7 +332,10 @@ input{
     margin-top: 1200px
 }
 
-
+#time-slot
+{
+    margin-top: -200%;
+}
     
 }
 

@@ -51,6 +51,7 @@ const ForgotPassword = () => {
 
         window.confirmationResult = confirmationResult;
         console.log("OTP has been sent")
+        document.getElementById('message-show').innerHTML=`OTP Has Been Sent`
 
       }).catch((error) => {
 
@@ -70,13 +71,15 @@ const ForgotPassword = () => {
       const user = result.user;
       console.log(JSON.stringify(user))
       setverify(1)
-      alert("OTP verified")
+      // alert("OTP verified")
+      document.getElementById('message-show').innerHTML=`OTP Verified , Please Click Next`
       dispatch(UserForgotPasswordAction(contactnumber))
       // window.location.href='/resetpassword'
       setverify(1)
 
     }).catch((error) => {
       alert('Invalid OTP')
+
       setverify(0)
       window.location.reload()
       setverify(0)
@@ -219,6 +222,7 @@ const ForgotPassword = () => {
                   পরবর্তী<i class="fa-solid fa-arrow-right"></i>
                 </button>
               </div>
+              <div id="message-show" style={{color:'green'}} ></div>
             </form>
 
             <br /><br /><br /><br /><br />
@@ -241,7 +245,7 @@ const ForgotPassword = () => {
                   <br />
                   <h2>Forgot Password ?</h2>
                   <h4 style={{ color: 'gray' }} >Enter Your Registered Contact Number</h4>
-
+                  
                   <form onSubmit={sendmail}  >
 
 
@@ -331,7 +335,12 @@ const ForgotPassword = () => {
                       >
                         Next<i class="fa-solid fa-arrow-right"></i>
                       </button>
+                   <br/>  <br/>
+                  
                     </div>
+
+                    <div id="message-show" style={{color:'green'}} ></div>
+                  
                   </form>
 
                   <br /><br /><br /><br /><br />
@@ -442,6 +451,8 @@ const ForgotPassword = () => {
                       >
                         Next<i class="fa-solid fa-arrow-right"></i>
                       </button>
+
+                      <div id="message-show" ></div>
                     </div>
                   </form>
 

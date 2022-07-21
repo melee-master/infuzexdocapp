@@ -66,7 +66,7 @@ useEffect( ()=>{
 
         
         
-        doctors.slice(0, 3).map(prod=>{
+        doctors.slice(0, 6).map(prod=>{
          
 
 return <div 
@@ -137,7 +137,7 @@ style={{backgroundColor:'#0EB9B8' , border:'1px solid white' , marginRight:'auto
 
         
         
-        doctors.slice(0, 3).map(prod=>{
+        doctors.slice(0, 6).map(prod=>{
          
 
 return <div 
@@ -208,7 +208,7 @@ style={{backgroundColor:'#0EB9B8' , border:'1px solid white', marginRight:'auto'
 
         
         
-        doctors.slice(0, 3).map(prod=>{
+        doctors.slice(0, 6).map(prod=>{
          
 
 return <div id="content" >

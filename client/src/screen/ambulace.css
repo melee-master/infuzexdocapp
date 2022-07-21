@@ -28,13 +28,16 @@
     #ambulance-list
 {
     
-    display: block;
+    display: grid;
+  grid-template-columns: auto;
     
 }
 
 #amb-img
 {
-    width: 90%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: auto;
    
 }
 

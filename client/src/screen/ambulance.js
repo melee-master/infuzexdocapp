@@ -48,26 +48,30 @@ const AmbulanceService = () => {
               <h2>
                 নামঃ এস কে বাবু</h2>
               <br />
-              <h4 className='doc-exp'>এসি/নন এসি অ্যাম্বুলেন্স
-              </h4>
-              <h4 className='doc-exp'>অক্সিজেন পাওয়া যায়
-              </h4>
+              <p className='doc-exp1'>এসি/নন এসি অ্যাম্বুলেন্স
+              </p>
+              <p className='doc-exp1'>অক্সিজেন পাওয়া যায়
+              </p>
 
 
+            
               <a href="tel:+917001220704">
-                <p>
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  &nbsp;  7001220704
-                </p>
-              </a>
+                      <p style={{backgroundColor:'white' , border:'1px solid black'  }} className='docdes-box1' >
+                        <i class="fa fa-phone" aria-hidden="true"></i> এখন ডাকো
+
+                        &nbsp;  7001220704
+                      </p>
+                    </a>
 
 
-              <a href="tel:+917583913679">
-                <p>
-                  <i class="fa fa-phone" aria-hidden="true"></i>
-                  &nbsp;  7583913679
-                </p>
-              </a>
+                    <a href="tel:+917583913679">
+                      <p style={{backgroundColor:'white' , border:'1px solid black'  }} className='docdes-box1'  >
+                        <i class="fa fa-phone" aria-hidden="true"></i> এখন ডাকো
+
+                        &nbsp;  7583913679
+                      </p>
+                    </a>
+
 
             </p>
 
@@ -97,24 +101,28 @@ const AmbulanceService = () => {
                   <p id='right-text' >
                     <h2>Name: SK Babu</h2>
                     <br />
-                    <h4 className='doc-exp'>AC/Non AC Ambulance </h4>
-                    <h4 className='doc-exp'>Oxygen Available</h4>
+                    <p className='doc-exp1'>AC/Non AC Ambulance </p>
+                    <p className='doc-exp1'>Oxygen Available</p>
 
 
                     <a href="tel:+917001220704">
-                      <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
+                      <p style={{backgroundColor:'white' , border:'1px solid black'  }} className='docdes-box1' >
+                        <i class="fa fa-phone" aria-hidden="true"></i> Call Now
                         &nbsp;  7001220704
                       </p>
                     </a>
 
 
                     <a href="tel:+917583913679">
-                      <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
+                      <p style={{backgroundColor:'white' , border:'1px solid black'  }} className='docdes-box1'  >
+                        <i class="fa fa-phone" aria-hidden="true"></i> Call Now
                         &nbsp;  7583913679
                       </p>
                     </a>
+
+
+                         
+              
 
                   </p>
 
@@ -143,24 +151,26 @@ const AmbulanceService = () => {
                   <p id='right-text' >
                     <h2>Name: SK Babu</h2>
                     <br />
-                    <h4 className='doc-exp'>AC/Non AC Ambulance </h4>
-                    <h4 className='doc-exp'>Oxygen Available</h4>
+                    <p className='doc-exp1'>AC/Non AC Ambulance </p>
+                    <p className='doc-exp1'>Oxygen Available</p>
 
 
+                    
                     <a href="tel:+917001220704">
-                      <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
+                      <p style={{backgroundColor:'white' , border:'1px solid black'  }} className='docdes-box1' >
+                        <i class="fa fa-phone" aria-hidden="true"></i> Call Now
                         &nbsp;  7001220704
                       </p>
                     </a>
 
 
                     <a href="tel:+917583913679">
-                      <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i>
+                      <p style={{backgroundColor:'white' , border:'1px solid black'  }} className='docdes-box1'  >
+                        <i class="fa fa-phone" aria-hidden="true"></i> Call Now
                         &nbsp;  7583913679
                       </p>
                     </a>
+
 
                   </p>
 

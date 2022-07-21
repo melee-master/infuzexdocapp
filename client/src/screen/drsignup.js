@@ -303,6 +303,7 @@ const DrSignUp = () => {
 
         window.confirmationResult = confirmationResult;
         console.log("OTP has been sent")
+        document.getElementById('message-show').innerHTML=`OTP Has Been Sent`
 
       }).catch((error) => {
 
@@ -322,7 +323,8 @@ const DrSignUp = () => {
       const user = result.user;
       console.log(JSON.stringify(user))
       setverify(1)
-      alert("OTP verified")
+    //  alert("OTP verified")
+      document.getElementById('message-show2').innerHTML=`OTP Has Been Verified`
       setverify(1)
 
     }).catch((error) => {
@@ -438,7 +440,7 @@ const DrSignUp = () => {
                 placeholder='Enter Name' />
             </p>
 
-            <p style={{ marginLeft: '5px' }}>
+            <p style={{ marginLeft: '2px' }}>
               <label className="formtext">Last Name</label>
 
 
@@ -471,7 +473,7 @@ const DrSignUp = () => {
 
             </p>
 
-            <p style={{ marginLeft: '5px' }} >
+            <p style={{ marginLeft: '2px' }} >
               <label className="formtext">Fees</label>
               <input type="text"
 
@@ -488,7 +490,7 @@ const DrSignUp = () => {
 
 
 
-            <p style={{ marginLeft: '5px' }} >
+            <p style={{ marginLeft: '2px' }} >
               <label className="formtext">College Name</label>
               <input type="text" placeholder='Enter College Name'
 
@@ -525,7 +527,7 @@ const DrSignUp = () => {
                 <option value='Paediatrician' >Paediatrician</option>
                 <option value='Dentist' >Dentist</option>
                 <option value='Diabetologist' >Diabetologist</option>
-                <option value='Ophthalmologist' >Ophthalmologist</option>
+                {/* <option value='Ophthalmologist' >Ophthalmologist</option> */}
                 <option value='Sexologist' >Sexologist</option>
                 <option value='Ophthalmologist' >Ophthalmologist</option>
                 <option value='Nutrition' >Nutritionist</option>
@@ -547,7 +549,7 @@ const DrSignUp = () => {
             </p>
 
 
-            <p  >
+            <p style={{ marginLeft: '2px' }} >
 
               <label className="formtext">Contact Number</label>
               <input type="number"
@@ -563,14 +565,32 @@ const DrSignUp = () => {
             </p>
 
 
-            <button className='box1' id="signupbtn" style={{ width: '30%', height: '55%', marginTop: '7%', marginLeft: 'auto', marginRight: 'auto' }}
+            {/* <button className='box1' id="signupbtn" style={{ width: '30%', height: '55%', marginTop: '7%', marginLeft: 'auto', marginRight: 'auto' }}
 
               onClick={onSignInSubmit}
 
             >
               Generate OTP
-            </button>
+            </button> */}
+                <div>
 
+
+<button
+
+  className='docdes-box1'
+
+  style={{ backgroundColor: 'black', color: 'white', border: '2px solid black', marginRight: 'auto', marginLeft: 'left', marginTop: '8%' }}
+  id='gen-otp'
+
+  onClick={onSignInSubmit}
+
+>
+  Generate OTP
+</button>
+</div>
+
+<div id="message-show" style={{color:'green'}} ></div>
+<p></p>
 
             <p  >
 
@@ -587,15 +607,28 @@ const DrSignUp = () => {
 
             </p>
 
-
-            <button className='box1' id="signupbtn" style={{ width: '30%', height: '55%', marginTop: '7%', marginLeft: 'auto', marginRight: 'auto' }}
+          
+            {/* <button className='box1' id="signupbtn" style={{ width: '30%', height: '55%', marginTop: '7%', marginLeft: 'auto', marginRight: 'auto' }}
 
               onClick={onSubmitOTP}
 
             >
               Verify OTP
-            </button>
+            </button> */}
 
+<div>
+                        <button
+                          className='docdes-box1'
+                          style={{ backgroundColor: 'black', color: 'white', border: '2px solid black', marginRight: 'auto', marginLeft: 'left', marginTop: '8%'  }}
+                          id='gen-otp'
+                          onClick={onSubmitOTP}
+
+                        >
+                         &nbsp;&nbsp; Verify OTP &nbsp;&nbsp;
+                        </button>
+
+                      </div>
+                      <div id="message-show2" style={{color:'green'}} ></div><p></p>
 
 
 
@@ -603,11 +636,16 @@ const DrSignUp = () => {
 
             <div id="sign-in-button"></div>
 
-            <p></p>
 
-            <p style={{ marginLeft: '5px' }}>
+
+<p></p>
+
+
+            
+
+            <p style={{ marginLeft: '2px' }}>
               <br />
-              <label className="formtext">Image Link</label>
+              <label className="formtext">Upload Image</label>
               <br />
               <br />
 
@@ -646,7 +684,7 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
 
 
 
-            <p  >
+            <p style={{ marginLeft: '2px' }} >
               <label className="formtext">Clinic Address</label>
               <input type="text" placeholder='Enter Address'
 
@@ -662,7 +700,7 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
 
 
 
-            <p style={{ marginLeft: '5px' }}>
+            <p style={{ marginLeft: '2px' }}>
               <label className="formtext">Years of Experience</label>
 
 
@@ -676,7 +714,7 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
 
             </p>
 
-            <p style={{ marginLeft: '5px' }}>
+            <p style={{ marginLeft: '2px' }}>
               <label className="formtext">Enter Patients Per Hr.</label>
 
 
@@ -709,7 +747,7 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
 
 
 
-            <p>
+            <p style={{ marginLeft: '2px' }}>
               <label className="formtext">Password</label>
               <input type="password"
 
@@ -722,7 +760,7 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
 
             </p>
 
-            <p style={{ marginLeft: '5px' }} >
+            <p style={{ marginLeft: '2px' }} >
               <label className="formtext">Confirm Password</label>
               <input type="password" placeholder='Enter Confirm Password'
 
@@ -754,12 +792,13 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
           />
 
 
-          <br /><br /><br />
-          <br /><br /><br />
+          <br /><br /><br /><br/>
+         
 
           <h3 style={{ float: 'left', marginLeft: '5%' }} > Select Time Intervals : </h3>
           <br /><br /><br /> <br />
 
+<p id='time-slot' > 
 
           <div className="checkList" id='timingboxnew' value={checked}  >
 
@@ -939,7 +978,7 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
             {`Selected Time Slots are: ${checkedItemsSun}`}
           </div>
 
-
+</p>
 
           <br /> <br /> <br /><br /> <br /><br />
           <button type='submit' className='box1' id="signupbtn"

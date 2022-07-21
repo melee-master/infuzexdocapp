@@ -15,3 +15,24 @@
   
 
 }
+
+#ambulance-button
+{
+    margin-left:85%;
+    margin-right: -50%;
+
+
+}
+
+
+@media screen and (max-width:750px) {
+
+
+    #ambulance-button
+{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+    
+}
