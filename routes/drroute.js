@@ -254,6 +254,7 @@ router.post('/login', (req, res) => {
                 _id: docs[0]._id,
                 email: docs[0].email,
                 contactnumber: docs[0].contactnumber,
+                status:docs[0].status,
                 lname: docs[0].lname
             }
 
