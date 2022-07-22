@@ -313,6 +313,9 @@ router.post('/getdoctorbycategory', (req, res) => {
 
 
 router.post('/updatedoctor', (req, res) => {
+
+    
+
     Doctor.findByIdAndUpdate(req.body.doctorid, {
         name: req.body.updatedproduct.name,
         lname: req.body.updatedproduct.lname,
@@ -326,7 +329,8 @@ router.post('/updatedoctor', (req, res) => {
         address: req.body.updatedproduct.address,
         status: req.body.updatedproduct.status,
         image: req.body.updatedproduct.image,
-        mon: req.body.checked,
+        patientsperhr: req.body.updatedproduct.patientsperhr,
+        mon: req.body.updatedproduct.checked,
         tue: req.body.checked1,
         wed: req.body.wed,
         thu: req.body.thu,
