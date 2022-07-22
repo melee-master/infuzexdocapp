@@ -55,7 +55,7 @@ id='ambulance-button'
 </a>
 </div>
 
-<AmbulanceService/>
+
 <AllDoctors/>
 
 <DoctorBySpecialization/>
@@ -109,9 +109,6 @@ id='ambulance-button'
 
 
 
-
-{/* <AmbulanceService/> */}
-
 <AllDoctors/>
 
 <DoctorBySpecialization/>
@@ -147,7 +144,7 @@ id='ambulance-button'
 </a>
 </div>
 
-<AmbulanceService/>
+
 
 
 <AllDoctors/>

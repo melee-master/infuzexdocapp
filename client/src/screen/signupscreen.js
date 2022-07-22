@@ -63,10 +63,11 @@ const SignUpScreen = () => {
           .then((confirmationResult) => {
           
             window.confirmationResult = confirmationResult;
-            alert("OTP has been sent")
+            document.getElementById('message-show').innerHTML=`OTP Has Been Sent`
+           // alert("OTP has been sent")
             
           }).catch((error) => {
-           
+            document.getElementById('message-show').innerHTML=`SMS not sent`
             console.log("SMS not sent",error)
           });
   
@@ -83,7 +84,8 @@ const SignUpScreen = () => {
       const user = result.user;
       //console.log(JSON.stringify(user))
       setverify(1)
-      alert("OTP verified")
+      document.getElementById('message-show1').innerHTML=`OTP Verified`
+      //alert("OTP verified")
       setverify(1)
       
     }).catch((error) => {
@@ -238,19 +240,21 @@ const SignUpScreen = () => {
 
 
 <div id='otp-screen' >
-                <p style={{ marginLeft: '5px' }} >
+                    <p style={{ marginLeft: '5px' }} >
 
-               
+                   
 
-                <label className="formtext">যোগাযোগের নম্বর</label>
-                                    <input type="Number"
+<label className="formtext">যোগাযোগের নম্বর
+</label>
+<input type="number"
 
-                                        value={contactnumber}
-                                        required
-                                        onChange={(e) => { setcontactnumber(e.target.value) }}
+value={contactnumber}
+required
+onChange={(e) => { setcontactnumber(e.target.value) }}
 
 
-                                        placeholder='যোগাযোগের নম্বর' />
+placeholder='যোগাযোগের নম্বর
+' />
 
 
 </p>
@@ -259,18 +263,20 @@ const SignUpScreen = () => {
 <button  
 
 className='docdes-box1'
-// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
-style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'  ,marginTop:'22%'  }} 
 
-
-//style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}  
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'   }} 
+id='gen-otp'
 
 onClick={onSignInSubmit}
-id='gen-otp'
+
 >
 OTP জেনারেট করুন
+
 </button>
 </div>
+
+<div id="message-show" style={{color:'green'}} ></div>
+<div> </div>
 
 <p  >
 
@@ -283,8 +289,7 @@ required
 onChange={(e) => { setotp(e.target.value) }}
 name='otp'
 
-placeholder='OTP লিখুন
-' />
+placeholder='Enter OTP' />
 
 
 </p>
@@ -292,18 +297,19 @@ placeholder='OTP লিখুন
 <div>
 <button 
 className='docdes-box1'
-// style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:'auto' , marginRight:'auto'  }}
-style={{backgroundColor:'black' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left' , color:'white' ,marginTop:'22%' }} 
-
-onClick={onSubmitOTP}
+style={{backgroundColor:'black',color:'white' , border:'2px solid black' , marginRight:'auto' , marginLeft:'left'   }} 
 id='gen-otp'
+onClick={onSubmitOTP}
+
 >
 OTP যাচাই করুন
+
 </button>
 
 </div>
 
-
+<div id="message-show1" style={{color:'green'}} ></div>
+<div> </div>
 
 
 <div id="sign-in-button"></div>
@@ -508,6 +514,9 @@ Generate OTP
 </button>
 </div>
 
+<div id="message-show" style={{color:'green'}} ></div>
+<div> </div>
+
 <p  >
 
 <label className="formtext">Enter OTP</label>
@@ -536,7 +545,8 @@ Verify OTP
 
 </div>
 
-
+<div id="message-show1" style={{color:'green'}} ></div>
+<div> </div>
 
 
 <div id="sign-in-button"></div>

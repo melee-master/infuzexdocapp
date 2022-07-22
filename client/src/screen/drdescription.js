@@ -76,14 +76,14 @@ const date = new Date()
 
         <img src={doctors.image} id="img-docdes"/>
 
-       <h3 className='docdes-name' > ডাঃ {doctors.name}  {doctors.lname}  </h3>
-        <p className='docdes-sub' > {doctors.field} </p>
-        <br/>
-        <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} Years Exp </p>
-        <br/>
-       <h4 className='docdes-sub'> {doctors.address} </h4>
-       <p className='docdes-sub' > 
-ফি: ₹{doctors.fees} </p>
+        <h3 className='docdes-name'  > ডাঃ. {doctors.name}  {doctors.lname}  </h3>
+        <p className='docdes-sub' style={{fontWeight:'bolder' , fontSize:'large' , marginTop:'-1%'}} > {doctors.field} </p>
+       
+        <p className='docdes-sub' style={{fontWeight:'bold'}} > {doctors.experience} 
+বছর মেয়াদ </p>
+       
+       <h4 className='docdes-sub' style={{fontWeight:'normal'}} > {doctors.address} </h4>
+       <p className='docdes-sub' > ফি : ₹{doctors.fees} </p>
 
        <hr/>
 
