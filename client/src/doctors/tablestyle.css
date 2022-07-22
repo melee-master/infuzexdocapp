@@ -106,9 +106,28 @@
   }
   
 
+  #post-button1
+  {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3%;
+    padding-left: 18%;
+    padding-right: 18%;
+  
+    
+  }
+  
+  
+  @media screen and (max-width:750px) {
 
-  
-  
+    #update-input
+    {
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    
+  }
   
   
   
@@ -117,6 +136,15 @@
     {
         #customers th  {
             font-size: 10px;
+        }
+
+        #post-button1
+        {
+          margin-top: 7%;
+          margin-left: 0%;
+
+        
+          
         }
     }
   

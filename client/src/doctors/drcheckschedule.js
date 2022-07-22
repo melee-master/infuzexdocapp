@@ -8,6 +8,7 @@ import axios from 'axios';
 import { GetPatientsByUserIdAction } from "../actions/bookingaction";
 import { GetPatientsByUserIdReducer } from "../reducers/bookingreducer";
 import Loader from '../component/loader';
+import DoctorTableStyle from './drnewtable'
 
 const CheckSchedule=()=>{
 
@@ -25,6 +26,57 @@ const CheckSchedule=()=>{
     
     const {orders , error , loading } = patientstate
     
+
+    if(orders)
+    {
+  
+        orders.sort(
+            function(a, b) {    
+                var v1 = a.slot.substr(5)
+                var bookingtime =parseInt(`${a.slot}`) 
+               // console.log('Hr is' , v1 , 'Time is ' , bookingtime )  
+                
+                if(v1==='AM')
+                {
+                    var time2 = bookingtime 
+                    return a.time2 > b.time2 ? 1 : -1;
+                }
+                else if(v1==='PM')
+                {
+                    var time2 = bookingtime+12 
+                    return a.time2 > b.time2 ? 1 : -1;
+
+                }
+                
+           
+            });
+        
+    
+       
+    }
+
+
+
+    if(orders)
+    {
+  
+        orders.sort(
+            function(a, b) {    
+                 
+             var mydate = new Date(a.date)
+
+            
+
+             return new Date(b.date) - new Date(a.date);
+                
+                
+           
+            });
+        
+    
+       
+    }
+
     
     const doc = localStorage.getItem('doctor')
         useEffect( ()=>{
@@ -91,7 +143,19 @@ const CheckSchedule=()=>{
                                </select>
                                <br/>
                              <br/>
-                           <table   className='table' id="customers"  >
+                             {loading && (<Loader />)}
+                             {
+    orders&&( orders.map((i,k)=>{
+       
+        return <DoctorTableStyle i={i} />
+    }) )
+}
+
+
+
+
+
+                           {/* <table   className='table' id="customers"  >
                               
                                  
                    
@@ -135,7 +199,7 @@ const CheckSchedule=()=>{
                                                 যোগাযোগের ঠিকানা" >{ord.contactnumber}
                                                                         <br /> {ord.email}
                                                                     </td>
-                                                                    {/* <td>{ord.createdAt.substr(0,10)}</td> */}
+                                                                  
                                                                     <td data-label="অ্যাপয়েন্টমেন্ট বুক করা হয়েছে" > {ord.date} </td>
                                                                     <td data-label="স্লট
                                                 " >{ord.slot}</td>
@@ -163,7 +227,7 @@ const CheckSchedule=()=>{
             
                                
             
-                           </table>
+                           </table> */}
 
 </div>  
 
@@ -214,7 +278,27 @@ const CheckSchedule=()=>{
                                <option value='Sun' >Sunday</option>
                                </select>
                                <br/>   <br/>
-                           <table   className='table' id="customers"  >
+                               {loading && (<Loader />)}
+                               {
+    orders&&( orders.map((i,k)=>{
+        var daynow = i.date.substr(0,3) 
+
+                                                
+
+
+                                            if( (i.date.substr(0,3)===day) && (i.checkif==='false') )
+{
+    return <DoctorTableStyle i={i} />
+}
+
+
+     
+    }) )
+}
+
+
+
+                           {/* <table   className='table' id="customers"  >
                               
                                  
                    
@@ -255,7 +339,7 @@ const CheckSchedule=()=>{
                                                                                 <td data-label="Contact Details" >{ord.contactnumber}
                                                                                     <br /> {ord.email}
                                                                                 </td>
-                                                                                {/* <td>{ord.createdAt.substr(0,10)}</td> */}
+                                                                               
                                                                                 <td data-label="Appointment Booked For" > {ord.date} </td>
                                                                                 <td data-label="Slot" >{ord.slot}</td>
                                                                                 <td data-label="Booked By" >{ord.status}</td>
@@ -275,7 +359,7 @@ const CheckSchedule=()=>{
             
                                
             
-                           </table>
+                           </table> */}
 
 </div>  
 

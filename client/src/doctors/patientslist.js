@@ -7,6 +7,8 @@ import DocumentMeta from 'react-document-meta';
 import axios from 'axios';
 import { GetPatientsByUserIdAction } from "../actions/bookingaction";
 import { GetPatientsByUserIdReducer } from "../reducers/bookingreducer";
+import DoctorTableStyle from './drnewtable'
+
 
 const PatientsList=()=>{
 
@@ -45,8 +47,65 @@ const {orders , error , loading } = patientstate
 
     } ,[dispatch]  )
 
+   
 
 
+    if(orders)
+    {
+  
+        orders.sort(
+            function(a, b) {    
+                var v1 = a.slot.substr(5)
+                var bookingtime =parseInt(`${a.slot}`) 
+               // console.log('Hr is' , v1 , 'Time is ' , bookingtime )  
+                
+                if(v1==='AM')
+                {
+                    var time2 = bookingtime 
+                    return a.time2 > b.time2 ? 1 : -1;
+                }
+                else if(v1==='PM')
+                {
+                    var time2 = bookingtime+12 
+                    return a.time2 > b.time2 ? 1 : -1;
+
+                }
+                
+           
+            });
+        
+    
+       
+    }
+
+
+
+
+    if(orders)
+    {
+  
+        orders.sort(
+            function(a, b) {    
+                 
+             var mydate = new Date(a.date)
+
+            
+
+             return new Date(b.date) - new Date(a.date);
+                
+                
+           
+            });
+        
+    
+       
+    }
+
+
+
+
+    
+    
 
     return(
         <div>
@@ -68,7 +127,16 @@ const {orders , error , loading } = patientstate
             
                            <h1 style={{textAlign:'center'  }} >সমস্ত রোগীর তালিকা
 </h1>
-            
+
+{
+    orders&&( orders.map((i,k)=>{
+       
+        return <DoctorTableStyle i={i} />
+    }) )
+}
+
+
+{/*             
                            <table   className='table' id="customers"  >
                               
                                  
@@ -89,7 +157,7 @@ const {orders , error , loading } = patientstate
   
                                   
                                 
-                                      {/* {loading && ( <Loading/> ) }   */}
+                                     
                                        {orders && (
                                           orders.map( ord =>{
                                             return  <tr>
@@ -102,7 +170,7 @@ const {orders , error , loading } = patientstate
                                             যোগাযোগের ঠিকানা" >{ord.contactnumber}
                                                                     <br /> {ord.email}
                                                                 </td>
-                                                                {/* <td>{ord.createdAt.substr(0,10)}</td> */}
+                                                               
                                                                 <td data-label="অ্যাপয়েন্টমেন্ট বুক করা হয়েছে" > {ord.date} </td>
                                                                 <td data-label="স্লট
                                             " >{ord.slot}</td>
@@ -128,7 +196,7 @@ const {orders , error , loading } = patientstate
             
                                
             
-                           </table>
+                           </table> */}
 
 </div>  
 
@@ -153,8 +221,14 @@ const {orders , error , loading } = patientstate
             <br></br>
             
                            <h1 style={{textAlign:'center'  }} >All Patient's List</h1>
-            
-                           <table   className='table' id="customers"  >
+                           {
+    orders&&( orders.map((i,k)=>{
+       
+        return <DoctorTableStyle i={i} />
+    }) )
+}
+
+                           {/* <table   className='table' id="customers"  >
                               
                                  
                    
@@ -171,7 +245,7 @@ const {orders , error , loading } = patientstate
                         </tr>
                                   
                                 
-                                      {/* {loading && ( <Loading/> ) }   */}
+                                   
                                        {orders && (
                                           orders.map( ord =>{
                                             return  <tr>
@@ -183,7 +257,7 @@ const {orders , error , loading } = patientstate
                                                                                 <td data-label="Contact Details" >{ord.contactnumber}
                                                                                     <br /> {ord.email}
                                                                                 </td>
-                                                                                {/* <td>{ord.createdAt.substr(0,10)}</td> */}
+                                                                               
                                                                                 <td data-label="Appointment Booked For" > {ord.date} </td>
                                                                                 <td data-label="Slot" >{ord.slot}</td>
                                                                                 <td data-label="Booked By" >{ord.status}</td>
@@ -201,7 +275,7 @@ const {orders , error , loading } = patientstate
             
                                
             
-                           </table>
+                           </table> */}
 
 </div>  
 

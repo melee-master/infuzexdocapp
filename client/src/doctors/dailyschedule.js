@@ -7,6 +7,7 @@ import DocumentMeta from 'react-document-meta';
 import axios from 'axios';
 import { GetPatientsByUserIdAction } from "../actions/bookingaction";
 import { GetPatientsByUserIdReducer } from "../reducers/bookingreducer";
+import DoctorTableStyle from './drnewtable'
 
 const DailySchedule = () => {
 
@@ -66,7 +67,15 @@ const DailySchedule = () => {
 <h1 style={{ textAlign: 'center' }} >
 ডাঃ {dr.name} আজকের সূচি ড</h1>
 
-<table   className='table' id="customers" 
+{
+    orders&&( orders.map((i,k)=>{
+        if (i.date === checkdate)
+        return <DoctorTableStyle i={i} />
+    }) )
+}
+
+
+{/* <table   className='table' id="customers" 
 >
 
 
@@ -88,7 +97,7 @@ const DailySchedule = () => {
   
 
 
-    {/* {loading && ( <Loading/> ) }   */}
+   
     {orders && (
         orders.map(ord => {
 
@@ -103,7 +112,7 @@ const DailySchedule = () => {
 যোগাযোগের ঠিকানা" >{ord.contactnumber}
                         <br /> {ord.email}
                     </td>
-                    {/* <td>{ord.createdAt.substr(0,10)}</td> */}
+                   
                     <td data-label="অ্যাপয়েন্টমেন্ট বুক করা হয়েছে" > {ord.date} </td>
                     <td data-label="স্লট
 " >{ord.slot}</td>
@@ -136,7 +145,7 @@ const DailySchedule = () => {
 
 
 
-</table>
+</table> */}
 
 </div>
 
@@ -164,7 +173,16 @@ const DailySchedule = () => {
 
 <h1 style={{ textAlign: 'center' }} >Dr {dr.name} Today's Schedule</h1>
 
-<table   className='table' id="customers" 
+{
+    orders&&( orders.map((i,k)=>{
+        if (i.date === checkdate)
+        return <DoctorTableStyle i={i} />
+    }) )
+}
+
+
+
+{/* <table   className='table' id="customers" 
 >
 
 
@@ -184,7 +202,7 @@ const DailySchedule = () => {
   
 
 
-    {/* {loading && ( <Loading/> ) }   */}
+    
     {orders && (
         orders.map(ord => {
 
@@ -198,7 +216,7 @@ const DailySchedule = () => {
                     <td data-label="Contact Details" >{ord.contactnumber}
                         <br /> {ord.email}
                     </td>
-                    {/* <td>{ord.createdAt.substr(0,10)}</td> */}
+                   
                     <td data-label="Appointment Booked For" > {ord.date} </td>
                     <td data-label="Slot" >{ord.slot}</td>
                     <td data-label="Booked By" >{ord.status}</td>
@@ -230,7 +248,7 @@ const DailySchedule = () => {
 
 
 
-</table>
+</table> */}
 
 </div>
 

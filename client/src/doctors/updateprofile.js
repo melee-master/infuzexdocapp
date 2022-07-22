@@ -1,5 +1,5 @@
-import React , {useState, useEffect} from 'react'
-import {Link , useParams ,  useHistory ,useLocation  } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, useParams, useHistory, useLocation } from 'react-router-dom'
 import Rating from 'react-rating'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,368 +11,365 @@ import Loader from "../component/loader";
 import { UpdateDoctorReducer } from '../reducers/doctorreducer';
 import { UpdateDoctorAction } from '../actions/doctoraction';
 import { set } from 'mongoose';
+import './tablestyle.css'
 
-const UpdateProfile=({match})=>{
+const UpdateProfile = ({ match }) => {
 
-     const params = useParams();
-//const { doctorid } = useParams();
-//   const doctorid=match.params.id
-    //const dispatch = useDispatch()
+  const params = useParams();
+  //const { doctorid } = useParams();
+  //   const doctorid=match.params.id
+  //const dispatch = useDispatch()
 
-    // const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
-    // const { loading, doctors ,error} = dridstate
-
-
-
-    const [name,setname] = useState('')
-    const [lname,setlname] = useState('')
-    const [email,setemail] = useState('')
-    const [contactnumber,setcontactnumber] = useState()
-    const [fees,setfees] = useState()
-    const [college,setcollege] = useState('')
-    const [experience,setexperience]=useState()
-    const [field,setfield] = useState('')
-    const [address,setaddress]=useState('')
-    const [image,setimage]=useState('')
-    const [description,setdescription]=useState('')
-    const [status,setstatus] = useState('false')
-    const [patientsperhr,setpatientsperhr] = useState()
-    const [checked, setChecked] = useState([]);
-    const [checked1, setChecked1] = useState([]);
-    const [wed, setwed] = useState([]);
-    const [thu, setthu] = useState([]);
-    const [fri, setfri] = useState([]);
-    const [sat, setsat] = useState([]);
-    const [sun, setsun] = useState([]);
-   
-
-    const checkList = ["12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM" , "4:00 AM" , "5:00 AM" , "6:00 AM" , "7:00 AM" , "8:00 AM" , "9:00 AM" , "10:00 AM" , "11:00 AM" ,
-    "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM" , "4:00 PM" , "5:00 PM" , "6:00 PM" , "7:00 PM" , "8:00 PM" , "9:00 PM" , "10:00 PM" , "11:00 PM" , "Doctor Isn't Available"
-];
-  
-   
-
-      const location = useLocation()
-
-      var testpath = location.pathname
-
-      var doctorid = location.pathname.substr(15,testpath.length)
-
-    const dispatch = useDispatch()
-
-    const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
-    const { loading, doctors ,error} = dridstate
+  // const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
+  // const { loading, doctors ,error} = dridstate
 
 
 
-   
+  const [name, setname] = useState('')
+  const [lname, setlname] = useState('')
+  const [email, setemail] = useState('')
+  const [contactnumber, setcontactnumber] = useState()
+  const [fees, setfees] = useState()
+  const [college, setcollege] = useState('')
+  const [experience, setexperience] = useState()
+  const [field, setfield] = useState('')
+  const [address, setaddress] = useState('')
+  const [image, setimage] = useState('')
+  const [description, setdescription] = useState('')
+  const [status, setstatus] = useState('false')
+  const [patientsperhr, setpatientsperhr] = useState()
+  const [checked, setChecked] = useState([]);
+  const [checked1, setChecked1] = useState([]);
+  const [wed, setwed] = useState([]);
+  const [thu, setthu] = useState([]);
+  const [fri, setfri] = useState([]);
+  const [sat, setsat] = useState([]);
+  const [sun, setsun] = useState([]);
 
-  
-    const updatestate = useSelector(state=> state.UpdateDoctorReducer )
 
-    const {success , update_error , uploading } = updatestate
+  const checkList = ["12:00 AM", "1:00 AM", "2:00 AM", "3:00 AM", "4:00 AM", "5:00 AM", "6:00 AM", "7:00 AM", "8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM",
+    "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM", "7:00 PM", "8:00 PM", "9:00 PM", "10:00 PM", "11:00 PM", "Doctor Isn't Available"
+  ];
+
+
+
+  const location = useLocation()
+
+  var testpath = location.pathname
+
+  var doctorid = location.pathname.substr(15, testpath.length)
+
+  const dispatch = useDispatch()
+
+  const dridstate = useSelector(state => state.GetDoctorByIdReducer)
+  const { loading, doctors, error } = dridstate
 
 
 
 
-//For Monday
-const handleCheck = (event) => {
+
+
+  const updatestate = useSelector(state => state.UpdateDoctorReducer)
+
+  const { success, update_error, uploading } = updatestate
+
+
+
+
+  //For Monday
+  const handleCheck = (event) => {
     var updatedList = [...checked];
     if (event.target.checked) {
-        
+
       updatedList = [...checked, event.target.value];
     } else {
       updatedList.splice(checked.indexOf(event.target.value), 1);
     }
     setChecked(updatedList);
- 
+
   };
 
-  
+
   const checkedItems = checked.length
     ? checked.reduce((total, item) => {
-        return total + ", " + item;
-      })
+      return total + ", " + item;
+    })
     : "";
 
-  
+
   var isChecked = (item) =>
     checked.includes(item) ? "checked-item" : "not-checked-item";
 
 
- 
 
-//For Tuesday
 
-const handleCheck1 = (event) => {
+  //For Tuesday
+
+  const handleCheck1 = (event) => {
     var updatedList1 = [...checked1];
-    
+
     if (event.target.checked) {
-        
+
       updatedList1 = [...checked1, event.target.value];
-     
+
     } else {
       updatedList1.splice(checked1.indexOf(event.target.value), 1);
     }
     setChecked1(updatedList1);
- 
+
   };
 
-  
+
   const checkedItems1 = checked1.length
     ? checked1.reduce((total, item) => {
-        return total + ", " + item;
-      })
+      return total + ", " + item;
+    })
     : "";
 
-  
+
   var isChecked1 = (item) =>
     checked1.includes(item) ? "checked-item" : "not-checked-item";
 
- 
-   
-//For Wednesday
-const handleCheckWed = (event) => {
+
+
+  //For Wednesday
+  const handleCheckWed = (event) => {
     var UpdateListWed = [...wed];
-    
+
     if (event.target.checked) {
-        
+
       UpdateListWed = [...wed, event.target.value];
-     
+
     } else {
       UpdateListWed.splice(wed.indexOf(event.target.value), 1);
     }
     setwed(UpdateListWed);
- 
+
   };
 
-  
+
   const checkedItemsWed = wed.length
     ? wed.reduce((total, item) => {
-        return total + ", " + item;
-      })
+      return total + ", " + item;
+    })
     : "";
 
-  
+
   var isCheckedWed = (item) =>
     wed.includes(item) ? "checked-item" : "not-checked-item";
 
 
 
-//For Thursday
-const handleCheckThu = (event) => {
+  //For Thursday
+  const handleCheckThu = (event) => {
     var UpdateListThu = [...thu];
-    
+
     if (event.target.checked) {
-        
+
       UpdateListThu = [...thu, event.target.value];
-     
+
     } else {
       UpdateListThu.splice(thu.indexOf(event.target.value), 1);
     }
     setthu(UpdateListThu);
- 
+
   };
 
-  
+
   const checkedItemsThu = thu.length
     ? thu.reduce((total, item) => {
-        return total + ", " + item;
-      })
+      return total + ", " + item;
+    })
     : "";
 
-  
+
   var isCheckedThu = (item) =>
-    thu.includes(item) ? "checked-item" : "not-checked-item";    
+    thu.includes(item) ? "checked-item" : "not-checked-item";
 
 
 
 
 
-//For Friday
-const handleCheckFri = (event) => {
+  //For Friday
+  const handleCheckFri = (event) => {
     var UpdateListFri = [...fri];
-    
+
     if (event.target.checked) {
-        
+
       UpdateListFri = [...fri, event.target.value];
-     
+
     } else {
       UpdateListFri.splice(fri.indexOf(event.target.value), 1);
     }
     setfri(UpdateListFri);
- 
+
   };
 
-  
+
   const checkedItemsFri = fri.length
     ? fri.reduce((total, item) => {
-        return total + ", " + item;
-      })
+      return total + ", " + item;
+    })
     : "";
 
-  
+
   var isCheckedFri = (item) =>
-    fri.includes(item) ? "checked-item" : "not-checked-item";  
+    fri.includes(item) ? "checked-item" : "not-checked-item";
 
 
 
-// For Saturday
+  // For Saturday
 
-const handleCheckSat = (event) => {
+  const handleCheckSat = (event) => {
     var UpdateListSat = [...sat];
-    
+
     if (event.target.checked) {
-        
+
       UpdateListSat = [...sat, event.target.value];
-     
+
     } else {
       UpdateListSat.splice(sat.indexOf(event.target.value), 1);
     }
     setsat(UpdateListSat);
- 
+
   };
 
-  
+
   const checkedItemsSat = sat.length
     ? sat.reduce((total, item) => {
-        return total + ", " + item;
-      })
+      return total + ", " + item;
+    })
     : "";
 
-  
+
   var isCheckedSat = (item) =>
-    sat.includes(item) ? "checked-item" : "not-checked-item";  
+    sat.includes(item) ? "checked-item" : "not-checked-item";
 
 
 
 
-// For Sunday
+  // For Sunday
 
-const handleCheckSun = (event) => {
+  const handleCheckSun = (event) => {
     var UpdateListSun = [...sun];
-    
+
     if (event.target.checked) {
-        
+
       UpdateListSun = [...sun, event.target.value];
-     
+
     } else {
       UpdateListSun.splice(sun.indexOf(event.target.value), 1);
     }
     setsun(UpdateListSun);
- 
+
   };
 
-  
+
   const checkedItemsSun = sun.length
     ? sun.reduce((total, item) => {
-        return total + ", " + item;
-      })
+      return total + ", " + item;
+    })
     : "";
 
-  
+
   var isCheckedSun = (item) =>
-    sun.includes(item) ? "checked-item" : "not-checked-item";  
-
-
-
- 
+    sun.includes(item) ? "checked-item" : "not-checked-item";
 
 
 
 
 
-    useEffect(() => {
-        
-        
-        if( doctors )
-        {
-            if( doctors._id==doctorid )
-            {
-                setname(doctors.name)
-                setlname(doctors.lname)
-                setimage(doctors.image)
-                setaddress(doctors.address)
-                setcollege(doctors.college)
-                setcontactnumber(doctors.contactnumber)
-                setdescription(doctors.description)
-                setemail(doctors.email)
-                setstatus(doctors.status)
-                setfees(doctors.fees)
-                setexperience(doctors.experience)
-                setfield(doctors.field)
-                setChecked(doctors.mon)
-                setChecked1(doctors.tue)
-                setwed(doctors.wed)
-                setthu(doctors.thu)
-                setfri(doctors.fri)
-                setsat(doctors.sat)
-                setsun(doctors.sun)
-                setpatientsperhr(doctors.patientsperhr)
-
-                
-            }
-            else
-            {
-                dispatch(GetDoctorById( {doctorid} ))
-
-            }
-        }
-
-        else
-        {
-            dispatch(GetDoctorById( {doctorid} ))
-        }
-
-        
-
-    }, [dispatch,doctors])
 
 
-    const editdoctor = (e) => {
-        e.preventDefault()
-        const updatedproduct = {
-            name: name,
-            lname:lname ,
-            image: image,
-            description: description ,
-            field:field ,
-            status:status ,
-            fees:fees ,
-            college:college ,
-            experience:experience ,
-            email : email ,
-            patientsperhr:patientsperhr ,
-            contactnumber :contactnumber  ,
-            address : address ,
-            checked:checked ,
-            checked1:checked1 ,
-            wed:wed ,
-            thu:thu ,
-            fri:fri ,
-            sat:sat ,
-            sun:sun
-
-        }
-
-        dispatch(UpdateDoctorAction(doctorid, updatedproduct))
 
 
+  useEffect(() => {
+
+
+    if (doctors) {
+      if (doctors._id == doctorid) {
+        setname(doctors.name)
+        setlname(doctors.lname)
+        setimage(doctors.image)
+        setaddress(doctors.address)
+        setcollege(doctors.college)
+        setcontactnumber(doctors.contactnumber)
+        setdescription(doctors.description)
+        setemail(doctors.email)
+        setstatus(doctors.status)
+        setfees(doctors.fees)
+        setexperience(doctors.experience)
+        setfield(doctors.field)
+       // setChecked(doctors.mon)
+        setChecked1(doctors.tue)
+        setwed(doctors.wed)
+        setthu(doctors.thu)
+        setfri(doctors.fri)
+        setsat(doctors.sat)
+        setsun(doctors.sun)
+        setpatientsperhr(doctors.patientsperhr)
+
+
+      }
+      else {
+        dispatch(GetDoctorById({ doctorid }))
+
+      }
+    }
+
+    else {
+      dispatch(GetDoctorById({ doctorid }))
     }
 
 
 
+  }, [dispatch, doctors])
+
+console.log('Patients/hr = ' , patientsperhr )
+  const editdoctor = (e) => {
+    e.preventDefault()
+    const updatedproduct = {
+      name: name,
+      lname: lname,
+      image: image,
+      description: description,
+      field: field,
+      status: status,
+      fees: fees,
+      college: college,
+      experience: experience,
+      email: email,
+      patientsperhr: patientsperhr,
+      contactnumber: contactnumber,
+      address: address,
+      checked: checked,
+      checked1: checked1,
+      wed: wed,
+      thu: thu,
+      fri: fri,
+      sat: sat,
+      sun: sun
+
+    }
+
+    dispatch(UpdateDoctorAction(doctorid, updatedproduct))
+
+
+  }
 
 
 
-return(
+
+
+
+  return (
     <div>
 
-        {loading && <Loader/> }
-        {uploading && <Loader/> }
-        {update_error && alert('Something Went Wrong') }
-        {error && alert('Something Went Wrong')  }
-        { success && alert('Updated Successfully')  }
+      {loading && <Loader />}
+      {uploading && <Loader />}
+      {update_error && alert('Something Went Wrong')}
+      {error && alert('Something Went Wrong')}
+      {success && alert('Updated Successfully')}
 
 
 
@@ -381,232 +378,245 @@ return(
 
 
 
-          {
-              doctors && (
-                  <div>
-                     
+      {
+        doctors && (
+          <div>
 
-                <h1>Dr. {doctors.name} </h1>
 
-                <form onSubmit={editdoctor} >
-                <div className="boxgrid"  style={{ width:'95%' , marginLeft:'1%' }}  >
+            <h1>Dr. {doctors.name} </h1>
 
-<p  >
-    <label className="formtext" >First Name</label>
-    <input type="text"
+            <form onSubmit={editdoctor} >
+              <div className="boxgrid" style={{ width: '95%', marginLeft: '1%' }}  >
 
-        value={name}
-        required
-        onChange={(e) => { setname(e.target.value) }}
+                <p  >
+                  <label className="formtext"
+                  
+                  id='update-input'
+                  
+                  >First Name</label>
+                  <br/>
+                  <input type="text"
+                    id='update-input'
+                    value={name}
+                    required
+                    onChange={(e) => { setname(e.target.value) }}
 
-   
 
-        placeholder='Enter Name' />
-</p>
 
-<p style={{ marginLeft: '5px' }}>
-    <label className="formtext">Last Name</label>
+                    placeholder='Enter Name' />
+                </p>
 
+                <p style={{ marginLeft: '5px' }}>
+                  <label className="formtext"  id='update-input' >Last Name</label>
 
-    <input type="text" placeholder='Enter Last Name'
 
-        value={lname}
-        required
-        onChange={(e) => { setlname(e.target.value) }}
+                  <input type="text" placeholder='Enter Last Name'
+id='update-input'
+                    value={lname}
+                    required
+                    onChange={(e) => { setlname(e.target.value) }}
 
-    />
+                  />
 
-</p>
+                </p>
 
 
 
-<p>
-    <label className="formtext"
+                <p>
+                  <label className="formtext"
 
+id='update-input'
 
 
+                  >Email Id</label>
+                  <input type="text"
+ id='update-input'
+                    value={email}
+                    required
+                    onChange={(e) => { setemail(e.target.value) }}
 
-    >Email Id</label>
-    <input type="text"
+                    placeholder='Enter Email Id' />
 
-        value={email}
-        required
-        onChange={(e) => { setemail(e.target.value) }}
+                </p>
 
-        placeholder='Enter Email Id' />
 
-</p>
+                <p style={{ marginLeft: '5px' }} >
 
+                  <label className="formtext"
+                   id='update-input'
+                  >Contact Number</label>
+                  <input type="Number"
 
-<p style={{ marginLeft: '5px' }} >
+                    value={contactnumber}
+                    required
+                    onChange={(e) => { setcontactnumber(e.target.value) }}
+                    id='update-input'
 
-    <label className="formtext">Contact Number</label>
-    <input type="Number"
+                    placeholder='Contact Number' />
 
-        value={contactnumber}
-        required
-        onChange={(e) => { setcontactnumber(e.target.value) }}
 
+                </p>
 
-        placeholder='Contact Number' />
 
 
-</p>
+                <p>
+                  <label className="formtext"  id='update-input' >Fees</label>
+                  <input type="text"
+ id='update-input'
+                    value={fees}
+                    required
+                    onChange={(e) => { setfees(e.target.value) }}
 
 
+                    placeholder='Enter Fees' />
 
-<p>
-            <label className="formtext">Fees</label>
-            <input type="text"
+                </p>
 
-                value={fees}
-                required
-                onChange={(e) => { setfees(e.target.value) }}
+                <p style={{ marginLeft: '5px' }}  >
+                  <label className="formtext" 
+                   id='update-input'
+                  >College Name</label>
+                  <input type="text" placeholder='Enter College Name'
+ id='update-input'
+                    value={college}
+                    required
+                    onChange={(e) => { setcollege(e.target.value) }}
 
 
-                placeholder='Enter Fees' />
 
-        </p>
+                  />
 
-        <p style={{ marginLeft: '5px' }} >
-            <label className="formtext">College Name</label>
-            <input type="text" placeholder='Enter College Name'
+                </p>
 
-                value={college}
-                required
-                onChange={(e) => { setcollege(e.target.value) }}
 
 
+                <p >
+                  <label className="formtext"
+                   id='update-input'
+                  >Enter Patients Per Hr</label>
 
-            />
 
-        </p>
+                  <input type="text" placeholder='Patients in an hr'
+ id='update-input'
+                    value={patientsperhr}
+                    required
+                    onChange={(e) => { setpatientsperhr(e.target.value) }}
 
+                  />
 
+                </p>
 
-        <p >
-    <label className="formtext">Enter Patients Per Hr</label>
 
 
-    <input type="text" placeholder='Patients in an hr'
 
-        value={patientsperhr}
-        required
-        onChange={(e) => { setpatientsperhr(e.target.value) }}
+                <p style={{ marginLeft: '5px' }} >
+                  <label className="formtext"  id='update-input'>Clinic Address</label>
+                  <input type="text" placeholder='Enter Address'
+ id='update-input'
+                    value={address}
+                    required
+                    onChange={(e) => { setaddress(e.target.value) }}
 
-    />
 
-</p>
 
+                  />
 
-  
+                </p>
 
-        <p style={{ marginLeft: '5px' }} >
-            <label className="formtext">Clinic Address</label>
-            <input type="text" placeholder='Enter Address'
 
-                value={address}
-                required
-                onChange={(e) => { setaddress(e.target.value) }}
 
+                <p >
+                  <label className="formtext"  id='update-input'>Years of Experience</label>
 
 
-            />
+                  <input type="Number" placeholder='Years of Experience'
+ id='update-input'
+                    value={experience}
+                    required
+                    onChange={(e) => { setexperience(e.target.value) }}
 
-        </p>
+                  />
 
+                </p>
 
 
-        <p >
-            <label className="formtext">Years of Experience</label>
+                <p style={{ marginLeft: '5px' }}>
+                  <label className="formtext"  id='update-input'>Image Link</label>
 
 
-            <input type="Number" placeholder='Years of Experience'
+                  <input type="text" placeholder='Enter Image Link'
+ id='update-input'
+                    value={image}
+                    required
+                    onChange={(e) => { setimage(e.target.value) }}
 
-                value={experience}
-                required
-                onChange={(e) => { setexperience(e.target.value) }}
+                  />
 
-            />
+                </p>
 
-        </p>
+                <p>
 
+                  <label className="formtext"  id='update-input'>Enter Description</label>
+                  <input value={description}
+ id='update-input'
+                    required placeholder='Enter Description....'
+                    onChange={(e) => { setdescription(e.target.value) }}
 
-        <p style={{ marginLeft: '5px' }}>
-            <label className="formtext">Image Link</label>
+                    className='doc-descroption-input'
 
+                  />
+                </p>
 
-            <input type="text" placeholder='Enter Image Link'
 
-                value={image}
-                required
-                onChange={(e) => { setimage(e.target.value) }}
+                <p style={{ marginLeft: '5px' }}>
 
-            />
+                  <label className="formtext"   id='update-input'>Field</label>
 
-        </p>
 
-        <p>
+                  <select value={field} onChange={(e) => { setfield(e.target.value) }} id='select-doc' style={{ marginTop: '50px' , float:'none' }}  >
 
-        <label className="formtext">Enter Description</label>
-    <input value={description} 
-    
-    required  placeholder='Enter Description....' 
-    onChange={ (e)=>{setdescription(e.target.value)} } 
-    
-    className='doc-descroption-input'
-    
-    />
-  </p>
+                    <option value='Physician'  >Field</option>
+                    <option value='Physician'  >Physician</option>
+                    <option value='Cardiologist' >Cardiologist</option>
+                    <option value='Orthopaedic' >Orthopaedic</option>
+                    <option value='Gynecologist' >Gynecologist</option>
+                    <option value='Pummonologist' >Pummonologist</option>
+                    <option value='Neurologist' >Neurologist</option>
+                    <option value='Endocrinologist' >Endocrinologist</option>
+                    <option value='Dermatologist' >Dermatologist</option>
+                    <option value='Paediatrician' >Paediatrician</option>
+                    <option value='Dentist' >Dentist</option>
+                    <option value='Diabetologist' >Diabetologist</option>
+                    <option value='Ophthalmologist' >Ophthalmologist</option>
+                    <option value='Sexologist' >Sexologist</option>
+                    <option value='Ophthalmologist' >Ophthalmologist</option>
+                    <option value='Nutrition' >Nutritionist</option>
+                    <option value='ENT-Specialist' >ENT Specialist</option>
+                    <option value='Psychiatrist' >Psychiatrist</option>
+                    <option value='Nephrologist' >Nephrologist</option>
+                    <option value='Oncologist' >Oncologist</option>
+                    <option value='Urologist' >Urologist</option>
+                    <option value='Gastroenterologists' >Gastroenterologists</option>
+                    <option value='Obstetricians' >Obstetricians</option>
 
 
-  <p style={{marginLeft:'5px'}}>
+                  </select>
 
-<label className="formtext"  >Field</label>
 
 
-<select value={field} onChange={ (e)=>{ setfield(e.target.value) } }  id='select-doc' style={{marginTop:'50px' , float:'left' }}  >
 
-<option value='Physician'  >Field</option>
-<option value='Physician'  >Physician</option>
-<option value='Cardiologist' >Cardiologist</option>
-<option value='Orthopaedic' >Orthopaedic</option>
-<option value='Gynecologist' >Gynecologist</option>
-<option value='Pummonologist' >Pummonologist</option>
-<option value='Neurologist' >Neurologist</option>
-<option value='Endocrinologist' >Endocrinologist</option>
-<option value='Dermatologist' >Dermatologist</option>
-<option value='Paediatrician' >Paediatrician</option>
-<option value='Dentist' >Dentist</option>
-<option value='Diabetologist' >Diabetologist</option>
-<option value='Ophthalmologist' >Ophthalmologist</option>
-<option value='Sexologist' >Sexologist</option>
-<option value='Ophthalmologist' >Ophthalmologist</option>
-<option value='Nutrition' >Nutritionist</option>
-<option value='ENT-Specialist' >ENT Specialist</option>
-<option value='Psychiatrist' >Psychiatrist</option>
-<option value='Nephrologist' >Nephrologist</option>
-<option value='Oncologist' >Oncologist</option>
-<option value='Urologist' >Urologist</option>
-<option value='Gastroenterologists' >Gastroenterologists</option>
-<option value='Obstetricians' >Obstetricians</option>
 
+                </p>
 
-</select> 
 
 
+          
 
- 
 
-</p>
 
-            
 
 
-
-
-
-           {/* <p></p>
+                {/* <p></p>
 
             <h3 style={{float:'left' , marginLeft:'5%' }} > Select Time Intervals : </h3>
 <br/><br/><br/> <br/> 
@@ -801,26 +811,29 @@ return(
 
 
 
-</div>
+              </div>
 
 
 
 
 
-                <button type="submit"  className='docdes-box1' style={{
-                    marginLeft:'auto' ,
-                    marginRight:'auto'
-                }}    id='post-button' > UPDATE </button>
+              <button type="submit" className='docdes-box1' style={{
+                // marginLeft: 'auto',
+                // marginRight: 'auto',
+                backgroundColor:'black' ,
+                color:'white'
 
-                </form>
+              }} id='post-button1' > UPDATE </button>
 
-                      </div>
-              )
-          } 
+            </form>
+
+          </div>
+        )
+      }
 
 
     </div>
-)
+  )
 
 }
 
