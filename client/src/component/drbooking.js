@@ -32,7 +32,7 @@ const DrBooking=({doctorid})=>{
     const [docid , setdocid] = useState(doctorid)
     const [time , settime ] = useState('')
     const [bookingdate, onChange] = useState(new Date());
-const [field , setfield] = useState('')
+    const [field , setfield] = useState(``)
 const [name , setname ] = useState('')
 const [lname , setlname ] = useState('')
 const [contactnumber,setcontactnumber]=useState()
@@ -58,6 +58,8 @@ var unavailableday
 var mm = today.getMonth() + 1; //January is 0 so need to add 1 to make it 1!
 var yyyy = today.getFullYear();
 
+
+
 var currentday = today.toString().substr(0,15)
 var day2=bookingdate.toString().substr(0,3)
 var dd2 = today.getDate() + 7
@@ -68,8 +70,67 @@ const dispatch = useDispatch()
     const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
     const { loading, doctors ,error} = dridstate
 
+    
+        var checkingday = bookingdate.toString().substr(0,3).toLocaleLowerCase()
   
 
+  var daytoshow
+       
+var tryslot = ``
+       if(loading===false)
+       {
+           if(doctors)
+           {
+          
+             if(checkingday==='mon')
+            {
+                
+                tryslot = doctors.mon[0]
+              
+            }
+
+            else if(checkingday==='tue')
+            {
+                
+                tryslot = doctors.tue[0]
+            }
+
+            else if(checkingday==='wed')
+            {
+                
+                tryslot = doctors.wed[0]
+            }
+
+            else if(checkingday==='thu')
+            {
+               
+                tryslot = doctors.thu[0]
+            }
+
+           else if(checkingday==='fri')
+            {
+               
+                tryslot = doctors.fri[0]
+               
+            }
+            else if(checkingday==='sat')
+            {
+               
+                tryslot = doctors.sat[0]
+            }
+            else if(checkingday==='sun')
+            {
+               
+                tryslot = doctors.sun[0]
+            }
+
+           }
+       }
+
+
+ 
+
+      
 var userid = doctors._id
 
     useEffect( ()=>{
@@ -137,7 +198,12 @@ const ShowAvailabilityBengali=()=>{
                 ):(
                     <p>
                         { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
-               {doctors.patientsperhr-x} স্লট উপলব্ধ
+               {doctors.patientsperhr-x} স্লট উপলব্ধ { 
+               
+   
+               field.length>0 ? field : tryslot 
+               
+               } 
 
                <br/><br/>
             </p>):(<p style={{fontWeight:'bold' , color:'#FF0000' }} >
@@ -173,7 +239,12 @@ const ShowAvailabilityEnglish=()=>{
                 ):(
                     <p>
                         { x<doctors.patientsperhr?(<p style={{fontWeight:'bold' , color:'#7CFC00' }} >
-               {doctors.patientsperhr-x} Slots Available at {field}
+               {doctors.patientsperhr-x} Slots Available at { 
+               
+   
+               field.length>0 ? field : tryslot 
+               
+               } 
                <br/><br/>
             </p>):(<p style={{fontWeight:'bold' , color:'#FF0000' }} >
              All Slots Booked , Please Try Another Slot
@@ -211,7 +282,8 @@ const ShowAvailabilityEnglish=()=>{
       let text = d.toTimeString();
       var timeinnum = parseInt(`${text}`)
 
-      
+
+
  if(x>doctors.patientsperhr-1)
  {
      alert('This Slot is Booked , Please Try Another Slot')
@@ -253,7 +325,7 @@ else if( date==currentday )
                 userid:user._id ,
                 status:'Registered User' ,
                 date:date ,
-                slot:field , 
+                slot: field.length>0 ? field : tryslot  , 
                 doctorname:doctors.name ,
            speciality:doctors.field  ,
            doctorcontact:doctors.contactnumber
@@ -283,7 +355,7 @@ else if( date==currentday )
                 status:'Doctor' ,
                 userid:doctor._id ,
                 date:date ,
-                slot:field , 
+                slot: field.length>0 ? field : tryslot  , 
                 doctorname:doctors.name ,
            speciality:doctors.field  ,
            doctorcontact:doctors.contactnumber
@@ -310,7 +382,7 @@ else if( date==currentday )
              status:'Compounder' ,
              userid:compounder._id ,
              date:date ,
-             slot:field ,
+             slot: field.length>0 ? field : tryslot  ,
              doctorname:doctors.name ,
            speciality:doctors.field ,
            doctorcontact:doctors.contactnumber
@@ -351,7 +423,7 @@ else
             userid:user._id ,
             status:'Registered User' ,
             date:date ,
-            slot:field , 
+            slot: field.length>0 ? field : tryslot  , 
             doctorname:doctors.name ,
        speciality:doctors.field  ,
        doctorcontact:doctors.contactnumber
@@ -375,7 +447,7 @@ alert('Please take a screenshot of this page')
             status:'Doctor' ,
             userid:doctor._id ,
             date:date ,
-            slot:field , 
+            slot: field.length>0 ? field : tryslot  , 
             doctorname:doctors.name ,
        speciality:doctors.field  ,
        doctorcontact:doctors.contactnumber
@@ -401,7 +473,7 @@ alert('Please take a screenshot of this page')
          status:'Compounder' ,
          userid:compounder._id ,
          date:date ,
-         slot:field ,
+         slot: field.length>0 ? field : tryslot  ,
          doctorname:doctors.name ,
        speciality:doctors.field ,
        doctorcontact:doctors.contactnumber

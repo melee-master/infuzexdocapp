@@ -100,9 +100,9 @@ console.log('Doc id is' , userid )
 
   var x= 0;
 
-
-
-  if(loading===false)
+if(orders)
+{
+ if(loading===false)
   {
   orders.map( i =>{
     if(( i.date===date ) && ( i.slot===field ) )
@@ -113,6 +113,9 @@ console.log('Doc id is' , userid )
 } )
   }
 
+}
+
+ 
 
    
 

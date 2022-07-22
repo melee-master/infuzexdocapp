@@ -42,6 +42,58 @@ const doc = localStorage.getItem('compounder')
     } ,[dispatch]  )
 
 
+    
+    if(orders)
+    {
+  
+        orders.sort(
+            function(a, b) {    
+                var v1 = a.slot.substr(5)
+                var bookingtime =parseInt(`${a.slot}`) 
+               // console.log('Hr is' , v1 , 'Time is ' , bookingtime )  
+                
+                if(v1==='AM')
+                {
+                    var time2 = bookingtime 
+                    return a.time2 > b.time2 ? 1 : -1;
+                }
+                else if(v1==='PM')
+                {
+                    var time2 = bookingtime+12 
+                    return a.time2 > b.time2 ? 1 : -1;
+
+                }
+                
+           
+            });
+        
+    
+       
+    }
+
+
+
+    if(orders)
+    {
+  
+        orders.sort(
+            function(a, b) {    
+                 
+             var mydate = new Date(a.date)
+
+            
+
+             return new Date(b.date) - new Date(a.date);
+                
+                
+           
+            });
+        
+    
+       
+    }
+
+
 
 
     return(

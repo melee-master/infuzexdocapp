@@ -9,6 +9,7 @@ import axios from 'axios';
 import './comp.css'
 import Loader from '../component/loader'
 import { DeleteCompounderAction } from '../actions/compounderaction'
+import './compoundertable.css'
 
 const GetCompounder=({docid})=>{
 
@@ -57,12 +58,12 @@ const [ans,setans]=useState()
 <table className='table' id="customers"  >
                <thead>
                    <tr>
-                   <th scope="col" >ব্যবহারকারী আইডি</th>
-                   <th scope="col" >নাম</th>
-                   <th scope="col" >ইমেইল</th>
-                   <th scope="col" >যোগাযোগের নম্বর</th>
-                   <th scope="col" >পাসওয়ার্ড</th>
-                   <th scope="col" >মুছে ফেলা</th>
+                  
+                   <th scope="col" style={{width:"20%"}}>নাম</th>
+                   <th scope="col" style={{width:"20%"}}>ইমেইল</th>
+                   <th scope="col" style={{width:"20%"}}>যোগাযোগের নম্বর</th>
+                   <th scope="col" style={{width:"20%"}}>পাসওয়ার্ড</th>
+                   <th scope="col" style={{width:"20%"}}>মুছে ফেলা</th>
                    
                    
                   
@@ -77,12 +78,12 @@ const [ans,setans]=useState()
                    {compounders && ( compounders.map(use=>{
                        return <tr>
 
-                           <td data-label="ব্যবহারকারী আইডি" > {use._id} </td>
-                           <td data-label="নাম" > {use.name} </td>
-                           <td data-label="ইমেইল" > {use.email} </td>
-                           <td data-label="যোগাযোগের নম্বর" > { use.contactnumber } </td>
-                           <td data-label="পাসওয়ার্ড" > { use.password } </td>
-                             <td data-label="মুছে ফেলা" > 
+                           
+                           <td data-label="নাম"  id='compounder-table'> {use.name} </td>
+                           <td data-label="ইমেইল" id='compounder-table'> {use.email} </td>
+                           <td data-label="যোগাযোগের নম্বর" id='compounder-table'> { use.contactnumber } </td>
+                           <td data-label="পাসওয়ার্ড" id='compounder-table'> { use.password } </td>
+                             <td data-label="মুছে ফেলা" id='compounder-table'> 
                              <i id="del" className="far fa-trash-alt" onClick={ 
                                 
                                 ()=>{ 
@@ -131,12 +132,12 @@ const [ans,setans]=useState()
 <table className='table' id="customers"  >
                <thead>
                    <tr>
-                   <th scope="col" >User Id</th>
-                   <th scope="col" >Name</th>
-                   <th scope="col" >Login Id</th>
-                   <th scope="col" >Contact Number</th>
-                   <th scope="col" >Password</th>
-                   <th scope="col" >Delete</th>
+                  
+                   <th scope="col" style={{width:"20%"}} >Name</th>
+                   <th scope="col" style={{width:"20%"}}  >Login Id</th>
+                   <th scope="col" style={{width:"20%"}} >Contact Number</th>
+                   <th scope="col" style={{width:"20%"}} >Password</th>
+                   <th scope="col" style={{width:"20%"}} >Delete</th>
                   
 
                    
@@ -153,12 +154,12 @@ const [ans,setans]=useState()
                    {compounders && ( compounders.map(use=>{
                        return <tr>
 
-                           <td data-label="User Id" > {use._id} </td>
-                           <td data-label="Name" > {use.name} </td>
-                           <td data-label="Login Id" > {use.email} </td>
-                           <td data-label="Contact Number" > { use.contactnumber } </td>
-                           <td data-label="Password" >{use.password}</td>
-                             <td data-label="Delete" > <i id="del" className="far fa-trash-alt" onClick={ 
+                       
+                           <td data-label="Name" id='compounder-table' > {use.name} </td>
+                           <td data-label="Login Id" id='compounder-table' > {use.email} </td>
+                           <td data-label="Contact Number" id='compounder-table' > { use.contactnumber } </td>
+                           <td data-label="Password" id='compounder-table' >{use.password}</td>
+                             <td data-label="Delete" id='compounder-table' > <i id="del" className="far fa-trash-alt" onClick={ 
                                 
                                  ()=>{ 
                                     alert('Do You want to Delete this Compounder?') 
@@ -204,9 +205,9 @@ const [ans,setans]=useState()
 
 
 <table className='table' id="customers"  >
-               <thead>
+               {/* <thead>
                    <tr>
-                   <th scope="col" >User Id</th>
+                  
                    <th scope="col" >Name</th>
                    <th scope="col" >Login Id</th>
                    <th scope="col" >Contact Number</th>
@@ -220,7 +221,7 @@ const [ans,setans]=useState()
                    
                        </tr>
                 
-               </thead>
+               </thead> */}
 
                <tbody>
                    {loading && (<Loader/>) }
@@ -228,12 +229,12 @@ const [ans,setans]=useState()
                    {compounders && ( compounders.map(use=>{
                        return <tr>
 
-                           <td data-label="User Id" > {use._id} </td>
-                           <td data-label="Name" > {use.name} </td>
-                           <td data-label="Login Id" > {use.email} </td>
-                           <td data-label="Contact Number" > { use.contactnumber } </td>
-                           <td data-label="Password" >{use.password}</td>
-                             <td data-label="Delete" > <i id="del" className="far fa-trash-alt" onClick={ 
+                          
+                           <td data-label="Name" id='compounder-table'> {use.name} </td>
+                           <td data-label="Login Id" id='compounder-table'> {use.email} </td>
+                           <td data-label="Contact Number" id='compounder-table'> { use.contactnumber } </td>
+                           <td data-label="Password" id='compounder-table'>{use.password}</td>
+                             <td data-label="Delete" id='compounder-table'> <i id="del" className="far fa-trash-alt" onClick={ 
                                 
                                  ()=>{ 
                                     alert('Do You want to Delete this Compounder?') 
