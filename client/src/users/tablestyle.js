@@ -60,13 +60,19 @@ return(
                                     style={{color:'#7C0A02'}}
                                     
                                     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > স্ট্যাটাস : </span> বিচারাধীন </p>
-                                    <p>
-                                    <a href={`/bookings/${i._id}`} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > বিস্তারিত দেখুন
- :  </span>
+                               
+
+                                         
+                                    <p  >
+                                    <a href={`/bookings/${i._id}`}  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content'
+                                    
+                                    style={{border:'1px solid black' , padding:'5px' , borderRadius:'5px' , backgroundColor:'#7C0A02' , color:'white' }}
+                                    
+                                    > বিস্তারিত দেখুন :   &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'white', border: 'none' }} ></i> </span>
                                     
                                     
                                                            
-                                    &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'black', border: 'none' }} ></i>
+                                   
                                                             
                                                         </a>
                                     
@@ -136,19 +142,31 @@ return(
                                     style={{color:'#008000'}}
                                     
                                     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > স্ট্যাটাস : </span> সম্পন্ন </p>
-                                 <p>
-                                    <a href={`/bookings/${i._id}`} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > বিস্তারিত দেখুন
- :  </span>
+                     
+
+
+
+
+
+
+
+
+
+
+                                    <p  >
+                                    <a href={`/bookings/${i._id}`}  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content'
                                     
+                                    style={{border:'1px solid black' , padding:'5px' , borderRadius:'5px' , backgroundColor:'#008000' , color:'white' }}
                                     
-                                                           
-                                    &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'black', border: 'none' }} ></i>
-                                                            
-                                                        </a>
+                                    > বিস্তারিত দেখুন :
+                                    &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'white', border: 'none' }} ></i> </span>
+                                    </a>
                                     
                                     </p>
 
-                                  
+
+
+
 
 
 
@@ -221,12 +239,18 @@ return(
                                     style={{color:'#7C0A02'}}
                                     
                                     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > Status : </span> Pending </p>
-                                    <p>
-                                    <a href={`/bookings/${i._id}`} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > View Details :  </span>
+                                   
+                                   
+                                    <p  >
+                                    <a href={`/bookings/${i._id}`}  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content'
+                                    
+                                    style={{border:'1px solid black' , padding:'5px' , borderRadius:'5px' , backgroundColor:'#7C0A02' , color:'white' }}
+                                    
+                                    > View Details :   &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'white', border: 'none' }} ></i> </span>
                                     
                                     
                                                            
-                                    &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'black', border: 'none' }} ></i>
+                                   
                                                             
                                                         </a>
                                     
@@ -296,17 +320,16 @@ return(
                                     style={{color:'#008000'}}
                                     
                                     >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > Status : </span> Completed </p>
-                                         <p>
-                                    <a href={`/bookings/${i._id}`} >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > View Details :  </span>
                                     
+                                    <p  >
+                                    <a href={`/bookings/${i._id}`}  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content'
                                     
-                                                           
-                                    &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'black', border: 'none' }} ></i>
-                                                            
-                                                        </a>
+                                    style={{border:'1px solid black' , padding:'5px' , borderRadius:'5px' , backgroundColor:'#008000' , color:'white' }}
+                                    
+                                    > View Details :   &nbsp;   <i class="fas fa-file-invoice" style={{ color: 'white', border: 'none' }} ></i> </span>
+                                    </a>
                                     
                                     </p>
-
 
                                   
 

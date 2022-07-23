@@ -221,3 +221,30 @@ export const GetAllPatientsReducer = ( state={orders:[]} , action )=>{
 
 
 }
+
+
+
+
+export const BookingDeleteReducer=( state={} , action )=>{
+    switch(action.type)
+    {
+        case 'DELETE_Booking_REQUEST' : return {
+            ...state ,
+            loading : true 
+        }
+
+        case 'DELETE_Booking_SUCCESS' : return {
+            ...state ,
+            loading : false ,
+            success : true 
+        }
+
+        case 'DELETE_Booking_FAILED' : return {
+            ...state ,
+            loading : false ,
+            error : action.payload
+        }
+
+        default : return  state
+    }
+}

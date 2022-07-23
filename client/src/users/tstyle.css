@@ -5,6 +5,23 @@ table, th, td {
   }
 
 
+  #Cancel-Booking
+  {
+   background-color: #960018;
+   color: white;
+   width: 30%;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 30px;
+   padding-top: 5px;
+padding-bottom: 5px;
+border-radius: 12px;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+
+  #Cancel-Booking:hover{
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
 
 
   @media screen and (max-width:600px) {
@@ -15,5 +32,19 @@ table, th, td {
         border-collapse: collapse;
       }
     
+
+      #Cancel-Booking
+      {
+       background-color: #960018;
+       color: white;
+       width: 70%;
+       margin-left: auto;
+       margin-right: auto;
+       font-size: 20px;
+       padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 12px;
+      }
+
       
   }
