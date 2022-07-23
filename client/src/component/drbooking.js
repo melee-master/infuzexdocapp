@@ -310,7 +310,7 @@ else if( date==currentday )
 
     if( timeinnum >= bookingtime  )
     {
-        alert(`Can't Book this Slot`)
+        alert(`Can't Book this Slot . This time is over , choose another time slot`)
     }
     else
     {
@@ -337,7 +337,7 @@ else if( date==currentday )
     
     
            window.location.href=`/bookingconfirmation`
-           alert('Please take a screenshot of this page')
+           alert('A Confirmation SMS has been sent to this Mobile Number')
 
           
     
@@ -365,7 +365,7 @@ else if( date==currentday )
            
            
     
-            alert('Please take a screenshot of this page')
+            alert('A Confirmation SMS has been sent to this Mobile Number')
     
            window.location.href=`/bookingconfirmation`
     
@@ -392,7 +392,7 @@ else if( date==currentday )
         //  setredirect(1)  
          window.location.href=`/bookingconfirmation`
     
-         alert('Please take a screenshot of this page')
+         alert('A Confirmation SMS has been sent to this Mobile Number')
          
     
         }
@@ -432,7 +432,7 @@ else
         dispatch(BookPatientsAction(details))
           window.location.href=`/bookingconfirmation`
 
-alert('Please take a screenshot of this page')
+          alert('A Confirmation SMS has been sent to this Mobile Number')
 
     }
 
@@ -456,7 +456,7 @@ alert('Please take a screenshot of this page')
         dispatch(BookPatientsAction(details))     
          window.location.href=`/bookingconfirmation`
 
-        alert('Please take a screenshot of this page')
+         alert('A Confirmation SMS has been sent to this Mobile Number')
 
        // window.location.href=`/bookingconfirmation`
 
@@ -482,7 +482,7 @@ alert('Please take a screenshot of this page')
      dispatch(BookPatientsAction(details))
      window.location.href=`/bookingconfirmation`
 
-     alert('Please take a screenshot of this page')
+     alert('A Confirmation SMS has been sent to this Mobile Number')
      
 
     }

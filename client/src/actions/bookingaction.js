@@ -1,6 +1,10 @@
 import axios from 'axios'
 import { get } from 'mongoose'
 
+const user = JSON.parse(localStorage.getItem('currentuser'))
+  const admin=JSON.parse(localStorage.getItem('admin'))
+  const doctor = JSON.parse(localStorage.getItem('doctor'))
+  const compounder = JSON.parse(localStorage.getItem('compounder'))
 
 
 export const BookPatientsAction=(details)=>dispatch=>{
@@ -232,4 +236,30 @@ export const GetBookingsByDate=({doctorid,date2})=>(dispatch  )=>{
     })
 
 
+}
+
+
+export const DeleteBookingAction=({bookingid})=>dispatch=>{
+    dispatch({type:'DELETE_Booking_REQUEST' })
+
+    axios.post('/api/booking/deletebooking' , {bookingid} ).then( res=>{
+        dispatch({type:'DELETE_Booking_SUCCESS' , payload : res.data })
+   
+       {
+           user?( <p> {
+               window.location.href='/updateuser/bookinglist'
+               } </p> ):( <p> {
+                doctor?( <p>
+                    {window.location.href='/drpage/dailyschedule'}
+                </p> ):( <p>
+                    {window.location.href='/drpage/allpatients'}
+                </p> )
+                   } </p> )
+       }
+
+    } ).catch(err=>{
+        dispatch({type:'DELETE_Booking_FAILED' , payload : err })
+
+
+    })
 }
