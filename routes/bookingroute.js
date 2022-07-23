@@ -261,6 +261,27 @@ router.post('/updatebooking' , (req,res)=>{
 } )
 
 
+router.post('/deletebooking' , (req,res)=>{
+
+    console.log('Operations on booking id' , req.body.bookingid  )
+    Booking.findByIdAndDelete(req.body.bookingid , (err)=>{
+
+        if(err)
+        {
+            console.log('Coudnt delete Booking because of' , err)
+            return res.status(400).json({message:`Something Went Wrong ${err} `})
+        }
+        else{
+            console.log('Deleted Booking')
+            res.send({message:'Deleted Successfully'})
+        }
+
+    } )
+
+} );
+
+
+
 
 
 module.exports =router
