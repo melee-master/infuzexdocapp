@@ -261,8 +261,13 @@ const Invoice = () => {
                                                 onClick={() => {
                                                     alert('Do You want to Cancel Booking?')
                                                     var bookingid = bookings._id
+                                                    var bookingname = bookings.name
+                                                    var bookingdate = bookings.date 
+                                                    var bookingslot = bookings.slot 
+                                                    var contactdetails = bookings.contactnumber
+                                                    var doctorname = bookings.doctorname
 
-                                                    dispatch(DeleteBookingAction({ bookingid }))
+                                                    dispatch(DeleteBookingAction({ bookingid , bookingname ,bookingdate , bookingslot , contactdetails ,doctorname  }))
                                                 }}
 
                                             >
