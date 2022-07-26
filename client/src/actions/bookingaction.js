@@ -239,10 +239,10 @@ export const GetBookingsByDate=({doctorid,date2})=>(dispatch  )=>{
 }
 
 
-export const DeleteBookingAction=({bookingid})=>dispatch=>{
+export const DeleteBookingAction=({ bookingid , bookingname ,bookingdate , bookingslot , contactdetails ,doctorname  })=>dispatch=>{
     dispatch({type:'DELETE_Booking_REQUEST' })
 
-    axios.post('/api/booking/deletebooking' , {bookingid} ).then( res=>{
+    axios.post('/api/booking/deletebooking' , { bookingid , bookingname ,bookingdate , bookingslot , contactdetails ,doctorname  } ).then( res=>{
         dispatch({type:'DELETE_Booking_SUCCESS' , payload : res.data })
    
        {

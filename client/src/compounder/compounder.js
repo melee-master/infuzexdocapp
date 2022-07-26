@@ -58,7 +58,8 @@ const Compounder=()=>{
 
 
 <ul className='makebig'  >
-                    <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > Make Booking</Link>  </li>
+                    <li ><Link to={`/compounder/makebooking`}   className='stylebar'   > বুকিং করুন
+</Link>  </li>
                     <li ><Link to='/compounder/checkschedule'   className='stylebar' >আজকের সূচি
  </Link>   </li>
                     {/* <li ><Link to='/compounder/adduser'  className='stylebar'>Add New Patient</Link>   </li> */}
