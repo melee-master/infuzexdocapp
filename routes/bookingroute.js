@@ -4,7 +4,10 @@ const mongoose = require('mongoose')
 
 const Booking = require('../models/Booking')
 
-const wbm = require('wbm');
+
+const accountSid = 'AC4b987f9ad23a9b5d52b20b55cac0f81f'; 
+const authToken = '5aff0222c723d635f58b2f99820fe4c0'; 
+const client = require('twilio')(accountSid, authToken); 
 
 
 
@@ -44,6 +47,15 @@ router.post('/booking' , (req,res)=>{
         
         if(!err)
         {
+
+            client.messages 
+      .create({ 
+         body: `${req.body.name} your booking has been confirmed with Dr.${req.body.doctorname} on ${req.body.date} at ${req.body.slot} `,  
+         from: '+15087196743',      
+         to: `+91${req.body.contactnumber}` 
+       }) 
+      .then(message => console.log('Message sent' , message.sid)) 
+      .done();
             
            return  res.send(book  )
         }
@@ -268,11 +280,20 @@ router.post('/deletebooking' , (req,res)=>{
 
         if(err)
         {
-            console.log('Coudnt delete Booking because of' , err)
+           
             return res.status(400).json({message:`Something Went Wrong ${err} `})
         }
         else{
-            console.log('Deleted Booking')
+           
+            client.messages 
+            .create({ 
+               body: `${req.body.bookingname} your booking has been cancelled with Dr.${req.body.doctorname} on ${req.body.bookingdate} at ${req.body.bookingslot} `,  
+               from: '+15087196743',      
+               to: `+91${req.body.contactdetails}` 
+             }) 
+            .then(message => console.log(' Cancelled  Message sent' , message.sid)) 
+            .done();
+
             res.send({message:'Deleted Successfully'})
         }
 

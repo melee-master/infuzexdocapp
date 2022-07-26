@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Tracker = require('../utils/Tracker');
 const fileManager = require('../utils/fileManager');
-const formParser = require('../utils/formParser');
+const formParser = require('../utils/formparser');
 
 const bucketManager = require('../services/bucketManager');
 
