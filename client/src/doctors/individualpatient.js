@@ -17,7 +17,11 @@ const IndividualBooking = () => {
     const bengali = localStorage.getItem('bengali')
     const english = localStorage.getItem('english')
 
-
+    
+    var todaydate = new Date() 
+    
+   var dateinstring =  todaydate.toString().substr(0,15)
+  
 
     const [checkif, setcheckif] = useState('false')
 
@@ -168,32 +172,39 @@ fontWeight:'bolder'
 
                 <form onSubmit={editdoctor} >
 
+                    {
+                        bookings.date===dateinstring?( <p>
+                            
                     <select value={checkif} onChange={(e) => { setcheckif(e.target.value) }}
 
-                        id='show-hide'
+id='show-hide'
 
-                        style={{
-                            marginLeft: 'auto',
-                            marginRight: 'auto'
-                        }} 
+style={{
+    marginLeft: 'auto',
+    marginRight: 'auto'
+}} 
 
-                    >
+>
 
-                        <option value='true' >চেক করা হয়েছে
+<option value='true' >চেক করা হয়েছে
 </option>
-                        <option value='false' >অস্বীকৃত </option>
+<option value='false' >অস্বীকৃত </option>
 
-                    </select>
+</select>
 
-                    <br /><br />
-
-
+<br /><br />
 
 
-                    <button type="submit" className='docdes-box1' style={{
-                        marginLeft: 'auto',
-                        marginRight: 'auto'
-                    }} id='post-button' > হালনাগাদ </button>
+
+
+<button type="submit" className='docdes-box1' style={{
+marginLeft: 'auto',
+marginRight: 'auto'
+}} id='post-button' > হালনাগাদ </button>
+                        </p> ):( <p></p> )
+                         
+                    }
+
 
 
 
@@ -201,14 +212,16 @@ fontWeight:'bolder'
                 </form>
 
             </div>
-            {
+
+           
+{
         bookings.checkif==='false'?(
             <p
    
             id='Cancel-Booking'
 style={{width:'30%'}}
              onClick={ ()=>{
-                 alert('আপনি কি বুকিং বাতিল করতে চান?')
+                 alert('Do You want to Cancel Booking?')
                  var bookingid = bookings._id
                 
                 dispatch(DeleteBookingAction({bookingid})) 
@@ -225,6 +238,7 @@ style={{width:'30%'}}
         )
     }
 
+ 
 
         </div>
     )
@@ -291,46 +305,68 @@ style={{width:'30%'}}
 
                 <br />
 
+{
+    bookings.date===dateinstring?(<p>
 
-                <span style={{ 
+<span style={{ 
 fontSize:'large' ,
 fontWeight:'bolder'
 }} > Status :  </span>
 
+    </p>):(<p></p>)
+}
+
+       
+
                 <form onSubmit={editdoctor} >
 
-                    <select value={checkif} onChange={(e) => { setcheckif(e.target.value) }}
+                    {
+                         bookings.date===dateinstring?(
+                             <p>
+                                  <select value={checkif} onChange={(e) => { setcheckif(e.target.value) }}
 
-                        id='show-hide'
+id='show-hide'
 
-                        style={{
-                            marginLeft: 'auto',
-                            marginRight: 'auto'
-                        }} 
+style={{
+    marginLeft: 'auto',
+    marginRight: 'auto'
+}} 
 
-                    >
+>
 
-                        <option value='true' >Checked</option>
-                        <option value='false' >Denied </option>
+<option value='true' >Checked</option>
+<option value='false' >Denied </option>
 
-                    </select>
+</select>
 
-                    <br /><br />
-
-
+<br /><br />
 
 
-                    <button type="submit" className='docdes-box1' style={{
-                        marginLeft: 'auto',
-                        marginRight: 'auto'
-                    }} id='post-button' > UPDATE </button>
+
+
+<button type="submit" className='docdes-box1' style={{
+marginLeft: 'auto',
+marginRight: 'auto'
+}} id='post-button' > UPDATE </button>
+                                 </p>
+                         ):(
+                             <p>
+                                 </p>
+                         )
+                    }
+
+                   
 
 
 
 
                 </form>
 
+            
+
             </div>
+
+
             {
         bookings.checkif==='false'?(
             <p
@@ -354,7 +390,6 @@ Cancel Booking
             </p>
         )
     }
-
 
         </div>
     )
