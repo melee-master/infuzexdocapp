@@ -5,9 +5,8 @@ const mongoose = require('mongoose')
 const Booking = require('../models/Booking')
 
 
-const accountSid = 'AC4b987f9ad23a9b5d52b20b55cac0f81f'; 
-const authToken = '5aff0222c723d635f58b2f99820fe4c0'; 
-const client = require('twilio')(accountSid, authToken); 
+
+const client = require('twilio')(process.env.accountSid, process.env.authToken); 
 
 
 

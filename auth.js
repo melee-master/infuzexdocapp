@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-var mongodburl = 'mongodb+srv://awanish:awanishmishra3@cluster0.wxhyc.mongodb.net/doctrap'
+var mongodburl = 'mongodb+srv://checkup:checkup@cluster0.3oruho2.mongodb.net/checkup'
 
 mongoose.connect(mongodburl , { useUnifiedTopology:true , useNewUrlParser:true })
 
