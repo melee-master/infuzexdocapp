@@ -1,0 +1,16 @@
+#coming-soon
+{
+    width: 50%;
+}
+
+
+
+@media screen and (max-width:750px) {
+
+    #coming-soon
+{
+    width: 100%;
+}
+
+    
+}

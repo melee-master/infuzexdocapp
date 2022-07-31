@@ -109,7 +109,11 @@ const BookingList = ({ userid }) => {
                         {loading && (<Loader />)}
                                     {
                                         orders&&(orders.map(i=>{
-                                          return  <TableStyle i={i} />
+                                           
+                                            if(i.checkif!=='Cancelled')
+                                            {
+                                                return  <TableStyle i={i} />
+                                            }
                                         }))
                                     }
 
@@ -133,8 +137,12 @@ const BookingList = ({ userid }) => {
 
                                     {loading && (<Loader />)}
                                     {
-                                        orders&&(orders.map(i=>{
-                                          return  <TableStyle i={i} />
+                                        orders&&(orders.map(i=>{ 
+                                            if(i.checkif!=='Cancelled')
+                                            {
+                                                return  <TableStyle i={i} />
+                                            }
+                                          
                                         }))
                                     }
 

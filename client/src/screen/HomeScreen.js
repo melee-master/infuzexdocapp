@@ -5,7 +5,8 @@ import './general.css'
 import DoctorBySpecialization  from "./doctorbyspec";
 import DoctorByIllness from "./doctorbyillness";
 import AmbulanceService from "./ambulance";
-
+import img1 from '../Images/doc-1.png'
+import amb from '../Images/amb.png'
 const HomeScreen=()=>{
 
     const meta = {
@@ -33,19 +34,30 @@ const HomeScreen=()=>{
 
 <div>
 
-<img src="https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg" id="homescreen-image" />
- <h1> আপনি নিরাপদ হাতে আছেন
+<img src={img1} id="homescreen-image" />
+ <h1> আপনি এখন নিরাপদ হাতে
  </h1>
+
+
 </div>
 
-<div className="gridcontain1"  >
+
+<div>
+
+<img src={amb} id="homescreen-image" />
+
+
+</div>
+<h3 style={{marginBottom:'-1%'}} >এমারজেনসি অবস্থায় ?</h3>
+<div className="gridcontain1" style={{alignItems:'center' , marginLeft:'-1%'  }} >
 <a href='/ambulance-list' style={{textDecoration:'none'}} >
-<p className='docdes-box1' style={{backgroundColor:'#0EB9B8' , border:'1px solid white'  , color:'white' 
+<p className='docdes-box1' style={{backgroundColor:'#0EB9B8' , border:'1px solid white'  , color:'white' ,
+
 }} 
 
 id='ambulance-button'
 
-> অ্যাম্বুলেন্স
+> অ্যাম্বুলেন্স বুক করুন
 
 &nbsp;&nbsp;
 <i class="fa fa-ambulance" aria-hidden="true"></i>
@@ -70,8 +82,8 @@ id='ambulance-button'
               <p>
 
 <div>
-
-<img src="https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg" id="homescreen-image" />
+<img src={img1} id="homescreen-image" />
+{/* <img src="https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg" id="homescreen-image" /> */}
  <h1> You are in Safe Hands </h1>
 
 
@@ -83,22 +95,19 @@ id='ambulance-button'
 <div>
 
 
-<img src="https://media.istockphoto.com/vectors/ambulance-emergency-paramedic-carrying-patient-in-stretcher-vector-id1218104087?b=1&k=20&m=1218104087&s=612x612&w=0&h=z4Cf76Q0lU48-W1UMQEuKDADirzMCQbgAjEdso4SRKA=" id="homescreen-image" />
-
-
-
+<img src={amb} id="homescreen-image" />
 
 
 </div>
-
-<div className="gridcontain1"  >
+<h3 style={{marginBottom:'-1%'}} >Is an Emergency?</h3>
+<div className="gridcontain1" style={{alignItems:'center' , marginLeft:'-1%' , marginBottom:'-6%' }}  >
 <a href='/ambulance-list' style={{textDecoration:'none'}} >
 <p className='docdes-box1' style={{backgroundColor:'#0EB9B8' , border:'1px solid white'  , color:'white' 
 }} 
 
 id='ambulance-button'
 
-> Ambulance 
+>Book Ambulance 
 &nbsp;&nbsp;
 <i class="fa fa-ambulance" aria-hidden="true"></i>
 
@@ -109,7 +118,7 @@ id='ambulance-button'
 
 
 
-<AllDoctors/>
+<AllDoctors  />
 
 <DoctorBySpecialization/>
 
@@ -124,18 +133,18 @@ id='ambulance-button'
               <p>
                 <div>
 
-<img src="https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg" id="homescreen-image" />
+                <img src={img1} id="homescreen-image" />
  <h1> You are in Safe Hands </h1>
 </div>
 
-<div className="gridcontain1"  >
+<div className="gridcontain1" style={{alignItems:'center' , marginLeft:'-1.5%'  }} >
 <a href='/ambulance-list' style={{textDecoration:'none'}} >
 <p className='docdes-box1' style={{backgroundColor:'#0EB9B8' , border:'1px solid white'  , color:'white' 
 }} 
 
 id='ambulance-button'
 
-> Ambulance 
+>Book Ambulance 
 &nbsp;&nbsp;
 <i class="fa fa-ambulance" aria-hidden="true"></i>
 

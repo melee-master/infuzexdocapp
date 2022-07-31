@@ -7,7 +7,7 @@ import { RegisterNewUser } from "../actions/useraction";
 import { RegisterUserReducer } from "../reducers/userreducer";
 import firebase from "../firebase";
 import './userscreen.css'
-
+import imgs from '../Images/signup.png'
 
 const SignUpScreen = () => {
 
@@ -172,7 +172,7 @@ const SignUpScreen = () => {
 
 <p>
 
-    <img src='https://i.pinimg.com/736x/8b/76/eb/8b76ebf906d93b0fee4f554c5431c5c7--clip-art-free-fair-use.jpg'
+    <img src={imgs}
         id="sideimg" />
 
 
@@ -409,7 +409,7 @@ OTP যাচাই করুন
 
     <p>
 
-        <img src='https://i.pinimg.com/736x/8b/76/eb/8b76ebf906d93b0fee4f554c5431c5c7--clip-art-free-fair-use.jpg'
+        <img src={imgs}
             id="sideimg" />
 
 

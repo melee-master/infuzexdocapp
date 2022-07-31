@@ -37,13 +37,10 @@ useEffect( ()=>{
            
 
 <FilterSearch/>
-<br/>
-<br/><br/>
 
-<br/>
           
 
-            <div className="gridcontain1"  >
+            <div className="gridcontain1" style={{marginTop:'-20px'}} >
             {loading ? <h1> <Loader/> </h1> :error ? (<h1>Something Went Wrong</h1>) :
             
             

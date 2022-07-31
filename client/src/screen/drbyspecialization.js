@@ -16,6 +16,7 @@ import '../component/loader.css'
 import '../Header/filter.css'
 
 import SpecializationGrid from "../Header/specializationgrid";
+import ComingSoon from "./comingsoon";
 
 
 
@@ -38,9 +39,9 @@ const IndividualDrSpecialization=()=>{
 
 {
         bengali ? ( <p>
+   <ComingSoon />
 
-
-<input type='text' onChange={ (e)=>{ setSearchTerm( e.target.value) } } 
+{/* <input type='text' onChange={ (e)=>{ setSearchTerm( e.target.value) } } 
 
 style={{width:'90%' , marginLeft:'5%' , marginRight:'auto' }}
 
@@ -75,14 +76,16 @@ placeholder='বিশেষীকরণ দ্বারা অনুসন্�
           
     } )
 }
-</div>
+</div> */}
 
         </p> ) : ( <p>
           {
             english ? (
               <p>
 
+                  <ComingSoon />
 
+{/* 
 <input type='text' onChange={ (e)=>{ setSearchTerm( e.target.value) } } 
 
 style={{width:'90%' , marginLeft:'5%' , marginRight:'auto' }}
@@ -118,7 +121,7 @@ placeholder='Search By Specialization....'
           
     } )
 }
-</div>
+</div> */}
 
 
 

@@ -9,6 +9,11 @@ import { FilterProducts2 } from "../actions/doctoraction";
 import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import phy from '../Images/phys.png'
+import paed from '../Images/paed.png'
+import psy from '../Images/psy.png'
+import dermo from '../Images/dermo.png'
+
 
 const DoctorBySpecialization=()=>{
 
@@ -78,7 +83,7 @@ interval={5000}
         <p>
             <img src='https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg' id="img-docgrid1" />
             <br />
-            <h4 style={{ color: 'black' }} >চিকিত্সক</h4>
+            <h4 style={{ color: 'black' }} >জেনারেল ফিজিসিয়ান</h4>
 
             <h5 className='consult-now' >এখনই পরামর্শ করুন</h5>
         </p>
@@ -90,7 +95,7 @@ interval={5000}
         <p>
             <img src='https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=' id="img-docgrid1" />
             <br />
-            <h4 style={{ color: 'black' }} >চর্মরোগ বিশেষজ্ঞ </h4>
+            <h4 style={{ color: 'black' }} >চর্মরোগ/ স্কিন বিশেষজ্ঞ </h4>
             <h5 className='consult-now' >এখনই পরামর্শ করুন</h5>
         </p>
     </a>
@@ -125,17 +130,7 @@ interval={5000}
 
 
 
-<p>
-<a href='/dentist' style={{ textDecoration: 'none' }} >
-        <p>
-            <img src='https://img.freepik.com/free-vector/dental-care-concept-illustration_52683-65383.jpg?w=2000' id="img-docgrid1" />
-            <br />
-            <h4 style={{ color: 'black' }} >ডেন্টিস্ট</h4>
-            <h5 className='consult-now' >এখনই পরামর্শ করুন</h5>
-        </p>
-    </a>
 
-</p>
 
 
 
@@ -164,7 +159,7 @@ interval={5000}
         <p>
             <img src='https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg' id="img-docgrid1" />
             <br />
-            <h4 style={{ color: 'black' }} >চিকিত্সক</h4>
+            <h4 style={{ color: 'black' }} >জেনারেল ফিজিসিয়ান</h4>
 
             <h5 className='consult-now' >এখনই পরামর্শ করুন</h5>
         </p>
@@ -176,7 +171,7 @@ interval={5000}
         <p>
             <img src='https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=' id="img-docgrid1" />
             <br />
-            <h4 style={{ color: 'black' }} >চর্মরোগ বিশেষজ্ঞ </h4>
+            <h4 style={{ color: 'black' }} >চর্মরোগ/ স্কিন বিশেষজ্ঞ</h4>
             <h5 className='consult-now' >এখনই পরামর্শ করুন</h5>
         </p>
     </a>
@@ -277,7 +272,9 @@ interval={5000}
 <p>
 <a href='/physician' style={{ textDecoration: 'none' }} >
         <p>
-            <img src='https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg' id="img-docgrid1" />
+            <img src={phy}
+          
+            id="img-docgrid1" />
             <br />
             <h4 style={{ color: 'black' }} >Physician</h4>
 
@@ -289,7 +286,7 @@ interval={5000}
 <p>
 <a href='/dermatologist' style={{ textDecoration: 'none' }} >
         <p>
-            <img src='https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=' id="img-docgrid1" />
+            <img src={dermo} id="img-docgrid1" />
             <br />
             <h4 style={{ color: 'black' }} >Dermatologist </h4>
             <h5 className='consult-now' >Consult Now</h5>
@@ -301,7 +298,7 @@ interval={5000}
 <p>
 <a href='/paediatrician' style={{ textDecoration: 'none' }} >
         <p>
-            <img src='https://img.freepik.com/free-vector/visiting-pediatrician-semi-flat-rgb-color-vector-illustration-mother-with-toddler-female-doctor-isolated-cartoon-characters-white-background_106317-17504.jpg?w=2000' id="img-docgrid1" />
+            <img src={paed} id="img-docgrid1" />
             <br />
             <h4 style={{ color: 'black' }} >Paediatrician</h4>
             <h5 className='consult-now' >Consult Now</h5>
@@ -314,7 +311,7 @@ interval={5000}
 <p>
 <a href='/psychiatrist' style={{ textDecoration: 'none' }} >
         <p>
-            <img src='https://us.123rf.com/450wm/happyvector071/happyvector0711601/happyvector071160100426/51469380-abstract-creative-concept-vector-silhouette-head-for-web-and-mobile-applications-isolated-on-white-b.jpg?ver=6' id="img-docgrid1" />
+            <img src={psy} id="img-docgrid1" />
             <br />
             <h4 style={{ color: 'black' }} >Psychiatrist</h4>
             <h5 className='consult-now' >Consult Now</h5>
@@ -326,17 +323,7 @@ interval={5000}
 
 
 
-<p>
-<a href='/dentist' style={{ textDecoration: 'none' }} >
-        <p>
-            <img src='https://img.freepik.com/free-vector/dental-care-concept-illustration_52683-65383.jpg?w=2000' id="img-docgrid1" />
-            <br />
-            <h4 style={{ color: 'black' }} >Dentist</h4>
-            <h5 className='consult-now' >Consult Now</h5>
-        </p>
-    </a>
 
-</p>
 
 
 
@@ -375,7 +362,9 @@ interval={5000}
 
 <a href='/physician' style={{ textDecoration: 'none' }} >
            <p>
-               <img src='https://i.pinimg.com/736x/b5/75/7a/b5757a2eed2300820433e4083ae635c2.jpg' id="img-docgrid1" />
+               <img src={phy}
+              
+               id="img-docgrid1" />
                <br />
                <h4 style={{ color: 'black' }} >Physician</h4>
 
@@ -387,7 +376,7 @@ interval={5000}
       
        <a href='/dermatologist' style={{ textDecoration: 'none' }} >
            <p>
-               <img src='https://media.istockphoto.com/vectors/dermatology-and-skin-health-care-concept-vector-flat-modern-doctor-vector-id1304919796?k=20&m=1304919796&s=612x612&w=0&h=Qp8bPxPspSilMqF5KCss99fPOkQyANj10o12-7T1pew=' id="img-docgrid1" />
+               <img src={dermo} id="img-docgrid1" />
                <br />
                <h4 style={{ color: 'black' }} >Dermatologist </h4>
                <h5 className='consult-now' >Consult Now</h5>
@@ -397,7 +386,7 @@ interval={5000}
 
        <a href='/paediatrician' style={{ textDecoration: 'none' }} >
            <p>
-               <img src='https://img.freepik.com/free-vector/visiting-pediatrician-semi-flat-rgb-color-vector-illustration-mother-with-toddler-female-doctor-isolated-cartoon-characters-white-background_106317-17504.jpg?w=2000' id="img-docgrid1" />
+               <img src={paed} id="img-docgrid1" />
                <br />
                <h4 style={{ color: 'black' }} >Paediatrician</h4>
                <h5 className='consult-now' >Consult Now</h5>
@@ -408,7 +397,7 @@ interval={5000}
 
        <a href='/psychiatrist' style={{ textDecoration: 'none' }} >
            <p>
-               <img src="https://us.123rf.com/450wm/happyvector071/happyvector0711601/happyvector071160100426/51469380-abstract-creative-concept-vector-silhouette-head-for-web-and-mobile-applications-isolated-on-white-b.jpg?ver=6" id="img-docgrid1" />
+               <img src={psy} id="img-docgrid1" />
                <br />
                <h4 style={{ color: 'black' }} >Psychiatrist</h4>
                <h5 className='consult-now' >Consult Now</h5>

@@ -1,6 +1,7 @@
 import React from "react";
 import './userscreen.css';
 import img1 from  '../Images/userpic.png';
+import user from '../Images/user.png'
 
 const UserWelcomeScreen=()=>{
     const bengali = localStorage.getItem('bengali')
@@ -20,7 +21,7 @@ const english = localStorage.getItem('english')
 
 <p> 
 
-    <img src='https://i.pinimg.com/736x/ba/49/9f/ba499f12a35aeaf61feede588dac49c7.jpg' id="img"  ></img>
+    <img src={user} id="img"  ></img>
 
 
 </p>
@@ -76,7 +77,7 @@ style={{backgroundColor:'white' , border:'2px solid black' , marginRight:'auto' 
 
 <p> 
 
-    <img src='https://i.pinimg.com/736x/ba/49/9f/ba499f12a35aeaf61feede588dac49c7.jpg' id="img"  ></img>
+    <img src={user} id="img"  ></img>
 
 
 </p>

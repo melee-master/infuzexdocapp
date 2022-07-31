@@ -685,6 +685,7 @@ id="signupbtn" style={{width:'30%' , height:'55%' , marginTop:'7%' , marginLeft:
 
 
             <p style={{ marginLeft: '2px' }} >
+              <br/> <br/>
               <label className="formtext">Clinic Address</label>
               <input type="text" placeholder='Enter Address'
 
