@@ -105,7 +105,12 @@ const FutureScheduleCompounder=({doctorid})=>{
 
                                             if( (i.date.substr(0,3)===day) && (i.checkif==='false') )
 {
-    return <DoctorTableStyle i={i} />
+    if(i.checkif!=='Cancelled')
+    {
+        return <DoctorTableStyle i={i} />
+    }
+
+   
 }
 
 
@@ -174,7 +179,10 @@ const FutureScheduleCompounder=({doctorid})=>{
 
                                             if( (i.date.substr(0,3)===day) && (i.checkif==='false') )
 {
-    return <DoctorTableStyle i={i} />
+    if(i.checkif!=='Cancelled')
+    {
+        return <DoctorTableStyle i={i} />
+    }
 }
 
 
@@ -241,7 +249,10 @@ const FutureScheduleCompounder=({doctorid})=>{
 
                                             if( (i.date.substr(0,3)===day) && (i.checkif==='false') )
 {
-    return <DoctorTableStyle i={i} />
+    if(i.checkif!=='Cancelled')
+    {
+        return <DoctorTableStyle i={i} />
+    }
 }
 
 

@@ -5,6 +5,7 @@ import { useState } from "react";
 import './loader.css'
 import '../Header/filter.css'
 import IllnessGrid from "../Header/illnessgrid";
+import ComingSoon from "../screen/comingsoon";
 
 const FilterDoctorIllness=()=>{
 
@@ -21,8 +22,8 @@ const FilterDoctorIllness=()=>{
 {
         bengali ? ( <p>
 
-
-<input type='text' onChange={ (e)=>{ setSearchTerm( e.target.value) } } 
+<ComingSoon />
+{/* <input type='text' onChange={ (e)=>{ setSearchTerm( e.target.value) } } 
 
 style={{width:'90%' , marginLeft:'5%' , marginRight:'auto' }}
 
@@ -57,13 +58,15 @@ placeholder='অসুস্থতা অনুসন্ধান করুন..
           
     } )
 }
-</div>
+</div> */}
 
         </p> ) : ( <p>
           {
             english ? (
               <p>
-                  <input type='text' onChange={ (e)=>{ setSearchTerm( e.target.value) } } 
+
+                  <ComingSoon />
+                  {/* <input type='text' onChange={ (e)=>{ setSearchTerm( e.target.value) } } 
 
 style={{width:'90%' , marginLeft:'5%' , marginRight:'auto' }}
 
@@ -98,7 +101,7 @@ placeholder='Search Illness....'
           
     } )
 }
-</div>
+</div> */}
 
 
               </p>

@@ -31,11 +31,12 @@ const AllUserList=()=>{
 <table className='table' id="customers"  >
                <thead>
                    <tr>
-                   <th scope="col" >User Id</th>
-                   <th scope="col" >Name</th>
-                   <th scope="col" >Email</th>
-                   <th scope="col" >Contact Number</th>
-                   <th scope="col" >Created At</th>
+                   <th scope="col" style={{width:'20%'}} >User Id</th>
+                   <th scope="col" style={{width:'20%'}} >Name</th>
+                   
+                   <th scope="col" style={{width:'20%'}} >Contact Number</th>
+                   <th scope="col" style={{width:'20%'}} >Created At</th>
+                   <th scope="col" style={{width:'20%'}} >View More</th>
                   
                    
                        </tr>
@@ -48,13 +49,16 @@ const AllUserList=()=>{
                    {users && ( users.map(use=>{
                        return <tr>
 
+                           
                            <td data-label="User Id" > {use._id} </td>
                            <td data-label="Name" > {use.name} </td>
-                           <td data-label="Email" > {use.email} </td>
+                         
                            <td  data-label="Contact Number" > { use.contactnumber } </td>
                            <td data-label="Created At" >{use.createdAt.substr(0,10)}</td>
-                          
-                          
+                           < a href={`/adminuserbookings/${use._id}`} style={{textDecoration:'none'}} >
+                               <td data-label="View More" ><i class="fa fa-eye" aria-hidden="true"></i>
+</td>
+                          </a>
 
 
                            </tr>

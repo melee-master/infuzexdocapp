@@ -341,8 +341,9 @@ Physician</option>
 
         </p>
 
+<p></p>
 
-        <p style={{ marginLeft: '5px' }}>
+        {/* <p style={{ marginLeft: '5px' }}>
             <label className="formtext">Image File</label>
 
 
@@ -354,7 +355,7 @@ Physician</option>
 
             />
 
-        </p>
+        </p> */}
 
         <p>
 

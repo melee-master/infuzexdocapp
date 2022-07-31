@@ -63,6 +63,10 @@ import LanguageSelector from './language';
 import Invoice from './users/invoice';
 import MakeChoice from './makechoice';
 import AmbulanceService from './screen/ambulance';
+import UserAdminBookingList from './admin/useradmin';
+import AdminGetCompounder from './admin/compounderadminlist';
+import AdminPatientsList from './admin/docbookinglist';
+import AdminCompounderHistory from './admin/compounderhistory';
 
 
 
@@ -210,6 +214,18 @@ function App() {
           }
           </p>
       )
+    }
+
+    {
+      admin?(
+<div>
+<Route path='/adminuserbookings/:id' component ={UserAdminBookingList}></Route>
+<Route path='/admincompounder/:id' component ={AdminGetCompounder}></Route>
+<Route path='/admindoctorbookings/:id' component ={AdminPatientsList}></Route>
+<Route path='/compounderhistory/:id/:id' component ={AdminCompounderHistory}></Route>
+
+  </div>
+      ):null
     }
 
    </BrowserRouter>

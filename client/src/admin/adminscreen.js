@@ -9,6 +9,10 @@ import EditDoctor from "./editdoc";
 import DoctorApprove from "./drapprove";
 import AddNewUser from "./addnewuser";
 import AddNewDoctor from "./addnewdoctor";
+import UserAdminBookingList from "./useradmin";
+import AdminGetCompounder from "./compounderadminlist";
+import AdminPatientsList from "./docbookinglist";
+import AdminCompounderHistory from "./compounderhistory";
 
 const AdminScreen=()=>{
 
@@ -25,8 +29,8 @@ const AdminScreen=()=>{
               <ul className='makebig'  >
                     <li ><Link to='/admin/userlist'   className='stylebar'   > User List</Link>  </li>
                     <li ><Link to='/admin/doctorlist'   className='stylebar' >Doctor List </Link>   </li>
-                    <li ><Link to='/admin/addnewuser'  className='stylebar'>Add New User</Link>   </li>
-                    <li ><Link to='/admin/addnewdoc'  className='stylebar'>Add New Doctor</Link>    </li>
+                    {/* <li ><Link to='/admin/addnewuser'  className='stylebar'>Add New User</Link>   </li> */}
+                    {/* <li ><Link to='/admin/addnewdoc'  className='stylebar'>Add New Doctor</Link>    </li> */}
                     <li ><Link to='/admin/reqlist'  className='stylebar'> Doctor Request List</Link>    </li>
 
                 </ul>
@@ -36,12 +40,15 @@ const AdminScreen=()=>{
 
 <Route path="/admin/userlist"   ><AllUserList/></Route>
 <Route path="/admin/doctorlist"  ><AllDrList/></Route>
-<Route path="/admin/addnewuser" component={AddNewUser} ></Route>
-<Route path="/admin/addnewdoc" component={AddNewDoctor} ></Route>
+{/* <Route path="/admin/addnewuser" component={AddNewUser} ></Route>
+<Route path="/admin/addnewdoc" component={AddNewDoctor} ></Route> */}
 <Route path="/admin/reqlist"  ><DrReq/></Route>
 <Route path="/admin/dredit/:doctor" component={EditDoctor}  ><EditDoctor/></Route>
 <Route path='/admin/doctorapprove/:doctor' component ={DoctorApprove}><DoctorApprove/></Route>
-
+<Route path='/adminuserbookings/:id' component ={UserAdminBookingList}></Route>
+<Route path='/admincompounder/:id' component ={AdminGetCompounder}></Route>
+<Route path='/admindoctorbookings/:id' component ={AdminPatientsList}></Route>
+<Route path='/compounderhistory/:id/:id' component ={AdminCompounderHistory}></Route>
 </Switch>
                
                

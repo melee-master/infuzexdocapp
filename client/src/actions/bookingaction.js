@@ -16,6 +16,8 @@ export const BookPatientsAction=(details)=>dispatch=>{
        
        
         sessionStorage.setItem('bookingdetails' ,  JSON.stringify(res.data) );
+     
+        
 // alert('redirecting.....')
 // console.log('redirecting.....')
 //         window.location.href=`/bookingconfirmation`
@@ -32,6 +34,29 @@ export const GetPatientsByUserIdAction=()=>(dispatch , getState )=>{
 
     const userid = getState().LoginDocUserReducer.doctor._id
 
+
+    dispatch({type:'GET_PatientsBYID_REQUEST'})
+
+    axios.post('/api/booking/getpatientsbyuserid' , {userid:userid} ).then( res=>{
+
+        dispatch({type:'GET_PatientsBYID_SUCCESS' , payload:res.data })
+       
+
+    } ).catch(err=>{
+        dispatch({type:'GET_PatientsBYID_FAILED' , payload:err })
+        console.log(err)
+    })
+
+
+}
+
+
+
+export const AdminGetPatientsByUserIdAction=({userid})=>(dispatch , getState )=>{
+
+  //  const userid = getState().LoginDocUserReducer.doctor._id
+
+console.log('User id recieved at action' , userid )
 
     dispatch({type:'GET_PatientsBYID_REQUEST'})
 
@@ -92,6 +117,28 @@ export const GetBookingsByUserIdAction=()=>(dispatch , getState )=>{
 
 
 }
+
+
+export const GetBookingsByUserAdminIdAction=({userid})=>(dispatch , getState )=>{
+
+  //  const userid = getState().LoginUserReducer.currentuser._id
+
+
+    dispatch({type:'GET_BookingsBYID_REQUEST'})
+
+    axios.post('/api/booking/getbookingssbyuserid' , {userid:userid} ).then( res=>{
+
+        dispatch({type:'GET_BookingsBYID_SUCCESS' , payload:res.data })
+       
+
+    } ).catch(err=>{
+        dispatch({type:'GET_BookingsBYID_FAILED' , payload:err })
+        console.log(err)
+    })
+
+
+}
+
 
 
 
@@ -252,7 +299,7 @@ export const DeleteBookingAction=({ bookingid , bookingname ,bookingdate , booki
                 doctor?( <p>
                     {window.location.href='/drpage/dailyschedule'}
                 </p> ):( <p>
-                    {window.location.href='/drpage/allpatients'}
+                    {window.location.href='/compounder/checkschedule'}
                 </p> )
                    } </p> )
        }

@@ -25,7 +25,7 @@ const DrBooking=({doctorid})=>{
 
     const bengali = localStorage.getItem('bengali')
     const english = localStorage.getItem('english')
-
+const bookingdetails = sessionStorage.getItem('bookingdetails')
 
 
 
@@ -70,7 +70,11 @@ const dispatch = useDispatch()
     const dridstate = useSelector(state=>state.GetDoctorByIdReducer)
     const { loading, doctors ,error} = dridstate
 
-    
+
+
+
+
+
         var checkingday = bookingdate.toString().substr(0,3).toLocaleLowerCase()
   
 
@@ -128,7 +132,7 @@ var tryslot = ``
        }
 
 
- 
+
 
       
 var userid = doctors._id
@@ -166,7 +170,7 @@ var userid = doctors._id
   if(orders)
   {
   orders.map( i =>{
-    if(( i.date===date ) && ( i.slot===field ) )
+    if(( i.date===date ) && ( i.slot===( field.length>0 ? field : tryslot ) ) )
     {
        
         x++;
@@ -325,6 +329,7 @@ else if( date==currentday )
                 userid:user._id ,
                 status:'Registered User' ,
                 date:date ,
+                address:doctors.address ,
                 slot: field.length>0 ? field : tryslot  , 
                 doctorname:doctors.name ,
            speciality:doctors.field  ,
@@ -355,6 +360,7 @@ else if( date==currentday )
                 status:'Doctor' ,
                 userid:doctor._id ,
                 date:date ,
+                address:doctors.address ,
                 slot: field.length>0 ? field : tryslot  , 
                 doctorname:doctors.name ,
            speciality:doctors.field  ,
@@ -385,6 +391,7 @@ else if( date==currentday )
              slot: field.length>0 ? field : tryslot  ,
              doctorname:doctors.name ,
            speciality:doctors.field ,
+           address:doctors.address ,
            doctorcontact:doctors.contactnumber
          }
     
@@ -426,7 +433,8 @@ else
             slot: field.length>0 ? field : tryslot  , 
             doctorname:doctors.name ,
        speciality:doctors.field  ,
-       doctorcontact:doctors.contactnumber
+       doctorcontact:doctors.contactnumber ,
+       address:doctors.address
         }
 
         dispatch(BookPatientsAction(details))
@@ -450,6 +458,7 @@ else
             slot: field.length>0 ? field : tryslot  , 
             doctorname:doctors.name ,
        speciality:doctors.field  ,
+       address:doctors.address ,
        doctorcontact:doctors.contactnumber
         }
 
@@ -476,6 +485,7 @@ else
          slot: field.length>0 ? field : tryslot  ,
          doctorname:doctors.name ,
        speciality:doctors.field ,
+       address:doctors.address ,
        doctorcontact:doctors.contactnumber
      }
 
@@ -513,6 +523,25 @@ else
 
 var timevar = []
 timevar =  doctors.checked
+
+
+
+
+
+
+
+
+
+
+if(bookingdetails)
+{
+    window.location.href=`/bookingconfirmation`
+}
+
+
+
+
+
 
 
 
@@ -899,7 +928,15 @@ style={{width:'90%', marginLeft:'5%'  }}
 
 <br/>
 
+               
+<br/>
+<input 
+style={{width:'90%', marginLeft:'5%'}}
+type='Number' value={contactnumber} placeholder='যোগাযোগের নম্বর লিখুন'
 
+required
+onChange={ (e)=>{ setcontactnumber(e.target.value) } }  />
+               
 
 
 

@@ -78,7 +78,12 @@ const dr = JSON.parse(localStorage.getItem('doctor'))
  {
     orders&&( orders.map((i,k)=>{
         if (i.date === checkdate)
-        return <DoctorTableStyle i={i} />
+        {
+            if(i.checkif!=='Cancelled')
+            {
+                return <DoctorTableStyle i={i} />
+            }
+        }
     }) )
 }
 
@@ -114,7 +119,12 @@ const dr = JSON.parse(localStorage.getItem('doctor'))
 {
     orders&&( orders.map((i,k)=>{
         if (i.date === checkdate)
-        return <DoctorTableStyle i={i} />
+       {
+        if(i.checkif!=='Cancelled')
+        {
+            return <DoctorTableStyle i={i} />
+        }
+       }
     }) )
 }
 
@@ -147,7 +157,12 @@ const dr = JSON.parse(localStorage.getItem('doctor'))
 {
     orders&&( orders.map((i,k)=>{
         if (i.date === checkdate)
-        return <DoctorTableStyle i={i} />
+        {
+            if(i.checkif!=='Cancelled')
+            {
+                return <DoctorTableStyle i={i} />
+            }
+        }
     }) )
 }
 

@@ -20,6 +20,13 @@ const ConfirmationPage=()=>{
     
 
 const booking = JSON.parse(sessionStorage.getItem('bookingdetails'))
+setTimeout(
+   function() {
+       console.log('Item Removed')
+ sessionStorage.removeItem('bookingdetails')
+ window.location.href='/homescreen'
+   }, 5000*2);
+
 
 //console.log(booking)
 
@@ -130,7 +137,7 @@ const booking = JSON.parse(sessionStorage.getItem('bookingdetails'))
 
 
 
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > Doctor : </span>: {booking.doctorname} </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > Doctor : </span> {booking.doctorname} </p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > Field: </span> {booking.speciality} </p>
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id='heading-content' > Booked On : </span> {booking.createdAt.substr(0,10)} </p>
