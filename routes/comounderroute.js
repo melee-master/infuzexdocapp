@@ -97,6 +97,19 @@ router.post('/login' , (req,res)=>{
 
 
 
+router.post('/getallcompounders' , (req,res)=>{
+    Compounder.find({} , (err,docs)=>{
+        if(err)
+        {
+            return res.status(400).json({message:`There's an error ${err.res.data} `})
+        }
+        else{
+            res.send(docs)
+        }
+    } )
+} )
+
+
 
 
 

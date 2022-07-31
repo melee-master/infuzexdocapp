@@ -88,6 +88,10 @@ const BookingSchema = mongoose.Schema({
         type:String ,
         require ,
     } ,
+    address : {
+        type:String ,
+        require ,
+    } ,
 
     slottrack : [trackingschema]
 

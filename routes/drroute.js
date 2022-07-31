@@ -331,12 +331,12 @@ router.post('/updatedoctor', (req, res) => {
         image: req.body.updatedproduct.image,
         patientsperhr: req.body.updatedproduct.patientsperhr,
         mon: req.body.updatedproduct.checked,
-        tue: req.body.checked1,
-        wed: req.body.wed,
-        thu: req.body.thu,
-        fri: req.body.fri,
-        sat: req.body.sat,
-        sun: req.body.sun,
+        // tue: req.updatedproduct.body.checked1,
+        // wed: req.updatedproduct.body.wed,
+        // thu: req.updatedproduct.body.thu,
+        // fri: req.updatedproduct.body.fri,
+        // sat: req.updatedproduct.body.sat,
+        // sun: req.updatedproduct.body.sun,
 
     }, (err) => {
         if (err)
