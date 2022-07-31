@@ -383,6 +383,7 @@ console.log('Patients/hr = ' , patientsperhr )
           <div>
 
 
+
             <h1>Dr. {doctors.name} </h1>
 
             <form onSubmit={editdoctor} >
@@ -540,7 +541,7 @@ id='update-input'
                 </p>
 
 
-                <p style={{ marginLeft: '5px' }}>
+                {/* <p style={{ marginLeft: '5px' }}>
                   <label className="formtext"  id='update-input'>Image Link</label>
 
 
@@ -552,28 +553,16 @@ id='update-input'
 
                   />
 
-                </p>
+                </p> */}
 
-                <p>
-
-                  <label className="formtext"  id='update-input'>Enter Description</label>
-                  <input value={description}
- id='update-input'
-                    required placeholder='Enter Description....'
-                    onChange={(e) => { setdescription(e.target.value) }}
-
-                    className='doc-descroption-input'
-
-                  />
-                </p>
 
 
                 <p style={{ marginLeft: '5px' }}>
 
-                  <label className="formtext"   id='update-input'>Field</label>
+                  <label className="formtext"   id='update-input'>Specialization</label>
 
 
-                  <select value={field} onChange={(e) => { setfield(e.target.value) }} id='select-doc' style={{ marginTop: '50px' , float:'none' }}  >
+                  <select value={field} onChange={(e) => { setfield(e.target.value) }} id='select-doc' style={{ marginTop: '4%' , float:'none' }}  >
 
                     <option value='Physician'  >Field</option>
                     <option value='Physician'  >Physician</option>
@@ -610,6 +599,18 @@ id='update-input'
 
 
 
+                <p>
+
+                  <label className="formtext"  id='update-input'>Enter Description</label>
+                  <input value={description}
+ id='update-input'
+                    required placeholder='Enter Description....'
+                    onChange={(e) => { setdescription(e.target.value) }}
+
+                    className='doc-descroption-input'
+
+                  />
+                </p>
           
 
 

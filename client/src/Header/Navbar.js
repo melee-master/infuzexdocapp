@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import DocumentMeta from 'react-document-meta';
-import img1 from '../Images/docap.png'
+import img1 from '../Images/logo2.png'
+
 import './navbar.css'
 import { LogOutUser } from "../actions/useraction";
 import AdminNavBar from "../admin/adminnavbar";
@@ -89,14 +90,7 @@ const Navbar = () => {
 
 
 
-                  <li className="box1" style={{ float: 'right' }}
-
-                    onClick={() => { dispatch(LogOutUserDoc()) }}
-
-                  >
-
-                    প্রস্থান
-                  </li>
+             
 
 
 
@@ -310,14 +304,6 @@ const Navbar = () => {
 
 
 
-                        <li className="box1" style={{ float: 'right' }}
-
-                          onClick={() => { dispatch(LogOutUserDoc()) }}
-
-                        >
-
-                          Logout
-                        </li>
 
 
 
@@ -495,15 +481,7 @@ const Navbar = () => {
 
 
 
-                        <li className="box1" style={{ float: 'right' }}
-
-                          onClick={() => { dispatch(LogOutUserDoc()) }}
-
-                        >
-
-                          Logout
-                        </li>
-
+                      
 
 
                         <a href='/drpage'>

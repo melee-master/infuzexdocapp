@@ -11,6 +11,7 @@ import $ from 'jquery';
 import { FilterProducts } from "../actions/doctoraction";
 import DoctorByCategory from "../screen/drbycategory";
 import DoctorByIllnessSpeciality from "./drby-illness-speciality";
+import ComingSoon from "../screen/comingsoon";
 
 const Psychiatrist=()=>{
 
@@ -42,9 +43,11 @@ useEffect( ()=>{
 
     return(
         <div>
+
+            <ComingSoon />
             
 
-
+{/* 
 
 
 
@@ -80,7 +83,7 @@ return <div className="card" id="content" >
 
 
 
-</div>
+</div> */}
 
            
         </div>

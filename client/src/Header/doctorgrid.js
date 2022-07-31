@@ -50,7 +50,7 @@ id="testing-image"
 
 <p className='doc-fees' >  ফি: ₹{prod.fees} </p>
 <br/>
-<p className='consult-now-1'  >দেখা হবে
+<p className='consult-now-1'  >অ্যাপয়েন্টমেন্ট বুক করুন
 </p>
 
 

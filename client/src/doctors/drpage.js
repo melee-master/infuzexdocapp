@@ -41,7 +41,9 @@ const DoctorPage=()=>{
             <li ><Link to='/drpage/dailyschedule'   className='stylebar'   > আজকের সূচি</Link>  </li>
             <li ><Link to='/drpage/checkpatientslist'   className='stylebar'   >সময়সূচী চেক করুন</Link>  </li>
             <li ><Link to='/drpage/addcompounder'   className='stylebar' >কম্পাউন্ডার যোগ করুন</Link>   </li>
-                     <li ><Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>আমার প্রোফাইল আপডেট করুন</Link>   </li> 
+            {
+              doctor.status==='true'?( <li > <Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>Update My  Profile</Link>  </li>  ):(<li >  </li> )
+            }
                     <li ><Link to='/drpage/compounderinfo'  className='stylebar'>কম্পাউন্ডার দেখুন</Link>   </li>
                     <li ><Link to='/drpage/allpatients'   className='stylebar'   > সকল রোগী</Link>  </li>
                     <li ><Link to='/drpage/changelanguage'   className='stylebar'   >ভাষা পরিবর্তন করুন</Link>  </li>
@@ -50,8 +52,9 @@ const DoctorPage=()=>{
 
 
         <Switch>
-        <Route path="/drpage" exact  component={DailySchedule}  ></Route>
+        <Route path="/drpage" exact  component={DoctorWelcomeScreen}  ></Route>
         <Route path="/drpage/dailyschedule"  component={DailySchedule}  ></Route>
+     
 <Route path="/drpage/allpatients"  component={PatientsList}  ></Route>
 <Route path="/drpage/addcompounder"  ><CompounderRegister docid={doctor._id} /></Route>
 <Route path="/drpage/update/:doctor" component={UpdateProfile}  ><UpdateProfile/></Route>
@@ -76,7 +79,11 @@ const DoctorPage=()=>{
             <li ><Link to='/drpage/dailyschedule'   className='stylebar'   > Today's Schedule</Link>  </li>
             <li ><Link to='/drpage/checkpatientslist'   className='stylebar'   >Check Schedule</Link>  </li>
             <li ><Link to='/drpage/addcompounder'   className='stylebar' >Add Compounder</Link>   </li>
-             <li ><Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>Update My  Profile</Link>   </li> 
+            
+            {
+              doctor.status==='true'?( <li > <Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>Update My  Profile</Link>  </li>  ):(<li >  </li> )
+            }
+             
             <li ><Link to='/drpage/compounderinfo'  className='stylebar'>See Compounder</Link>   </li>
             <li ><Link to='/drpage/allpatients'   className='stylebar'   > All Patients</Link>  </li>
 
@@ -113,7 +120,9 @@ const DoctorPage=()=>{
             <li ><Link to='/drpage/dailyschedule'   className='stylebar'   > Today's Schedule</Link>  </li>
             <li ><Link to='/drpage/checkpatientslist'   className='stylebar'   >Check Schedule</Link>  </li>
             <li ><Link to='/drpage/addcompounder'   className='stylebar' >Add Compounder</Link>   </li>
-             <li ><Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>Update My  Profile</Link>   </li> 
+            {
+              doctor.status==='true'?( <li > <Link to={`/drpage/update/${doctor._id}`}   className='stylebar'>Update My  Profile</Link>  </li>  ):(<li >  </li> )
+            }
             <li ><Link to='/drpage/compounderinfo'  className='stylebar'>See Compounder</Link>   </li>
             <li ><Link to='/drpage/allpatients'   className='stylebar'   > All Patients</Link>  </li>
 
@@ -123,7 +132,7 @@ const DoctorPage=()=>{
 
 
         <Switch>
-        <Route path="/drpage" exact  component={DailySchedule}  ></Route>
+        <Route path="/drpage" exact  component={DoctorWelcomeScreen}  ></Route>
         <Route path="/drpage/dailyschedule"  component={DailySchedule}  ></Route>
 <Route path="/drpage/allpatients"  component={PatientsList}  ></Route>
 <Route path="/drpage/addcompounder"  ><CompounderRegister docid={doctor._id} /></Route>

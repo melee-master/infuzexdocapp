@@ -8,7 +8,9 @@ import DailySchedule from "./dailyschedule";
 import CheckSchedule from "./drcheckschedule";
 import PatientsList from "./patientslist";
 import UpdateProfile from "./updateprofile";
-
+import './docs.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { LogOutUserDoc } from "../actions/doctoraction";
 
 const DoctorWelcomeScreen=()=>{
 
@@ -18,10 +20,10 @@ const DoctorWelcomeScreen=()=>{
     const english = localStorage.getItem('english')
 
 
-
+    const dispatch = useDispatch()
 
     const doctor = JSON.parse(localStorage.getItem('doctor'))
-console.log(doctor)
+
   var anyobject = doctor.status
 
     return(
@@ -50,7 +52,13 @@ console.log(doctor)
        
        <h6 style={{fontWeight:'normal'}} > আপনার প্রোফাইল যাচাইকরণের মধ্য দিয়ে গেছে, অ্যাডমিনের কাছ থেকে যাচাই করা হলে আপনার প্রোফাইল স্ক্রিনে দেখাবে </h6>
        
-       
+       <p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+  প্রস্থান
+
+</span> 
+ </p>
        
        <br/><br/>
        
@@ -77,6 +85,13 @@ console.log(doctor)
          
             <p> 
 সাইন আপ করার জন্য ধন্যবাদ ! <i class="fa-solid fa-party-horn"></i> </p>
+<p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+  প্রস্থান
+
+</span> 
+ </p>
             
             <h6 style={{fontWeight:'normal'}} > আপনার প্রোফাইল যাচাইকরণের মধ্য দিয়ে গেছে, অ্যাডমিনের কাছ থেকে যাচাই করা হলে আপনার প্রোফাইল স্ক্রিনে দেখাবে  </h6>
             
@@ -116,14 +131,37 @@ console.log(doctor)
        
        <h6 style={{fontWeight:'normal'}} > Your profile has undergone for verification , Your profile will show on screen once its verified from Admin  </h6>
        
-       
+       <p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+Logout
+</span> 
+ </p>
+
+
        
        <br/><br/>
        
                  </div> ):(<p><div class="card card-1" style={{width:'80%' , marginLeft:'auto' , marginRight:'auto' , borderRadius:'20px' , backgroundColor:'#f3f1f1' }} >
 
          
-<p> Welcome Back ! <i class="fa-solid fa-party-horn"></i> </p>
+<p> Welcome Back ! <i class="fa-solid fa-party-horn"></i>
+
+
+
+<p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+Logout
+</span> 
+ </p>
+
+
+
+ </p>
+
+
+
 </div></p>)
    }
 
@@ -143,7 +181,13 @@ console.log(doctor)
             <p> Thanks For Signing Up ! <i class="fa-solid fa-party-horn"></i> </p>
             
             <h6 style={{fontWeight:'normal'}} > Your profile has undergone for verification , Your profile will show on screen once its verified from Admin  </h6>
-            
+            <p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+Logout
+</span> 
+ </p>
+
             
             
             <br/><br/>
@@ -184,14 +228,34 @@ console.log(doctor)
        
        <h6 style={{fontWeight:'normal'}} > Your profile has undergone for verification , Your profile will show on screen once its verified from Admin  </h6>
        
-       
+       <p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+Logout
+</span> 
+ </p>
+
+
        
        <br/><br/>
        
                  </div> ):(<p><div class="card card-1" style={{width:'80%' , marginLeft:'auto' , marginRight:'auto' , borderRadius:'20px' , backgroundColor:'#f3f1f1' }} >
 
          
-<p> Welcome Back ! <i class="fa-solid fa-party-horn"></i> </p>
+<p>
+  
+   Welcome Back ! <i class="fa-solid fa-party-horn"></i>
+   <p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+Logout
+</span> 
+ </p>
+
+
+
+
+ </p>
 </div></p>)
    }
 
@@ -212,7 +276,14 @@ console.log(doctor)
             
             <h6 style={{fontWeight:'normal'}} > Your profile has undergone for verification , Your profile will show on screen once its verified from Admin  </h6>
             
-            
+            <p  onClick={() => { dispatch(LogOutUserDoc()) }} > 
+  <span id='logout-button' >
+  <i class="fas fa-sign-out-alt"></i> &nbsp;
+Logout
+</span> 
+ </p>
+
+
             
             <br/><br/>
             

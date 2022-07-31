@@ -70,7 +70,12 @@ const DailySchedule = () => {
 {
     orders&&( orders.map((i,k)=>{
         if (i.date === checkdate)
-        return <DoctorTableStyle i={i} />
+       {
+        if(i.checkif!=='Cancelled')
+        {
+            return <DoctorTableStyle i={i} />
+        }
+       }
     }) )
 }
 
@@ -105,7 +110,12 @@ const DailySchedule = () => {
 {
     orders&&( orders.map((i,k)=>{
         if (i.date === checkdate)
-        return <DoctorTableStyle i={i} />
+       {
+        if(i.checkif!=='Cancelled')
+        {
+            return <DoctorTableStyle i={i} />
+        }
+       }
     }) )
 }
 
@@ -140,7 +150,12 @@ const DailySchedule = () => {
 {
     orders&&( orders.map((i,k)=>{
         if (i.date === checkdate)
-        return <DoctorTableStyle i={i} />
+       {
+        if(i.checkif!=='Cancelled')
+        {
+            return <DoctorTableStyle i={i} />
+        }
+       }
     }) )
 }
 

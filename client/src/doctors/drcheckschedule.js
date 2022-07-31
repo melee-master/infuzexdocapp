@@ -147,7 +147,10 @@ const CheckSchedule=()=>{
                              {
     orders&&( orders.map((i,k)=>{
        
+        if(i.checkif!=='Cancelled')
+    {
         return <DoctorTableStyle i={i} />
+    }
     }) )
 }
 
@@ -288,7 +291,10 @@ const CheckSchedule=()=>{
 
                                             if( (i.date.substr(0,3)===day) && (i.checkif==='false') )
 {
-    return <DoctorTableStyle i={i} />
+    if(i.checkif!=='Cancelled')
+    {
+        return <DoctorTableStyle i={i} />
+    }
 }
 
 

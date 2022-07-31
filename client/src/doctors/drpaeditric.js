@@ -11,6 +11,7 @@ import $ from 'jquery';
 import { FilterProducts } from "../actions/doctoraction";
 import DoctorByCategory from "../screen/drbycategory";
 import DoctorByIllnessSpeciality from "./drby-illness-speciality";
+import ComingSoon from "../screen/comingsoon";
 
 const Paediatrician=()=>{
 
@@ -45,10 +46,10 @@ useEffect( ()=>{
             
 
 
+<ComingSoon />
 
 
-
-
+{/* 
             <div className="gridcontain1"  >
             {loading ? <h1> <Loader/> </h1> :error ? (<h1>Something Went Wrong</h1>) :
             
@@ -80,7 +81,7 @@ return <div className="card" id="content" >
 
 
 
-</div>
+</div> */}
 
            
         </div>

@@ -131,7 +131,10 @@ const {orders , error , loading } = patientstate
 {
     orders&&( orders.map((i,k)=>{
        
-        return <DoctorTableStyle i={i} />
+        if(i.checkif!=='Cancelled')
+        {
+            return <DoctorTableStyle i={i} />
+        }
     }) )
 }
 
@@ -224,7 +227,10 @@ const {orders , error , loading } = patientstate
                            {
     orders&&( orders.map((i,k)=>{
        
-        return <DoctorTableStyle i={i} />
+         if(i.checkif!=='Cancelled')
+        {
+            return <DoctorTableStyle i={i} />
+        }
     }) )
 }
 
